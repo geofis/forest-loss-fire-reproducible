@@ -1,0 +1,878 @@
+---
+# output: github_document
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    latex_engine: lualatex
+    template: ref/svm-latex-ms.tex
+    # template: null
+    number_sections: true
+    toc: true
+    toc_depth: 4
+title: "Reproducible R code for the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century'"
+subtitle: "Data download, preparation and exploratory data analysis (EDA)"
+author:
+  - name: "Martínez Batlle, José Ramón (jmartinez19@uasd.edu.do; Twitter: https://twitter.com/geografiard)"
+  - affiliation: Researcher, Universidad Autónoma de Santo Domingo (UASD)
+keywords: "keyword 1, keyword 2"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 10pt
+bibliography: ref/biblio.bib
+# csl: plos-one.csl
+csl: ref/apa.csl
+classoption:
+  - landscape
+  - a3paper
+header-includes:
+  \usepackage{pdflscape}
+  \usepackage{graphicx}
+  \newcommand{\blandscape}{\begin{landscape}}
+  \newcommand{\elandscape}{\end{landscape}}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse=TRUE,
+  fig.path = "img/",
+  fig.align="center",
+  fig.width=16,
+  fig.height=9,
+  warning=FALSE,
+  message=FALSE,
+  dev = 'png',
+  dpi = 150,
+  tidy = FALSE,
+  size = 'tiny',
+  fig.pos = "!H"
+)
+```
+
+<!-- This .md was generated from the.Rmd with the same name. Please edit that file -->
+
+# Description and URLs
+
+This is a reproducible notebook of the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century' [@martinez2021forest]. Useful URLs are listed below:
+
+- This document: https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf
+
+- Source repo: https://github.com/geofis/forest-loss-fire-reproducible
+
+- Associated preprint DOI: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1
+
+- Associated preprint full text: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1.full
+
+- Cite the preprint using the following format: Martínez Batlle, J. R. (2021). Forest loss and fire in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604
+
+# Instructions for downloading the source data
+
+Visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, won't work) and place the ZIP file in this repo (e.g. in the same directory containing this document).
+
+# Unzip source data
+
+```{r}
+if(any(dir.exists('out'), dir.exists('data'))) {
+  "Directories 'out' and/or 'data' already available in the repo dir. Skipping unzip."
+} else {
+  unzip('forest-loss-fire-reproducible-data-repo.zip') 
+}
+```
+
+# Packages and functions
+
+## Packages
+
+```{r}
+source('R/load-packages.R')
+my_tmap_options <- tmap_options()
+my_tmap_options$legend.format$big.num.abbr <- c("MM" = 6,"BB" = 9)
+tmap_options(my_tmap_options)
+```
+
+## Custom functions
+
+```{r}
+source('R/load-functions.R')
+```
+
+# Abbreviations
+
+Abbreviations used in column names and maps:
+
+```{r}
+abbr <- data.frame(
+  Abbreviation = c('MM', 'PUA', 'SQM', 'SQKM', 'PCT', 'PYR'),
+  Meaning = c('millions', 'per unit-area', 'square meters', 'square kilometers', 'percent', 'per year'))
+knitr::kable(abbr %>% arrange(.[[1]]), format = "latex") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+```
+
+# Common use objects
+
+## Cores for parallel computing
+
+```{r}
+UseCores <- detectCores() -1
+```
+
+## Reference layers
+
+These layers are used as references in thematic maps and provide zones for exploratory data analysis useful for policy desing and decision makers.
+
+### Administrative
+
+Source: @one2015datos
+
+```{r administrative}
+admpath <- 'data/administrative/administrative.gpkg'
+st_layers(admpath)
+prov <- st_read(admpath, 'PROVCenso2010', quiet = T)
+prov
+prov <- prov %>% mutate(AREASQM = st_area(geom) %>% units::drop_units())
+# plot(prov['AREASQM'])
+prov %>% ggplot + aes(fill=AREASQM, label = TOPONIMIA) +
+  geom_sf(color='transparent') +
+  scale_fill_viridis_c(option = 'magma', direction = -1, alpha = 0.7) +
+  geom_sf_text(size = 2.5) +
+  theme_bw() +
+  theme(panel.grid=element_blank())
+mun <- st_read(admpath, 'MUNCenso2010', quiet = T)
+mun
+mun <- mun %>% mutate(AREASQM = st_area(geom) %>% units::drop_units())
+mun %>% ggplot + aes(fill=AREASQM, label = TOPONIMIA) +
+  geom_sf(color='transparent') +
+  scale_fill_viridis_c(option = 'magma', direction = -1, alpha = 0.7) +
+  geom_sf_text(size = 2) +
+  theme_bw() +
+  theme(panel.grid=element_blank())
+```
+
+### Protected areas
+
+Source: @unep2021protected
+
+```{r}
+papath <- 'data/protected_areas/protected-areas.gpkg'
+st_layers(papath)
+pa <- st_read(papath, 'Protected Areas', quiet = T) %>% st_transform(32619)
+pa
+pa <- pa %>% mutate(
+  AREASQM = st_area(geom) %>% units::drop_units(),
+  AREASQMLOG = log(st_area(geom)) %>% units::drop_units()
+)
+pa %>% ggplot + aes(fill=AREASQMLOG) +
+  geom_sf(data = prov, fill = 'transparent', lwd = 0.1) +
+  geom_sf(color='transparent') +
+  scale_fill_viridis_c(option = 'magma', direction = -1, alpha = 0.7) +
+  geom_sf_text(aes(label = NAME), size = 2) +
+  theme_bw() +
+  theme(panel.grid=element_blank())
+```
+
+## Cutline for cropping raster sources
+
+A cutline was generated using a shapefile from @one2015datos as well as the datamask provided in @hansen2013high. In detail, the cutline was generated using the following workflow: the international boundary between Haiti and the DR was extracted as a polyline from @one2015datos; the remainder of the DR land area (water bodies excluded) was extracted from a vectorized version of the datamask file from @hansen2013high; both layers were then joined together into a single cutline. Afterwards, cropped and warped versions (e.g., onto EPSG:32619) of the `datamask`, `lossyear`, `treecover` and `gain` files were masked using the generated cutline.
+
+```{r}
+source('R/load-cutline.R')
+```
+
+# Download and prepare forest cover and forest loss data
+
+Using the `R/original-script-used-to-download-and-prepare-forest-cover-and-forest-loss-data.R` script many operations were accomplished to prepare the forest cover and forest loss layers generated by Hansen et al., which included  downloading, mosaicking, cropping and clipping with the above mentioned cutline. The resulting files were saved in the directory named `out`, appending the suffix `_crop` to each filename (e.g. `out/treecover2000_crop.tif`)
+
+# Tree cover, forest loss and fire layers: importing and plotting
+
+## Tree canopy cover of year 2000
+
+Set a percentage threshold above which tree-cover would be considered as forest.
+
+```{r tree-canopy-cover-2000-nationwide}
+tc <- raster('out/treecover2000_crop.tif')
+names(tc) <- 'TREECOVER2000'
+plot(as_Spatial(cline))
+plot(tc, add = T)
+pctc <- 25 #25% or higher tree cover in year 2000 as a baseline is considered as "forest cover"
+tcforzonal <- tc
+tcforzonal[tcforzonal < pctc] <- NA
+tcforzonal[tcforzonal >= pctc] <- 1
+plot(as_Spatial(cline))
+plot(tcforzonal, add = T)
+```
+
+## Year of gross forest cover loss (2001-2018)
+
+```{r year-of-gross-forest-cover-loss-nationwide}
+ly <- raster('out/lossyear_crop.tif')
+names(ly) <- 'LOSSYEAR'
+plot(ly)
+lt <- ly
+lt[lt > 0] <- 1
+lt[lt == 0] <- NA
+plot(as_Spatial(cline))
+plot(lt, add = T)
+lt1218 <- ly
+lt1218[ly <= 11] <- NA
+lt1218[ly > 11] <- 1
+plot(as_Spatial(cline))
+plot(lt1218, add = T)
+```
+
+## Hotspot/fire layers (M6 and V1) for the long-term analytical approach
+
+The hotspot/fire/thermal anomalies layers (M6 and V1) were created using the script `R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-long-term-approach.R`. This script was initially fed from a layer where thermal anomalies and spontaneous fires from chimneys and landfills were manually removed. Then, the script filtered out points falling outside the mask (e.g. outside forest cover), as well as points recorded before 1-1-2001 and after 31-12-2018. Lastly, all points with a confidence value of less than 30% in the MODIS collection, as well as those with a "low confidence" tag in the VIIRS collection, were excluded from the dataset. For practical reasons, the fire layers are simply loaded using the `readRDS` function as follows.
+
+
+```{r fires-m6-v1-sel2}
+firesm6sel2 <- st_read('out/fire_archive_M6_93308_DR_firesm6sel2.geojson')
+cline %>% as_Spatial %>% plot
+plot(as_Spatial(firesm6sel2), main = "Thermal anomalies within forest M6",
+     pch = 1, cex = 0.1, add = T, col = 'orange')
+firesv1sel2 <- st_read('out/fire_archive_V1_93309_DR_firesv1sel2.geojson')
+cline %>% as_Spatial %>% plot
+plot(as_Spatial(firesv1sel2), main = "Thermal anomalies within forest V1",
+     pch = 1, cex = 0.1, add = T, col = 'orange')
+```
+
+## Hotspot/fire layers (M6 and V1) for the annual analytical approach
+
+The hotspot/fire/thermal anomalies layers (M6 and V1) were created using the script `R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-annual-approach.R`. This script was initially fed from a layer where thermal anomalies and spontaneous fires from chimneys and landfills were manually removed. Then ...
+
+<!-- TODO Look for this in the paper -->
+
+# Grid layers for modelling
+
+The models generated in this study are referred to zonal statistics computed using different regular grids for long-term and annual approaches
+
+## Long-term approach analysis grid
+
+The regular grid for the long-term approach, loaded in the following code chunk, was generated using the script `R/original-script-used-to-create-the-grid-long-term-approach.R`. For practical reasons, the grid is simply loaded using the `readRDS` function.
+
+```{r regular-grid}
+grd <- readRDS('out/grd_plain_only_area_known_in_R_as_grd.RDS')
+grd
+cline %>% as_Spatial %>% plot
+grd %>% as_Spatial %>% plot(add=T)
+```
+
+## Annual approach analysis grid
+
+<!-- TODO Retrieve from main script -->
+
+# Zonal statistic computations
+
+Many zonal statistics were performed using different zone layers. These computations may assit policy information and decision-making processes. These tasks were performed in semi-automatic mode using R scripts. Since such scripts produced intermediate results, they are not essential to reproduce this RMarkdown. However, if one or more scripts should be run, it would be sufficient to open and run them in one go.
+
+## Zonal statistics by provinces
+
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-provinces.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/prov_zonal_statistics.RDS`.
+
+## Zonal statistics by municipalities
+
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-municipalities.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/mun_zonal_statistics.RDS`.
+
+## Zonal statistics by protected areas
+
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-protected-areas.R`. It is worth mentioning that protected areas with less than 3 sq. km and less than 30% within cutline, were excluded in the script. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/pa_zonal_statistics.RDS`.
+
+## Zonal statistics by grid used in the long-term analytical approach
+
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-grid-long-term-approach.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/grd_zonal_statistics.RDS`.
+
+## Zonal statistics by grid used in the annual analytical approach
+
+<!-- TODO Retrieve from main script -->
+
+# Exploratory data analisys (EDA)
+
+## At National level, no zonal analysis
+
+### Tree canopy cover of year 2000 classes: area in km^2 and percentages
+
+```{r tree-canopy-cover-2000-nationwide-by-year, out.width = '50%'}
+tct <- table(tc[])
+tcsum <- tct %>% as.data.frame %>%
+  mutate(
+    treecover = as.numeric(as.character(Var1)),
+    `sq. km` = Freq*prod(res(tc))/1000000,
+    pct = Freq/sum(Freq)*100) %>%
+  dplyr::select(-Var1, -Freq) %>% 
+  mutate(`Tree canopy cover for year 2000` = case_when(
+    treecover <= 25 ~ '0-25%',
+    treecover >= 26 & treecover <= 50 ~ '26-50%',
+    treecover >= 51 & treecover <= 75 ~ '51-75%',
+    treecover >= 76 ~ '76-100%'
+  )) %>%
+  group_by(`Tree canopy cover for year 2000`) %>%
+  summarise_each(funs(sum(.)), (`sq. km`:pct))
+tcsum
+tcsum %>%
+  ggplot() + aes(x = `Tree canopy cover for year 2000`, y = `sq. km`) +
+  theme_bw() + geom_col(width = 0.45) + theme(text = element_text(size = 16))
+```
+
+### Year of gross forest cover loss (2001-2018): area in km^2 and percentages
+
+- By year
+
+```{r year-of-gross-forest-cover-loss-nationwide-by-year, out.width = '50%'}
+lyt <- table(ly[])
+lysum <- lyt %>% as.data.frame %>%
+  mutate(
+    `Year of gross forest cover loss` = as.numeric(as.character(Var1)) + 2000,
+    `sq. km` = Freq*prod(res(ly))/1000000,
+    pct = Freq/sum(Freq)*100) %>%
+  dplyr::select(-Var1, -Freq)
+lysum
+lysum %>% dplyr::filter(`Year of gross forest cover loss`>2000) %>% 
+  ggplot() + aes(x = `Year of gross forest cover loss`, y = `sq. km`) +
+  theme_bw() + geom_col(width = 0.45) +
+  scale_x_continuous(breaks = lysum$`Year of gross forest cover loss`) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), text = element_text(size = 16))
+```
+
+- By 4-year periods
+
+```{r year-of-gross-forest-cover-loss-nationwide-by-period, out.width = '50%'}
+lysum %>% dplyr::filter(`Year of gross forest cover loss`>2000) %>% 
+  mutate(`Period of gross forest cover loss` = case_when(
+    `Year of gross forest cover loss` <= 2004 ~ '2001-2004',
+    `Year of gross forest cover loss` >= 2005 &
+      `Year of gross forest cover loss` <= 2008 ~ '2005-2008',
+    `Year of gross forest cover loss` >= 2009 &
+      `Year of gross forest cover loss` <= 2012 ~ '2009-2012',
+    `Year of gross forest cover loss` >= 2013 &
+      `Year of gross forest cover loss` <= 2016 ~ '2013-2016',
+    `Year of gross forest cover loss` >= 2017 ~ '2017-2018')) %>% 
+  group_by(`Period of gross forest cover loss`) %>%
+  summarise_each(funs(sum(.)), (`sq. km`:pct)) %>% 
+  ggplot() + aes(x = `Period of gross forest cover loss`, y = `sq. km`) +
+  theme_bw() + geom_col(width = 0.45) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), text = element_text(size = 16))
+```
+
+## Zonal, by provinces
+
+```{r zonal-prov}
+#Zonal statistics object
+provzonal <- readRDS('out/prov_zonal_statistics.RDS')
+
+# Tree cover for pctc threshold
+provzonal %>% select(matches('^TREECOVER2000')) %>%
+  gather(variable, value, -geom) %>%
+  tm_shape() +
+    tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", ncol = 2, nrow = 2, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(TOPONIMIA, matches('^TREECOVER2000')))
+
+# Loss year
+# * PCT
+provzonal %>% select(matches('^LOSSYEAR_[1-9].*_PCT$')) %>%
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+    tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", ncol = 5, nrow = 4, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 0.75)
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(TOPONIMIA, matches('^LOSSYEAR_[1-9].*_PCT$')))
+# * AREASQM
+provzonal %>% select(matches('^LOSSYEAR_[1-9].*_AREASQM$')) %>%
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+    tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", ncol = 5, nrow = 4, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 0.75)
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(TOPONIMIA, matches('^LOSSYEAR_[1-9].*_AREASQM$')))
+
+# Total loss 2001-2018
+provzonal %>% select(matches('^LOSS0118')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+    tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(TOPONIMIA, matches('^LOSS0118')) %>% select(-matches('<NA>')))
+
+# Total loss 2012-2018
+provzonal %>% select(matches('^LOSS1218')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+    tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(TOPONIMIA, matches('^LOSS1218')) %>% select(-matches('<NA>')))
+
+# Fires M6
+provzonal %>% select(matches('^LOSS0118|NFIRESM6')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 3, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(TOPONIMIA, matches('^LOSS0118|NFIRESM6')) %>% select(-matches('<NA>')))
+# Fires M6. Only AREASQM and FIRESM6
+provzonal %>% select(matches('^LOSS0118_AREASQM|NFIRESM6|TOPONIMIA')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom, -TOPONIMIA) %>%
+  mutate(TOPONIMIA=gsub(' ', '\n', TOPONIMIA)) %>% 
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) +
+  tm_text(text = 'TOPONIMIA')
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(matches('^LOSS0118_AREASQM|NFIRESM6|TOPONIMIA')) %>% select(-matches('<NA>')))
+# Fires V1
+provzonal %>% select(matches('^LOSS1218|NFIRESV1')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 3, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(provzonal %>% select(TOPONIMIA, matches('^LOSS1218|NFIRESV1')) %>% select(-matches('<NA>')))
+```
+
+## Zonal, by municipalities
+
+```{r zonal-mun}
+#Zonal statistics object
+munzonal <- readRDS('out/mun_zonal_statistics.RDS')
+
+# Tree cover for pctc threshold
+munzonal %>% select(matches('^TREECOVER2000')) %>%
+  gather(variable, value, -geom) %>%
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 2, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^TREECOVER2000')))
+
+# Loss year
+# * PCT
+munzonal %>% select(matches('^LOSSYEAR_[1-9].*_PCT$')) %>%
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 5, nrow = 4, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 0.75)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^LOSSYEAR_[1-9].*_PCT$')))
+# * AREASQM
+munzonal %>% select(matches('^LOSSYEAR_[1-9].*_AREASQM$')) %>%
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 5, nrow = 4, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 0.75)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^LOSSYEAR_[1-9].*_AREASQM$')))
+
+# Total loss 2001-2018
+munzonal %>% select(matches('^LOSS0118')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^LOSS0118')) %>% select(-matches('<NA>')))
+
+# Total loss 2012-2018
+munzonal %>% select(matches('^LOSS1218')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+    tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^LOSS1218')) %>% select(-matches('<NA>')))
+
+# Fires M6
+munzonal %>% select(matches('^LOSS0118|NFIRESM6')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 3, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^LOSS0118|NFIRESM6')) %>% select(-matches('<NA>')))
+
+# Fires M6. Only AREASQM and FIRESM6
+munzonal %>% select(matches('^LOSS0118_AREASQM|NFIRESM6|TOPONIMIA')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom, -TOPONIMIA) %>%
+  mutate(TOPONIMIA=gsub(' ', '\n', TOPONIMIA)) %>% 
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) +
+  tm_text(text = 'TOPONIMIA', size = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^LOSS0118_AREASQM|NFIRESM6|TOPONIMIA')) %>% select(-matches('<NA>')))
+
+# Fires V1
+munzonal %>% select(matches('^LOSS1218|NFIRESV1')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 3, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1)
+# Top twenty sorted descending by column 2
+stripped_table(munzonal %>% select(TOPONIMIA, matches('^LOSS1218|NFIRESV1')) %>% select(-matches('<NA>')))
+```
+
+## Zonal, by protected areas
+
+```{r zonal-pa}
+#Zonal statistics object
+pazonal <- readRDS('out/pa_zonal_statistics.RDS')
+pazonal <- pazonal %>% mutate(CATEGORY_NAME = paste(DESIG, NAME))
+pazonal <- pazonal %>% filter(!grepl('Cartagena Convention', DESIG))
+
+# Tree cover for pctc threshold
+pazonal %>% select(matches('^TREECOVER2000')) %>%
+  gather(variable, value, -geom) %>%
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 2, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(pazonal %>% select(CATEGORY_NAME, matches('^TREECOVER2000')))
+
+# Loss year
+# * PCT
+pazonal %>% select(matches('^LOSSYEAR_[1-9].*_PCT$')) %>%
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 5, nrow = 4, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 0.75) + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(pazonal %>% select(CATEGORY_NAME, matches('^LOSSYEAR_[1-9].*_PCT$')))
+## ggplot
+pazonal %>% select(CATEGORY_NAME, matches('^LOSSYEAR_[1-9].*_PCT$|^LOSS0118_PCT$')) %>%
+  st_drop_geometry() %>% 
+  replace(is.na(.), 0) %>%
+  arrange(desc(LOSS0118_PCT)) %>% 
+  slice(c(1:10,37)) %>% 
+  mutate(CATEGORY_NAME = gsub('Valle Nuevo', 'Valle Nuevo (#37!!)', CATEGORY_NAME)) %>% 
+  mutate(CATEGORY_NAME = fct_reorder(CATEGORY_NAME, desc(LOSS0118_PCT))) %>% 
+  gather(variable, value, -CATEGORY_NAME, -LOSS0118_PCT) %>%
+  mutate(year = lubridate::as_date(
+    paste0(2000 + as.numeric(gsub('(LOSSYEAR_)([0-9]{,2})(.*)', '\\2', variable)), '-01-01'))) %>% 
+  ggplot + aes(x=year, y=value, group = CATEGORY_NAME, colour = CATEGORY_NAME) + 
+  geom_path(lwd = 1.5) + 
+  geom_point(size = 2) + 
+  scale_x_date(breaks=date_breaks("1 year"), date_labels = "%y") + 
+  scale_y_continuous(n.breaks = 3, trans = 'log1p') +
+  facet_grid(CATEGORY_NAME ~ ., switch = 'y') +
+  ggtitle('2001-2018 LOSS PCT') +
+  ylab('value (log)') +
+  theme_bw() +
+  theme(strip.text.y.left = element_text(angle = 0), legend.position="none",
+        axis.text.y = element_text(size = 8), aspect.ratio=0.15)
+# * AREASQM
+pazonal %>% select(matches('^LOSSYEAR_[1-9].*_AREASQM$')) %>%
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 5, nrow = 4, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 0.75) + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(pazonal %>% select(CATEGORY_NAME, matches('^LOSSYEAR_[1-9].*_AREASQM$')))
+## ggplot
+pazonal %>% select(CATEGORY_NAME, matches('^LOSSYEAR_[1-9].*_AREASQM$|^LOSS0118_AREASQM$')) %>%
+  st_drop_geometry() %>% 
+  replace(is.na(.), 0) %>%
+  arrange(desc(LOSS0118_AREASQM)) %>% 
+  slice(c(1:10)) %>% 
+  mutate(CATEGORY_NAME = fct_reorder(CATEGORY_NAME, desc(LOSS0118_AREASQM))) %>% 
+  gather(variable, value, -CATEGORY_NAME, -LOSS0118_AREASQM) %>%
+  mutate(year = lubridate::as_date(
+    paste0(2000 + as.numeric(gsub('(LOSSYEAR_)([0-9]{,2})(.*)', '\\2', variable)), '-01-01'))) %>% 
+  ggplot + aes(x=year, y=value, group = CATEGORY_NAME, colour = CATEGORY_NAME) + 
+  geom_path(lwd = 1.5) + 
+  geom_point(size = 2) + 
+  scale_x_date(breaks=date_breaks("1 year"), date_labels = "%y") + 
+  scale_y_continuous(n.breaks = 3, trans = 'log2') +
+  facet_grid(CATEGORY_NAME ~ ., switch = 'y') +
+  ggtitle('2001-2018 LOSS AREA SQM') +
+  ylab('value (log)') +
+  theme_bw() +
+  theme(strip.text.y.left = element_text(angle = 0), legend.position="none",
+        axis.text.y = element_text(size = 8), aspect.ratio=0.15)
+
+# Total loss 2001-2018
+pazonal %>% select(matches('^LOSS0118')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# ALL sorted descending by column 2
+stripped_table(
+  pazonal %>% select(CATEGORY_NAME, matches('^LOSS0118')) %>% select(-matches('<NA>')),
+  n = nrow(pazonal),
+  long_table = T
+)
+# ALL sorted descending by column 3
+stripped_table(
+  pazonal %>% select(CATEGORY_NAME, matches('^LOSS0118')) %>% select(-matches('<NA>')),
+  n = nrow(pazonal),
+  order_col = 3,
+  long_table = T
+)
+
+# Total loss 2012-2018
+pazonal %>% select(matches('^LOSS1218')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(pazonal %>% select(CATEGORY_NAME, matches('^LOSS1218')) %>% select(-matches('<NA>')))
+
+# Fires M6
+pazonal %>% select(matches('^LOSS0118|NFIRESM6')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 3, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(pazonal %>% select(CATEGORY_NAME, matches('^LOSS0118|NFIRESM6')) %>% select(-matches('<NA>')))
+
+# Fires M6. Only AREASQM and FIRESM6
+pazonal %>% select(matches('^LOSS0118_AREASQM|NFIRESM6|^NAME')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom, -NAME) %>%
+  mutate(NAME = gsub("(.{10,}?)\\s", "\\1\n", NAME)) %>% 
+  # mutate(NAME=gsub(' ', '\n', NAME)) %>% 
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) +
+  tm_text(text = 'NAME', size = 0.5, auto.placement = T, col = 'black') + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(
+  pazonal %>% select(CATEGORY_NAME, matches('^LOSS0118_AREASQM|NFIRESM6')) %>%
+    select(-matches('<NA>'))
+)
+
+# Fires V1
+pazonal %>% select(matches('^LOSS1218|NFIRESV1')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geom) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'jenks') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 3, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 1, legend.title.size = 1, legend.text.size = 1) + 
+  tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
+# Top twenty sorted descending by column 2
+stripped_table(pazonal %>% select(CATEGORY_NAME, matches('^LOSS1218|NFIRESV1')) %>% select(-matches('<NA>')))
+```
+
+## Zonal, by grid used in the long-term analytical approach
+
+```{r  zonal-long-term-grid}
+#Zonal statistics object
+grdzonal <- readRDS('out/grd_zonal_statistics.RDS')
+
+# Tree cover for pctc threshold
+grdzonal %>% select(matches('^TREECOVER2000')) %>%
+  gather(variable, value, -geometry) %>%
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 2, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 2, legend.title.size = 2, legend.text.size = 1.5) +
+  tm_shape(prov) + tm_borders()
+
+# Loss year
+# * PCT
+grdzonal %>% dplyr::select(matches('^LOSSYEAR_[1-9].*_PCT$')) %>%
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 6, nrow = 3, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 2, legend.title.size = 1, legend.text.size = 1) +
+  tm_shape(prov) + tm_borders()
+# * AREASQM
+grdzonal %>% dplyr::select(matches('^LOSSYEAR_[1-9].*AREA.*')) %>%
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 6, nrow = 3, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 2, legend.title.size = 1, legend.text.size = 1) +
+  tm_shape(prov) + tm_borders()
+# * Provinces overlayed, single scale
+grdzonal %>% dplyr::select(matches('^LOSSYEAR_[1-9].*AREA.*')) %>%
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1,
+          style = 'kmeans', legend.is.portrait = F, title = 'Area (square meters)',
+          textNA = "No tree cover loss") +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 6, nrow = 3, free.coords = FALSE, free.scales = FALSE) +
+  tm_layout(panel.label.size = 3, legend.title.size = 2.5, legend.text.size = 1.5,
+            legend.outside.position = "bottom" , legend.outside.size = .1,
+            main.title = 'Dominican Republic. Tree cover loss 2001-2018',
+            main.title.size = 2.5, attr.outside=TRUE) + 
+  tm_credits('Author: José Martínez B.\nSource: Hansen et al. 2013', size = 2) +
+  tm_shape(prov) + tm_borders()
+# * Loss per unit area (PUA). Provinces overlayed, single scale
+grdzonal %>% dplyr::select(matches('^LOSSYEAR_[1-9].*PUA.*')) %>%
+  replace(is.na(.), 0) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1,
+          style = 'kmeans', legend.is.portrait = F, legend.format = list(digits = 3, text.separator = '-'),
+          title = 'Per unit area loss', textNA = "No tree cover loss") +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 6, nrow = 3, free.coords = FALSE, free.scales = FALSE) +
+  tm_layout(panel.label.size = 3, legend.title.size = 2, legend.text.size = 0.8,
+            legend.outside.position = "bottom" , legend.outside.size = .1,
+            main.title = 'Dominican Republic. Tree cover loss 2001-2018',
+            main.title.size = 2.5, attr.outside=TRUE) + 
+  tm_credits('\nAuthor: José Martínez B.\nSource: Hansen et al. 2013', size = 2) +
+  tm_shape(prov) + tm_borders()
+
+# Total loss 2001-2018
+grdzonal %>% select(matches('^LOSS0118')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 2, legend.title.size = 1, legend.text.size = 1) +
+  tm_shape(prov) + tm_borders()
+
+# Total loss 2012-2018
+grdzonal %>% select(matches('^LOSS1218')) %>% select(-matches('<NA>')) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+    tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 2, legend.title.size = 1, legend.text.size = 1) +
+  tm_shape(prov) + tm_borders()
+
+# Fires M6 and LOSS0118
+grdzonal %>% dplyr::select(matches('LOSS0118_PUA_PYR|NFIRESM6_PSQKM_PYR')) %>% 
+  replace(is.na(.), 0) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 2, legend.title.size = 1, legend.text.size = 1) +
+  tm_shape(prov) + tm_borders()
+
+# Fires V1 and LOSS1218
+grdzonal %>% dplyr::select(matches('LOSS1218_PUA_PYR|NFIRESV1_PSQKM_PYR')) %>% 
+  replace(is.na(.), 0) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 2, legend.title.size = 1, legend.text.size = 1) +
+  tm_shape(prov) + tm_borders()
+
+# Fires M6 and LOSS0118, fires V1 and LOSS1218
+grdzonal %>% dplyr::select(matches('LOSS1218_PUA_PYR|NFIRESV1_PSQKM_PYR|LOSS0118_PUA_PYR|NFIRESM6_PSQKM_PYR')) %>% 
+  replace(is.na(.), 0) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1, style = 'kmeans') +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 2, nrow = 2, free.coords = FALSE, free.scales = TRUE) +
+  tm_layout(panel.label.size = 2, legend.title.size = 1, legend.text.size = 1) +
+  tm_shape(prov) + tm_borders()
+```
+
+## Zonal, by grid used in the long-term analytical approach
+
+<!-- TODO Retrieve from main script -->
+
+```{r  zonal-annual-grid}
+#Zonal statistics object
+# hexzonal <- readRDS('out/hex_zonal_statistics.RDS')
+```
+
+# References
+

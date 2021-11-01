@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.local/*
+.config/*
+.cache/*
+.bash_history
+.sudo_as_admin_successful
+forest-loss-fire-reproducible-data-repo.zip
+data/*
+out/*

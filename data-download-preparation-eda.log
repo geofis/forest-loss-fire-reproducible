@@ -1,0 +1,2318 @@
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.8.7)  1 NOV 2021 14:53
+ restricted system commands enabled.
+**data-download-preparation-eda.tex
+(./data-download-preparation-eda.tex
+LaTeX2e <2020-02-02> patch level 2
+Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
+Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initializatio
+n
+Lua module: lualibs 2020-02-02 2.70 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-02-02 2.70 ConTeXt Lua libraries -- extended c
+ollection.
+Lua module: luaotfload-log 2020-02-02 3.12 luaotfload submodule / logging
+Lua module: luaotfload-parsers 2020-02-02 3.12 luaotfload submodule / filelist
+Lua module: luaotfload-configuration 2020-02-02 3.12 luaotfload submodule / conf
+ig file reader
+luaotfload | conf : Root cache directory is /home/jose/.texlive2019/texmf-var/lu
+atex-cache/generic-dev/names.
+luaotfload | init : Loading fontloader “fontloader-2020-01-26.lua” from kpse
+-resolved path “/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader
+-2020-01-26.lua”.
+Lua-only attribute luaotfload@state = 2
+Lua-only attribute luaotfload@noligature = 3
+Lua-only attribute luaotfload@syllabe = 4
+luaotfload | init : Context OpenType loader version “3.11”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Lua module: luaotfload-loaders 2020-02-02 3.12 luaotfload submodule / callback h
+andling
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua module: luaotfload-database 2020-02-02 3.12 luaotfload submodule / database
+Lua module: luaotfload-unicode 2020-02-02 3.12 luaotfload submodule / Unicode he
+lpers
+Lua module: luaotfload-colors 2020-02-02 3.12 luaotfload submodule / color
+Lua-only attribute luaotfload_color_attribute = 5
+Lua module: luaotfload-resolvers 2020-02-02 3.12 luaotfload submodule / resolver
+s
+luaotfload | conf : Root cache directory is /home/jose/.texlive2019/texmf-var/lu
+atex-cache/generic-dev/names.
+Lua module: luaotfload-features 2020-02-02 3.12 luaotfload submodule / features
+Lua module: luaotfload-letterspace 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-embolden 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-notdef 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-auxiliary 2020-02-02 3.12 luaotfload submodule / auxiliar
+y functions
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
+t'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Lua module: luaotfload-fallback 2020-02-02 3.12 luaotfload submodule / fallback
+Lua module: luaotfload-multiscript 2020-02-02 3.12 luaotfload submodule / multis
+cript
+Lua module: luaotfload-script 2020-02-02 3.12 luaotfload submodule / Script help
+ers
+Lua module: luaotfload-tounicode 2020-02-02 3.12 luaotfload submodule / tounicod
+e
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
+. L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/ba
+se/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/jose/.texlive2019/texmf-
+var/luatex-cache/generic-dev/names/luaotfload-names.luc)
+\c@part=\count163
+\c@section=\count164
+\c@subsection=\count165
+\c@subsubsection=\count166
+\c@paragraph=\count167
+\c@subparagraph=\count168
+\c@figure=\count169
+\c@table=\count170
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count171
+\Gm@cntv=\count172
+\c@Gm@tempcnt=\count173
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks15
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 112
+.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+)
+\cslhangindent=\skip49
+(/usr/share/texlive/texmf-dist/tex/latex/abstract/abstract.sty
+Package: abstract 2009/06/08 v1.2a configurable abstracts
+\abstitleskip=\skip50
+\absleftindent=\skip51
+\absrightindent=\skip52
+\absparindent=\skip53
+\absparsep=\skip54
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: luatex.def on input line 147.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
+)) (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count174
+\FV@InFile=\read2
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count175
+\FV@StepNumber=\count176
+\FV@OutFile=\write3
+) (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip55
+\fb@frw=\dimen143
+\fb@frh=\dimen144
+\FrameRule=\dimen145
+\FrameSep=\dimen146
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box46
+\beforetitleunit=\skip56
+\aftertitleunit=\skip57
+\ttl@plus=\dimen147
+\ttl@minus=\dimen148
+\ttl@toksa=\toks18
+\titlewidth=\dimen149
+\titlewidthlast=\dimen150
+\titlewidthfirst=\dimen151
+)
+\c@hypothesis=\count177
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks19
+) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen152
+\Hy@linkcounter=\count178
+\Hy@pagecounter=\count179
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count180
+Package hyperref Info: Option `unicode' set `true' on input line 4421.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count181
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen153
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+))
+\Fld@menulength=\count182
+\Field@Width=\dimen154
+\Fld@charsize=\dimen155
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count183
+\c@Item=\count184
+\c@Hfootnote=\count185
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2020/01/14 v7.00d Hyperref driver for luaTeX
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+
+) (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count186
+\c@bookmark@seq@number=\count187
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+6.
+)
+\Hy@SectionHShift=\skip58
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 165.
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\%' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\#' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\&' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textunderscore' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\_' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\~' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textasciitilde' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Hy@tempa' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Hy@tempa' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\%' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\#' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\&' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textunderscore' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\_' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\catcode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\active' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\~' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textasciitilde' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Hy@tempa' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Hy@tempa' on input line 165.
+
+Package hyperref Info: Option `colorlinks' set `true' on input line 165.
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 105.
+))
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen156
+\Gin@req@width=\dimen157
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen158
+\lightrulewidth=\dimen159
+\cmidrulewidth=\dimen160
+\belowrulesep=\dimen161
+\belowbottomsep=\dimen162
+\aboverulesep=\dimen163
+\abovetopsep=\dimen164
+\cmidrulesep=\dimen165
+\cmidrulekern=\dimen166
+\defaultaddspace=\dimen167
+\@cmidla=\count188
+\@cmidlb=\count189
+\@aboverulesep=\dimen168
+\@belowrulesep=\dimen169
+\@thisruleclass=\count190
+\@lastruleclass=\count191
+\@thisrulewidth=\dimen170
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip59
+\LTright=\skip60
+\LTpre=\skip61
+\LTpost=\skip62
+\LTchunksize=\count192
+\LTcapwidth=\dimen171
+\LT@head=\box47
+\LT@firsthead=\box48
+\LT@foot=\box49
+\LT@lastfoot=\box50
+\LT@cols=\count193
+\LT@rows=\count194
+\c@LT@tables=\count195
+\c@LT@chunks=\count196
+\LT@p@ftn=\toks20
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen172
+\ar@mcellbox=\box51
+\extrarowheight=\dimen173
+\NC@list=\toks21
+\extratabsurround=\skip63
+\backup@length=\skip64
+\ar@cellbox=\box52
+) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip65
+\multirow@cntb=\count197
+\multirow@dima=\skip66
+\bigstrutjot=\dimen174
+) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen175
+\WF@size=\dimen176
+\c@WF@wrappedlines=\count198
+\WF@box=\box53
+\WF@everypar=\toks22
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count199
+\float@exts=\toks23
+\float@box=\box54
+\@float@everytoks=\toks24
+\@floatcapt=\box55
+) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks25
+\minrowclearance=\skip67
+) (/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed) + interm
+ediate FMi
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box56
+\sift@deathcycles=\count266
+\@vwid@loff=\dimen177
+\@vwid@roff=\dimen178
+)
+\c@taburow=\count267
+\tabu@nbcols=\count268
+\tabu@cnt=\count269
+\tabu@Xcol=\count270
+\tabu@alloc=\count271
+\tabu@nested=\count272
+\tabu@target=\dimen179
+\tabu@spreadtarget=\dimen180
+\tabu@naturalX=\dimen181
+\tabucolX=\dimen182
+\tabu@Xsum=\dimen183
+\extrarowdepth=\dimen184
+\abovetabulinesep=\dimen185
+\belowtabulinesep=\dimen186
+\tabustrutrule=\dimen187
+\tabu@thebody=\toks26
+\tabu@footnotes=\toks27
+\tabu@box=\box57
+\tabu@arstrutbox=\box58
+\tabu@hleads=\box59
+\tabu@vleads=\box60
+\tabu@cellskip=\skip68
+) (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box61
+) (/usr/share/texlive/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks28
+)
+\TPTL@width=\skip69
+) (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box62
+\UL@hyphenbox=\box63
+\UL@skip=\skip70
+\UL@hook=\toks29
+\UL@height=\dimen188
+\UL@pe=\count273
+\UL@pixel=\dimen189
+\ULC@box=\box64
+Package: ulem 2019/11/18
+\ULdepth=\dimen190
+) (/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen191
+\c@nlinenum=\count274
+\TeXr@lab=\toks30
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count275
+\l__pdf_internal_box=\box65
+)
+
+LaTeX Warning: Unused global option(s):
+    [a3paper].
+
+(./data-download-preparation-eda.aux)
+\openout1 = data-download-preparation-eda.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 194.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 19
+4.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: a3paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: landscape 
+* h-part:(L,W,R)=(72.26999pt, 1050.47577pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=1195.01575pt
+* \paperheight=845.04684pt
+* \textwidth=1050.47577pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=144.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\big@size=\dimen192
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count276
+\scratchdimen=\dimen193
+\scratchbox=\box66
+\nofMPsegments=\count277
+\nofMParguments=\count278
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count279
+\MPscratchDim=\dimen194
+\MPnumerator=\count280
+\makeMPintoPDFobject=\count281
+\everyMPtoPDFconversion=\toks32
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
+5.
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
+))
+\AtBeginShipoutBox=\box67
+Package hyperref Info: Link coloring ON on input line 194.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count282
+)
+LaTeX Info: Redefining \ref on input line 194.
+LaTeX Info: Redefining \pageref on input line 194.
+LaTeX Info: Redefining \nameref on input line 194.
+(./data-download-preparation-eda.out) (./data-download-preparation-eda.out)
+\@outlinefile=\write4
+
+\openout4 = data-download-preparation-eda.out
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 214
+.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 214.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 21
+4.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 2
+14.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 2
+14.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 2
+14.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 2
+14.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+) (./data-download-preparation-eda.toc)
+\tf@toc=\write5
+
+\openout5 = data-download-preparation-eda.toc
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 24
+3.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 26
+6.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+Package xcolor Warning: Incompatible color definition on input line 273.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 275.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 2
+75.
+(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 280.
+
+
+LaTeX Font Warning: Font shape `TS1/lmtt/bx/it' in size <10> not available
+(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 280.
+
+
+Package xcolor Warning: Incompatible color definition on input line 282.
+
+
+Package xcolor Warning: Incompatible color definition on input line 282.
+
+
+Package xcolor Warning: Incompatible color definition on input line 290.
+
+
+Package xcolor Warning: Incompatible color definition on input line 297.
+
+
+Package xcolor Warning: Incompatible color definition on input line 297.
+
+
+Package xcolor Warning: Incompatible color definition on input line 302.
+
+
+Package xcolor Warning: Incompatible color definition on input line 306.
+
+
+Package xcolor Warning: Incompatible color definition on input line 306.
+
+
+Package xcolor Warning: Incompatible color definition on input line 313.
+
+
+Package xcolor Warning: Incompatible color definition on input line 321.
+
+
+Package xcolor Warning: Incompatible color definition on input line 321.
+
+[2]
+
+Package xcolor Warning: Incompatible color definition on input line 348.
+
+
+Package xcolor Warning: Incompatible color definition on input line 352.
+
+
+Package xcolor Warning: Incompatible color definition on input line 352.
+
+
+Package xcolor Warning: Incompatible color definition on input line 366.
+
+
+Package xcolor Warning: Incompatible color definition on input line 404.
+
+
+Package xcolor Warning: Incompatible color definition on input line 404.
+
+
+Package xcolor Warning: Incompatible color definition on input line 404.
+
+[3]
+
+Package xcolor Warning: Incompatible color definition on input line 404.
+
+
+Package xcolor Warning: Incompatible color definition on input line 404.
+
+<img/administrative-1.png, id=238, 991.0626pt x 636.9396pt>
+File: img/administrative-1.png Graphic file (type png)
+<use img/administrative-1.png>
+Package luatex.def Info: img/administrative-1.png  used on input line 406.
+(luatex.def)             Requested size: 991.0602pt x 636.93805pt.
+
+Package xcolor Warning: Incompatible color definition on input line 408.
+
+[4<./img/administrative-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 437.
+
+
+Package xcolor Warning: Incompatible color definition on input line 437.
+
+<img/administrative-2.png, id=243, 991.5444pt x 636.9396pt>
+File: img/administrative-2.png Graphic file (type png)
+<use img/administrative-2.png>
+Package luatex.def Info: img/administrative-2.png  used on input line 439.
+(luatex.def)             Requested size: 991.54198pt x 636.93805pt.
+[5]
+
+Package xcolor Warning: Incompatible color definition on input line 446.
+
+[6<./img/administrative-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 551.
+
+
+Package xcolor Warning: Incompatible color definition on input line 551.
+
+
+Underfull \vbox (badness 10000) detected at line 551
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 551
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 551.
+
+[7]
+
+Package xcolor Warning: Incompatible color definition on input line 551.
+
+
+Package xcolor Warning: Incompatible color definition on input line 551.
+
+<img/unnamed-chunk-6-1.png, id=257, 743.4174pt x 636.9396pt>
+File: img/unnamed-chunk-6-1.png Graphic file (type png)
+<use img/unnamed-chunk-6-1.png>
+Package luatex.def Info: img/unnamed-chunk-6-1.png  used on input line 553.
+(luatex.def)             Requested size: 743.41559pt x 636.93805pt.
+[8] [9<./img/unnamed-chunk-6-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 571.
+
+
+Package xcolor Warning: Incompatible color definition on input line 583.
+
+
+Package xcolor Warning: Incompatible color definition on input line 583.
+
+
+Package xcolor Warning: Incompatible color definition on input line 609.
+
+
+Package xcolor Warning: Incompatible color definition on input line 616.
+
+
+Package xcolor Warning: Incompatible color definition on input line 616.
+
+<img/tree-canopy-cover-2000-nationwide-1.png, id=267, 886.512pt x 479.8728pt>
+File: img/tree-canopy-cover-2000-nationwide-1.png Graphic file (type png)
+<use img/tree-canopy-cover-2000-nationwide-1.png>
+Package luatex.def Info: img/tree-canopy-cover-2000-nationwide-1.png  used on in
+put line 618.
+(luatex.def)             Requested size: 886.50983pt x 479.87163pt.
+[10]
+
+Package xcolor Warning: Incompatible color definition on input line 620.
+
+
+Package xcolor Warning: Incompatible color definition on input line 629.
+
+
+Package xcolor Warning: Incompatible color definition on input line 629.
+
+<img/tree-canopy-cover-2000-nationwide-2.png, id=275, 903.375pt x 479.8728pt>
+File: img/tree-canopy-cover-2000-nationwide-2.png Graphic file (type png)
+<use img/tree-canopy-cover-2000-nationwide-2.png>
+Package luatex.def Info: img/tree-canopy-cover-2000-nationwide-2.png  used on in
+put line 631.
+(luatex.def)             Requested size: 903.3728pt x 479.87163pt.
+[11<./img/tree-canopy-cover-2000-nationwide-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 637.
+
+
+Package xcolor Warning: Incompatible color definition on input line 643.
+
+
+Package xcolor Warning: Incompatible color definition on input line 643.
+
+<img/year-of-gross-forest-cover-loss-nationwide-1.png, id=281, 1095.6132pt x 556
+.479pt>
+File: img/year-of-gross-forest-cover-loss-nationwide-1.png Graphic file (type pn
+g)
+<use img/year-of-gross-forest-cover-loss-nationwide-1.png>
+Package luatex.def Info: img/year-of-gross-forest-cover-loss-nationwide-1.png  u
+sed on input line 645.
+(luatex.def)             Requested size: 1095.61053pt x 556.47765pt.
+
+Overfull \hbox (45.13477pt too wide) in paragraph at lines 645--645
+ [] 
+ []
+
+[12<./img/tree-canopy-cover-2000-nationwide-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 647.
+
+
+Package xcolor Warning: Incompatible color definition on input line 655.
+
+
+Package xcolor Warning: Incompatible color definition on input line 655.
+
+<img/year-of-gross-forest-cover-loss-nationwide-2.png, id=287, 930.3558pt x 479.
+8728pt>
+File: img/year-of-gross-forest-cover-loss-nationwide-2.png Graphic file (type pn
+g)
+<use img/year-of-gross-forest-cover-loss-nationwide-2.png>
+Package luatex.def Info: img/year-of-gross-forest-cover-loss-nationwide-2.png  u
+sed on input line 657.
+(luatex.def)             Requested size: 930.35353pt x 479.87163pt.
+[13<./img/year-of-gross-forest-cover-loss-nationwide-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 659.
+
+
+Package xcolor Warning: Incompatible color definition on input line 667.
+
+
+Package xcolor Warning: Incompatible color definition on input line 667.
+
+<img/year-of-gross-forest-cover-loss-nationwide-3.png, id=292, 903.375pt x 479.8
+728pt>
+File: img/year-of-gross-forest-cover-loss-nationwide-3.png Graphic file (type pn
+g)
+<use img/year-of-gross-forest-cover-loss-nationwide-3.png>
+Package luatex.def Info: img/year-of-gross-forest-cover-loss-nationwide-3.png  u
+sed on input line 669.
+(luatex.def)             Requested size: 903.3728pt x 479.87163pt.
+[14<./img/year-of-gross-forest-cover-loss-nationwide-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 688.
+
+
+Package xcolor Warning: Incompatible color definition on input line 703.
+
+
+Package xcolor Warning: Incompatible color definition on input line 703.
+
+
+Package xcolor Warning: Incompatible color definition on input line 703.
+
+[15<./img/year-of-gross-forest-cover-loss-nationwide-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 703.
+
+
+Package xcolor Warning: Incompatible color definition on input line 703.
+
+<img/fires-m6-v1-sel2-1.png, id=303, 688.0104pt x 479.8728pt>
+File: img/fires-m6-v1-sel2-1.png Graphic file (type png)
+<use img/fires-m6-v1-sel2-1.png>
+Package luatex.def Info: img/fires-m6-v1-sel2-1.png  used on input line 705.
+(luatex.def)             Requested size: 688.00873pt x 479.87163pt.
+
+Package xcolor Warning: Incompatible color definition on input line 707.
+
+
+Package xcolor Warning: Incompatible color definition on input line 722.
+
+
+Package xcolor Warning: Incompatible color definition on input line 722.
+
+<img/fires-m6-v1-sel2-2.png, id=304, 688.0104pt x 479.8728pt>
+File: img/fires-m6-v1-sel2-2.png Graphic file (type png)
+<use img/fires-m6-v1-sel2-2.png>
+Package luatex.def Info: img/fires-m6-v1-sel2-2.png  used on input line 724.
+(luatex.def)             Requested size: 688.00873pt x 479.87163pt.
+[16<./img/fires-m6-v1-sel2-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 754.
+
+[17<./img/fires-m6-v1-sel2-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 778.
+
+
+Package xcolor Warning: Incompatible color definition on input line 778.
+
+<img/regular-grid-1.png, id=316, 688.0104pt x 488.0634pt>
+File: img/regular-grid-1.png Graphic file (type png)
+<use img/regular-grid-1.png>
+Package luatex.def Info: img/regular-grid-1.png  used on input line 780.
+(luatex.def)             Requested size: 688.00873pt x 488.06221pt.
+[18] [19<./img/regular-grid-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 856.
+
+
+Package xcolor Warning: Incompatible color definition on input line 885.
+
+
+Package xcolor Warning: Incompatible color definition on input line 885.
+
+<img/tree-canopy-cover-2000-nationwide-by-year-1.png, id=329, 1145.7204pt x 639.
+3486pt>
+File: img/tree-canopy-cover-2000-nationwide-by-year-1.png Graphic file (type png
+)
+<use img/tree-canopy-cover-2000-nationwide-by-year-1.png>
+Package luatex.def Info: img/tree-canopy-cover-2000-nationwide-by-year-1.png  us
+ed on input line 887.
+(luatex.def)             Requested size: 525.23788pt x 293.09909pt.
+[20]
+
+Package xcolor Warning: Incompatible color definition on input line 900.
+
+
+Package xcolor Warning: Incompatible color definition on input line 936.
+
+
+Package xcolor Warning: Incompatible color definition on input line 936.
+
+
+Package xcolor Warning: Incompatible color definition on input line 936.
+
+[21<./img/tree-canopy-cover-2000-nationwide-by-year-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 936.
+
+
+Package xcolor Warning: Incompatible color definition on input line 936.
+
+<img/year-of-gross-forest-cover-loss-nationwide-by-year-1.png, id=346, 1145.7204
+pt x 639.3486pt>
+File: img/year-of-gross-forest-cover-loss-nationwide-by-year-1.png Graphic file 
+(type png)
+<use img/year-of-gross-forest-cover-loss-nationwide-by-year-1.png>
+Package luatex.def Info: img/year-of-gross-forest-cover-loss-nationwide-by-year-
+1.png  used on input line 938.
+(luatex.def)             Requested size: 525.23788pt x 293.09909pt.
+
+Package xcolor Warning: Incompatible color definition on input line 946.
+
+
+Package xcolor Warning: Incompatible color definition on input line 964.
+
+
+Package xcolor Warning: Incompatible color definition on input line 964.
+
+<img/year-of-gross-forest-cover-loss-nationwide-by-period-1.png, id=347, 1145.72
+04pt x 639.3486pt>
+File: img/year-of-gross-forest-cover-loss-nationwide-by-period-1.png Graphic fil
+e (type png)
+<use img/year-of-gross-forest-cover-loss-nationwide-by-period-1.png>
+Package luatex.def Info: img/year-of-gross-forest-cover-loss-nationwide-by-perio
+d-1.png  used on input line 966.
+(luatex.def)             Requested size: 525.23788pt x 293.09909pt.
+[22<./img/year-of-gross-forest-cover-loss-nationwide-by-year-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 971.
+
+
+Package xcolor Warning: Incompatible color definition on input line 985.
+
+
+Package xcolor Warning: Incompatible color definition on input line 985.
+
+<img/zonal-prov-1.png, id=352, 855.6768pt x 624.4128pt>
+File: img/zonal-prov-1.png Graphic file (type png)
+<use img/zonal-prov-1.png>
+Package luatex.def Info: img/zonal-prov-1.png  used on input line 987.
+(luatex.def)             Requested size: 855.67471pt x 624.41127pt.
+[23<./img/year-of-gross-forest-cover-loss-nationwide-by-period-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 989.
+
+
+Package xcolor Warning: Incompatible color definition on input line 994.
+
+
+Package xcolor Warning: Incompatible color definition on input line 994.
+
+[24<./img/zonal-prov-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1029.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1043.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1043.
+
+<img/zonal-prov-2.png, id=362, 1049.3604pt x 624.4128pt>
+File: img/zonal-prov-2.png Graphic file (type png)
+<use img/zonal-prov-2.png>
+Package luatex.def Info: img/zonal-prov-2.png  used on input line 1045.
+(luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
+[25]
+
+Package xcolor Warning: Incompatible color definition on input line 1047.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1052.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1052.
+
+[26<./img/zonal-prov-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1088.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1100.
+
+<img/zonal-prov-3.png, id=371, 1049.3604pt x 624.4128pt>
+File: img/zonal-prov-3.png Graphic file (type png)
+<use img/zonal-prov-3.png>
+Package luatex.def Info: img/zonal-prov-3.png  used on input line 1102.
+(luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
+[27]
+
+Package xcolor Warning: Incompatible color definition on input line 1104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1109.
+
+[28<./img/zonal-prov-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1145.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1158.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1158.
+
+<img/zonal-prov-4.png, id=380, 1110.0672pt x 399.894pt>
+File: img/zonal-prov-4.png Graphic file (type png)
+<use img/zonal-prov-4.png>
+Package luatex.def Info: img/zonal-prov-4.png  used on input line 1160.
+(luatex.def)             Requested size: 1110.0645pt x 399.893pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1160--1160
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1162.
+
+[29<./img/zonal-prov-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1167.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1167.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1202.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1215.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1215.
+
+<img/zonal-prov-5.png, id=385, 1110.0672pt x 399.894pt>
+File: img/zonal-prov-5.png Graphic file (type png)
+<use img/zonal-prov-5.png>
+Package luatex.def Info: img/zonal-prov-5.png  used on input line 1217.
+(luatex.def)             Requested size: 1110.0645pt x 399.893pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1217--1217
+ [] 
+ []
+
+[30]
+
+Package xcolor Warning: Incompatible color definition on input line 1219.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1224.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1224.
+
+[31<./img/zonal-prov-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1259.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1272.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1272.
+
+<img/zonal-prov-6.png, id=395, 1110.0672pt x 267.8808pt>
+File: img/zonal-prov-6.png Graphic file (type png)
+<use img/zonal-prov-6.png>
+Package luatex.def Info: img/zonal-prov-6.png  used on input line 1274.
+(luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1274--1274
+ [] 
+ []
+
+[32]
+
+Package xcolor Warning: Incompatible color definition on input line 1276.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1281.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1281.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1316.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1330.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1330.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1330.
+
+[33<./img/zonal-prov-6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1330.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1330.
+
+<img/zonal-prov-7.png, id=404, 1110.0672pt x 399.894pt>
+File: img/zonal-prov-7.png Graphic file (type png)
+<use img/zonal-prov-7.png>
+Package luatex.def Info: img/zonal-prov-7.png  used on input line 1332.
+(luatex.def)             Requested size: 1110.0645pt x 399.893pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1332--1332
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1334.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1339.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1339.
+
+[34<./img/zonal-prov-7.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1374.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1386.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1386.
+
+<img/zonal-prov-8.png, id=409, 1110.0672pt x 267.8808pt>
+File: img/zonal-prov-8.png Graphic file (type png)
+<use img/zonal-prov-8.png>
+Package luatex.def Info: img/zonal-prov-8.png  used on input line 1388.
+(luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1388--1388
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1390.
+
+[35<./img/zonal-prov-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1395.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1395.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1433.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1447.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1447.
+
+<img/zonal-mun-1.png, id=414, 855.6768pt x 624.4128pt>
+File: img/zonal-mun-1.png Graphic file (type png)
+<use img/zonal-mun-1.png>
+Package luatex.def Info: img/zonal-mun-1.png  used on input line 1449.
+(luatex.def)             Requested size: 855.67471pt x 624.41127pt.
+[36]
+
+Package xcolor Warning: Incompatible color definition on input line 1451.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1456.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1456.
+
+[37<./img/zonal-mun-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1491.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1505.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1505.
+
+<img/zonal-mun-2.png, id=425, 1049.3604pt x 624.4128pt>
+File: img/zonal-mun-2.png Graphic file (type png)
+<use img/zonal-mun-2.png>
+Package luatex.def Info: img/zonal-mun-2.png  used on input line 1507.
+(luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
+[38]
+
+Package xcolor Warning: Incompatible color definition on input line 1509.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1514.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1514.
+
+[39<./img/zonal-mun-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1550.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1562.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1562.
+
+<img/zonal-mun-3.png, id=434, 1049.3604pt x 624.4128pt>
+File: img/zonal-mun-3.png Graphic file (type png)
+<use img/zonal-mun-3.png>
+Package luatex.def Info: img/zonal-mun-3.png  used on input line 1564.
+(luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
+[40]
+
+Package xcolor Warning: Incompatible color definition on input line 1566.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1571.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1571.
+
+[41<./img/zonal-mun-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1607.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1620.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1620.
+
+<img/zonal-mun-4.png, id=444, 1110.0672pt x 399.894pt>
+File: img/zonal-mun-4.png Graphic file (type png)
+<use img/zonal-mun-4.png>
+Package luatex.def Info: img/zonal-mun-4.png  used on input line 1622.
+(luatex.def)             Requested size: 1110.0645pt x 399.893pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1622--1622
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1624.
+
+[42<./img/zonal-mun-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1629.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1629.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1664.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1677.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1677.
+
+<img/zonal-mun-5.png, id=449, 1110.0672pt x 399.894pt>
+File: img/zonal-mun-5.png Graphic file (type png)
+<use img/zonal-mun-5.png>
+Package luatex.def Info: img/zonal-mun-5.png  used on input line 1679.
+(luatex.def)             Requested size: 1110.0645pt x 399.893pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1679--1679
+ [] 
+ []
+
+[43]
+
+Package xcolor Warning: Incompatible color definition on input line 1681.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1686.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1686.
+
+[44<./img/zonal-mun-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1721.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1734.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1734.
+
+<img/zonal-mun-6.png, id=458, 1110.0672pt x 267.8808pt>
+File: img/zonal-mun-6.png Graphic file (type png)
+<use img/zonal-mun-6.png>
+Package luatex.def Info: img/zonal-mun-6.png  used on input line 1736.
+(luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1736--1736
+ [] 
+ []
+
+[45]
+
+Package xcolor Warning: Incompatible color definition on input line 1738.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1743.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1743.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1778.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1793.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1793.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1793.
+
+[46<./img/zonal-mun-6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1793.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1793.
+
+<img/zonal-mun-7.png, id=467, 1110.0672pt x 399.894pt>
+File: img/zonal-mun-7.png Graphic file (type png)
+<use img/zonal-mun-7.png>
+Package luatex.def Info: img/zonal-mun-7.png  used on input line 1795.
+(luatex.def)             Requested size: 1110.0645pt x 399.893pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1795--1795
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1797.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1802.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1802.
+
+[47<./img/zonal-mun-7.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1837.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1850.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1850.
+
+<img/zonal-mun-8.png, id=472, 1110.0672pt x 267.8808pt>
+File: img/zonal-mun-8.png Graphic file (type png)
+<use img/zonal-mun-8.png>
+Package luatex.def Info: img/zonal-mun-8.png  used on input line 1852.
+(luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1852--1852
+ [] 
+ []
+
+[48]
+
+Package xcolor Warning: Incompatible color definition on input line 1854.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1859.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1859.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1897.
+
+[49<./img/zonal-mun-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1914.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1914.
+
+<img/zonal-pa-1.png, id=482, 840.2592pt x 624.4128pt>
+File: img/zonal-pa-1.png Graphic file (type png)
+<use img/zonal-pa-1.png>
+Package luatex.def Info: img/zonal-pa-1.png  used on input line 1916.
+(luatex.def)             Requested size: 840.25716pt x 624.41127pt.
+[50]
+
+Package xcolor Warning: Incompatible color definition on input line 1918.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1923.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1923.
+
+[51<./img/zonal-pa-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1958.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1973.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1973.
+
+<img/zonal-pa-2.png, id=492, 1030.0884pt x 624.4128pt>
+File: img/zonal-pa-2.png Graphic file (type png)
+<use img/zonal-pa-2.png>
+Package luatex.def Info: img/zonal-pa-2.png  used on input line 1975.
+(luatex.def)             Requested size: 1030.08589pt x 624.41127pt.
+[52]
+
+Package xcolor Warning: Incompatible color definition on input line 1977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1982.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1982.
+
+[53<./img/zonal-pa-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2018.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2043.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2043.
+
+<img/zonal-pa-3.png, id=501, 530.4618pt x 639.3486pt>
+File: img/zonal-pa-3.png Graphic file (type png)
+<use img/zonal-pa-3.png>
+Package luatex.def Info: img/zonal-pa-3.png  used on input line 2045.
+(luatex.def)             Requested size: 530.4605pt x 639.34703pt.
+[54]
+
+Package xcolor Warning: Incompatible color definition on input line 2047.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2060.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2060.
+
+
+Overfull \vbox (1.05287pt too high) detected at line 2060
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2060.
+
+[55<./img/zonal-pa-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2060.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2060.
+
+<img/zonal-pa-4.png, id=510, 1030.0884pt x 624.4128pt>
+File: img/zonal-pa-4.png Graphic file (type png)
+<use img/zonal-pa-4.png>
+Package luatex.def Info: img/zonal-pa-4.png  used on input line 2062.
+(luatex.def)             Requested size: 1030.08589pt x 624.41127pt.
+[56]
+
+Package xcolor Warning: Incompatible color definition on input line 2064.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2069.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2069.
+
+[57<./img/zonal-pa-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2105.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2129.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2129.
+
+<img/zonal-pa-5.png, id=519, 588.2778pt x 639.3486pt>
+File: img/zonal-pa-5.png Graphic file (type png)
+<use img/zonal-pa-5.png>
+Package luatex.def Info: img/zonal-pa-5.png  used on input line 2131.
+(luatex.def)             Requested size: 588.27635pt x 639.34703pt.
+[58]
+
+Package xcolor Warning: Incompatible color definition on input line 2133.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2147.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2147.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2147.
+
+[59<./img/zonal-pa-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2147.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2147.
+
+<img/zonal-pa-6.png, id=528, 1110.0672pt x 407.6028pt>
+File: img/zonal-pa-6.png Graphic file (type png)
+<use img/zonal-pa-6.png>
+Package luatex.def Info: img/zonal-pa-6.png  used on input line 2149.
+(luatex.def)             Requested size: 1110.0645pt x 407.60179pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2149--2149
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2151.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2160.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2160.
+
+[60<./img/zonal-pa-6.png>] [61] [62]
+
+Package xcolor Warning: Incompatible color definition on input line 2307.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2317.
+
+[63] [64]
+
+Package xcolor Warning: Incompatible color definition on input line 2464.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2478.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2478.
+
+<img/zonal-pa-7.png, id=552, 1110.0672pt x 407.6028pt>
+File: img/zonal-pa-7.png Graphic file (type png)
+<use img/zonal-pa-7.png>
+Package luatex.def Info: img/zonal-pa-7.png  used on input line 2480.
+(luatex.def)             Requested size: 1110.0645pt x 407.60179pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2480--2480
+ [] 
+ []
+
+[65]
+
+Package xcolor Warning: Incompatible color definition on input line 2482.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2487.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2487.
+
+[66<./img/zonal-pa-7.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2522.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2536.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2536.
+
+<img/zonal-pa-8.png, id=561, 1110.0672pt x 272.6988pt>
+File: img/zonal-pa-8.png Graphic file (type png)
+<use img/zonal-pa-8.png>
+Package luatex.def Info: img/zonal-pa-8.png  used on input line 2538.
+(luatex.def)             Requested size: 1110.0645pt x 272.69812pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2538--2538
+ [] 
+ []
+
+[67]
+
+Package xcolor Warning: Incompatible color definition on input line 2540.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2545.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2545.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2580.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2597.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2597.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2597.
+
+[68<./img/zonal-pa-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2597.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2597.
+
+<img/zonal-pa-9.png, id=571, 1110.0672pt x 407.6028pt>
+File: img/zonal-pa-9.png Graphic file (type png)
+<use img/zonal-pa-9.png>
+Package luatex.def Info: img/zonal-pa-9.png  used on input line 2599.
+(luatex.def)             Requested size: 1110.0645pt x 407.60179pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2599--2599
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2601.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2609.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2609.
+
+[69<./img/zonal-pa-9.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2644.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2658.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2658.
+
+<img/zonal-pa-10.png, id=576, 1110.0672pt x 272.6988pt>
+File: img/zonal-pa-10.png Graphic file (type png)
+<use img/zonal-pa-10.png>
+Package luatex.def Info: img/zonal-pa-10.png  used on input line 2660.
+(luatex.def)             Requested size: 1110.0645pt x 272.69812pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2660--2660
+ [] 
+ []
+
+[70]
+
+Package xcolor Warning: Incompatible color definition on input line 2662.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2667.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2667.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2706.
+
+[71<./img/zonal-pa-10.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2721.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2721.
+
+<img/zonal-long-term-grid-1.png, id=587, 857.604pt x 624.4128pt>
+File: img/zonal-long-term-grid-1.png Graphic file (type png)
+<use img/zonal-long-term-grid-1.png>
+Package luatex.def Info: img/zonal-long-term-grid-1.png  used on input line 2723
+.
+(luatex.def)             Requested size: 857.60191pt x 624.41127pt.
+[72]
+<img/zonal-long-term-grid-2.png, id=592, 857.604pt x 309.7974pt>
+File: img/zonal-long-term-grid-2.png Graphic file (type png)
+<use img/zonal-long-term-grid-2.png>
+Package luatex.def Info: img/zonal-long-term-grid-2.png  used on input line 2729
+.
+(luatex.def)             Requested size: 857.60191pt x 309.79663pt.
+[73<./img/zonal-long-term-grid-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2731.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2746.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2746.
+
+<img/zonal-long-term-grid-3.png, id=597, 1110.0672pt x 420.1296pt>
+File: img/zonal-long-term-grid-3.png Graphic file (type png)
+<use img/zonal-long-term-grid-3.png>
+Package luatex.def Info: img/zonal-long-term-grid-3.png  used on input line 2748
+.
+(luatex.def)             Requested size: 1110.0645pt x 420.12857pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2748--2748
+ [] 
+ []
+
+[74<./img/zonal-long-term-grid-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2750.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2763.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2763.
+
+<img/zonal-long-term-grid-4.png, id=602, 1110.0672pt x 420.1296pt>
+File: img/zonal-long-term-grid-4.png Graphic file (type png)
+<use img/zonal-long-term-grid-4.png>
+Package luatex.def Info: img/zonal-long-term-grid-4.png  used on input line 2765
+.
+(luatex.def)             Requested size: 1110.0645pt x 420.12857pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2765--2765
+ [] 
+ []
+
+[75<./img/zonal-long-term-grid-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2767.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2786.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2786.
+
+<img/zonal-long-term-grid-5.png, id=607, 1110.0672pt x 563.2242pt>
+File: img/zonal-long-term-grid-5.png Graphic file (type png)
+<use img/zonal-long-term-grid-5.png>
+Package luatex.def Info: img/zonal-long-term-grid-5.png  used on input line 2788
+.
+(luatex.def)             Requested size: 1110.0645pt x 563.22282pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2788--2788
+ [] 
+ []
+
+[76<./img/zonal-long-term-grid-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2790.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2810.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2810.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2810.
+
+[77<./img/zonal-long-term-grid-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2810.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2810.
+
+<img/zonal-long-term-grid-6.png, id=616, 1110.0672pt x 562.2606pt>
+File: img/zonal-long-term-grid-6.png Graphic file (type png)
+<use img/zonal-long-term-grid-6.png>
+Package luatex.def Info: img/zonal-long-term-grid-6.png  used on input line 2812
+.
+(luatex.def)             Requested size: 1110.0645pt x 562.25923pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2812--2812
+ [] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2814.
+
+[78<./img/zonal-long-term-grid-6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2828.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2828.
+
+<img/zonal-long-term-grid-7.png, id=621, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-7.png Graphic file (type png)
+<use img/zonal-long-term-grid-7.png>
+Package luatex.def Info: img/zonal-long-term-grid-7.png  used on input line 2830
+.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2830--2830
+ [] 
+ []
+
+<img/zonal-long-term-grid-8.png, id=622, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-8.png Graphic file (type png)
+<use img/zonal-long-term-grid-8.png>
+Package luatex.def Info: img/zonal-long-term-grid-8.png  used on input line 2836
+.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2836--2836
+ [] 
+ []
+
+[79<./img/zonal-long-term-grid-7.png>]
+<img/zonal-long-term-grid-9.png, id=627, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-9.png Graphic file (type png)
+<use img/zonal-long-term-grid-9.png>
+Package luatex.def Info: img/zonal-long-term-grid-9.png  used on input line 2842
+.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2842--2842
+ [] 
+ []
+
+[80<./img/zonal-long-term-grid-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2844.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2858.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2858.
+
+<img/zonal-long-term-grid-10.png, id=632, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-10.png Graphic file (type png)
+<use img/zonal-long-term-grid-10.png>
+Package luatex.def Info: img/zonal-long-term-grid-10.png  used on input line 286
+0.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2860--2860
+ [] 
+ []
+
+[81<./img/zonal-long-term-grid-9.png>]
+<img/zonal-long-term-grid-11.png, id=638, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-11.png Graphic file (type png)
+<use img/zonal-long-term-grid-11.png>
+Package luatex.def Info: img/zonal-long-term-grid-11.png  used on input line 286
+6.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2866--2866
+ [] 
+ []
+
+[82<./img/zonal-long-term-grid-10.png>]
+<img/zonal-long-term-grid-12.png, id=643, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-12.png Graphic file (type png)
+<use img/zonal-long-term-grid-12.png>
+Package luatex.def Info: img/zonal-long-term-grid-12.png  used on input line 287
+2.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2872--2872
+ [] 
+ []
+
+[83<./img/zonal-long-term-grid-11.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2874.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2889.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2889.
+
+<img/zonal-long-term-grid-13.png, id=648, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-13.png Graphic file (type png)
+<use img/zonal-long-term-grid-13.png>
+Package luatex.def Info: img/zonal-long-term-grid-13.png  used on input line 289
+1.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2891--2891
+ [] 
+ []
+
+[84<./img/zonal-long-term-grid-12.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2893.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2908.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2908.
+
+<img/zonal-long-term-grid-14.png, id=653, 1110.0672pt x 396.0396pt>
+File: img/zonal-long-term-grid-14.png Graphic file (type png)
+<use img/zonal-long-term-grid-14.png>
+Package luatex.def Info: img/zonal-long-term-grid-14.png  used on input line 291
+0.
+(luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
+
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2910--2910
+ [] 
+ []
+
+[85<./img/zonal-long-term-grid-13.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2912.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2927.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2927.
+
+<img/zonal-long-term-grid-15.png, id=658, 857.604pt x 624.4128pt>
+File: img/zonal-long-term-grid-15.png Graphic file (type png)
+<use img/zonal-long-term-grid-15.png>
+Package luatex.def Info: img/zonal-long-term-grid-15.png  used on input line 292
+9.
+(luatex.def)             Requested size: 857.60191pt x 624.41127pt.
+[86<./img/zonal-long-term-grid-14.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2935.
+
+[87<./img/zonal-long-term-grid-15.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2940.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2940.
+
+[88]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2977.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2977.
+(./data-download-preparation-eda.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2977.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2977.
+Package rerunfilecheck Info: File `data-download-preparation-eda.out' has not ch
+anged.
+(rerunfilecheck)             Checksum: 41A38CEAD078057929B4A4C8C1E29B0A;9270.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2977.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 14032 strings out of 481365
+ 156260,552014 words of node,token memory allocated
+ 3362 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 2 glue, 418 kern, 1 glyph, 203 attribute, 65 glue_s
+pec, 203 attribute_list, 1 write nodes
+   avail lists: 2:2656,3:234,4:821,5:1358,6:83,7:13095,8:93,9:2206,10:20,11:243
+ 29804 multiletter control sequences out of 65536+600000
+ 145 fonts using 10970747 bytes
+ 38i,10n,37p,783b,424s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/
+share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmtko10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
+no/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on data-download-preparation-eda.pdf (88 pages, 20009012 bytes).
+
+PDF statistics: 725 PDF objects out of 1000 (max. 8388607)
+ 566 compressed objects within 6 object streams
+ 171 named destinations out of 1000 (max. 131072)
+ 305 words of extra memory for PDF output out of 10000 (max. 100000000)
+
