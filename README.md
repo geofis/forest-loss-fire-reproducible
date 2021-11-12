@@ -44,7 +44,7 @@ docker run --rm \
   jmartinez19/rstudio
 ```
 
-2. Open a browser and type "localhost:8787". You should be redirected to RStudio IDE.
+2. When Docker finishes pulling the image, open a browser and type [localhost:8787](localhost:8787) in the address bar. You should be redirected to RStudio IDE.
 
 3. In the `Files` tab (down-right pane), click on the `forest-loss-fire-reproducible` directory, and then click on the `forest-loss-fire-reproducible.Rproj` file. When asked `Do you want to open the project ~/forest-loss-fire-reproducible?`, click `Yes`.
 
