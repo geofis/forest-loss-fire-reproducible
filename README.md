@@ -4,13 +4,19 @@
 
 If you want to check the results of the reproducible code, check the PDF version of the `.Rmd` notebooks.
 
-If you want to reproduce the code, first visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document). Then follow the sequence listed below by running the code chunks in each `.Rmd` notebooks, or alternately by knitting the notebooks.
+If you want to reproduce the code, follow these instructions:
 
-1. `data-download-preparation.Rmd`.
+1. Clone this repo in your computer.
 
-2. `modelling.Rmd`
+2. Visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
 
-Note: You will need an installation of R Programming Language (version 3.3 or greater) to reproduce the code. Check the [Methods for reproducing the code](#methods-for-reproducing-the-code) section for more information.
+3. Run the code chunks in each `.Rmd` notebooks, or alternately knit the notebooks.
+
+    - `data-download-preparation.Rmd`.
+    
+    - `modelling.Rmd`
+
+Note: You will need a working installation of R Programming Language (version 3.3 or greater) to reproduce the code. Check the [Methods for reproducing the code](#methods-for-reproducing-the-code) section for more information.
 
 ## Disclaimer
 
@@ -42,7 +48,7 @@ docker run --rm \
 
 3. In the `Files` tab (down-right pane), click on the `forest-loss-fire-reproducible` directory, and then click on the `forest-loss-fire-reproducible.Rproj` file. When asked `Do you want to open the project ~/forest-loss-fire-reproducible?`, click `Yes`.
 
-4. Run the code chunks in the reproducible scripts, by following the sequence mentioned in the [How to reproduce](#how-to-reproduce) section.
+4. Run the code chunks in the reproducible scripts, or alternately knit the notebooks.
 
 ### Using R from a Docker
 
@@ -73,7 +79,7 @@ docker run -it --rm \
 
 `xhost -`
 
-6. Run the code chunks in the reproducible scripts, by following the sequence mentioned in the [How to reproduce](#how-to-reproduce) section.
+6. Run the code chunks in the reproducible scripts, or alternately knit the notebooks.
 
 ## Appendix
 
