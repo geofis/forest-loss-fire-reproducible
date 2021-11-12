@@ -1,7 +1,6 @@
 # Original script used to compute zonal statistics for protected areas
 
 # Functions, packages, data
-# Function, packages
 source('R/load-packages.R')
 source('R/load-functions.R')
 # Cutline

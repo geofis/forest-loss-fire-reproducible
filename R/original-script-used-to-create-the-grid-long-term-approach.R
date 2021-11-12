@@ -1,7 +1,6 @@
 # Original script used to create the long-term approach analysis grid
 
 # Functions, packages, data
-# Function, packages
 source('R/load-packages.R')
 source('R/load-functions.R')
 # Cutline

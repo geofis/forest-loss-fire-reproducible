@@ -113,7 +113,8 @@ periodic_summaries <- function(source_table = four_variables_for_plots,
                                smooth = T,
                                save = F,
                                plot_filename = NULL,
-                               calc_se = T) {
+                               calc_se = T,
+                               new_dev = T) {
   x_axis_breaks <- unique(source_table[, bins])
   summaries <- summarySE(
     data = source_table,
@@ -133,7 +134,7 @@ periodic_summaries <- function(source_table = four_variables_for_plots,
     p <- p +
     geom_smooth(method = smooth_method, span = smooth_span, formula = smooth_formula, method.args = method_args, alpha = smooth_alpha, size = 0) + 
     stat_smooth(geom = "line", method = smooth_method, span = smooth_span, formula = smooth_formula, method.args = method_args, alpha = smooth_alpha, size = 2, col = 'blue')
-  dev.new()
+  if(new_dev) dev.new()
   print(p)
   if(save){
     jpeg(paste0('out/', plot_filename), width = 1800, height = 2700, res = 350)

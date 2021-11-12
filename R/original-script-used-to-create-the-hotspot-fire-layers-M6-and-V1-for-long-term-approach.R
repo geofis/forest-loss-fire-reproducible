@@ -1,11 +1,10 @@
-# Original script used to create the hotspot/fire layers M6 and V1
+# Original script used to create the hotspot/fire layers M6 and V1 for the long-term analytical approach
 
 # Functions, packages, data
-# Function, packages
 source('R/load-packages.R')
 source('R/load-functions.R')
 
-#Fires M6
+# Fires M6
 # Manually removed chimneys and landfills
 firesm6manrem <- st_read('out/fire_archive_M6_93308_DR_manually_removed_chimneys_landfills.geojson')
 firesm6sel <- firesm6manrem %>%
@@ -22,7 +21,7 @@ firesm6sel2
 plot(firesm6sel2['SATELLITE'], main = "Thermal anomalies within forest")
 # ** Note: the suffix "sel2" stands for "selection 2", which for this study means "fires or thermal anomalies recorded within areas which in 2000 had forest, assuming by forest areas with treecover equal or greater than pctc (25% in the last run)"
 
-# * Fires VIIRS
+# Fires V1
 # Manually removed chimneys and landfills
 firesv1manrem <- st_read('out/fire_archive_V1_93309_DR_manually_removed_chimneys_landfills.geojson')
 firesv1sel <- firesv1manrem %>%

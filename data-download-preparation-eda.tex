@@ -403,7 +403,7 @@ Source: Oficina Nacional de Estadística -ONE- (2015)
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/administrative-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/administrative-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -436,7 +436,7 @@ Source: Oficina Nacional de Estadística -ONE- (2015)
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/administrative-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/administrative-2} \end{center}
 
 \hypertarget{protected-areas}{%
 \subsubsection{Protected areas}\label{protected-areas}}
@@ -550,7 +550,7 @@ Source: UNEP-WCMC and IUCN (October 2021)
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/protected-areas-1} \end{center}
 
 \hypertarget{cutline-for-cropping-raster-sources}{%
 \subsection{Cutline for cropping raster
@@ -615,7 +615,7 @@ forest.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/tree-canopy-cover-2000-nationwide-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -628,7 +628,7 @@ forest.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/tree-canopy-cover-2000-nationwide-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-2} \end{center}
 
 \hypertarget{year-of-gross-forest-cover-loss-2001-2018}{%
 \subsection{Year of gross forest cover loss
@@ -642,7 +642,7 @@ forest.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/year-of-gross-forest-cover-loss-nationwide-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -654,7 +654,7 @@ forest.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/year-of-gross-forest-cover-loss-nationwide-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -666,24 +666,25 @@ forest.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/year-of-gross-forest-cover-loss-nationwide-3} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-3} \end{center}
 
 \hypertarget{hotspotfire-layers-m6-and-v1-for-the-long-term-analytical-approach}{%
 \subsection{Hotspot/fire layers (M6 and V1) for the long-term analytical
 approach}\label{hotspotfire-layers-m6-and-v1-for-the-long-term-analytical-approach}}
 
-The hotspot/fire/thermal anomalies layers (M6 and V1) were created using
-the script
+The hotspot/fire/thermal anomalies layers (M6 and V1 datasets) were
+created using the script
 \texttt{R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-long-term-approach.R}.
 This script was initially fed from a layer where thermal anomalies and
-spontaneous fires from chimneys and landfills were manually removed.
-Then, the script filtered out points falling outside the mask
-(e.g.~outside forest cover), as well as points recorded before 1-1-2001
-and after 31-12-2018. Lastly, all points with a confidence value of less
-than 30\% in the MODIS collection, as well as those with a ``low
-confidence'' tag in the VIIRS collection, were excluded from the
-dataset. For practical reasons, the fire layers are simply loaded using
-the \texttt{readRDS} function as follows.
+spontaneous fires from chimneys and landfills were manually removed from
+each dataset, which were called ``noise-free versions of MODIS and VIIRS
+datasets,'' respectively. Then, the script filtered out points falling
+outside the mask (e.g.~outside forest cover), as well as points recorded
+before 1-1-2001 and after 31-12-2018. Lastly, all points with a
+confidence value of less than 30\% in the MODIS collection, as well as
+those with a ``low confidence'' tag in the VIIRS collection, were
+excluded from the dataset. For practical reasons, the fire layers are
+simply loaded using the \texttt{readRDS} function as follows.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -702,7 +703,7 @@ the \texttt{readRDS} function as follows.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/fires-m6-v1-sel2-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/fires-m6-v1-sel2-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -721,7 +722,7 @@ the \texttt{readRDS} function as follows.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/fires-m6-v1-sel2-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/fires-m6-v1-sel2-2} \end{center}
 
 \hypertarget{hotspotfire-layers-m6-and-v1-for-the-annual-analytical-approach}{%
 \subsection{Hotspot/fire layers (M6 and V1) for the annual analytical
@@ -731,8 +732,42 @@ The hotspot/fire/thermal anomalies layers (M6 and V1) were created using
 the script
 \texttt{R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-annual-approach.R}.
 This script was initially fed from a layer where thermal anomalies and
-spontaneous fires from chimneys and landfills were manually removed.
-Then \ldots{}
+spontaneous fires from chimneys and landfills were manually removed from
+each dataset, which were called ``noise-free versions of MODIS and VIIRS
+datasets,'' respectively. Afterwards, annual maps of fire points using
+the date field of the datasets were generated. Then, from the annual
+maps of large clearings, buffer zones were created around the patches at
+a maximum distance of 2.5 km. Lastly, the corresponding annual subsets
+of fire points were generated by selecting only those falling within the
+patches and/or their buffer zones.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Patches of forest loss \textgreater{} 1 ha. Fires M6, year 2001, intersected by forest{-}loss patches \textgreater{}1ha + 2.5 km buffer}
+\NormalTok{loss1ha\_firesm6\_2500\_year2001 }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{\textquotesingle{}out/forest\_loss\_1ha\_firesm6\_2500\_buffer\_year\_2001.RDS\textquotesingle{}}\NormalTok{)}
+\NormalTok{cline }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ as\_Spatial }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ plot}
+\FunctionTok{plot}\NormalTok{(}
+  \FunctionTok{as\_Spatial}\NormalTok{(loss1ha\_firesm6\_2500\_year2001),}
+  \AttributeTok{main =} \StringTok{"Thermal anomalies from M6 dataset intersected by forest{-}loss patches \textgreater{}1ha + 2.5 km buffer, year 2001"}\NormalTok{,}
+  \AttributeTok{pch =} \DecValTok{1}\NormalTok{, }\AttributeTok{cex =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{add =}\NormalTok{ T, }\AttributeTok{col =} \StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Patches of forest loss \textgreater{} 1 ha. Fires V1, year 2012, intersected by forest{-}loss patches \textgreater{}1ha + 2.5 km buffer}
+\NormalTok{loss1ha\_firesv1\_2500\_year2012 }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{\textquotesingle{}out/forest\_loss\_1ha\_firesv1\_2500\_buffer\_year\_2012.RDS\textquotesingle{}}\NormalTok{)}
+\NormalTok{cline }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ as\_Spatial }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ plot}
+\FunctionTok{plot}\NormalTok{(}
+  \FunctionTok{as\_Spatial}\NormalTok{(loss1ha\_firesv1\_2500\_year2012),}
+  \AttributeTok{main =} \StringTok{"Thermal anomalies from V1 dataset intersected by forest{-}loss patches \textgreater{}1ha + 2.5 km buffer, year 2012"}\NormalTok{,}
+  \AttributeTok{pch =} \DecValTok{1}\NormalTok{, }\AttributeTok{cex =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{add =}\NormalTok{ T, }\AttributeTok{col =} \StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-2} \end{center}
 
 \hypertarget{grid-layers-for-modelling}{%
 \section{Grid layers for modelling}\label{grid-layers-for-modelling}}
@@ -777,11 +812,56 @@ For practical reasons, the grid is simply loaded using the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/regular-grid-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/regular-grid-1} \end{center}
 
 \hypertarget{annual-approach-analysis-grid}{%
 \subsection{Annual approach analysis
 grid}\label{annual-approach-analysis-grid}}
+
+The regular grid for the long-term approach, loaded in the following
+code chunk, was generated using the script
+\texttt{R/original-script-used-to-create-the-grid-annual-approach.R}.
+For practical reasons, the grid is simply loaded using the
+\texttt{readRDS} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hexsf }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{\textquotesingle{}out/honeycomb\_grid\_sf.RDS\textquotesingle{}}\NormalTok{)}
+\NormalTok{hexsf}
+\DocumentationTok{\#\# Simple feature collection with 253 features and 6 fields}
+\DocumentationTok{\#\# Geometry type: POLYGON}
+\DocumentationTok{\#\# Dimension:     XY}
+\DocumentationTok{\#\# Bounding box:  xmin: 182239.3 ymin: 1953895 xmax: 572239.3 ymax: 2205042}
+\DocumentationTok{\#\# Projected CRS: WGS 84 / UTM zone 19N}
+\DocumentationTok{\#\# First 10 features:}
+\DocumentationTok{\#\#    ENLACE a0\_square\_meters   AREASQM AREASQM\_PCT     xutm    yutm}
+\DocumentationTok{\#\# 1       1        194855716  81359197    41.75356 189739.3 2053488}
+\DocumentationTok{\#\# 2       2        194855716  89453896    45.90776 197239.3 2040497}
+\DocumentationTok{\#\# 3       3        194855716 192920585    99.00689 204739.3 2053488}
+\DocumentationTok{\#\# 4       4        194855716 168639558    86.54586 212239.3 2014517}
+\DocumentationTok{\#\# 5       5        194855716 166723114    85.56234 212239.3 2040497}
+\DocumentationTok{\#\# 6       6        194855716 182554622    93.68708 212239.3 2066478}
+\DocumentationTok{\#\# 7       7        194855716 135315105    69.44374 212239.3 2092459}
+\DocumentationTok{\#\# 8       8        194855716  85442381    43.84905 212239.3 2170401}
+\DocumentationTok{\#\# 9       9        194855716 105127666    53.95154 219739.3 1975545}
+\DocumentationTok{\#\# 10     10        194855716 194855716   100.00000 219739.3 2001526}
+\DocumentationTok{\#\#                          geometry}
+\DocumentationTok{\#\# 1  POLYGON ((189739.3 2044827,...}
+\DocumentationTok{\#\# 2  POLYGON ((197239.3 2031837,...}
+\DocumentationTok{\#\# 3  POLYGON ((204739.3 2044827,...}
+\DocumentationTok{\#\# 4  POLYGON ((212239.3 2005856,...}
+\DocumentationTok{\#\# 5  POLYGON ((212239.3 2031837,...}
+\DocumentationTok{\#\# 6  POLYGON ((212239.3 2057818,...}
+\DocumentationTok{\#\# 7  POLYGON ((212239.3 2083799,...}
+\DocumentationTok{\#\# 8  POLYGON ((212239.3 2161741,...}
+\DocumentationTok{\#\# 9  POLYGON ((219739.3 1966885,...}
+\DocumentationTok{\#\# 10 POLYGON ((219739.3 1992866,...}
+\NormalTok{cline }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ as\_Spatial }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ plot}
+\NormalTok{hexsf }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ as\_Spatial }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot}\NormalTok{(}\AttributeTok{add=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/hex-grid-annual-approach-1} \end{center}
 
 \hypertarget{zonal-statistic-computations}{%
 \section{Zonal statistic
@@ -801,7 +881,7 @@ provinces}\label{zonal-statistics-by-provinces}}
 The script used to compute zonal statistics is stored in
 \texttt{R/original-script-used-to-compute-zonal-statistics-provinces.R}.
 For practical reasons and for future use (e.g.~in the EDA section), the
-results of the script were saved as an RDS file located at
+results of the script were saved to an RDS file located at
 \texttt{out/prov\_zonal\_statistics.RDS}.
 
 \hypertarget{zonal-statistics-by-municipalities}{%
@@ -811,7 +891,7 @@ municipalities}\label{zonal-statistics-by-municipalities}}
 The script used to compute zonal statistics is stored in
 \texttt{R/original-script-used-to-compute-zonal-statistics-municipalities.R}.
 For practical reasons and for future use (e.g.~in the EDA section), the
-results of the script were saved as an RDS file located at
+results of the script were saved to an RDS file located at
 \texttt{out/mun\_zonal\_statistics.RDS}.
 
 \hypertarget{zonal-statistics-by-protected-areas}{%
@@ -823,7 +903,7 @@ The script used to compute zonal statistics is stored in
 It is worth mentioning that protected areas with less than 3 sq. km and
 less than 30\% within cutline, were excluded in the script. For
 practical reasons and for future use (e.g.~in the EDA section), the
-results of the script were saved as an RDS file located at
+results of the script were saved to an RDS file located at
 \texttt{out/pa\_zonal\_statistics.RDS}.
 
 \hypertarget{zonal-statistics-by-grid-used-in-the-long-term-analytical-approach}{%
@@ -833,12 +913,18 @@ approach}\label{zonal-statistics-by-grid-used-in-the-long-term-analytical-approa
 The script used to compute zonal statistics is stored in
 \texttt{R/original-script-used-to-compute-zonal-statistics-grid-long-term-approach.R}.
 For practical reasons and for future use (e.g.~in the EDA section), the
-results of the script were saved as an RDS file located at
+results of the script were saved to an RDS file located at
 \texttt{out/grd\_zonal\_statistics.RDS}.
 
 \hypertarget{zonal-statistics-by-grid-used-in-the-annual-analytical-approach}{%
 \subsection{Zonal statistics by grid used in the annual analytical
 approach}\label{zonal-statistics-by-grid-used-in-the-annual-analytical-approach}}
+
+The script used to compute zonal statistics is stored in
+\texttt{R/original-script-used-to-compute-zonal-statistics-grid-annual-approach.R}.
+For practical reasons and for future use (e.g.~in the EDA section), the
+results of the script were saved to an RDS file located at
+\texttt{out/hex\_zonal\_statistics.RDS}.
 
 \hypertarget{exploratory-data-analisys-eda}{%
 \section{Exploratory data analisys
@@ -884,7 +970,7 @@ percentages}\label{tree-canopy-cover-of-year-2000-classes-area-in-km2-and-percen
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{img/tree-canopy-cover-2000-nationwide-by-year-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-by-year-1} \end{center}
 
 \hypertarget{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-percentages}{%
 \subsubsection{Year of gross forest cover loss (2001-2018): area in
@@ -935,7 +1021,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{img/year-of-gross-forest-cover-loss-nationwide-by-year-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-by-year-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -963,7 +1049,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{img/year-of-gross-forest-cover-loss-nationwide-by-period-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-by-period-1} \end{center}
 
 \hypertarget{zonal-by-provinces}{%
 \subsection{Zonal, by provinces}\label{zonal-by-provinces}}
@@ -984,7 +1070,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1042,7 +1128,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1099,7 +1185,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-3} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-3} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1157,7 +1243,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-4} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-4} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1214,7 +1300,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-5} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-5} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1271,7 +1357,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-6} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-6} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1329,7 +1415,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-7} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-7} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1385,7 +1471,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-prov-8} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-prov-8} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1446,7 +1532,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1504,7 +1590,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1561,7 +1647,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-3} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-3} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1619,7 +1705,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-4} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-4} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1676,7 +1762,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-5} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-5} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1733,7 +1819,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-6} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-6} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1792,7 +1878,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-7} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-7} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1849,7 +1935,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-mun-8} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-mun-8} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1913,7 +1999,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1957,6 +2043,162 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# ALL sorted descending by column 2}
+\FunctionTok{stripped\_table}\NormalTok{(}
+\NormalTok{  pazonal }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(CATEGORY\_NAME, }\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}TREECOVER2000\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\textless{}NA\textgreater{}\textquotesingle{}}\NormalTok{)),}
+  \AttributeTok{order\_col =} \DecValTok{1}\NormalTok{, }\AttributeTok{n =} \FunctionTok{nrow}\NormalTok{(pazonal),}
+  \AttributeTok{long\_table =}\NormalTok{ T}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[t]{llrrrr}
+\toprule
+  & CATEGORY\_NAME & TREECOVER2000\_>=25\%TC\_PCT & TREECOVER2000\_<25\%TC\_PCT & TREECOVER2000\_>=25\%TC\_AREASQM & TREECOVER2000\_<25\%TC\_AREASQM\\
+\midrule
+\endfirsthead
+\multicolumn{6}{@{}l}{\textit{(continued)}}\\
+\toprule
+  & CATEGORY\_NAME & TREECOVER2000\_>=25\%TC\_PCT & TREECOVER2000\_<25\%TC\_PCT & TREECOVER2000\_>=25\%TC\_AREASQM & TREECOVER2000\_<25\%TC\_AREASQM\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+\cellcolor{lightgray}{1} & \cellcolor{lightgray}{Via Panoramica Vía Panorámica Costa Azul} & \cellcolor{lightgray}{16.3307853} & \cellcolor{lightgray}{83.6692147} & \cellcolor{lightgray}{3.112644e+06} & \cellcolor{lightgray}{15947334.9}\\
+2 & Via Panoramica Mirador del Paraíso & 39.3640466 & 60.6359534 & 8.275303e+06 & 12747187.0\\
+\cellcolor{lightgray}{3} & \cellcolor{lightgray}{Via Panoramica Mirador del Atlántico} & \cellcolor{lightgray}{51.3662861} & \cellcolor{lightgray}{48.6337139} & \cellcolor{lightgray}{6.223541e+06} & \cellcolor{lightgray}{5892462.7}\\
+4 & Via Panoramica Entrada de Mao & 71.5352663 & 28.4647337 & 3.889122e+07 & 15475281.1\\
+\cellcolor{lightgray}{5} & \cellcolor{lightgray}{Via Panoramica Carretera Santiago - La Cumbre - Puerto Plata} & \cellcolor{lightgray}{59.2508235} & \cellcolor{lightgray}{40.7491765} & \cellcolor{lightgray}{1.243086e+07} & \cellcolor{lightgray}{8549200.8}\\
+\addlinespace
+6 & Via Panoramica Carretera Nagua - Sánchez & 58.0140667 & 41.9859333 & 9.773630e+06 & 7073370.0\\
+\cellcolor{lightgray}{7} & \cellcolor{lightgray}{Via Panoramica Carretera El Abanico - Constanza} & \cellcolor{lightgray}{57.6227891} & \cellcolor{lightgray}{42.3772109} & \cellcolor{lightgray}{1.310670e+07} & \cellcolor{lightgray}{9638986.5}\\
+8 & Via Panoramica Carretera Cabral - Polo & 59.9304146 & 40.0695854 & 6.089977e+06 & 4071769.9\\
+\cellcolor{lightgray}{9} & \cellcolor{lightgray}{Via Panoramica Carretera Bayacanes-Jarabacoa} & \cellcolor{lightgray}{73.7080689} & \cellcolor{lightgray}{26.2919311} & \cellcolor{lightgray}{1.196090e+07} & \cellcolor{lightgray}{4266496.6}\\
+10 & Via Panoramica Autovia Santo Domingo - Samana - Boulevar del Atlantico & 57.7894782 & 42.2105218 & 5.969193e+07 & 43600110.1\\
+\addlinespace
+\cellcolor{lightgray}{11} & \cellcolor{lightgray}{Santuario De Mamiferos Marinos Estero Hondo} & \cellcolor{lightgray}{31.2148392} & \cellcolor{lightgray}{68.7851608} & \cellcolor{lightgray}{1.015811e+07} & \cellcolor{lightgray}{22384455.7}\\
+12 & Reserva Forestal Villarpando & 79.6642464 & 20.3357536 & 6.337343e+07 & 16177225.7\\
+\cellcolor{lightgray}{13} & \cellcolor{lightgray}{Reserva Forestal Río Cana} & \cellcolor{lightgray}{80.1427532} & \cellcolor{lightgray}{19.8572468} & \cellcolor{lightgray}{2.083290e+08} & \cellcolor{lightgray}{51618405.8}\\
+14 & Reserva Forestal Loma Novillero & 93.3188794 & 6.6811206 & 1.202832e+07 & 861161.7\\
+\cellcolor{lightgray}{15} & \cellcolor{lightgray}{Reserva Forestal Loma El 20} & \cellcolor{lightgray}{69.5133433} & \cellcolor{lightgray}{30.4866567} & \cellcolor{lightgray}{3.476835e+07} & \cellcolor{lightgray}{15248448.2}\\
+\addlinespace
+16 & Reserva Forestal Las Matas & 20.9660036 & 79.0339964 & 1.001703e+07 & 37760440.8\\
+\cellcolor{lightgray}{17} & \cellcolor{lightgray}{Reserva Forestal Hatillo} & \cellcolor{lightgray}{63.6135031} & \cellcolor{lightgray}{36.3864969} & \cellcolor{lightgray}{2.030413e+08} & \cellcolor{lightgray}{116138281.8}\\
+18 & Reserva Forestal Guanito & 70.9588252 & 29.0411748 & 4.892286e+07 & 20022561.6\\
+\cellcolor{lightgray}{19} & \cellcolor{lightgray}{Reserva Forestal Cerro de Bocanigua} & \cellcolor{lightgray}{8.6179107} & \cellcolor{lightgray}{91.3820893} & \cellcolor{lightgray}{2.517152e+06} & \cellcolor{lightgray}{26691226.5}\\
+20 & Reserva Forestal Cerro Chacuey & 84.8994811 & 15.1005189 & 4.405685e+07 & 7836105.6\\
+\addlinespace
+\cellcolor{lightgray}{21} & \cellcolor{lightgray}{Reserva Forestal Cayuco} & \cellcolor{lightgray}{88.0875912} & \cellcolor{lightgray}{11.9124088} & \cellcolor{lightgray}{4.438683e+06} & \cellcolor{lightgray}{600259.4}\\
+22 & Reserva Forestal Cabeza de Toro & 70.1046838 & 29.8953162 & 2.633262e+08 & 112292355.2\\
+\cellcolor{lightgray}{23} & \cellcolor{lightgray}{Reserva Forestal Barrero} & \cellcolor{lightgray}{26.1405649} & \cellcolor{lightgray}{73.8594351} & \cellcolor{lightgray}{8.120355e+07} & \cellcolor{lightgray}{229438349.3}\\
+24 & Reserva Forestal Arroyo Cano & 84.4863667 & 15.5136333 & 2.019122e+07 & 3707571.4\\
+\cellcolor{lightgray}{25} & \cellcolor{lightgray}{Reserva Forestal Alto Mao} & \cellcolor{lightgray}{89.0366402} & \cellcolor{lightgray}{10.9633598} & \cellcolor{lightgray}{1.870790e+08} & \cellcolor{lightgray}{23035618.6}\\
+\addlinespace
+26 & Reserva Forestal Alto bao & 83.9546228 & 16.0453772 & 2.204493e+08 & 42132192.7\\
+\cellcolor{lightgray}{27} & \cellcolor{lightgray}{Reserva Cientifica Loma Quita Espuela} & \cellcolor{lightgray}{92.7048217} & \cellcolor{lightgray}{7.2951783} & \cellcolor{lightgray}{7.021144e+07} & \cellcolor{lightgray}{5525116.5}\\
+28 & Reserva Cientifica Loma Guaconejo & 95.7429390 & 4.2570610 & 2.237636e+07 & 994930.1\\
+\cellcolor{lightgray}{29} & \cellcolor{lightgray}{Reserva Cientifica Loma Barbacoa} & \cellcolor{lightgray}{95.9849705} & \cellcolor{lightgray}{4.0150295} & \cellcolor{lightgray}{1.315749e+07} & \cellcolor{lightgray}{550374.7}\\
+30 & Reserva Cientifica Las Neblinas & 93.3784393 & 6.6215607 & 3.807613e+07 & 2700017.1\\
+\addlinespace
+\cellcolor{lightgray}{31} & \cellcolor{lightgray}{Reserva Cientifica La Salcedoa} & \cellcolor{lightgray}{77.5760173} & \cellcolor{lightgray}{22.4239827} & \cellcolor{lightgray}{3.197405e+07} & \cellcolor{lightgray}{9242360.9}\\
+32 & Reserva Cientifica Ébano Verde & 99.4588611 & 0.5411389 & 2.973741e+07 & 161796.2\\
+\cellcolor{lightgray}{33} & \cellcolor{lightgray}{Reserva Biológica Sierra Prieta} & \cellcolor{lightgray}{96.8335788} & \cellcolor{lightgray}{3.1664212} & \cellcolor{lightgray}{3.873387e+06} & \cellcolor{lightgray}{126658.3}\\
+34 & Reserva Biológica Loma Charco Azul & 57.3430148 & 42.6569852 & 9.988543e+07 & 74303929.7\\
+\cellcolor{lightgray}{35} & \cellcolor{lightgray}{Refugio de Vida Silvestre Río Soco} & \cellcolor{lightgray}{45.1802336} & \cellcolor{lightgray}{54.8197664} & \cellcolor{lightgray}{5.315016e+06} & \cellcolor{lightgray}{6449013.7}\\
+\addlinespace
+36 & Refugio de Vida Silvestre Río Higuamo & 65.8064260 & 34.1935740 & 1.216933e+07 & 6323287.4\\
+\cellcolor{lightgray}{37} & \cellcolor{lightgray}{Refugio de Vida Silvestre Río Chacuey} & \cellcolor{lightgray}{77.3000664} & \cellcolor{lightgray}{22.6999336} & \cellcolor{lightgray}{2.997265e+07} & \cellcolor{lightgray}{8801768.0}\\
+38 & Refugio de Vida Silvestre Ría Maimón & 49.8247218 & 50.1752782 & 2.405438e+06 & 2422362.4\\
+\cellcolor{lightgray}{39} & \cellcolor{lightgray}{Refugio de Vida Silvestre Monumento Natural Miguel Domingo Fuerte} & \cellcolor{lightgray}{84.0686221} & \cellcolor{lightgray}{15.9313779} & \cellcolor{lightgray}{2.818711e+07} & \cellcolor{lightgray}{5341582.1}\\
+40 & Refugio de Vida Silvestre Manglares de Puerto Viejo & 7.8763050 & 92.1236950 & 8.769266e+05 & 10256804.7\\
+\addlinespace
+\cellcolor{lightgray}{41} & \cellcolor{lightgray}{Refugio de Vida Silvestre Manglar de la Jina} & \cellcolor{lightgray}{24.9558113} & \cellcolor{lightgray}{75.0441887} & \cellcolor{lightgray}{1.319275e+07} & \cellcolor{lightgray}{39671701.7}\\
+42 & Refugio de Vida Silvestre Lagunas Redonda y Limón & 36.1311239 & 63.8688761 & 9.594479e+06 & 16960131.6\\
+\cellcolor{lightgray}{43} & \cellcolor{lightgray}{Refugio de Vida Silvestre Lagunas de Bávaro y El Caletón} & \cellcolor{lightgray}{20.4231831} & \cellcolor{lightgray}{79.5768169} & \cellcolor{lightgray}{1.307073e+06} & \cellcolor{lightgray}{5092873.7}\\
+44 & Refugio de Vida Silvestre Laguna Saladilla & 30.4988180 & 69.5011820 & 9.489458e+06 & 21624725.7\\
+\cellcolor{lightgray}{45} & \cellcolor{lightgray}{Refugio de Vida Silvestre Laguna Cabral o Rincón} & \cellcolor{lightgray}{4.0765686} & \cellcolor{lightgray}{95.9234314} & \cellcolor{lightgray}{2.284298e+06} & \cellcolor{lightgray}{53750526.7}\\
+\addlinespace
+46 & Refugio de Vida Silvestre La Gran Laguna o Perucho & 33.8233813 & 66.1766187 & 2.475744e+06 & 4843880.0\\
+\cellcolor{lightgray}{47} & \cellcolor{lightgray}{Refugio de Vida Silvestre Humedales del Bajo Yaque del Sur} & \cellcolor{lightgray}{3.8745155} & \cellcolor{lightgray}{96.1254845} & \cellcolor{lightgray}{2.265132e+06} & \cellcolor{lightgray}{56197194.2}\\
+48 & Refugio de Vida Silvestre Cañón Río Gurabo & 74.8286878 & 25.1713122 & 2.256819e+07 & 7591620.2\\
+\cellcolor{lightgray}{49} & \cellcolor{lightgray}{Refugio de Vida Silvestre Bahia de Luperón} & \cellcolor{lightgray}{43.6916900} & \cellcolor{lightgray}{56.3083100} & \cellcolor{lightgray}{8.163662e+06} & \cellcolor{lightgray}{10521039.6}\\
+50 & Parque Nacional Valle Nuevo & 84.5282712 & 15.4717288 & 7.659372e+08 & 140194190.1\\
+\addlinespace
+\cellcolor{lightgray}{51} & \cellcolor{lightgray}{Parque Nacional Sierra Martín García} & \cellcolor{lightgray}{72.8168067} & \cellcolor{lightgray}{27.1831933} & \cellcolor{lightgray}{1.904179e+08} & \cellcolor{lightgray}{71084794.4}\\
+52 & Parque Nacional Sierra de Neiba & 69.6271339 & 30.3728661 & 1.274175e+08 & 55582293.7\\
+\cellcolor{lightgray}{53} & \cellcolor{lightgray}{Parque Nacional Sierra de Bahoruco} & \cellcolor{lightgray}{88.1011026} & \cellcolor{lightgray}{11.8988974} & \cellcolor{lightgray}{9.623023e+08} & \cellcolor{lightgray}{129968135.2}\\
+54 & Parque Nacional Saltos de la Jalda & 88.1868298 & 11.8131702 & 3.212971e+07 & 4303973.5\\
+\cellcolor{lightgray}{55} & \cellcolor{lightgray}{Parque Nacional Punta Espada} & \cellcolor{lightgray}{49.9096730} & \cellcolor{lightgray}{50.0903270} & \cellcolor{lightgray}{4.104462e+07} & \cellcolor{lightgray}{41193188.6}\\
+\addlinespace
+56 & Parque Nacional Picky Lora & 92.3194330 & 7.6805670 & 1.036529e+08 & 8623460.9\\
+\cellcolor{lightgray}{57} & \cellcolor{lightgray}{Parque Nacional Nalga de Maco} & \cellcolor{lightgray}{82.6462447} & \cellcolor{lightgray}{17.3537553} & \cellcolor{lightgray}{1.370679e+08} & \cellcolor{lightgray}{28781005.0}\\
+58 & Parque Nacional Montaña La Humeadora & 94.0252451 & 5.9747549 & 2.871610e+08 & 18247403.6\\
+\cellcolor{lightgray}{59} & \cellcolor{lightgray}{Parque Nacional Máximo Gómez} & \cellcolor{lightgray}{76.1949505} & \cellcolor{lightgray}{23.8050495} & \cellcolor{lightgray}{3.222647e+07} & \cellcolor{lightgray}{10068289.4}\\
+60 & Parque Nacional Manolo Tavarez Justo & 93.0441039 & 6.9558961 & 3.272608e+08 & 24465730.1\\
+\addlinespace
+\cellcolor{lightgray}{61} & \cellcolor{lightgray}{Parque Nacional Manglares del Bajo Yuna} & \cellcolor{lightgray}{78.3065153} & \cellcolor{lightgray}{21.6934847} & \cellcolor{lightgray}{9.487214e+07} & \cellcolor{lightgray}{26282708.9}\\
+62 & Parque Nacional Manglares de Estero Balsa & 33.3944954 & 66.6055046 & 1.888339e+07 & 37663017.7\\
+\cellcolor{lightgray}{63} & \cellcolor{lightgray}{Parque Nacional Luis Quin} & \cellcolor{lightgray}{86.8040330} & \cellcolor{lightgray}{13.1959670} & \cellcolor{lightgray}{1.712595e+08} & \cellcolor{lightgray}{26034908.2}\\
+64 & Parque Nacional Los Haitises & 94.3607166 & 5.6392834 & 5.960590e+08 & 35622299.1\\
+\cellcolor{lightgray}{65} & \cellcolor{lightgray}{Parque Nacional Lago Enriquillo e Isla Cabritos} & \cellcolor{lightgray}{1.6547394} & \cellcolor{lightgray}{98.3452606} & \cellcolor{lightgray}{6.700602e+06} & \cellcolor{lightgray}{398233395.5}\\
+\addlinespace
+66 & Parque Nacional La Hispaniola & 50.0098947 & 49.9901053 & 2.741823e+07 & 27407377.2\\
+\cellcolor{lightgray}{67} & \cellcolor{lightgray}{Parque Nacional La Gran Sabana} & \cellcolor{lightgray}{6.7321418} & \cellcolor{lightgray}{93.2678582} & \cellcolor{lightgray}{1.478217e+07} & \cellcolor{lightgray}{204793812.2}\\
+68 & Parque Nacional José del Carmen Ramírez & 82.0178580 & 17.9821420 & 6.149357e+08 & 134822601.0\\
+\cellcolor{lightgray}{69} & \cellcolor{lightgray}{Parque Nacional Jaragua} & \cellcolor{lightgray}{31.3660689} & \cellcolor{lightgray}{68.6339311} & \cellcolor{lightgray}{4.814738e+08} & \cellcolor{lightgray}{1053541025.4}\\
+70 & Parque Nacional Humedales del Ozama & 43.4198647 & 56.5801353 & 2.015476e+07 & 26263538.8\\
+\addlinespace
+\cellcolor{lightgray}{71} & \cellcolor{lightgray}{Parque Nacional Francisco Alberto Caamaño Deñó} & \cellcolor{lightgray}{33.6662104} & \cellcolor{lightgray}{66.3337896} & \cellcolor{lightgray}{1.977924e+08} & \cellcolor{lightgray}{389717643.3}\\
+72 & Parque Nacional El Morro & 17.4540788 & 82.5459212 & 3.205114e+06 & 15158008.2\\
+\cellcolor{lightgray}{73} & \cellcolor{lightgray}{Parque Nacional Cotubanamá (Del Este)} & \cellcolor{lightgray}{47.7556133} & \cellcolor{lightgray}{52.2443867} & \cellcolor{lightgray}{3.803282e+08} & \cellcolor{lightgray}{416077050.5}\\
+74 & Parque Nacional Cabo Cabrón & 87.4517255 & 12.5482745 & 3.115334e+07 & 4470131.5\\
+\cellcolor{lightgray}{75} & \cellcolor{lightgray}{Parque Nacional Baiguate} & \cellcolor{lightgray}{86.6759322} & \cellcolor{lightgray}{13.3240678} & \cellcolor{lightgray}{4.544164e+07} & \cellcolor{lightgray}{6985416.1}\\
+\addlinespace
+76 & Parque Nacional Armando Bermúdez & 99.4492787 & 0.5507213 & 7.981303e+08 & 4419814.0\\
+\cellcolor{lightgray}{77} & \cellcolor{lightgray}{Parque Nacional Aniana Vargas} & \cellcolor{lightgray}{66.2654500} & \cellcolor{lightgray}{33.7345500} & \cellcolor{lightgray}{8.589790e+07} & \cellcolor{lightgray}{43729077.2}\\
+78 & Parque Nacional Anacaona & 55.3803711 & 44.6196289 & 2.984618e+08 & 240468883.3\\
+\cellcolor{lightgray}{79} & \cellcolor{lightgray}{Monumento Natural Saltos de Jima} & \cellcolor{lightgray}{64.1597654} & \cellcolor{lightgray}{35.8402346} & \cellcolor{lightgray}{1.191080e+07} & \cellcolor{lightgray}{6653483.8}\\
+80 & Monumento Natural Salto Grande & 72.4481659 & 27.5518341 & 1.069278e+07 & 4066434.4\\
+\addlinespace
+\cellcolor{lightgray}{81} & \cellcolor{lightgray}{Monumento Natural Salto El Limón} & \cellcolor{lightgray}{88.1772739} & \cellcolor{lightgray}{11.8227261} & \cellcolor{lightgray}{1.452719e+07} & \cellcolor{lightgray}{1947792.3}\\
+82 & Monumento Natural Salto de Socoa & 77.9952416 & 22.0047584 & 5.327307e+07 & 15029904.4\\
+\cellcolor{lightgray}{83} & \cellcolor{lightgray}{Monumento Natural Salto de La Damajagua} & \cellcolor{lightgray}{96.2903869} & \cellcolor{lightgray}{3.7096131} & \cellcolor{lightgray}{5.320742e+06} & \cellcolor{lightgray}{204983.0}\\
+84 & Monumento Natural Salto de Jimenoa & 96.7382590 & 3.2617410 & 1.686247e+07 & 568555.0\\
+\cellcolor{lightgray}{85} & \cellcolor{lightgray}{Monumento Natural Río Cumayasa y Cueva de las Maravillas} & \cellcolor{lightgray}{36.6842668} & \cellcolor{lightgray}{63.3157332} & \cellcolor{lightgray}{3.256086e+07} & \cellcolor{lightgray}{56198878.1}\\
+\addlinespace
+86 & Monumento Natural Reserva Antropológica Cuevas de Borbón o del Pomier & 63.2103105 & 36.7896895 & 3.174434e+06 & 1847585.3\\
+\cellcolor{lightgray}{87} & \cellcolor{lightgray}{Monumento Natural Los Cacheos} & \cellcolor{lightgray}{0.8271550} & \cellcolor{lightgray}{99.1728450} & \cellcolor{lightgray}{4.613026e+05} & \cellcolor{lightgray}{55308489.8}\\
+88 & Monumento Natural Loma Isabel de Torres & 94.5291718 & 5.4708282 & 1.569649e+07 & 908426.4\\
+\cellcolor{lightgray}{89} & \cellcolor{lightgray}{Monumento Natural Las Marías} & \cellcolor{lightgray}{27.0243743} & \cellcolor{lightgray}{72.9756257} & \cellcolor{lightgray}{1.217374e+06} & \cellcolor{lightgray}{3287352.9}\\
+90 & Monumento Natural Las Dunas de las Calderas & 16.9268970 & 83.0731030 & 2.958687e+06 & 14520516.3\\
+\addlinespace
+\cellcolor{lightgray}{91} & \cellcolor{lightgray}{Monumento Natural Las Caobas} & \cellcolor{lightgray}{53.9809062} & \cellcolor{lightgray}{46.0190938} & \cellcolor{lightgray}{5.693486e+07} & \cellcolor{lightgray}{48537361.9}\\
+92 & Monumento Natural Lagunas Cabarete y Goleta & 74.2833726 & 25.7166274 & 5.333655e+07 & 18464916.9\\
+\cellcolor{lightgray}{93} & \cellcolor{lightgray}{Monumento Natural La Tinaja} & \cellcolor{lightgray}{81.6231436} & \cellcolor{lightgray}{18.3768564} & \cellcolor{lightgray}{2.409466e+07} & \cellcolor{lightgray}{5424736.3}\\
+94 & Monumento Natural Isla Catalina & 48.2635273 & 51.7364727 & 7.837690e+06 & 8401674.6\\
+\cellcolor{lightgray}{95} & \cellcolor{lightgray}{Monumento Natural Hoyo Claro} & \cellcolor{lightgray}{67.0247609} & \cellcolor{lightgray}{32.9752391} & \cellcolor{lightgray}{2.633797e+07} & \cellcolor{lightgray}{12957912.7}\\
+\addlinespace
+96 & Monumento Natural Diego de Ocampo & 92.8558987 & 7.1441013 & 2.353298e+07 & 1810569.0\\
+\cellcolor{lightgray}{97} & \cellcolor{lightgray}{Monumento Natural Cerro de San Francisco} & \cellcolor{lightgray}{90.7180705} & \cellcolor{lightgray}{9.2819295} & \cellcolor{lightgray}{3.651148e+06} & \cellcolor{lightgray}{373571.7}\\
+98 & Monumento Natural Cabo Samaná & 79.2496232 & 20.7503768 & 7.346906e+06 & 1923682.0\\
+\cellcolor{lightgray}{99} & \cellcolor{lightgray}{Corredor Ecologico Autopista Juan Bosch} & \cellcolor{lightgray}{22.1218962} & \cellcolor{lightgray}{77.8781038} & \cellcolor{lightgray}{1.227294e+06} & \cellcolor{lightgray}{4320574.7}\\
+100 & Corredor Ecologico Autopista Duarte & 41.1485625 & 58.8514375 & 4.265560e+06 & 6100682.9\\
+\addlinespace
+\cellcolor{lightgray}{101} & \cellcolor{lightgray}{Corredor Ecologico Autopista 6 de Noviembre} & \cellcolor{lightgray}{20.5983424} & \cellcolor{lightgray}{79.4016576} & \cellcolor{lightgray}{7.483224e+05} & \cellcolor{lightgray}{2884602.8}\\
+102 & Area Nacional De Recreo Playa Larga & 0.0197443 & 99.9802557 & 2.961669e+03 & 14997150.5\\
+\cellcolor{lightgray}{103} & \cellcolor{lightgray}{Area Nacional De Recreo Playa de Cabo Rojo - Pedernales} & \cellcolor{lightgray}{6.7464316} & \cellcolor{lightgray}{93.2535684} & \cellcolor{lightgray}{1.181795e+06} & \cellcolor{lightgray}{16335533.9}\\
+104 & Area Nacional De Recreo Playa Blanca & 51.8436741 & 48.1563259 & 3.454111e+06 & 3208439.2\\
+\cellcolor{lightgray}{105} & \cellcolor{lightgray}{Area Nacional De Recreo Guaraguao - Punta Catuano} & \cellcolor{lightgray}{67.2725113} & \cellcolor{lightgray}{32.7274887} & \cellcolor{lightgray}{1.250931e+07} & \cellcolor{lightgray}{6085669.8}\\
+\addlinespace
+106 & Area Nacional De Recreo Guagui & 95.1509671 & 4.8490329 & 3.946277e+07 & 2011080.6\\
+\cellcolor{lightgray}{107} & \cellcolor{lightgray}{Area Nacional De Recreo Boca de Nigua} & \cellcolor{lightgray}{15.0601647} & \cellcolor{lightgray}{84.9398353} & \cellcolor{lightgray}{8.757018e+05} & \cellcolor{lightgray}{4938987.4}\\
+108 & Area Nacional De Recreo Bahía de las Águilas & 1.1695259 & 98.8304741 & 4.665196e+05 & 39423115.7\\*
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 
 \CommentTok{\# Loss year}
 \CommentTok{\# * PCT}
@@ -1972,7 +2214,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2042,7 +2284,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-3} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-3} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2059,7 +2301,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-4} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-4} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2128,7 +2370,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-5} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-5} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2146,7 +2388,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-6} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-6} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2477,7 +2719,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-7} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-7} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2535,7 +2777,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-8} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-8} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2596,7 +2838,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-9} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-9} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2643,6 +2885,51 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Top twenty sorted descending by column 2}
+\FunctionTok{stripped\_table}\NormalTok{(}
+\NormalTok{  pazonal }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(CATEGORY\_NAME, }\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}LOSS0118\_AREASQM|NFIRESM6\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\textless{}NA\textgreater{}\textquotesingle{}}\NormalTok{)),}
+  \AttributeTok{order\_col =} \DecValTok{3}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[H]
+\centering
+\begin{tabular}[t]{llrr}
+\toprule
+  & CATEGORY\_NAME & LOSS0118\_AREASQM & NFIRESM6\\
+\midrule
+\cellcolor{lightgray}{1} & \cellcolor{lightgray}{Parque Nacional José del Carmen Ramírez} & \cellcolor{lightgray}{90356487} & \cellcolor{lightgray}{727}\\
+2 & Parque Nacional Sierra de Bahoruco & 99490393 & 500\\
+\cellcolor{lightgray}{3} & \cellcolor{lightgray}{Parque Nacional Valle Nuevo} & \cellcolor{lightgray}{48606234} & \cellcolor{lightgray}{392}\\
+4 & Parque Nacional Los Haitises & 106098081 & 308\\
+\cellcolor{lightgray}{5} & \cellcolor{lightgray}{Parque Nacional Manolo Tavarez Justo} & \cellcolor{lightgray}{34746840} & \cellcolor{lightgray}{128}\\
+\addlinespace
+6 & Parque Nacional Nalga de Maco & 17958794 & 117\\
+\cellcolor{lightgray}{7} & \cellcolor{lightgray}{Reserva Forestal Alto Mao} & \cellcolor{lightgray}{30640838} & \cellcolor{lightgray}{104}\\
+8 & Reserva Forestal Cerro Chacuey & 13734337 & 82\\
+\cellcolor{lightgray}{9} & \cellcolor{lightgray}{Parque Nacional Montaña La Humeadora} & \cellcolor{lightgray}{18277567} & \cellcolor{lightgray}{82}\\
+10 & Parque Nacional Francisco Alberto Caamaño Deñó & 6035530 & 81\\
+\addlinespace
+\cellcolor{lightgray}{11} & \cellcolor{lightgray}{Parque Nacional Armando Bermúdez} & \cellcolor{lightgray}{17271703} & \cellcolor{lightgray}{79}\\
+12 & Reserva Forestal Hatillo & 6270945 & 76\\
+\cellcolor{lightgray}{13} & \cellcolor{lightgray}{Monumento Natural Las Caobas} & \cellcolor{lightgray}{18868449} & \cellcolor{lightgray}{76}\\
+14 & Parque Nacional Sierra Martín García & 8441457 & 76\\
+\cellcolor{lightgray}{15} & \cellcolor{lightgray}{Via Panoramica Entrada de Mao} & \cellcolor{lightgray}{12301958} & \cellcolor{lightgray}{69}\\
+\addlinespace
+16 & Reserva Forestal Río Cana & 19467164 & 53\\
+\cellcolor{lightgray}{17} & \cellcolor{lightgray}{Monumento Natural Salto de Socoa} & \cellcolor{lightgray}{13282788} & \cellcolor{lightgray}{53}\\
+18 & Parque Nacional Sierra de Neiba & 7072866 & 43\\
+\cellcolor{lightgray}{19} & \cellcolor{lightgray}{Refugio de Vida Silvestre Río Chacuey} & \cellcolor{lightgray}{5762642} & \cellcolor{lightgray}{38}\\
+20 & Reserva Forestal Villarpando & 3377307 & 34\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 
 \CommentTok{\# Fires V1}
 \NormalTok{pazonal }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}LOSS1218|NFIRESV1\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\textless{}NA\textgreater{}\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
@@ -2657,7 +2944,7 @@ percentages}\label{year-of-gross-forest-cover-loss-2001-2018-area-in-km2-and-per
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-pa-10} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-pa-10} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2720,13 +3007,13 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-1} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-1} \end{center}
 
 \begin{verbatim}
 ## ================================================================================
 \end{verbatim}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-2} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2745,7 +3032,7 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-3} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-3} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2762,7 +3049,7 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-4} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-4} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2785,7 +3072,7 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-5} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-5} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2809,7 +3096,7 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-6} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-6} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2827,19 +3114,19 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-7} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-7} \end{center}
 
 \begin{verbatim}
 ## =====================================================
 \end{verbatim}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-8} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-8} \end{center}
 
 \begin{verbatim}
 ## ===========================
 \end{verbatim}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-9} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-9} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2857,19 +3144,19 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-10} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-10} \end{center}
 
 \begin{verbatim}
 ## =====================================================
 \end{verbatim}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-11} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-11} \end{center}
 
 \begin{verbatim}
 ## ===========================
 \end{verbatim}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-12} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-12} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2888,7 +3175,7 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-13} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-13} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2907,7 +3194,7 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-14} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-14} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2926,18 +3213,132 @@ approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/zonal-long-term-grid-15} \end{center}
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-long-term-grid-15} \end{center}
 
-\hypertarget{zonal-by-grid-used-in-the-long-term-analytical-approach-1}{%
-\subsection{Zonal, by grid used in the long-term analytical
-approach}\label{zonal-by-grid-used-in-the-long-term-analytical-approach-1}}
+\hypertarget{zonal-by-grid-used-in-the-annual-analytical-approach}{%
+\subsection{Zonal, by grid used in the annual analytical
+approach}\label{zonal-by-grid-used-in-the-annual-analytical-approach}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Zonal statistics object}
-\CommentTok{\# hexzonal \textless{}{-} readRDS(\textquotesingle{}out/hex\_zonal\_statistics.RDS\textquotesingle{})}
+\NormalTok{hexsf }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{\textquotesingle{}out/honeycomb\_grid\_sf.RDS\textquotesingle{}}\NormalTok{)}
+\FunctionTok{tm\_shape}\NormalTok{(cline) }\SpecialCharTok{+}
+  \FunctionTok{tm\_fill}\NormalTok{(}\StringTok{\textquotesingle{}grey90\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_borders}\NormalTok{(}\StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_shape}\NormalTok{(hexsf) }\SpecialCharTok{+}
+  \FunctionTok{tm\_fill}\NormalTok{(}\StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.4}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{tm\_borders}\NormalTok{(}\StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_text}\NormalTok{(}\StringTok{\textquotesingle{}ENLACE\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{, }\AttributeTok{shadow =}\NormalTok{ T)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-annual-grid-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\#Zonal statistics object}
+\NormalTok{hexzonal }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{\textquotesingle{}out/hex\_zonal\_statistics.RDS\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Patches of forest loss \textgreater{} 1 Ha}
+\NormalTok{hexzonal }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}year.*loss1ha\_AREASQM\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{rename\_at}\NormalTok{(}\FunctionTok{vars}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}year.*loss1ha\_AREASQM\textquotesingle{}}\NormalTok{)), }\FunctionTok{funs}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{.loss1ha\_AREASQM\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,.))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{gather}\NormalTok{(variable, value, }\SpecialCharTok{{-}}\NormalTok{geometry) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{variable =} \FunctionTok{factor}\NormalTok{(variable, }\AttributeTok{levels =} \FunctionTok{unique}\NormalTok{(variable))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_shape}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col=}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{, }\AttributeTok{palette =} \StringTok{"YlOrBr"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{,}
+          \AttributeTok{style =} \StringTok{\textquotesingle{}kmeans\textquotesingle{}}\NormalTok{, }\AttributeTok{legend.is.portrait =}\NormalTok{ F, }\AttributeTok{title =} \StringTok{\textquotesingle{}Area (square meters)\textquotesingle{}}\NormalTok{,}
+          \AttributeTok{textNA =} \StringTok{"No tree cover loss"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_borders}\NormalTok{(}\AttributeTok{col =} \StringTok{\textquotesingle{}grey15\textquotesingle{}}\NormalTok{, }\AttributeTok{lwd =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_facets}\NormalTok{(}\AttributeTok{by =} \StringTok{"variable"}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{6}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{free.coords =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{free.scales =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_layout}\NormalTok{(}\AttributeTok{panel.label.size =} \DecValTok{3}\NormalTok{, }\AttributeTok{legend.title.size =} \DecValTok{1}\NormalTok{, }\AttributeTok{legend.text.size =} \FloatTok{1.5}\NormalTok{,}
+            \AttributeTok{legend.outside.position =} \StringTok{"bottom"}\NormalTok{ , }\AttributeTok{legend.outside.size =}\NormalTok{ .}\DecValTok{1}\NormalTok{,}
+            \AttributeTok{main.title =} \StringTok{\textquotesingle{}Dominican Republic. Tree cover loss 2001{-}2018 within annual analytical approach hex grid\textquotesingle{}}\NormalTok{, }\AttributeTok{main.title.size =} \DecValTok{2}\NormalTok{, }\AttributeTok{attr.outside=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{tm\_credits}\NormalTok{(}\StringTok{\textquotesingle{}Author: José Martínez B.}\SpecialCharTok{\textbackslash{}n}\StringTok{Source: Hansen et al. 2013\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_scale\_bar}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_shape}\NormalTok{(prov) }\SpecialCharTok{+} \FunctionTok{tm\_borders}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-annual-grid-2} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# Fires M6}
+\NormalTok{hexzonal }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}NFIRESM6\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\textless{}NA\textgreater{}\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename\_at}\NormalTok{(}\FunctionTok{vars}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}NFIRESM6\textquotesingle{}}\NormalTok{)), }\FunctionTok{funs}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}\^{}NFIRESM6\_\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,.))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{gather}\NormalTok{(variable, value, }\SpecialCharTok{{-}}\NormalTok{geometry) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{variable =} \FunctionTok{factor}\NormalTok{(variable, }\AttributeTok{levels =} \FunctionTok{unique}\NormalTok{(variable))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_shape}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col=}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{, }\AttributeTok{palette =} \StringTok{"YlOrBr"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{,}
+          \AttributeTok{style =} \StringTok{\textquotesingle{}kmeans\textquotesingle{}}\NormalTok{, }\AttributeTok{legend.is.portrait =}\NormalTok{ F, }\AttributeTok{title =} \StringTok{\textquotesingle{}Number of fires/hotspots at \textless{}2.5 km from forest loss\textquotesingle{}}\NormalTok{,}
+          \AttributeTok{textNA =} \StringTok{"No fires/hotspots"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_borders}\NormalTok{(}\AttributeTok{col =} \StringTok{\textquotesingle{}grey15\textquotesingle{}}\NormalTok{, }\AttributeTok{lwd =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_facets}\NormalTok{(}\AttributeTok{by =} \StringTok{"variable"}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{6}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{free.coords =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{free.scales =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_layout}\NormalTok{(}\AttributeTok{panel.label.size =} \DecValTok{3}\NormalTok{, }\AttributeTok{legend.title.size =} \DecValTok{1}\NormalTok{, }\AttributeTok{legend.text.size =} \FloatTok{1.5}\NormalTok{,}
+            \AttributeTok{legend.outside.position =} \StringTok{"bottom"}\NormalTok{ , }\AttributeTok{legend.outside.size =}\NormalTok{ .}\DecValTok{1}\NormalTok{,}
+            \AttributeTok{main.title =} \StringTok{\textquotesingle{}Dominican Republic. Number of selected fires/hotspots detected by MODIS, 2001{-}2018,  within annual analytical approach hex grid\textquotesingle{}}\NormalTok{,}
+            \AttributeTok{main.title.size =} \DecValTok{2}\NormalTok{, }\AttributeTok{attr.outside=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{tm\_credits}\NormalTok{(}\StringTok{\textquotesingle{}Author: José Martínez B.}\SpecialCharTok{\textbackslash{}n}\StringTok{Source: NASA/FIRMS\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_scale\_bar}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_shape}\NormalTok{(prov) }\SpecialCharTok{+} \FunctionTok{tm\_borders}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-annual-grid-3} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# Fires V1}
+\NormalTok{hexzonal }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}NFIRESV1\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\textless{}NA\textgreater{}\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename\_at}\NormalTok{(}\FunctionTok{vars}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}NFIRESV1\textquotesingle{}}\NormalTok{)), }\FunctionTok{funs}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}\^{}NFIRESV1\_\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,.))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{gather}\NormalTok{(variable, value, }\SpecialCharTok{{-}}\NormalTok{geometry) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{variable =} \FunctionTok{factor}\NormalTok{(variable, }\AttributeTok{levels =} \FunctionTok{unique}\NormalTok{(variable))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_shape}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col=}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{, }\AttributeTok{palette =} \StringTok{"YlOrBr"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{,}
+          \AttributeTok{style =} \StringTok{\textquotesingle{}kmeans\textquotesingle{}}\NormalTok{, }\AttributeTok{legend.is.portrait =}\NormalTok{ F, }\AttributeTok{title =} \StringTok{\textquotesingle{}Number of fires/hotspots at \textless{}2.5 km from forest loss\textquotesingle{}}\NormalTok{,}
+          \AttributeTok{textNA =} \StringTok{"No tree cover loss"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_borders}\NormalTok{(}\AttributeTok{col =} \StringTok{\textquotesingle{}grey15\textquotesingle{}}\NormalTok{, }\AttributeTok{lwd =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_facets}\NormalTok{(}\AttributeTok{by =} \StringTok{"variable"}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{4}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{free.coords =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{free.scales =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_layout}\NormalTok{(}\AttributeTok{panel.label.size =} \DecValTok{3}\NormalTok{, }\AttributeTok{legend.title.size =} \DecValTok{1}\NormalTok{, }\AttributeTok{legend.text.size =} \FloatTok{1.5}\NormalTok{,}
+            \AttributeTok{legend.outside.position =} \StringTok{"bottom"}\NormalTok{ , }\AttributeTok{legend.outside.size =}\NormalTok{ .}\DecValTok{1}\NormalTok{,}
+            \AttributeTok{main.title =} \StringTok{\textquotesingle{}Dominican Republic. Number of selected fires/hotspots detected by VIIRS, 2001{-}2018,  within annual analytical approach hex grid\textquotesingle{}}\NormalTok{,}
+            \AttributeTok{main.title.size =} \DecValTok{2}\NormalTok{, }\AttributeTok{attr.outside=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{tm\_credits}\NormalTok{(}\StringTok{\textquotesingle{}Author: José Martínez B.}\SpecialCharTok{\textbackslash{}n}\StringTok{Source: NASA/FIRMS\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_scale\_bar}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_shape}\NormalTok{(prov) }\SpecialCharTok{+} \FunctionTok{tm\_borders}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-annual-grid-4} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# Patches of forest loss \textless{} 1 ha}
+\NormalTok{hexzonal }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}NCLUMPSSMALLER1HA\_\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename\_at}\NormalTok{(}\FunctionTok{vars}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{\textquotesingle{}\^{}NCLUMPSSMALLER1HA\_\textquotesingle{}}\NormalTok{)), }\FunctionTok{funs}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}\^{}NCLUMPSSMALLER1HA\_\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,.))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{gather}\NormalTok{(variable, value, }\SpecialCharTok{{-}}\NormalTok{geometry) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{variable =} \FunctionTok{factor}\NormalTok{(variable, }\AttributeTok{levels =} \FunctionTok{unique}\NormalTok{(variable))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_shape}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col=}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{, }\AttributeTok{palette =} \StringTok{"YlOrBr"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{,}
+          \AttributeTok{style =} \StringTok{\textquotesingle{}kmeans\textquotesingle{}}\NormalTok{, }\AttributeTok{legend.is.portrait =}\NormalTok{ F, }\AttributeTok{title =} \StringTok{\textquotesingle{}Number of clumps\textquotesingle{}}\NormalTok{,}
+          \AttributeTok{textNA =} \StringTok{"No tree cover loss"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_borders}\NormalTok{(}\AttributeTok{col =} \StringTok{\textquotesingle{}grey15\textquotesingle{}}\NormalTok{, }\AttributeTok{lwd =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_facets}\NormalTok{(}\AttributeTok{by =} \StringTok{"variable"}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{6}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{free.coords =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{free.scales =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_layout}\NormalTok{(}\AttributeTok{panel.label.size =} \DecValTok{3}\NormalTok{, }\AttributeTok{legend.title.size =} \DecValTok{1}\NormalTok{, }\AttributeTok{legend.text.size =} \FloatTok{1.5}\NormalTok{,}
+            \AttributeTok{legend.outside.position =} \StringTok{"bottom"}\NormalTok{ , }\AttributeTok{legend.outside.size =}\NormalTok{ .}\DecValTok{1}\NormalTok{,}
+            \AttributeTok{main.title =} \StringTok{\textquotesingle{}Dominican Republic. Number of clumps of forest loss \textless{}1ha,  within annual analyticial approach hex grid\textquotesingle{}}\NormalTok{,}
+            \AttributeTok{main.title.size =} \DecValTok{2}\NormalTok{, }\AttributeTok{attr.outside=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{tm\_credits}\NormalTok{(}\StringTok{\textquotesingle{}Author: José Martínez B.}\SpecialCharTok{\textbackslash{}n}\StringTok{Source: Hansen et al., 2013\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_scale\_bar}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{tm\_shape}\NormalTok{(prov) }\SpecialCharTok{+} \FunctionTok{tm\_borders}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/data-download-preparation-eda/zonal-annual-grid-5} \end{center}
 
 \hypertarget{references}{%
 \section*{References}\label{references}}

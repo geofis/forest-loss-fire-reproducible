@@ -1,7 +1,6 @@
 # Original script used to compute zonal statistics for long-term approach grid
 
 # Functions, packages, data
-# Function, packages
 source('R/load-packages.R')
 source('R/load-functions.R')
 # Cutline

@@ -38,7 +38,7 @@ docker run --rm \
 
 3. In the `Files` tab (down-right pane), click on the `forest-loss-fire-reproducible` directory, and then click on the `forest-loss-fire-reproducible.Rproj` file. When asked `Do you want to open the project ~/forest-loss-fire-reproducible?`, click `Yes`.
 
-4. Run the code chunks in the reproducible scripts, by following the sequence mentioned in [Script execution sequence](#Script_execution_sequence) section.
+4. Run the code chunks in the reproducible scripts, by following the sequence mentioned in [Script execution sequence](#script-execution-sequence) section.
 
 ### Using R from a Docker
 

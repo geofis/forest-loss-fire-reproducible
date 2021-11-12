@@ -6,7 +6,6 @@ output:
     fig_caption: true
     latex_engine: lualatex
     template: ref/svm-latex-ms.tex
-    # template: null
     number_sections: true
     toc: true
     toc_depth: 4
@@ -21,7 +20,6 @@ geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 10pt
 bibliography: ref/biblio.bib
-# csl: plos-one.csl
 csl: ref/apa.csl
 classoption:
   - landscape
@@ -40,7 +38,7 @@ editor_options:
 knitr::opts_chunk$set(
   echo = TRUE,
   collapse=TRUE,
-  fig.path = "img/",
+  fig.path = "img/data-download-preparation-eda/",
   fig.align="center",
   fig.width=16,
   fig.height=9,
@@ -76,7 +74,7 @@ Visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve i
 
 # Unzip source data
 
-```{r}
+```{r unzip-source-data}
 if(any(dir.exists('out'), dir.exists('data'))) {
   "Directories 'out' and/or 'data' already available in the repo dir. Skipping unzip."
 } else {
@@ -88,7 +86,7 @@ if(any(dir.exists('out'), dir.exists('data'))) {
 
 ## Packages
 
-```{r}
+```{r packages}
 source('R/load-packages.R')
 my_tmap_options <- tmap_options()
 my_tmap_options$legend.format$big.num.abbr <- c("MM" = 6,"BB" = 9)
@@ -97,7 +95,7 @@ tmap_options(my_tmap_options)
 
 ## Custom functions
 
-```{r}
+```{r load-functions}
 source('R/load-functions.R')
 ```
 
@@ -105,7 +103,7 @@ source('R/load-functions.R')
 
 Abbreviations used in column names and maps:
 
-```{r}
+```{r abbreviations}
 abbr <- data.frame(
   Abbreviation = c('MM', 'PUA', 'SQM', 'SQKM', 'PCT', 'PYR'),
   Meaning = c('millions', 'per unit-area', 'square meters', 'square kilometers', 'percent', 'per year'))
@@ -117,7 +115,7 @@ knitr::kable(abbr %>% arrange(.[[1]]), format = "latex") %>%
 
 ## Cores for parallel computing
 
-```{r}
+```{r cores}
 UseCores <- detectCores() -1
 ```
 
@@ -157,7 +155,7 @@ mun %>% ggplot + aes(fill=AREASQM, label = TOPONIMIA) +
 
 Source: @unep2021protected
 
-```{r}
+```{r protected-areas}
 papath <- 'data/protected_areas/protected-areas.gpkg'
 st_layers(papath)
 pa <- st_read(papath, 'Protected Areas', quiet = T) %>% st_transform(32619)
@@ -179,7 +177,7 @@ pa %>% ggplot + aes(fill=AREASQMLOG) +
 
 A cutline was generated using a shapefile from @one2015datos as well as the datamask provided in @hansen2013high. In detail, the cutline was generated using the following workflow: the international boundary between Haiti and the DR was extracted as a polyline from @one2015datos; the remainder of the DR land area (water bodies excluded) was extracted from a vectorized version of the datamask file from @hansen2013high; both layers were then joined together into a single cutline. Afterwards, cropped and warped versions (e.g., onto EPSG:32619) of the `datamask`, `lossyear`, `treecover` and `gain` files were masked using the generated cutline.
 
-```{r}
+```{r cutline}
 source('R/load-cutline.R')
 ```
 
@@ -226,7 +224,7 @@ plot(lt1218, add = T)
 
 ## Hotspot/fire layers (M6 and V1) for the long-term analytical approach
 
-The hotspot/fire/thermal anomalies layers (M6 and V1) were created using the script `R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-long-term-approach.R`. This script was initially fed from a layer where thermal anomalies and spontaneous fires from chimneys and landfills were manually removed. Then, the script filtered out points falling outside the mask (e.g. outside forest cover), as well as points recorded before 1-1-2001 and after 31-12-2018. Lastly, all points with a confidence value of less than 30% in the MODIS collection, as well as those with a "low confidence" tag in the VIIRS collection, were excluded from the dataset. For practical reasons, the fire layers are simply loaded using the `readRDS` function as follows.
+The hotspot/fire/thermal anomalies layers (M6 and V1 datasets) were created using the script `R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-long-term-approach.R`. This script was initially fed from a layer where thermal anomalies and spontaneous fires from chimneys and landfills were manually removed from each dataset, which were called "noise-free versions of MODIS and VIIRS datasets", respectively. Then, the script filtered out points falling outside the mask (e.g. outside forest cover), as well as points recorded before 1-1-2001 and after 31-12-2018. Lastly, all points with a confidence value of less than 30% in the MODIS collection, as well as those with a "low confidence" tag in the VIIRS collection, were excluded from the dataset. For practical reasons, the fire layers are simply loaded using the `readRDS` function as follows.
 
 
 ```{r fires-m6-v1-sel2}
@@ -242,9 +240,25 @@ plot(as_Spatial(firesv1sel2), main = "Thermal anomalies within forest V1",
 
 ## Hotspot/fire layers (M6 and V1) for the annual analytical approach
 
-The hotspot/fire/thermal anomalies layers (M6 and V1) were created using the script `R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-annual-approach.R`. This script was initially fed from a layer where thermal anomalies and spontaneous fires from chimneys and landfills were manually removed. Then ...
+The hotspot/fire/thermal anomalies layers (M6 and V1) were created using the script `R/original-script-used-to-create-the-hotspot-fire-layers-M6-and-V1-for-annual-approach.R`. This script was initially fed from a layer where thermal anomalies and spontaneous fires from chimneys and landfills were manually removed from each dataset, which were called "noise-free versions of MODIS and VIIRS datasets", respectively. Afterwards, annual maps of fire points using the date field of the datasets were generated. Then, from the annual maps of large clearings, buffer zones were created around the patches at a maximum distance of 2.5 km. Lastly, the corresponding annual subsets of fire points were generated by selecting only those falling within the patches and/or their buffer zones.
 
-<!-- TODO Look for this in the paper -->
+```{r fires-m6-v1-sel-2500km-buffer}
+# Patches of forest loss > 1 ha. Fires M6, year 2001, intersected by forest-loss patches >1ha + 2.5 km buffer
+loss1ha_firesm6_2500_year2001 <- readRDS('out/forest_loss_1ha_firesm6_2500_buffer_year_2001.RDS')
+cline %>% as_Spatial %>% plot
+plot(
+  as_Spatial(loss1ha_firesm6_2500_year2001),
+  main = "Thermal anomalies from M6 dataset intersected by forest-loss patches >1ha + 2.5 km buffer, year 2001",
+  pch = 1, cex = 0.1, add = T, col = 'orange')
+# Patches of forest loss > 1 ha. Fires V1, year 2012, intersected by forest-loss patches >1ha + 2.5 km buffer
+loss1ha_firesv1_2500_year2012 <- readRDS('out/forest_loss_1ha_firesv1_2500_buffer_year_2012.RDS')
+cline %>% as_Spatial %>% plot
+plot(
+  as_Spatial(loss1ha_firesv1_2500_year2012),
+  main = "Thermal anomalies from V1 dataset intersected by forest-loss patches >1ha + 2.5 km buffer, year 2012",
+  pch = 1, cex = 0.1, add = T, col = 'orange')
+```
+
 
 # Grid layers for modelling
 
@@ -263,7 +277,14 @@ grd %>% as_Spatial %>% plot(add=T)
 
 ## Annual approach analysis grid
 
-<!-- TODO Retrieve from main script -->
+The regular grid for the long-term approach, loaded in the following code chunk, was generated using the script `R/original-script-used-to-create-the-grid-annual-approach.R`. For practical reasons, the grid is simply loaded using the `readRDS` function.
+
+```{r hex-grid-annual-approach}
+hexsf <- readRDS('out/honeycomb_grid_sf.RDS')
+hexsf
+cline %>% as_Spatial %>% plot
+hexsf %>% as_Spatial %>% plot(add=T)
+```
 
 # Zonal statistic computations
 
@@ -271,23 +292,23 @@ Many zonal statistics were performed using different zone layers. These computat
 
 ## Zonal statistics by provinces
 
-The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-provinces.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/prov_zonal_statistics.RDS`.
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-provinces.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved to an RDS file located at `out/prov_zonal_statistics.RDS`.
 
 ## Zonal statistics by municipalities
 
-The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-municipalities.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/mun_zonal_statistics.RDS`.
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-municipalities.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved to an RDS file located at `out/mun_zonal_statistics.RDS`.
 
 ## Zonal statistics by protected areas
 
-The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-protected-areas.R`. It is worth mentioning that protected areas with less than 3 sq. km and less than 30% within cutline, were excluded in the script. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/pa_zonal_statistics.RDS`.
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-protected-areas.R`. It is worth mentioning that protected areas with less than 3 sq. km and less than 30% within cutline, were excluded in the script. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved to an RDS file located at `out/pa_zonal_statistics.RDS`.
 
 ## Zonal statistics by grid used in the long-term analytical approach
 
-The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-grid-long-term-approach.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved as an RDS file located at `out/grd_zonal_statistics.RDS`.
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-grid-long-term-approach.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved to an RDS file located at `out/grd_zonal_statistics.RDS`.
 
 ## Zonal statistics by grid used in the annual analytical approach
 
-<!-- TODO Retrieve from main script -->
+The script used to compute zonal statistics is stored in `R/original-script-used-to-compute-zonal-statistics-grid-annual-approach.R`. For practical reasons and for future use (e.g. in the EDA section), the results of the script were saved to an RDS file located at `out/hex_zonal_statistics.RDS`.
 
 # Exploratory data analisys (EDA)
 
@@ -582,6 +603,12 @@ pazonal %>% select(matches('^TREECOVER2000')) %>%
   tm_shape(shp = cline) + tm_borders(col = 'black', lwd = 0.5)
 # Top twenty sorted descending by column 2
 stripped_table(pazonal %>% select(CATEGORY_NAME, matches('^TREECOVER2000')))
+# ALL sorted descending by column 2
+stripped_table(
+  pazonal %>% select(CATEGORY_NAME, matches('^TREECOVER2000')) %>% select(-matches('<NA>')),
+  order_col = 1, n = nrow(pazonal),
+  long_table = T
+)
 
 # Loss year
 # * PCT
@@ -719,6 +746,13 @@ pazonal %>% select(matches('^LOSS0118_AREASQM|NFIRESM6|^NAME')) %>% select(-matc
 stripped_table(
   pazonal %>% select(CATEGORY_NAME, matches('^LOSS0118_AREASQM|NFIRESM6')) %>%
     select(-matches('<NA>'))
+)
+# Top twenty sorted descending by column 2
+stripped_table(
+  pazonal %>%
+    select(CATEGORY_NAME, matches('^LOSS0118_AREASQM|NFIRESM6')) %>%
+    select(-matches('<NA>')),
+  order_col = 3
 )
 
 # Fires V1
@@ -865,13 +899,95 @@ grdzonal %>% dplyr::select(matches('LOSS1218_PUA_PYR|NFIRESV1_PSQKM_PYR|LOSS0118
   tm_shape(prov) + tm_borders()
 ```
 
-## Zonal, by grid used in the long-term analytical approach
-
-<!-- TODO Retrieve from main script -->
+## Zonal, by grid used in the annual analytical approach
 
 ```{r  zonal-annual-grid}
+hexsf <- readRDS('out/honeycomb_grid_sf.RDS')
+tm_shape(cline) +
+  tm_fill('grey90') +
+  tm_borders('black') +
+  tm_shape(hexsf) +
+  tm_fill('white', alpha = 0.4) + 
+  tm_borders('black') +
+  tm_text('ENLACE', size = 1, shadow = T)
+
 #Zonal statistics object
-# hexzonal <- readRDS('out/hex_zonal_statistics.RDS')
+hexzonal <- readRDS('out/hex_zonal_statistics.RDS')
+
+# Patches of forest loss > 1 Ha
+hexzonal %>% select(matches('^year.*loss1ha_AREASQM')) %>%
+  rename_at(vars(matches('^year.*loss1ha_AREASQM')), funs(gsub('\\.loss1ha_AREASQM','',.))) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1,
+          style = 'kmeans', legend.is.portrait = F, title = 'Area (square meters)',
+          textNA = "No tree cover loss") +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 6, nrow = 3, free.coords = FALSE, free.scales = FALSE) +
+  tm_layout(panel.label.size = 3, legend.title.size = 1, legend.text.size = 1.5,
+            legend.outside.position = "bottom" , legend.outside.size = .1,
+            main.title = 'Dominican Republic. Tree cover loss 2001-2018 within annual analytical approach hex grid', main.title.size = 2, attr.outside=TRUE) + 
+  tm_credits('Author: José Martínez B.\nSource: Hansen et al. 2013', size = 1.5) +
+  tm_scale_bar(size = 1.3) +
+  tm_shape(prov) + tm_borders()
+
+# Fires M6
+hexzonal %>% select(matches('NFIRESM6')) %>% select(-matches('<NA>')) %>% 
+  rename_at(vars(matches('^NFIRESM6')), funs(gsub('^NFIRESM6_','',.))) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1,
+          style = 'kmeans', legend.is.portrait = F, title = 'Number of fires/hotspots at <2.5 km from forest loss',
+          textNA = "No fires/hotspots") +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 6, nrow = 3, free.coords = FALSE, free.scales = FALSE) +
+  tm_layout(panel.label.size = 3, legend.title.size = 1, legend.text.size = 1.5,
+            legend.outside.position = "bottom" , legend.outside.size = .1,
+            main.title = 'Dominican Republic. Number of selected fires/hotspots detected by MODIS, 2001-2018,  within annual analytical approach hex grid',
+            main.title.size = 2, attr.outside=TRUE) + 
+  tm_credits('Author: José Martínez B.\nSource: NASA/FIRMS', size = 1.5) +
+  tm_scale_bar(size = 1.3) +
+  tm_shape(prov) + tm_borders()
+
+# Fires V1
+hexzonal %>% select(matches('NFIRESV1')) %>% select(-matches('<NA>')) %>% 
+  rename_at(vars(matches('^NFIRESV1')), funs(gsub('^NFIRESV1_','',.))) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1,
+          style = 'kmeans', legend.is.portrait = F, title = 'Number of fires/hotspots at <2.5 km from forest loss',
+          textNA = "No tree cover loss") +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 4, nrow = 2, free.coords = FALSE, free.scales = FALSE) +
+  tm_layout(panel.label.size = 3, legend.title.size = 1, legend.text.size = 1.5,
+            legend.outside.position = "bottom" , legend.outside.size = .1,
+            main.title = 'Dominican Republic. Number of selected fires/hotspots detected by VIIRS, 2001-2018,  within annual analytical approach hex grid',
+            main.title.size = 2, attr.outside=TRUE) + 
+  tm_credits('Author: José Martínez B.\nSource: NASA/FIRMS', size = 1.5) +
+  tm_scale_bar(size = 1.3) +
+  tm_shape(prov) + tm_borders()
+
+# Patches of forest loss < 1 ha
+hexzonal %>% select(matches('NCLUMPSSMALLER1HA_')) %>% 
+  rename_at(vars(matches('^NCLUMPSSMALLER1HA_')), funs(gsub('^NCLUMPSSMALLER1HA_','',.))) %>% 
+  gather(variable, value, -geometry) %>%
+  mutate(variable = factor(variable, levels = unique(variable))) %>% 
+  tm_shape() +
+  tm_fill(col='value', palette = "YlOrBr", size = 0.1,
+          style = 'kmeans', legend.is.portrait = F, title = 'Number of clumps',
+          textNA = "No tree cover loss") +
+  tm_borders(col = 'grey15', lwd = 0.3) +
+  tm_facets(by = "variable", ncol = 6, nrow = 3, free.coords = FALSE, free.scales = FALSE) +
+  tm_layout(panel.label.size = 3, legend.title.size = 1, legend.text.size = 1.5,
+            legend.outside.position = "bottom" , legend.outside.size = .1,
+            main.title = 'Dominican Republic. Number of clumps of forest loss <1ha,  within annual analyticial approach hex grid',
+            main.title.size = 2, attr.outside=TRUE) + 
+  tm_credits('Author: José Martínez B.\nSource: Hansen et al., 2013', size = 1.5) +
+  tm_scale_bar(size = 1.3) +
+  tm_shape(prov) + tm_borders()
 ```
 
 # References

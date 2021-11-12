@@ -1,0 +1,1501 @@
+---
+# output: github_document
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    latex_engine: lualatex
+    template: ref/svm-latex-ms.tex
+    number_sections: true
+    toc: true
+    toc_depth: 4
+title: "Reproducible R code for the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century'"
+subtitle: "Data transformation, exploratory spatial data analysis (ESDA) and modelling"
+author:
+  - name: "Martínez Batlle, José Ramón (jmartinez19@uasd.edu.do; Twitter: https://twitter.com/geografiard)"
+  - affiliation: Researcher, Universidad Autónoma de Santo Domingo (UASD)
+keywords: "keyword 1, keyword 2"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 10pt
+bibliography: ref/biblio.bib
+csl: ref/apa.csl
+classoption:
+  - landscape
+  - a3paper
+header-includes:
+  \usepackage{pdflscape}
+  \usepackage{graphicx}
+  \newcommand{\blandscape}{\begin{landscape}}
+  \newcommand{\elandscape}{\end{landscape}}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse=TRUE,
+  fig.path = "img/modelling/",
+  fig.align="center",
+  fig.width=15,
+  fig.height=9,
+  warning=FALSE,
+  message=FALSE,
+  dev = 'png',
+  dpi = 150,
+  tidy = TRUE,
+  size = 'tiny',
+  fig.pos = "!H"
+)
+```
+
+<!-- This .md was generated from the.Rmd with the same name. Please edit that file -->
+
+# Description and URLs
+
+This is a reproducible notebook of the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century' [@martinez2021forest]. Useful URLs are listed below:
+
+- This document: https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf
+
+- Source repo: https://github.com/geofis/forest-loss-fire-reproducible
+
+- Associated preprint DOI: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1
+
+- Associated preprint full text: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1.full
+
+- Cite the preprint using the following format: Martínez Batlle, J. R. (2021). Forest loss and fire in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604
+
+# Instructions for downloading the source data
+
+Visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, won't work) and place the ZIP file in this repo (e.g. in the same directory containing this document).
+
+# Unzip source data
+
+```{r unzip-source-data}
+if(any(dir.exists('out'), dir.exists('data'))) {
+  "Directories 'out' and/or 'data' already available in the repo dir. Skipping unzip."
+} else {
+  unzip('forest-loss-fire-reproducible-data-repo.zip') 
+}
+```
+
+# Prepare the environment
+
+```{r prepare-the-environment}
+source('R/load-packages.R')
+source('R/load-functions.R')
+UseCores <- detectCores() -1
+source('R/load-cutline.R')
+admpath <- 'data/administrative/administrative.gpkg'
+prov <- st_read(admpath, 'PROVCenso2010', quiet = T)
+# Read seaocean mask and points_of_interest layers
+# The following mask was generated using the "original-script-used-to-generate-sea-ocean-mask.R"
+# This mask, as well as the points_of_interest source, are used for enhancing the visualization
+# of spatial data in different maps of the ESDA
+seaocean <- st_read('out/gadm_mask_inv.gpkg')
+points_of_interest <- st_read('out/points_of_interest.gpkg')
+```
+
+# Modelling for the **long-term approach**, using forest-loss as dependent variable, and fires M6 (2001-2018) and V1 (2012-2018) as independent variables
+
+## Exploratory Spatial Data Analysis (ESDA)
+
+```{r lta-esda}
+# Zonal statistics object
+grdzonal <- readRDS('out/grd_zonal_statistics.RDS')
+# * Neighbours, weight
+grdnb <- poly2nb(grdzonal)
+plot(as_Spatial(cline))
+plot(as_Spatial(grdzonal), add=T)
+plot(grdnb, coords = coordinates(as_Spatial(grdzonal)), add=T)
+attr(grdnb, 'region.id') <- grdzonal$ENLACE
+grdww <- nb2listw(grdnb, zero.policy = T)
+grdww
+
+# * Moran test per unit area (PUA)
+grdzonal$LOSS0118_PUA_PYR_NORM <- transformTukey(grdzonal$LOSS0118_PUA_PYR %>% replace(is.na(.), 0), plotit = F)
+#     lambda      W Shapiro.p.value
+# 414  0.325 0.9979          0.8116
+# 
+# if (lambda >  0){TRANS = x ^ lambda} 
+# if (lambda == 0){TRANS = log(x)} 
+# if (lambda <  0){TRANS = -1 * x ^ lambda} 
+moran.test(grdzonal$LOSS0118_PUA_PYR_NORM, listw = grdww, na.action = na.exclude, zero.policy = T)
+
+# * Moran test per unit area (PUA)
+grdzonal$LOSS1218_PUA_PYR_NORM <- transformTukey(grdzonal$LOSS1218_PUA_PYR %>% replace(is.na(.), 0), plotit = F)
+#     lambda      W Shapiro.p.value
+# 410  0.225 0.9977          0.7475
+# 
+# if (lambda >  0){TRANS = x ^ lambda} 
+# if (lambda == 0){TRANS = log(x)} 
+# if (lambda <  0){TRANS = -1 * x ^ lambda} 
+moran.test(grdzonal$LOSS1218_PUA_PYR_NORM, listw = grdww, na.action = na.exclude, zero.policy = T)
+
+# * Transformation of fires M6 per sq. km using Tukey's Ladder of Powers
+grdzonal$NFIRESM6_PSQKM_PYR_TLP <- transformTukey(grdzonal$NFIRESM6_PSQKM_PYR %>% replace(is.na(.), 0), plotit = F)
+#     lambda      W Shapiro.p.value
+# 414  0.325 0.9833         2.5e-05
+# 
+# if (lambda >  0){TRANS = x ^ lambda} 
+# if (lambda == 0){TRANS = log(x)} 
+# if (lambda <  0){TRANS = -1 * x ^ lambda} 
+
+# * Transformation of fires V1 per sq. km using Tukey's Ladder of Powers
+grdzonal$NFIRESV1_PSQKM_PYR_TLP <- transformTukey(grdzonal$NFIRESV1_PSQKM_PYR %>% replace(is.na(.), 0), plotit = F)
+#     lambda      W Shapiro.p.value
+# 413    0.3 0.9886        0.000823
+# 
+# if (lambda >  0){TRANS = x ^ lambda} 
+# if (lambda == 0){TRANS = log(x)} 
+# if (lambda <  0){TRANS = -1 * x ^ lambda} 
+moran.test(grdzonal$NFIRESM6_PSQKM_PYR_TLP, listw = grdww, na.action = na.exclude, zero.policy = T)
+moran.test(grdzonal$NFIRESV1_PSQKM_PYR_TLP, listw = grdww, na.action = na.exclude, zero.policy = T)
+
+# * Moran plot
+mploss0118 <- moran.plot(
+  x = replace_na(grdzonal$LOSS0118_PUA_PYR_NORM, 0),
+  listw = grdww, zero.policy = T, quiet = T,
+  xlab = 'Average forest loss per unit-area per year\nof the period 2001-2018 (transformed)',
+  ylab = 'Spatially lagged variable', return_df = T
+)
+mpfiresm60118 <- moran.plot(
+  x = replace_na(grdzonal$NFIRESM6_PSQKM_PYR_TLP, 0),
+  listw = grdww, zero.policy = T, quiet = T,
+  xlab = 'Average number of fires M6 per square km per year\nof the period 2001-2018 (transformed)',
+  ylab = 'Spatially lagged variable', return_df = T
+)
+mploss1218 <- moran.plot(
+  x = replace_na(grdzonal$LOSS1218_PUA_PYR_NORM, 0),
+  listw = grdww, zero.policy = T, quiet = T,
+  xlab = 'Average forest loss per unit-area per year\nof the period 2012-2018 (transformed)',
+  ylab = 'Spatially lagged variable', return_df = T
+)
+mpfiresv11218 <- moran.plot(
+  x = replace_na(grdzonal$NFIRESV1_PSQKM_PYR_TLP, 0),
+  listw = grdww, zero.policy = T, quiet = T,
+  xlab = 'Average number of fires V1 per square km per year\nof the period 2012-2018 (transformed)',
+  ylab = 'Spatially lagged variable', return_df = T
+)
+
+# gg Moran plot
+{
+all_mp <- plyr::ldply(
+  list(
+    mploss0118 = mploss0118,
+    mploss1218 = mploss1218,
+    mpfiresm60118 = mpfiresm60118,
+    mpfiresv11218 = mpfiresv11218), .id = 'name'
+) %>% mutate(
+  name = case_when(
+    name == 'mploss0118' ~ "(A)",
+    name == 'mploss1218' ~ "(B)",
+    name == 'mpfiresm60118' ~ "(C)",
+    name == 'mpfiresv11218' ~ "(D)",
+    TRUE ~ as.character(x)
+  )
+)
+all_mp_sum <- all_mp %>%
+  group_by(name) %>%
+  summarize(x = mean(x), wx = mean(wx))
+# jpeg('out/moran_plots_forest_loss_fires_0118_1218.jpg', width = 3840, height = 2160, res = 300)
+moran_plot_gg(mp = all_mp, mp_sum = all_mp_sum, textsize = 16)
+# dev.off()
+}
+
+# * LISA Map LOSS0118_PUA_PYR_NORM
+grdlisamapl0118 <- lisamap(objesp = grdzonal %>% replace(is.na(.), 0),
+                      var = 'LOSS0118_PUA_PYR_NORM',
+                      pesos = grdww,
+                      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+                      leyenda = T,
+                      anchuratitulo = 1000,
+                      tamanotitulo = 16,
+                      fuentedatos = 'Hansen et al., 2013',
+                      titulomapa = paste0('LISA clusters of forest loss per unit area per year, 2001-2018'))
+# grdlisamapl0118$grafico$layers <- c(grdlisamapl0118$grafico$layers, geom_sf(data=prov, fill = 'transparent')[[1]])
+grdlisamapl0118$grafico
+
+# * LISA Map FIRESM6_PSQKM_PYR per square km per year
+grdlisamapfm6 <- lisamap(objesp = grdzonal %>% replace(is.na(.), 0),
+                      var = 'NFIRESM6_PSQKM_PYR',
+                      pesos = grdww,
+                      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+                      leyenda = T,
+                      anchuratitulo = 1000,
+                      tamanotitulo = 16,
+                      fuentedatos = 'NASA, 2019',
+                      titulomapa = paste0('LISA clusters of fires M6 per square km per year, 2001-2018'))
+grdlisamapfm6$grafico$layers <- c(grdlisamapfm6$grafico$layers, geom_sf(data=prov, fill = 'transparent')[[1]])
+grdlisamapfm6$grafico
+
+# * LISA Map FIRESM6_PSQKM_PYR_TLP per square km per year
+grdlisamapfm6tlp <- lisamap(objesp = grdzonal %>% replace(is.na(.), 0),
+                      var = 'NFIRESM6_PSQKM_PYR_TLP',
+                      pesos = grdww,
+                      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+                      leyenda = T,
+                      anchuratitulo = 1000,
+                      tamanotitulo = 16,
+                      fuentedatos = 'NASA, 2019',
+                      titulomapa = paste0('LISA clusters of fires M6 (transformed) per square km per year, 2001-2018'))
+grdlisamapfm6tlp$grafico$layers <- c(grdlisamapfm6tlp$grafico$layers, geom_sf(data=prov, fill = 'transparent')[[1]])
+grdlisamapfm6tlp$grafico
+
+# * LISA Map LOSS1218_PUA_PYR_NORM
+grdlisamapl1218 <- lisamap(objesp = grdzonal %>% replace(is.na(.), 0),
+                      var = 'LOSS1218_PUA_PYR_NORM',
+                      pesos = grdww,
+                      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+                      leyenda = T,
+                      anchuratitulo = 1000,
+                      tamanotitulo = 16,
+                      fuentedatos = 'Hansen et al., 2013',
+                      titulomapa = paste0('LISA clusters of forest loss per unit area per year, 2012-2018'))
+grdlisamapl1218$grafico$layers <- c(grdlisamapl1218$grafico$layers, geom_sf(data=prov, fill = 'transparent')[[1]])
+grdlisamapl1218$grafico
+
+# * LISA Map FIRESV1_PSQKM_PYR per square km per year
+grdlisamapfv1 <- lisamap(objesp = grdzonal %>% replace(is.na(.), 0),
+                      var = 'NFIRESV1_PSQKM_PYR',
+                      pesos = grdww,
+                      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+                      leyenda = T,
+                      anchuratitulo = 1000,
+                      tamanotitulo = 16,
+                      fuentedatos = 'NASA, 2019',
+                      titulomapa = paste0('LISA clusters of fires V1 per square km per year, 2012-2018'))
+grdlisamapfv1$grafico$layers <- c(grdlisamapfv1$grafico$layers, geom_sf(data=prov, fill = 'transparent')[[1]])
+grdlisamapfv1$grafico
+
+# * LISA Map FIRESV1_PSQKM_PYR_TLP per square km per year
+grdlisamapfv1tlp <- lisamap(objesp = grdzonal %>% replace(is.na(.), 0),
+                      var = 'NFIRESV1_PSQKM_PYR_TLP',
+                      pesos = grdww,
+                      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+                      leyenda = T,
+                      anchuratitulo = 1000,
+                      tamanotitulo = 16,
+                      fuentedatos = 'NASA, 2019',
+                      titulomapa = paste0('LISA clusters of fires V1 (transformed) per square km per year, 2012-2018'))
+grdlisamapfv1tlp$grafico$layers <- c(grdlisamapfv1tlp$grafico$layers, geom_sf(data=prov, fill = 'transparent')[[1]])
+grdlisamapfv1tlp$grafico
+
+# * LISA Map FIRESM6_PSQKM_PYR_TLP per square km per year {tmap} (for manuscript)
+grdlisamapl0118_obj <- lisamap_tmap_obj(
+  objesp = grdzonal %>% replace(is.na(.), 0),
+  var = 'LOSS0118_PUA_PYR_NORM',
+  pesos = grdww)
+grdlisamapl1218_obj <- lisamap_tmap_obj(
+  objesp = grdzonal %>% replace(is.na(.), 0),
+  var = 'LOSS1218_PUA_PYR_NORM',
+  pesos = grdww)
+grdlisamapfm6tlp_obj <- lisamap_tmap_obj(
+  objesp = grdzonal %>% replace(is.na(.), 0),
+  var = 'NFIRESM6_PSQKM_PYR_TLP',
+  pesos = grdww)
+grdlisamapfv1tlp_obj <- lisamap_tmap_obj(
+  objesp = grdzonal %>% replace(is.na(.), 0),
+  var = 'NFIRESV1_PSQKM_PYR_TLP',
+  pesos = grdww)
+
+grdlisamap_objs <- grdlisamapl0118_obj %>% select(-LOSS0118_PUA_PYR_NORM) %>%
+  inner_join(
+    Reduce(function(...) merge(..., by='ENLACE', all.x=TRUE),
+           list(
+             grdlisamapl0118_obj %>% st_drop_geometry(),
+             grdlisamapl1218_obj %>% st_drop_geometry(),
+             grdlisamapfm6tlp_obj %>% st_drop_geometry(),
+             grdlisamapfv1tlp_obj %>% st_drop_geometry()
+             )
+           ),
+    by = 'ENLACE'
+  )
+# jpeg('out/lisamaps_loss0118_loss1218_firesm6_firesv1.jpg', width = 3840, height = 2160, res = 250)
+{
+  grdlisamap_objs %>% dplyr::select(
+    `(A)` = LOSS0118_PUA_PYR_NORM,
+    `(B)` = LOSS1218_PUA_PYR_NORM,
+    `(C)` = NFIRESM6_PSQKM_PYR_TLP,
+    `(D)` = NFIRESV1_PSQKM_PYR_TLP) %>%
+    replace(is.na(.), 0) %>%
+    gather(variable, value, -geometry) %>%
+    mutate(variable = factor(variable, levels = unique(variable))) %>% 
+    mutate(color = case_when(
+      value == 'high-high' ~ 'red',
+      value == 'low-low' ~ 'blue',
+      value == 'high-low' ~ 'lightblue',
+      value == 'low-high' ~ 'pink',
+      value == 'not signif.' ~ 'lightgrey'
+    )) %>%
+    tm_shape() +
+    tm_fill(col = 'color', size = 0.1, legend.is.portrait = T,
+            legend.format = list(digits = 2, text.separator = '-')
+            ) +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", nrow = 2, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 3, legend.title.size = 0.0001,
+              legend.text.size = 1.8, bg.color = 'white',
+              legend.format = list(fun = function(x) formatC(x, digits = 2, format = "f"))) + 
+    tm_shape(seaocean) + tm_borders() + tm_fill(col = 'white') #+ 
+    # tm_shape(points_of_interest) + tm_text('code', size = 2, col = 'black', fontface = 'bold', bg.color = 'white', bg.alpha = 0.5)
+}
+# dev.off()
+
+# Statistical summaries
+grdzonaledam6 <- grdzonal %>% mutate(LOSS0118_AREASQKM = LOSS0118_AREASQM/1000000) %>% 
+  dplyr::select(ENLACE,
+    NFIRESM6, NFIRESM6_PSQKM, NFIRESM6_PSQKM_PYR, NFIRESM6_PSQKM_PYR_TLP,
+    LOSS0118_AREASQKM, LOSS0118_PUA, LOSS0118_PUA_PYR, LOSS0118_PUA_PYR_NORM) %>% 
+  replace(is.na(.), 0)
+
+grdzonaledav1 <- grdzonal %>% mutate(LOSS1218_AREASQKM = LOSS1218_AREASQM/1000000) %>%
+  dplyr::select(ENLACE,
+    NFIRESV1, NFIRESV1_PSQKM, NFIRESV1_PSQKM_PYR, NFIRESV1_PSQKM_PYR_TLP,
+    LOSS1218_AREASQKM, LOSS1218_PUA, LOSS1218_PUA_PYR, LOSS1218_PUA_PYR_NORM) %>% 
+  replace(is.na(.), 0)
+# Statistical summaries (latex table for manuscript)
+grdzonaledam6 %>% st_drop_geometry %>% gather(key, val) %>% distinct(key)
+grdzonaledam6 %>% st_drop_geometry %>%
+  summarise(
+    `Total number of fire points` = sum(NFIRESM6),
+    `Average number of fire points per 100 sq. km` = mean(NFIRESM6_PSQKM)*100,
+    `Average number of fire points per 100 sq. km per year` = mean(NFIRESM6_PSQKM_PYR)*100,
+    `Maximum number of fire points per 100 sq. km per year` = max(NFIRESM6_PSQKM_PYR)*100,
+    `Total forest loss area (sq. km)` = sum(LOSS0118_AREASQKM),
+    `Average forest loss area (sq. km) per 100 sq. km` = mean(LOSS0118_PUA)*100,
+    `Average forest loss area (sq. km) per 100 sq. km per year` = mean(LOSS0118_PUA_PYR)*100,
+    `Maximum forest loss area (sq. km) per 100 sq. km per year` = max(LOSS0118_PUA_PYR)*100
+    ) %>%
+  gather(`Attribute`, `Period 2001-2018, MODIS fire points`) %>% 
+  inner_join(
+    grdzonaledav1 %>% st_drop_geometry %>%
+      summarise(
+        `Total number of fire points` = sum(NFIRESV1),
+        `Average number of fire points per 100 sq. km` = mean(NFIRESV1_PSQKM)*100,
+        `Average number of fire points per 100 sq. km per year` = mean(NFIRESV1_PSQKM_PYR)*100,
+        `Maximum number of fire points per 100 sq. km per year` = max(NFIRESV1_PSQKM_PYR)*100,
+        `Total forest loss area (sq. km)` = sum(LOSS1218_AREASQKM),
+        `Average forest loss area (sq. km) per 100 sq. km` = mean(LOSS1218_PUA)*100,
+        `Average forest loss area (sq. km) per 100 sq. km per year` = mean(LOSS1218_PUA_PYR)*100,
+        `Maximum forest loss area (sq. km) per 100 sq. km per year` = max(LOSS1218_PUA_PYR)*100
+    ) %>%
+  gather(`Attribute`, `Period 2012-2018, VIIRS fire points`)
+  ) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate_if(is.numeric, as.character) %>% 
+  knitr::kable(format = 'latex', digits = 2)
+#Scatterplots
+grdzonaledam6 %>% st_drop_geometry %>% gather(key, val, -ENLACE) %>% 
+  mutate(
+    axes = stringi::stri_replace_all_regex(
+      str = key, pattern = c('NFIRESM6.*', 'LOSS.*'),
+      replacement = c('Fires (M6)', 'Forest Loss'), vectorize_all = F),
+    pane = stringi::stri_replace_all_regex(
+      str = key, pattern = c('.*M6$|.*AREASQKM$', '.*PSQKM$|.*PUA$', '.*PSQKM_PYR$|.*PUA_PYR$', '.*PYR_TLP$|.*PYR_NORM$'),
+      replacement = c(
+        'Fire points count vs.\n forest loss area (in sq. km)',
+        'Fire density (points per sq. km) vs.\nforest loss per unit area',
+        'Yearly averaged fire density (points per sq. km per year)\nvs. yearly averaged forest loss per unit area',
+        'Transformed yearly averaged fire density vs.\ntransformed yearly averaged forest loss per unit area'),
+      vectorize_all = F)
+  ) %>% dplyr::select(-key) %>% tidyr::spread(axes, val) %>% 
+  mutate(pane = factor(pane, levels = unique(pane)[c(2,1,4,3)])) %>% 
+  ggplot() + aes(x = `Fires (M6)`, y = `Forest Loss`) +
+  geom_point() + geom_smooth(method = 'lm') + facet_wrap(~ pane, scales = 'free', ncol = 4) +
+  theme_bw() + 
+  theme(text = element_text(size = 12))
+# QQ-norm
+grdzonaledam6 %>% st_drop_geometry %>%
+  dplyr::select(matches('.*PSQKM_PYR$|.*PUA_PYR$|.*PYR_TLP$|.*PYR_NORM$')) %>% gather(key, val) %>% 
+  mutate(key = stringi::stri_replace_all_regex(
+      str = key, pattern = c('.*PSQKM_PYR$', '.*PUA_PYR$', '.*PYR_TLP$', '.*PYR_NORM$'),
+      replacement = c(
+        'Yearly averaged fire density (points per sq. km per year)',
+        'Yearly averaged forest loss per unit area',
+        'Transformed yearly averaged fire density',
+        'Transformed yearly averaged forest loss per unit area'),
+      vectorize_all = F)
+  ) %>% 
+  mutate(key = factor(key, levels = sort(unique(key))[c(3,4,1,2)])) %>% 
+  ggplot + aes(sample = val) + geom_qq() + facet_wrap(~ key, scales = 'free_y', nrow = 2, dir = 'h') +
+  theme_bw() + theme(text = element_text(size = 14), aspect.ratio = 1)
+# Maps (for manuscript)
+{
+  # jpeg('out/maps_loss0118_loss1218_firesm6_firesv1.jpg', width = 3840, height = 2160, res = 250)
+  grdzonal %>% dplyr::select(
+    `(A)` = LOSS0118_PUA,
+    `(B)` = LOSS1218_PUA,
+    `(C)` = NFIRESM6_PSQKM,
+    `(D)` = NFIRESV1_PSQKM) %>%
+    mutate_if(is.numeric, funs(.*100)) %>% 
+    replace(is.na(.), 0) %>% 
+    gather(variable, value, -geometry) %>%
+    mutate(variable = factor(variable, levels = unique(variable))) %>% 
+    tm_shape() +
+    tm_fill(col='value', palette = c('#c9eebd', '#69d6bd', '#00bdc1', '#10858d'), size = 0.1,
+            style = 'kmeans', legend.is.portrait = T, legend.format = list(digits = 2, text.separator = '-'), n = 4
+            ) +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", nrow = 2, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 3, legend.title.size = 0.0001,
+              legend.text.size = 1.8, bg.color = 'grey90',
+              legend.format = list(scientific = TRUE, fun = function(x) formatC(x, digits = 2, format = "f"))) + 
+    tm_shape(seaocean) + tm_borders() + tm_fill(col = 'white') + 
+    tm_shape(points_of_interest) + tm_text('code', size = 2, col = 'black', fontface = 'bold', bg.color = 'white', bg.alpha = 0.5)
+  # dev.off()
+}
+```
+
+## Spatial autoregressive model: 2001-2018
+
+```{r lta-spatial-models-2001-2018}
+# ** LM LOSS0118_PUA_PYR_NORM ~ NFIRESM6_PSQKM_PYR_TLP
+grdzonal %>%
+  st_drop_geometry() %>%
+  replace(is.na(.), 0) %>%
+  remove_rownames %>% 
+  column_to_rownames('ENLACE') %>% 
+  lm(LOSS0118_PUA_PYR_NORM ~
+       NFIRESM6_PSQKM_PYR_TLP,
+     data = .) -> grdlm4
+grdlm4 %>% summary()
+grdlm4 %>% AIC()
+grdlm4 %>% logLik()
+grdlm4 %>% lmtest::bptest() #Heteroscedastic model 
+lm.morantest(grdlm4, grdww)
+# Note to self: spatially autocorrelated residuals. This model is not suitable to predict loss 01-18
+
+# Lagrange multiplier test
+lmultests <- lm.LMtests(model = grdlm4, listw = grdww, test=c('LMerr', 'LMlag', 'RLMerr', 'RLMlag'))
+lmultests
+tlmultests <- t(sapply(lmultests, function(x) c(x$statistic, x$p.value)))
+colnames(tlmultests) <- c("Statistic", "p-value")
+printCoefmat(tlmultests) %>% knitr::kable(format = 'latex', digits = 2) #Latex output for manuscript
+#Both LMerr and LMlag are statistically significant, so it is assumed that either the lagged variable (with a lagsarlm model) or the error dependence (with a errorsarlm model) improve the result. However, the robust counterpart of LMlag, RLMlag, is not significant, so the error dependence robust test (RLMerr) suggests that errorsarlm model is the most likely alternative.
+
+# ** ERROR SAR, LOSS0118_PUA_PYR_NORM ~ NFIRESM6_PSQKM_PYR_TLP
+grdzonal %>%
+  st_drop_geometry() %>%
+  replace(is.na(.), 0) %>%
+  spatialreg::errorsarlm(LOSS0118_PUA_PYR_NORM ~
+                         NFIRESM6_PSQKM_PYR_TLP,
+                       data = .,
+                       listw = grdww) -> grdesar1
+grdesar1 %>% summary(Nagelkerke=T)
+spatialreg::bptest.Sarlm(grdesar1)
+grdesar1 %>% residuals.sarlm() %>% moran.test(listw = grdww)
+
+# Summaries
+grdzonal$NFIRESM6 %>% summary()
+grdzonal$NFIRESM6_PSQKM %>% summary()
+grdzonal$NFIRESM6_PSQKM_PYR %>% summary()
+
+# * Predict forest loss per unit area per year, based on number of fires per 100 sq. km per year
+rangenfm6_100sqkm <- seq(0, max(grdzonal$NFIRESM6_PSQKM_PYR, na.rm=T), length.out = 20)*100
+fl <- NULL; nf <- NULL; predictfor_100 <- NULL
+for (nf in 1:20) {#These are actual figures of number of fires
+  fl <- (coef.sarlm(grdesar1)[[3]]*(rangenfm6_100sqkm[nf]^0.325)+coef.sarlm(grdesar1)[[2]])^(1/0.325)
+  predictfor_100[nf] <- fl
+}
+rangenfm6_100sqkm; predictfor_100
+diff((predictfor_100*1000000))
+mean(diff((predictfor_100*1000000)))
+```
+
+## Spatial autoregressive model: 2012-2018
+
+```{r lta-spatial-models-2012-2018}
+# ** ERROR SAR, LOSS1218_PUA_PYR_NORM ~ NFIRESV1_PSQKM_PYR_TLP
+grdzonal %>%
+  st_drop_geometry() %>%
+  replace(is.na(.), 0) %>%
+  spatialreg::errorsarlm(LOSS1218_PUA_PYR_NORM ~
+                         NFIRESV1_PSQKM_PYR_TLP,
+                       data = .,
+                       listw = grdww) -> grdesarv1
+grdesarv1 %>% summary(Nagelkerke=T)
+spatialreg::bptest.Sarlm(grdesarv1)
+grdesarv1 %>% residuals.sarlm() %>% moran.test(listw = grdww)
+
+# * Predict forest loss per unit area per year, based on number of fires per 100 sq. km per year
+rangenfv1_100sqkm <- seq(0, max(grdzonal$NFIRESV1_PSQKM_PYR, na.rm=T), length.out = 20)*100
+fl <- NULL; nf <- NULL; predictfor1218_100 <- NULL
+for (nf in 1:20) {#These are actual figures of number of fires
+  fl <- (coef.sarlm(grdesarv1)[[3]]*(rangenfv1_100sqkm[nf]^0.3)+coef.sarlm(grdesarv1)[[2]])^(1/0.225)
+  predictfor1218_100[nf] <- fl
+}
+rangenfv1_100sqkm; predictfor1218_100
+diff((predictfor1218_100*1000000))
+mean(diff((predictfor1218_100*1000000)))
+```
+
+## Model prediction comparison: 2001-2018 and 2012-2018
+
+```{r lta-model-predictions}
+#Plot
+loss_fire_assoc_df <- data.frame(rangenfm6_100sqkm, rangenfv1_100sqkm, predictfor_100, predictfor1218_100)
+loss_fire_assoc_df %>%
+  gather(variable, value) %>%
+  mutate(
+    period = ifelse(grepl('v1|1218', variable), '2012-2018', '2001-2018'),
+    axis = ifelse(grepl('range', variable), 'x', 'y'),
+    id = 1:nrow(.)) %>% 
+  select(period, axis, value) %>% 
+  group_by(period, axis) %>% 
+  mutate(rn = row_number()) %>% 
+  ungroup() %>% 
+  spread(axis, value) %>% 
+  ggplot() + aes(x = x, y = y, colour = period) + 
+  geom_path()
+```
+
+# Modelling for the **annual approach**, using forest-loss as dependent variable, and fires M6 (2001-2018) and V1 (2012-2018) as independent variables
+
+## Neighbours
+
+```{r aa-neighbours}
+#Zonal statistics object
+hexzonal <- readRDS('out/hex_zonal_statistics.RDS')
+hexzonalfm <- hexzonal %>% # "fm" stands for "for modelling"
+  dplyr::select(matches('^ENLACE$|^AREASQM$|^year([0-9]){,2}.loss1ha_PCT$|NFIRES|NCLUMPSSMALLER1HA')) %>% 
+  mutate_at(vars(matches('NFIRES|NCLUMPSSMALLER1HA')), funs("PSQKM" = ./(AREASQM/1000000))) %>% 
+  mutate_at(vars(matches('PCT')), funs("PUA" = ./100)) %>% #Proportion per unit area
+  rename_with(.cols = matches('PCT_PUA'), .fn = ~ gsub('PCT_PUA', 'PUA', .)) %>% 
+  rename_with(.cols = matches('\\.'), .fn = ~ gsub('\\.', '_', .)) %>% 
+  rename_with(.fn = ~ gsub('loss1ha', 'lossgreater1ha', .)) %>% 
+  dplyr::select(matches('^ENLACE$|^AREASQM$|PUA$|PSQKM$')) %>% 
+  rename_at(vars(!matches('^geometry$')), funs(toupper(.))) %>% 
+  replace(is.na(.), 0)
+
+# * Neighbours, weight
+hexnb <- poly2nb(hexzonalfm)
+plot(as_Spatial(cline))
+plot(as_Spatial(hexzonalfm), add=T)
+plot(hexnb, coords = coordinates(as_Spatial(hexzonalfm)), add=T)
+attr(hexnb, 'region.id') <- hexzonalfm$ENLACE
+hexww <- nb2listw(hexnb, zero.policy = T)
+hexww
+plot(prov %>% st_geometry(), border = 'grey')
+plot(hexzonalfm %>% st_geometry(), add=T, border = 'red')
+plot(hexnb, coords = coordinates(as_Spatial(hexzonalfm)), add=T)
+hexwb <- nb2listw(hexnb, style = 'B', zero.policy = T)
+hexwb
+```
+
+## Exploratory data analysis (EDA) of the time series
+
+```{r aa-eda-ts}
+# ENTIRE DATASETS VALUES, SOURCES ARE VALUE RASTERS OF BOTH SMALL AND LARGE CLUMPS OF FOREST LOSS (SMALL CLEARINGS AND LARGE CLEARINGS). NO ZONAL DATA USED HERE
+# Forest loss from small clearings
+# losssmaller1ha_byyear <- readRDS('out/forest_loss_clumps_smaller_than_1ha_by_year.RDS') # This file is big and when loaded as object "losssmaller1ha_byyear" will take at least 20 GB of RAM. This is the reason why this line (and the subsequent ones) are commented. To ensure a smooth knitting, the object "foo" is created below using a readRDS function which loads the summary contained in the "summary_of_forest_loss_from_small_clearings.RDS" file.
+# foo <- sapply(names(losssmaller1ha_byyear),
+#        function(x) {
+#          length(which(!is.na(losssmaller1ha_byyear[[x]][])))*prod(res(losssmaller1ha_byyear[[x]]))
+#        }
+# )
+# foo
+# saveRDS(foo, 'out/summary_of_forest_loss_from_small_clearings.RDS')
+# rm(losssmaller1ha_byyear)
+# gc()
+(foo <- readRDS('out/summary_of_forest_loss_from_small_clearings.RDS'))
+forest_loss_small_clumps_by_year <- foo %>% 
+  enframe(name = 'year', value = 'Small clearings (<1ha)') %>% 
+  mutate(year = as.numeric(gsub('year', '', year)) + 2000)
+
+# Forest loss from medium- and large clearings
+# loss1ha_firesm6_2500_byyear <- readRDS('out/forest_loss_1ha_firesm6_2500_buffer_by_year.RDS') # This file is big and when loaded as object "loss1ha_firesm6_2500_byyear" will take at least 20 GB of RAM. This is the reason why this line (and the subsequent ones) are commented. To ensure a smooth knitting, the object "foo" is created below using a readRDS function which loads the summary contained in the "summary_of_forest_loss_from_medium_large_clearings.RDS" file.
+# loss1ha_solo <- loss1ha_firesm6_2500_byyear[grep('loss1ha$', names(loss1ha_firesm6_2500_byyear))]
+# bar <- sapply(names(loss1ha_solo),
+#        function(x) {
+#          length(which(!is.na(loss1ha_solo[[x]][])))*prod(res(loss1ha_solo[[x]]))
+#        }
+# )
+# names(bar) <- gsub('(.*)(year[0-9]{,2})(.*)', '\\2', names(bar))
+# saveRDS(bar, 'out/summary_of_forest_loss_from_medium_large_clearings.RDS')
+# rm(loss1ha_solo)
+# rm(loss1ha_firesm6_2500_byyear)
+# gc()
+(bar <- readRDS('out/summary_of_forest_loss_from_medium_large_clearings.RDS'))
+forest_loss_large_clumps_by_year <- bar %>% 
+  enframe(name = 'year', value = 'Medium- and large-sized clearings (>1ha)') %>% 
+  mutate(year = as.numeric(gsub('year', '', year)) + 2000)
+# Join
+areasqm_small_large_clearings <- forest_loss_small_clumps_by_year %>%
+  inner_join(forest_loss_large_clumps_by_year, by = 'year') %>% 
+  mutate(total = rowSums(.[,2:3])) %>%
+  mutate_at(.vars = vars(matches('clearing')), .funs = list(PCT = ~ ./total))
+
+# Small clearings (<1ha) vs. large clearings (>1ha)
+CPCOLS <- c("#FF6A6A", "#EEC591") # > Addins > Plot Colour Helper
+# jpeg('out/small_clearings_and_medium_large_sized_clearings_per_year.jpg', width = 2500, height = 2500, res = 300)
+areasqm_small_large_clearings %>% 
+  select(1:3) %>%
+  pivot_longer(cols = -year, names_to = 'variable', values_to = 'value') %>% 
+  mutate(variable=factor(variable, levels = sort(unique(variable), decreasing = T))) %>%
+  ggplot + aes(x = year, y = value, fill = variable) + geom_bar(position = position_fill(reverse = T), stat="identity") +
+  scale_x_continuous(breaks = 2001:2018) + 
+  scale_y_continuous(labels = percent) +
+  scale_fill_manual(values = CPCOLS) +
+  geom_segment(y = 0.5, yend = 0.5, x = 2000, xend = 2019, colour="black") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), panel.grid.minor = element_blank(),
+        legend.title = element_blank(), legend.position = 'bottom',
+        text = element_text(size = 14), aspect.ratio = 1) +
+  ylab('Percentage of annual forest loss')
+# dev.off()
+
+# Tests
+# areasqm_small_large_clearings <- readRDS('out/deforestation_area_m2_small_and_large_clearings.RDS')
+sapply(areasqm_small_large_clearings %>% select(matches('PCT')), shapiro.test) #Not significant
+with(
+  areasqm_small_large_clearings,
+  t.test(`Small clearings (<1ha)_PCT`, `Medium- and large-sized clearings (>1ha)_PCT`, paired = T)) #Not significant
+## Small clearings accounted for more than half of the deforested area in 7 of the first 18 years of this Century in the Dominican Republic. 
+
+# THESE ANALYSES USE ZONAL STATISTICS FROM SIMPLE FEATURES OBJECTS
+# Four variables: absolute values per year, including cum.sum
+four_variables_abs_pct_cumsum <- hexzonal[, grep('NFIRES|NCLUMPS|loss1ha_AREASQM', colnames(hexzonal))] %>% 
+  st_drop_geometry() %>% 
+  pivot_longer(cols = everything(), names_to = 'variable', values_to = 'value') %>% 
+  mutate(year = as.numeric(gsub('.*year([0-9]{,2}).*', '\\1', variable)) + 2000) %>%
+  mutate(variable = gsub('_year[0-9]{,2}|year[0-9]{,2}\\.', '', variable)) %>% 
+  mutate(variable = case_when(
+    variable == 'NFIRESM6' ~ 'Number of MODIS M6 fire points',
+    variable == 'NFIRESV1' ~ 'Number of VIIRS V1 fire points',
+    variable == 'NCLUMPSSMALLER1HA' ~ 'Number of forest loss patches <1 Ha',
+    variable == 'loss1ha_AREASQM' ~ 'Area of forest loss in sq. km'
+  )) %>%
+  replace(is.na(.), 0) %>% 
+  pivot_wider(names_from = 'variable', values_from = 'value', values_fn = sum) %>% 
+  # inner_join(forest_loss_small_clumps_by_year, by = 'year') %>% 
+  mutate_at(vars(contains('Area')), ~ ./1000000) %>%
+  replace(is.na(.), 0) %>% 
+  mutate_at(vars(-'year'), funs("pct" = ./sum(.))) %>% 
+  mutate_at(vars(-'year'), funs("cumsum" = cumsum(.)))
+four_variables_abs_pct_cumsum %>%
+  adorn_totals(where = 'row')
+
+# Cumulative absolute value
+four_variables_abs_pct_cumsum %>%
+  dplyr::select(year, matches('[a,m,s]_cumsum', ignore.case = F)) %>% 
+  pivot_longer(cols = -contains('year')) %>% 
+  replace(. == 0, NA) %>% 
+  na.omit() %>% 
+  ggplot + aes(x = year, y = value) + geom_line() +
+  scale_x_continuous(breaks = 2001:2018) + 
+  scale_y_continuous(labels = function(y) gsub('\\.[0]', '', label_number_si(accuracy = 0.1)(y))) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), panel.grid.minor = element_blank(),
+        text = element_text(size = 14), aspect.ratio = 1) +
+  ylab('Cummulative value') +
+  facet_wrap(~ name, scales = 'free')
+
+# Cumulative proportion
+four_variables_abs_pct_cumsum %>%
+  dplyr::select(matches('year|pct_cumsum')) %>% 
+  pivot_longer(cols = contains('cumsum')) %>% 
+  replace(. == 0, NA) %>%
+  na.omit() %>% 
+  ggplot + aes(x = year, y = value) + geom_line() +
+  scale_y_continuous(trans = 'exp') +
+  scale_x_continuous(breaks = 2001:2018) + 
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), panel.grid.minor = element_blank(),
+        text = element_text(size = 14), aspect.ratio = 1) +
+  ylab('Cummulative proportion') +
+  facet_wrap(~ name, scales = 'free_x')
+
+# Absolute values non-cumulative
+four_variables_abs_pct_cumsum %>%
+  dplyr::select(-matches('pct|cumsum', ignore.case = F)) %>% 
+  pivot_longer(cols = -contains('year')) %>% 
+  replace(. == 0, NA) %>% 
+  na.omit() %>% 
+  ggplot + aes(x = year, y = value) + geom_line() +
+  scale_x_continuous(breaks = 2001:2018) + 
+  scale_y_continuous(trans = 'log', breaks = pretty_breaks(),
+                     labels = function(y) gsub('\\.[0]', '', label_number_si(accuracy = 0.1)(y))) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), panel.grid.minor = element_blank(),
+        text = element_text(size = 14), aspect.ratio = 1) +
+  ylab('Value') +
+  facet_wrap(~ name, scales = 'free')
+
+# Three variables: summaries, plots, standard errors, confidence intervals
+three_variables_for_plots <- hexzonalfm %>% 
+  select(!matches('ENLACE|AREASQM')) %>%
+  st_drop_geometry %>% 
+  gather(variable, value) %>% 
+  mutate(year = as.numeric(create_year_from_string(variable)) + 2000,
+         variable2 = create_variable_name_from_string(variable)) %>% 
+  mutate(value = value * 100) %>% 
+  mutate(variable2 = case_when(
+    variable2 == 'NFIRESM6PSQKM' ~ '(C)',
+    variable2 == 'NFIRESV1PSQKM' ~ '(D)',
+    variable2 == 'NCLUMPSSMALLER1HAPSQKM' ~ '(B)',
+    variable2 == 'LOSSGREATER1HA_PUA' ~ '(A)'
+  ))
+three_variables_sum <- summarySE(
+  three_variables_for_plots %>%
+  filter(!grepl('D', variable2)),
+  measurevar="value", groupvars=c('year', 'variable2'))
+three_variables_plot <- three_variables_for_plots %>%
+  filter(!grepl('D', variable2)) %>% 
+  ggplot + aes(x = year, y = value) +
+  scale_x_continuous(breaks = 2001:2018) + 
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), panel.grid.minor = element_blank(),
+        text = element_text(size = 14), aspect.ratio = 1/3) +
+  geom_errorbar(data = three_variables_sum, aes(ymin = value - se, ymax = value + se), colour = "grey30", width = .3) +
+  geom_line(data = three_variables_sum) +
+  geom_point(data = three_variables_sum, aes(x = year, y = value), size=2, shape=21, fill="white") +
+  facet_wrap(~ variable2, scales = 'free_y', ncol = 1)
+three_variables_plot
+three_variables_plot + geom_smooth(method = 'loess', span = 0.5)
+# jpeg('out/forest_loss_fire_points_line_plots_error_bars_2001_2018.jpg', width = 1800, height = 2200, res = 350)
+# dev.off()
+
+# Four variables: summaries, plots, standard errors, confidence intervals. Includes summary tables for the paper 
+## Prepare table
+four_variables_for_plots <- hexzonalfm %>% 
+  select(!matches('ENLACE|AREASQM')) %>%
+  st_drop_geometry %>% 
+  gather(variable, value) %>% 
+  mutate(year = as.numeric(create_year_from_string(variable)) + 2000,
+         variable2 = create_variable_name_from_string(variable)) %>% 
+  mutate(value = value * 100) %>% 
+  mutate(variable2 = case_when(
+    variable2 == 'NFIRESM6PSQKM' ~ '(C)',
+    variable2 == 'NFIRESV1PSQKM' ~ '(D)',
+    variable2 == 'NCLUMPSSMALLER1HAPSQKM' ~ '(B)',
+    variable2 == 'LOSSGREATER1HA_PUA' ~ '(A)'
+  ))
+four_variables_for_plots$year_factor <- factor(four_variables_for_plots$year)
+four_variables_for_plots$decennial <- cut(
+  x = four_variables_for_plots$year-2000,
+  breaks = breaks  <- c(1, 10, 18), include.lowest = T,
+  labels = seq_along(breaks[-1]))
+four_variables_for_plots$decennial_interval <- four_variables_for_plots %>%
+  group_by(decennial) %>%
+  mutate(interval = factor(paste(min(year), max(year), sep = '-'))) %>% 
+  pull(interval)
+four_variables_for_plots$quadrennial <- cut(
+  x = four_variables_for_plots$year-2000,
+  breaks = breaks  <- c(1, 4, 8, 12, 16, 18), include.lowest = T,
+  labels = seq_along(breaks[-1]))
+four_variables_for_plots$quadrennial_interval <- four_variables_for_plots %>%
+  group_by(quadrennial) %>%
+  mutate(interval = factor(paste(min(year), max(year), sep = '-'))) %>% 
+  pull(interval)
+four_variables_for_plots$triennial <- cut(
+  x = four_variables_for_plots$year-2000,
+  breaks = breaks  <- c(1, 3, 6, 9, 12, 15, 18), include.lowest = T,
+  labels = seq_along(breaks[-1]))
+four_variables_for_plots$triennial_interval <- four_variables_for_plots %>%
+  group_by(triennial) %>%
+  mutate(interval = factor(paste(min(year), max(year), sep = '-'))) %>% 
+  pull(interval)
+four_variables_for_plots$sexennial <- cut(
+  x = four_variables_for_plots$year-2000,
+  breaks = breaks  <- c(1, 6, 12, 18), include.lowest = T,
+  labels = seq_along(breaks[-1]))
+four_variables_for_plots$sexennial_interval <- four_variables_for_plots %>%
+  group_by(sexennial) %>%
+  mutate(interval = factor(paste(min(year), max(year), sep = '-'))) %>% 
+  pull(interval)
+## Years
+periodic_summaries_yearly <- periodic_summaries(
+  source_table = four_variables_for_plots, measurevar = 'value',
+  bins = 'year_factor', sum_variable = 'variable2', aspect_ratio = 1/3, smooth_alpha = 0.3,
+  # smooth_method = 'loess', method_args = list(degree = 0),
+  smooth_method = 'gam', smooth_formula = y ~ s(x, bs = 'ad', k = 13),
+  smooth_span = 0.35, labels_angle = 90, xlab = 'Year', smooth = T, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables.jpg',
+  calc_se = F, new_dev = F
+)
+sapply(periodic_summaries_yearly$summaries_print_df[,-1], summary)
+periodic_summaries_yearly$summaries_print_df %>%
+  summarise_at(vars(-matches('^year')), psych::describe, na.rm = T) %>% t
+## Triennials
+periodic_summaries(
+  source_table = four_variables_for_plots, measurevar = 'value',
+  bins = 'triennial_interval', sum_variable = 'variable2', aspect_ratio = 1/3,
+  smooth_span = 0.7, labels_angle = 0, xlab = 'Triennial', smooth = F, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables_triennial.jpg',
+  new_dev = F
+)
+## Quadrennials
+periodic_summaries(
+  source_table = four_variables_for_plots, measurevar = 'value',
+  bins = 'quadrennial_interval', sum_variable = 'variable2', aspect_ratio = 1/3,
+  smooth_span = 0.7, labels_angle = 0, xlab = 'Quadrennial', smooth = F, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables_quadrennial.jpg',
+  new_dev = F
+)
+
+# Drawing results
+periodic_summaries(
+  source_table = four_variables_for_plots %>% filter(!variable2 == '(D)') %>%  mutate(variable2 = case_when(
+    variable2 == '(C)' ~ 'C. Number of MODIS M6 fire points per 100 sq. km',
+    variable2 == '(B)' ~ 'B. Number of small clearings (<1 ha) per 100 sq. km',
+    variable2 == '(A)' ~ 'A. Area of forest loss in sq. km per 100 sq. km'
+  )),
+  measurevar = 'value',
+  bins = 'quadrennial_interval', sum_variable = 'variable2', aspect_ratio = 1/2,
+  smooth_span = 0.7, labels_angle = 0, xlab = 'Quadrennial', smooth = F, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables_quadrennial.jpg',
+  calc_se = F, new_dev = F
+)
+# In the Dominican Republic, by four-year periods from 2001 to 2018, both the area of forest loss (top) and the number of small clearings (middle) per 100 sq. km, increased since 2013 WITHOUT the help of fire (bottom). This is a worrisome pattern
+periodic_summaries(
+  source_table = four_variables_for_plots %>% filter(!variable2 == '(D)') %>%  mutate(variable2 = case_when(
+    variable2 == '(C)' ~ 'Número de puntos de calor/fuegos MODIS por cada 100 km cuad.',
+    variable2 == '(B)' ~ 'Número de parches de aclareo (<1 ha) por cada 100 km cuad.',
+    variable2 == '(A)' ~ 'Área de pérdida de bosque, en km cuad., por cada 100 km cuad.'
+  )),
+  measurevar = 'value',
+  bins = 'quadrennial_interval', sum_variable = 'variable2', aspect_ratio = 1/2,
+  smooth_span = 0.7, labels_angle = 0, xlab = 'Quadrennial', smooth = F, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables_quadrennial.jpg',
+  calc_se = F, new_dev = F
+)
+
+## Sexennials
+periodic_summaries(
+  source_table = four_variables_for_plots, measurevar = 'value',
+  bins = 'sexennial_interval', sum_variable = 'variable2', aspect_ratio = 1/3,
+  smooth_span = 0.7, labels_angle = 0, xlab = 'Sexennial', smooth = F, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables_sexennial.jpg',
+  new_dev = F
+)
+## Decennials
+periodic_summaries(
+  source_table = four_variables_for_plots, measurevar = 'value',
+  bins = 'decennial_interval', sum_variable = 'variable2', aspect_ratio = 1/3,
+  smooth_span = 0.7, labels_angle = 0, xlab = 'Decennial', smooth = F, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables_decennial.jpg',
+  new_dev = F
+)
+
+# Commented plot, only forest loss and fires modis
+four_variables_for_plots_commented <- hexzonalfm %>% 
+  select(!matches('ENLACE|AREASQM')) %>%
+  st_drop_geometry %>% 
+  gather(variable, value) %>% 
+  mutate(year = as.numeric(create_year_from_string(variable)) + 2000,
+         variable2 = create_variable_name_from_string(variable)) %>% 
+  mutate(value = value * 100) %>% 
+  mutate(variable2 = case_when(
+    variable2 == 'NFIRESM6PSQKM' ~ 'Number of MODIS M6 fire points per 100 sq. km',
+    variable2 == 'NFIRESV1PSQKM' ~ 'Number of VIRS V1 fire points per 100 sq. km',
+    variable2 == 'NCLUMPSSMALLER1HAPSQKM' ~ 'Number of forest loss patches <1 Ha per 100 sq. km',
+    variable2 == 'LOSSGREATER1HA_PUA' ~ 'Area of forest loss in sq. km per 100 sq. km'
+  ))
+four_variables_sum_commented <- summarySE(
+  four_variables_for_plots_commented %>%
+  filter(grepl('MODIS|^Area of', variable2)),
+  measurevar="value", groupvars=c('year', 'variable2'))
+four_variables_plot_commented <- four_variables_for_plots_commented %>%
+  filter(grepl('MODIS|^Area of', variable2)) %>% 
+  ggplot + aes(x = year, y = value) +
+  scale_x_continuous(breaks = 2001:2018) + 
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), panel.grid.minor = element_blank(),
+        text = element_text(size = 14), aspect.ratio = 1/3) +
+  geom_errorbar(data = four_variables_sum_commented, aes(ymin = value - se, ymax = value + se), colour = "grey30", width = .3) +
+  geom_line(data = four_variables_sum_commented) +
+  geom_point(data = four_variables_sum_commented, aes(x = year, y = value), size=2, shape=21, fill="white") +
+  facet_wrap(~ variable2, scales = 'free_y', ncol = 1)
+four_variables_plot_commented + geom_smooth(method = 'loess', span = 0.5)
+# Fire (bottom chart) and forest-loss (top chart), were strongly associated during the first 15 years of the 21st Century in the Dominican Republic. However, in recent years, no such association exists. And yes, 2005, 2016 and 2017 were tough years
+
+# Time-series decomposition
+four_variables_sum <- summarySE(
+  four_variables_for_plots_commented,
+  measurevar="value", groupvars=c('year', 'variable2')) %>% 
+   mutate(variable2 = case_when(
+    variable2 == 'Number of MODIS M6 fire points per 100 sq. km' ~ '(C)',
+    variable2 == 'Number of VIRS V1 fire points per 100 sq. km' ~ '(D)',
+    variable2 == 'Number of forest loss patches <1 Ha per 100 sq. km' ~ '(B)',
+    variable2 == 'Area of forest loss in sq. km per 100 sq. km' ~ '(A)'
+  ))
+four_variables_ts <- sapply(
+  unique(four_variables_sum$variable2),
+  function(x)
+    ts(
+      four_variables_sum[four_variables_sum$variable2 == x, 'value'],
+      start = if(grepl('D', x)) 2012 else 2001, frequency = 1),
+  simplify = F, USE.NAMES = T
+  )
+four_variables_ts_filt <- sapply(
+  four_variables_ts,
+  function(x) sapply(c("HP", "CF"), function(y) mFilter(x, filter = y)),
+  simplify = F, USE.NAMES = T
+)
+four_variables_ts_filt_for_gg <- lapply(
+  four_variables_ts_filt, function(x) ldply(lapply(x, crear_tabla_de_mfilter_para_gg), .id = NULL)) %>%
+  plyr::ldply(.id = 'Variable')
+four_variables_ts_filt_gg <- four_variables_ts_filt_for_gg %>%
+  gather(Component, Value, -Variable, -Year, -Filter) %>% 
+  mutate(Variable = gsub(' per', '\nper', Variable)) %>% 
+  ggplot +
+  aes(x = Year, y = Value, color = Component) +
+    scale_x_continuous(breaks = 2001:2018) + 
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), text = element_text(size = 14), aspect.ratio = 1/2) +
+  geom_line() +
+  facet_grid(Variable ~ Filter, scales = 'free_y')
+four_variables_ts_filt_gg
+# jpeg('out/forest_loss_fire_points_line_plots_2001_2018_ts_decomposition.jpg', width = 2600, height = 2160, res = 250)
+# four_variables_ts_filt_gg
+# dev.off()
+```
+
+## Yearly forest-loss and fire incidence maps
+
+```{r aa-yearly-forest-loss-maps}
+hexzonalfm_yearly_maps <- hexzonalfm %>% 
+  select(!matches('ENLACE|AREASQM')) %>%
+  gather(variable, value, -geometry) %>% 
+  mutate(year = as.numeric(create_year_from_string(variable)) + 2000,
+         variable2 = create_variable_name_from_string(variable)) %>% 
+  replace(is.na(.), 0) %>% 
+  mutate(value = value * 100) %>% 
+  mutate(variable2 = case_when(
+    variable2 == 'NFIRESM6PSQKM' ~ 'MODIS M6 fire points per 100 sq. km',
+    variable2 == 'NFIRESV1PSQKM' ~ 'VIRS V1 fire points per 100 sq. km',
+    variable2 == 'NCLUMPSSMALLER1HAPSQKM' ~ 'Forest loss patches <1 Ha per 100 sq. km',
+    variable2 == 'LOSSGREATER1HA_PUA' ~ 'Forest loss in sq. km per 100 sq. km'
+  )) %>% select(-variable, variable = variable2)
+invisible(map(hexzonalfm_yearly_maps$variable %>% unique, 
+     function(x) {
+       m <- hexzonalfm_yearly_maps %>%
+          filter(variable == x) %>% 
+          tm_shape() +
+         {if(grepl('Forest loss in sq. km per 100 sq. km', x))
+           tm_fill(col='value', palette = c('#c9eebd', '#69d6bd', '#00bdc1', '#10858d'), size = 0.1,
+                  style = 'fixed', breaks = c(0, 0.2, 0.4, 1, 7, 13.5),
+                  legend.is.portrait = F,
+                  legend.format = list(digits = 2, text.separator = '-', scientific = TRUE, format = 'f'), n = 4)
+           else
+             tm_fill(col='value', palette = c('#c9eebd', '#69d6bd', '#00bdc1', '#10858d'), size = 0.1,
+                  style = 'kmeans',
+                  legend.is.portrait = F,
+                  legend.format = list(digits = 2, text.separator = '-', scientific = TRUE, format = 'f'), n = 4)} +
+         tm_borders(col = 'grey15', lwd = 0.3) +
+         tm_facets(by = "year", nrow = ifelse(grepl('VIRS', x), 2, 3), free.coords = FALSE, free.scales = FALSE) +
+         tm_layout(
+           panel.label.size = 1.75, legend.title.size = 0.00001, legend.text.size = 3,
+           legend.outside.position = "bottom" , legend.outside.size = .1,
+           outer.margins = c(-0.02, 0.01, -0.02, 0.01), inner.margins = 0) +
+          tm_shape(seaocean) + tm_borders() + tm_fill(col = 'white') #+ 
+          # tm_shape(points_of_interest) + tm_text('code', size = 2, col = 'black', fontface = 'bold', bg.color = 'white', bg.alpha = 0.5)
+       n <- paste0('out/yearly_', x %>% gsub(' |<|\\.', '_', .) %>% gsub('__', '_', .) %>% tolower, '.jpg')
+       # jpeg(n, width = 3840, height = 1700, res = 300)
+       # dev.new()
+       print(m)
+       # dev.off()
+     }))
+```
+
+## Transformations
+
+```{r transformations}
+# * Transformations using Tukey's Ladder of Powers
+hexzonalfmt <- hexzonalfm %>%
+  mutate(across(!matches('ENLACE|AREASQM|geometry'),
+                list('TLP' = ~ transformTukey(.x, plotit = F, quiet = T),
+                'LAMBDA' = ~ transformTukey(x = .x, plotit = F, returnLambda = T, quiet = T)[['lambda']]))) %>% 
+  mutate(across(matches('TLP$'),
+                 list('SWPVAL' = ~ shapiro.test(.x)$p.value,
+                      'ADPVAL' = ~ ad.test(.x)$p.value, 
+                      'MTPVAL' = ~ moran.test(.x, listw = hexww, na.action = na.exclude, zero.policy = T)$p.value,
+                      'MIEST' = ~ moran.test(.x, listw = hexww, na.action = na.exclude, zero.policy = T)$estimate[[1]],
+                      'MIVAR' = ~ moran.test(.x, listw = hexww, na.action = na.exclude, zero.policy = T)$estimate[[3]],
+                      'LENGTH' = ~ length(.x))))
+lambda_tests <- hexzonalfmt %>%
+  st_drop_geometry %>%
+  select(matches('SWPVAL$|ADPVAL$|MTPVAL|MIEST|MIVAR|LENGTH')) %>%
+  unique %>%
+  gather(variable, value) %>% 
+  separate(variable, into = c('variable', 'test'), sep = '_TLP_') %>%
+  mutate(variable = paste0(variable, '_TLP')) %>% 
+  spread(key = test, value = value) %>% 
+  mutate(year = as.numeric(create_year_from_string(variable))+2000,
+         variable2 = create_variable_name_from_string(variable))
+lambda_tests %>% arrange(SWPVAL)
+lambda_tests %>% arrange(MTPVAL)
+lambda_tests %>% arrange(MIEST)
+lambda_tests %>% arrange(MIVAR)
+# dev.new()
+lambda_tests %>%
+  ggplot + aes(x = year, y = MIEST) +
+  scale_x_continuous(breaks = 2001:2018) + 
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+  geom_line() + facet_wrap(~ variable2, scales = 'free_y')
+# jpeg('out/morans_i_time_series_four_variables_tlp.jpg', width = 3840, height = 1600, res = 350)
+lambda_tests %>% 
+  dplyr::select(value = MIEST, MIVAR, LENGTH, variable2, year) %>% 
+  mutate(year_factor = factor(year)) %>% 
+    mutate(variable = case_when(
+    variable2 == 'NFIRESM6PSQKM_TLP' ~ '(C)',
+    variable2 == 'NFIRESV1PSQKM_TLP' ~ '(D)',
+    variable2 == 'NCLUMPSSMALLER1HAPSQKM_TLP' ~ '(B)',
+    variable2 == 'LOSSGREATER1HA_PUA_TLP' ~ '(A)'
+    )) %>% 
+  ggplot +
+  aes(x = year_factor, y = value, group = variable, color = variable) +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5),
+    panel.grid.minor = element_blank(),
+    text = element_text(size = 14), aspect.ratio = 1/3) +
+  geom_line(lwd = 0.6) +
+  geom_errorbar(
+    aes(
+      ymin = value - qnorm(p=(0.05/2)+(1-0.05))*sqrt(MIVAR)/sqrt(LENGTH),
+      ymax = value + qnorm(p=(0.05/2)+(1-0.05))*sqrt(MIVAR)/sqrt(LENGTH)),
+      #color = variable),
+    alpha = 0.75,
+    colour = "grey50",
+    width = .1) +
+  geom_point(size=0.5, shape=21) + 
+  xlab('Year') +
+  ylab("Moran's I")
+# dev.off()
+```
+
+## LISA maps
+
+```{r, eval=F}
+# Large clearings
+loss1hagreatercols <- grep('^YEAR[0-9]{,2}_LOSS.*_TLP$', names(hexzonalfmt), value = T)
+hexlisamaps <- map(
+  loss1hagreatercols,
+  function(x) {
+    lm <- lisamap(
+      objesp = hexzonalfmt,
+      var = x,
+      pesos = hexww,
+      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+      leyenda = T,
+      anchuratitulo = 1000,
+      tamanotitulo = 14,
+      fuentedatos = 'Hansen et al., 2013',
+      titulomapa = paste0(2000+as.numeric(create_year_from_string(x))))
+    lm$grafico$layers <- c(lm$grafico$layers, geom_sf(data=seaocean, fill = 'white')[[1]])
+    return(lm$grafico)
+  })
+legendhexlisamaps <- get_legend(hexlisamaps[[1]] +
+                              guides(color = guide_legend(nrow = 1)) +
+                              theme(legend.position = "bottom"))
+hexlisamapsnl <- map(
+  hexlisamaps,
+  function(x) {
+    mapRange <- c(
+      range(st_coordinates(hexzonalfmt)[,1]),
+      range(st_coordinates(hexzonalfmt)[,2]))
+    x +
+      theme(legend.position = "none") +
+      labs(caption = NULL) + 
+      coord_sf(xlim = mapRange[c(1:2)], ylim = mapRange[c(3:4)]) +
+      theme(
+        plot.title = element_text(hjust = 0.5, vjust = -0.5, size = 12),
+        plot.background = element_rect(fill = 'white', color = 'black', size = 0),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        plot.margin = unit(c(2, 2, 2, 2), "mm"))
+})
+# jpeg('out/yearly_lisamaps_forestloss1ha_tlp.jpg', width = 3840, height = 1600, res = 350)
+plot_grid(plotlist = hexlisamapsnl, nrow = 3)
+# dev.off()
+
+# Small clearings
+nclumpssmall1hacols <- grep('^NCLUMPSSMALLER1HA_YEAR[0-9]{,2}.*_TLP$', names(hexzonalfmt), value = T)
+hexlisamapssmal1ha <- map(
+  nclumpssmall1hacols,
+  function(x) {
+    lm <- lisamap(
+      objesp = hexzonalfmt,
+      var = x,
+      pesos = hexww,
+      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+      leyenda = T,
+      anchuratitulo = 1000,
+      tamanotitulo = 14,
+      fuentedatos = 'Hansen et al., 2013',
+      titulomapa = paste0(2000+as.numeric(create_year_from_string(x))))
+    lm$grafico$layers <- c(lm$grafico$layers, geom_sf(data=seaocean, fill = 'white')[[1]])
+    return(lm$grafico)
+  })
+legendhexlisamapssmal1ha <- get_legend(hexlisamapssmal1ha[[1]] +
+                              guides(color = guide_legend(nrow = 1)) +
+                              theme(legend.position = "bottom"))
+hexlisamapsnlsmal1ha <- map(
+  hexlisamapssmal1ha,
+  function(x) {
+    mapRange <- c(
+      range(st_coordinates(hexzonalfmt)[,1]),
+      range(st_coordinates(hexzonalfmt)[,2]))
+    x +
+      theme(legend.position = "none") +
+      labs(caption = NULL) + 
+      coord_sf(xlim = mapRange[c(1:2)], ylim = mapRange[c(3:4)]) +
+      theme(
+        plot.title = element_text(hjust = 0.5, vjust = -0.5, size = 12),
+        plot.background = element_rect(fill = 'white', color = 'black', size = 0),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        plot.margin = unit(c(2, 2, 2, 2), "mm"))
+})
+# jpeg('out/yearly_lisamaps_nclumpssmaller1ha_tlp.jpg', width = 3840, height = 1600, res = 350)
+plot_grid(plotlist = hexlisamapsnlsmal1ha, nrow = 3)
+# dev.off()
+
+# Fire points MODIS
+firemodiscols <- grep('^NFIRESM6_YEAR[0-9]{,2}.*_TLP$', names(hexzonalfmt), value = T)
+hexlisamapsfiremodis <- map(
+  firemodiscols,
+  function(x) {
+    lm <- lisamap(
+      objesp = hexzonalfmt,
+      var = x,
+      pesos = hexww,
+      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+      leyenda = T,
+      anchuratitulo = 1000,
+      tamanotitulo = 14,
+      fuentedatos = 'Hansen et al., 2013',
+      titulomapa = paste0(2000+as.numeric(create_year_from_string(x))))
+    lm$grafico$layers <- c(lm$grafico$layers, geom_sf(data=seaocean, fill = 'white')[[1]])
+    return(lm$grafico)
+  })
+legendhexlisamapsfiremodis <- get_legend(hexlisamapsfiremodis[[1]] +
+                              guides(color = guide_legend(nrow = 1)) +
+                              theme(legend.position = "bottom"))
+hexlisamapsnlfiremodis <- map(
+  hexlisamapsfiremodis,
+  function(x) {
+    mapRange <- c(
+      range(st_coordinates(hexzonalfmt)[,1]),
+      range(st_coordinates(hexzonalfmt)[,2]))
+    x +
+      theme(legend.position = "none") +
+      labs(caption = NULL) + 
+      coord_sf(xlim = mapRange[c(1:2)], ylim = mapRange[c(3:4)]) +
+      theme(
+        plot.title = element_text(hjust = 0.5, vjust = -0.5, size = 12),
+        plot.background = element_rect(fill = 'white', color = 'black', size = 0),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        plot.margin = unit(c(2, 2, 2, 2), "mm"))
+})
+# jpeg('out/yearly_lisamaps_firemodis_tlp.jpg', width = 3840, height = 1600, res = 350)
+plot_grid(plotlist = hexlisamapsnlfiremodis, nrow = 3)
+# dev.off()
+
+# Fire points VIIRS
+fireviirscols <- grep('^NFIRESV1_YEAR[0-9]{,2}.*_TLP$', names(hexzonalfmt), value = T)
+hexlisamapsfireviirs <- map(
+  fireviirscols,
+  function(x) {
+    lm <- lisamap(
+      objesp = hexzonalfmt,
+      var = x,
+      pesos = hexww,
+      tituloleyenda = 'Significance\n("x-y", read as\n "x" surrounded\nby "y"',
+      leyenda = T,
+      anchuratitulo = 1000,
+      tamanotitulo = 14,
+      fuentedatos = 'Hansen et al., 2013',
+      titulomapa = paste0(2000+as.numeric(create_year_from_string(x))))
+    lm$grafico$layers <- c(lm$grafico$layers, geom_sf(data=seaocean, fill = 'white')[[1]])
+    return(lm$grafico)
+  })
+legendhexlisamapsfireviirs <- get_legend(hexlisamapsfireviirs[[1]] +
+                              guides(color = guide_legend(nrow = 1)) +
+                              theme(legend.position = "bottom"))
+hexlisamapsnlfireviirs <- map(
+  hexlisamapsfireviirs,
+  function(x) {
+    mapRange <- c(
+      range(st_coordinates(hexzonalfmt)[,1]),
+      range(st_coordinates(hexzonalfmt)[,2]))
+    x +
+      theme(legend.position = "none") +
+      labs(caption = NULL) + 
+      coord_sf(xlim = mapRange[c(1:2)], ylim = mapRange[c(3:4)]) +
+      theme(
+        plot.title = element_text(hjust = 0.5, vjust = -0.5, size = 12),
+        plot.background = element_rect(fill = 'white', color = 'black', size = 0),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        plot.margin = unit(c(2, 2, 2, 2), "mm"))
+})
+# jpeg('out/yearly_lisamaps_fireviirs_tlp.jpg', width = 3840, height = 1600, res = 350)
+plot_grid(plotlist = hexlisamapsnlfireviirs, nrow = 2, ncol = 4)
+# dev.off()
+```
+
+## Models
+
+```{r, eval=F}
+# LARGE CLEARINGS TRANS
+annual_models_folossg1ha_trans_formulas <- data.frame(
+  y = grep('^YEAR[0-9]{,2}_LOSS.*_TLP$', names(hexzonalfmt), value = T),
+  x = grep('^NFIRESM6_YEAR[0-9]{,2}.*_TLP$', names(hexzonalfmt), value = T)) %>%
+  mutate(formula= paste(y, x, sep = ' ~ ')) %>% 
+  pull(formula)
+annual_models_folossg1ha_trans <- sapply(annual_models_folossg1ha_trans_formulas,
+       function(x)
+         hexzonalfmt %>%
+         st_drop_geometry() %>%
+         replace(is.na(.), 0) %>%
+         spatialreg::errorsarlm(formula = x,
+                                data = .,
+                                listw = hexww),
+       simplify = F)
+lapply(annual_models_folossg1ha_trans, function(x) summary(x, Nagelkerke = T))
+lapply(annual_models_folossg1ha_trans, function(x) x$coefficients[[1]]) %>% unlist %>% plot
+lapply(annual_models_folossg1ha_trans, function(x) x$coefficients[[2]]) %>% unlist %>% plot
+lapply(annual_models_folossg1ha_trans, function(x) summary(x, Nagelkerke = T)$NK) %>% unlist %>% plot
+lapply(annual_models_folossg1ha_trans, function(x) summary(x, Nagelkerke = T)$Coef[,4])
+lapply(
+  annual_models_folossg1ha_trans,
+  function(x) 
+    summary(x, Nagelkerke = T)$Coef[,c(1,4)] %>%
+    as.data.frame %>%
+    rownames_to_column(var = 'variable')) %>% 
+  plyr::ldply() %>% 
+  format(., scientific = F)
+annual_models_sign_coefs(annual_models_folossg1ha_trans) #Coefficient is significant in each annual model
+
+# LARGE CLEARINGS UNTRANS
+annual_models_folossg1ha_untrans_formulas <- data.frame(
+  y = grep('^YEAR[0-9]{,2}_LOSS.*PUA$', names(hexzonalfmt), value = T),
+  x = grep('^NFIRESM6_YEAR[0-9]{,2}.*KM$', names(hexzonalfmt), value = T)) %>%
+  mutate(formula= paste(y, x, sep = ' ~ ')) %>% 
+  pull(formula)
+annual_models_folossg1ha_untrans <- sapply(annual_models_folossg1ha_untrans_formulas,
+       function(x)
+         hexzonalfmt %>%
+         st_drop_geometry() %>%
+         replace(is.na(.), 0) %>%
+         spatialreg::errorsarlm(formula = x,
+                                data = .,
+                                listw = hexww),
+       simplify = F)
+lapply(annual_models_folossg1ha_untrans, function(x) summary(x, Nagelkerke = T))
+lapply(annual_models_folossg1ha_untrans, function(x) x$coefficients[[1]]) %>% unlist %>% plot
+lapply(annual_models_folossg1ha_untrans, function(x) x$coefficients[[2]]) %>% unlist %>% plot
+lapply(annual_models_folossg1ha_untrans, function(x) summary(x, Nagelkerke = T)$NK) %>% unlist %>% plot
+lapply(annual_models_folossg1ha_untrans, function(x) summary(x, Nagelkerke = T)$Coef[,4])
+lapply(
+  annual_models_folossg1ha_untrans,
+  function(x) 
+    summary(x, Nagelkerke = T)$Coef[,c(1,4)] %>%
+    as.data.frame %>%
+    rownames_to_column(var = 'variable')) %>% 
+  plyr::ldply() %>%
+  format(., scientific = F)
+annual_models_sign_coefs(annual_models_folossg1ha_untrans) #Intercept not significant in years 5, 13 and 14
+
+# NCLUMPS TRANS
+annual_models_folossnclumpsl1ha_trans_formulas <- data.frame(
+  y = grep('^NCLUMPSSMALLER1HA_YEAR[0-9]{,2}.*_TLP$', names(hexzonalfmt), value = T),
+  x = grep('^NFIRESM6_YEAR[0-9]{,2}.*_TLP$', names(hexzonalfmt), value = T)) %>%
+  mutate(formula= paste(y, x, sep = ' ~ ')) %>% 
+  pull(formula)
+annual_models_folossnclumpsl1ha_trans <- sapply(annual_models_folossnclumpsl1ha_trans_formulas,
+       function(x)
+         hexzonalfmt %>%
+         st_drop_geometry() %>%
+         replace(is.na(.), 0) %>%
+         spatialreg::errorsarlm(formula = x,
+                                data = .,
+                                listw = hexww),
+       simplify = F)
+lapply(annual_models_folossnclumpsl1ha_trans, function(x) summary(x, Nagelkerke = T))
+lapply(annual_models_folossnclumpsl1ha_trans, function(x) x$coefficients[[1]]) %>% unlist %>% plot
+lapply(annual_models_folossnclumpsl1ha_trans, function(x) x$coefficients[[2]]) %>% unlist %>% plot
+lapply(annual_models_folossnclumpsl1ha_trans, function(x) summary(x, Nagelkerke = T)$NK) %>% unlist %>% plot
+lapply(
+  annual_models_folossnclumpsl1ha_trans,
+  function(x) 
+    summary(x, Nagelkerke = T)$Coef[,c(1,4)] %>%
+    as.data.frame %>%
+    rownames_to_column(var = 'variable')) %>% 
+  plyr::ldply() %>%
+  format(., scientific = F)
+annual_models_sign_coefs(annual_models_folossnclumpsl1ha_trans) #NFIRESM6 coefficient is significant in every annual model
+
+# NCLUMPS UNTRANS
+annual_models_folossnclumpsl1ha_untrans_formulas <- data.frame(
+  y = grep('^NCLUMPSSMALLER1HA_YEAR[0-9]{,2}.*KM$', names(hexzonalfmt), value = T),
+  x = grep('^NFIRESM6_YEAR[0-9]{,2}.*KM$', names(hexzonalfmt), value = T)) %>%
+  mutate(formula= paste(y, x, sep = ' ~ ')) %>% 
+  pull(formula)
+annual_models_folossnclumpsl1ha_untrans <- sapply(annual_models_folossnclumpsl1ha_untrans_formulas,
+       function(x)
+         hexzonalfmt %>%
+         st_drop_geometry() %>%
+         replace(is.na(.), 0) %>%
+         spatialreg::errorsarlm(formula = x,
+                                data = .,
+                                listw = hexww),
+       simplify = F)
+lapply(annual_models_folossnclumpsl1ha_untrans, function(x) summary(x, Nagelkerke = T))
+lapply(annual_models_folossnclumpsl1ha_untrans, function(x) x$coefficients[[1]]) %>% unlist %>% plot
+lapply(annual_models_folossnclumpsl1ha_untrans, function(x) x$coefficients[[2]]) %>% unlist %>% plot
+lapply(annual_models_folossnclumpsl1ha_untrans, function(x) summary(x, Nagelkerke = T)$NK) %>% unlist %>% plot
+lapply(
+  annual_models_folossnclumpsl1ha_untrans,
+  function(x) 
+    summary(x, Nagelkerke = T)$Coef[,c(1,4)] %>%
+    as.data.frame %>%
+    rownames_to_column(var = 'variable')) %>% 
+  plyr::ldply() %>%
+  format(., scientific = F)
+annual_models_sign_coefs(annual_models_folossnclumpsl1ha_untrans) #NFIRESM6 coefficient is significant in every annual model
+```
+
+## Local models
+
+```{r, eval=F}
+# Eastern Region, large clearings ~ fire
+hexzonalfmter <- hexzonalfmt %>%
+  mutate(x = st_coordinates(st_centroid(.))[,1], y = st_coordinates(st_centroid(.))[,2]) %>%
+  filter(x > ((max(x) - min(x)) * 4/5) + min(x) & y < ((max(y) - min(y)) * 2/3) + min(y))
+hexnber <- poly2nb(hexzonalfmter)
+hexwwer <- nb2listw(hexnber, zero.policy = T)
+annual_models_folossg1ha_trans_er <- sapply(annual_models_folossg1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmter %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwer),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossg1ha_trans_er) #NFIRESM6 coefficient not significant in many years
+
+# Eastern Region, small clearings ~ fire
+annual_models_folossnclumpsl1ha_trans_er <- sapply(annual_models_folossnclumpsl1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmter %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwer),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossnclumpsl1ha_trans_er) #NFIRESM6 coefficient not significant almost every year
+
+# Los Haitises-Samaná, large clearings ~ fire
+hexzonalfmtlhs <- hexzonalfmt %>%
+  mutate(x = st_coordinates(st_centroid(.))[,1], y = st_coordinates(st_centroid(.))[,2]) %>%
+  filter(x > ((max(x) - min(x)) * 3/5) + min(x) & x < ((max(x) - min(x)) * 4/5) + min(x))
+hexnblhs <- poly2nb(hexzonalfmtlhs)
+hexwwlhs <- nb2listw(hexnblhs, zero.policy = T)
+annual_models_folossg1ha_trans_lhs <- sapply(annual_models_folossg1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmtlhs %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwlhs),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossg1ha_trans_lhs) #NFIRESM6 coefficient not significant in many years
+
+# Los Haitises-Samaná, small clearings ~ fire
+annual_models_folossnclumpsl1ha_trans_lhs <- sapply(annual_models_folossnclumpsl1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmtlhs %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwlhs),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossnclumpsl1ha_trans_lhs) #NFIRESM6 coefficient is significant in seven years
+
+# Central, large clearings ~ fire
+hexzonalfmtcent <- hexzonalfmt %>%
+  mutate(x = st_coordinates(st_centroid(.))[,1], y = st_coordinates(st_centroid(.))[,2]) %>%
+  filter(x > ((max(x) - min(x)) * 1/5) + min(x) & x < ((max(x) - min(x)) * 3/5) + min(x))
+hexnbcent <- poly2nb(hexzonalfmtcent)
+hexwwcent <- nb2listw(hexnbcent, zero.policy = T)
+annual_models_folossg1ha_trans_cent <- sapply(annual_models_folossg1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmtcent %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwcent),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossg1ha_trans_cent) #NFIRESM6 coefficient is not significant only in 2016
+
+# Central, small clearings ~ fire
+annual_models_folossnclumpsl1ha_trans_cent <- sapply(annual_models_folossnclumpsl1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmtcent %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwcent),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossnclumpsl1ha_trans_cent) #NFIRESM6 coefficient is not significant only in 4, 12 and 16
+
+# Western, large clearings ~ fire
+hexzonalfmtwr <- hexzonalfmt %>%
+  mutate(x = st_coordinates(st_centroid(.))[,1], y = st_coordinates(st_centroid(.))[,2]) %>%
+  filter(x < ((max(x) - min(x)) * 1/5) + min(x))
+hexnbwr <- poly2nb(hexzonalfmtwr)
+hexwwwr <- nb2listw(hexnbwr, zero.policy = T)
+annual_models_folossg1ha_trans_wr <- sapply(annual_models_folossg1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmtwr %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwwr),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossg1ha_trans_wr) #NFIRESM6 coefficient is significant in every annual model
+
+# Western, small clearings ~ fire
+annual_models_folossnclumpsl1ha_trans_wr <- sapply(annual_models_folossnclumpsl1ha_trans_formulas,
+                        function(x)
+                          hexzonalfmtwr %>%
+                          st_drop_geometry() %>%
+                          replace(is.na(.), 0) %>%
+                          spatialreg::errorsarlm(formula = x,
+                                                 data = ., # zero.policy = T,
+                                                 listw = hexwwwr),
+                        simplify = F)
+annual_models_sign_coefs(annual_models_folossnclumpsl1ha_trans_wr) #NFIRESM6 coefficient is significant in every annual model
+
+# Maps
+# jpeg('out/east_west_regions_maps.jpg', width = 2000, height = 1600, res = 350)
+plot_grid(plotlist = list(
+  small_map(hexzonalfmtwr),
+  small_map(hexzonalfmtcent),
+  small_map(hexzonalfmtlhs),
+  small_map(hexzonalfmter)),
+  labels = c('(A)', '(B)', '(C)', '(D)'),
+  label_size = 14, nrow = 2, scale = 1, hjust = -4.9, vjust = 1.2,
+  align = 'v', axis = 't')
+# dev.off()
+# system(
+#   paste('convert out/east_west_regions_maps.jpg -gravity South -chop 0x70',
+#          'out/east_west_regions_maps_cropped.jpg')
+# )
+```
