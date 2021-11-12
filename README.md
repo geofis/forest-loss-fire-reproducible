@@ -8,7 +8,7 @@ If you want to reproduce the code, follow these instructions:
 
 1. Clone this repo to your computer.
 
-2. Visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
+2. Visit ZENODO, download the dataset [`forest-loss-fire-reproducible-data-repo.zip`](https://doi.org/10.5281/zenodo.5682103) (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
 
 3. Run the code chunks in each `.Rmd` notebooks, or alternately knit the notebooks.
 

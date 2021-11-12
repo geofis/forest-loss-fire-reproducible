@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.8.7)  11 NOV 2021 21:46
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.8.7)  12 NOV 2021 12:01
  restricted system commands enabled.
 **data-download-preparation-eda.tex
 (./data-download-preparation-eda.tex
@@ -888,90 +888,96 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 24
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 26
-6.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 25
+5.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-Package xcolor Warning: Incompatible color definition on input line 273.
+Package xcolor Warning: Incompatible color definition on input line 276.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 275.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 278.
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 2
-75.
+78.
 (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 280.
+(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 283.
 
 
 LaTeX Font Warning: Font shape `TS1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 280.
+(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 283.
 
 
-Package xcolor Warning: Incompatible color definition on input line 282.
+Package xcolor Warning: Incompatible color definition on input line 285.
 
 
-Package xcolor Warning: Incompatible color definition on input line 282.
+Package xcolor Warning: Incompatible color definition on input line 285.
 
 
-Package xcolor Warning: Incompatible color definition on input line 290.
+Package xcolor Warning: Incompatible color definition on input line 293.
 
 
-Package xcolor Warning: Incompatible color definition on input line 297.
+Package xcolor Warning: Incompatible color definition on input line 300.
 
 
-Package xcolor Warning: Incompatible color definition on input line 297.
+Package xcolor Warning: Incompatible color definition on input line 300.
 
 
-Package xcolor Warning: Incompatible color definition on input line 302.
+Package xcolor Warning: Incompatible color definition on input line 305.
 
 
-Package xcolor Warning: Incompatible color definition on input line 306.
+Package xcolor Warning: Incompatible color definition on input line 309.
 
 
-Package xcolor Warning: Incompatible color definition on input line 306.
+Package xcolor Warning: Incompatible color definition on input line 309.
 
 
-Package xcolor Warning: Incompatible color definition on input line 313.
+Package xcolor Warning: Incompatible color definition on input line 316.
 
 
-Package xcolor Warning: Incompatible color definition on input line 321.
+Package xcolor Warning: Incompatible color definition on input line 324.
 
 
-Package xcolor Warning: Incompatible color definition on input line 321.
+Package xcolor Warning: Incompatible color definition on input line 324.
 
 [2]
 
-Package xcolor Warning: Incompatible color definition on input line 348.
+Package xcolor Warning: Incompatible color definition on input line 324.
 
 
-Package xcolor Warning: Incompatible color definition on input line 352.
+Package xcolor Warning: Incompatible color definition on input line 324.
 
 
-Package xcolor Warning: Incompatible color definition on input line 352.
+Package xcolor Warning: Incompatible color definition on input line 351.
 
 
-Package xcolor Warning: Incompatible color definition on input line 366.
+Package xcolor Warning: Incompatible color definition on input line 355.
 
 
-Package xcolor Warning: Incompatible color definition on input line 404.
+Package xcolor Warning: Incompatible color definition on input line 355.
 
 
-Package xcolor Warning: Incompatible color definition on input line 404.
+Package xcolor Warning: Incompatible color definition on input line 369.
 
 
-Package xcolor Warning: Incompatible color definition on input line 404.
+Package xcolor Warning: Incompatible color definition on input line 407.
+
+
+Package xcolor Warning: Incompatible color definition on input line 407.
+
+
+Package xcolor Warning: Incompatible color definition on input line 407.
 
 [3]
 
-Package xcolor Warning: Incompatible color definition on input line 404.
+Package xcolor Warning: Incompatible color definition on input line 407.
 
 
-Package xcolor Warning: Incompatible color definition on input line 404.
+Package xcolor Warning: Incompatible color definition on input line 407.
 
 <img/data-download-preparation-eda/administrative-1.png, id=238, 991.0626pt x 63
 6.9396pt>
@@ -979,1712 +985,1722 @@ File: img/data-download-preparation-eda/administrative-1.png Graphic file (type
 png)
 <use img/data-download-preparation-eda/administrative-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/administrative-1.png 
- used on input line 406.
+ used on input line 409.
 (luatex.def)             Requested size: 991.0602pt x 636.93805pt.
+[4]
 
-Package xcolor Warning: Incompatible color definition on input line 408.
-
-[4<./img/data-download-preparation-eda/administrative-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 437.
+Package xcolor Warning: Incompatible color definition on input line 411.
 
 
-Package xcolor Warning: Incompatible color definition on input line 437.
+Package xcolor Warning: Incompatible color definition on input line 440.
 
-<img/data-download-preparation-eda/administrative-2.png, id=243, 991.5444pt x 63
+
+Package xcolor Warning: Incompatible color definition on input line 440.
+
+
+Package xcolor Warning: Incompatible color definition on input line 440.
+
+[5<./img/data-download-preparation-eda/administrative-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 440.
+
+
+Package xcolor Warning: Incompatible color definition on input line 440.
+
+<img/data-download-preparation-eda/administrative-2.png, id=249, 991.5444pt x 63
 6.9396pt>
 File: img/data-download-preparation-eda/administrative-2.png Graphic file (type 
 png)
 <use img/data-download-preparation-eda/administrative-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/administrative-2.png 
- used on input line 439.
+ used on input line 442.
 (luatex.def)             Requested size: 991.54198pt x 636.93805pt.
-[5]
+[6]
 
-Package xcolor Warning: Incompatible color definition on input line 446.
+Package xcolor Warning: Incompatible color definition on input line 449.
 
-[6<./img/data-download-preparation-eda/administrative-2.png>]
+[7<./img/data-download-preparation-eda/administrative-2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 551.
-
-
-Package xcolor Warning: Incompatible color definition on input line 551.
+Package xcolor Warning: Incompatible color definition on input line 554.
 
 
-Underfull \vbox (badness 10000) detected at line 551
+Package xcolor Warning: Incompatible color definition on input line 554.
+
+
+Underfull \vbox (badness 10000) detected at line 554
  []
 
 
-Underfull \vbox (badness 10000) detected at line 551
+Underfull \vbox (badness 10000) detected at line 554
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 551.
+Package xcolor Warning: Incompatible color definition on input line 554.
 
-[7]
+[8]
 
-Package xcolor Warning: Incompatible color definition on input line 551.
+Package xcolor Warning: Incompatible color definition on input line 554.
 
 
-Package xcolor Warning: Incompatible color definition on input line 551.
+Package xcolor Warning: Incompatible color definition on input line 554.
 
-<img/data-download-preparation-eda/protected-areas-1.png, id=257, 743.4174pt x 6
+<img/data-download-preparation-eda/protected-areas-1.png, id=263, 743.4174pt x 6
 36.9396pt>
 File: img/data-download-preparation-eda/protected-areas-1.png Graphic file (type
  png)
 <use img/data-download-preparation-eda/protected-areas-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/protected-areas-1.png
-  used on input line 553.
+  used on input line 556.
 (luatex.def)             Requested size: 743.41559pt x 636.93805pt.
-[8] [9<./img/data-download-preparation-eda/protected-areas-1.png>]
+[9] [10<./img/data-download-preparation-eda/protected-areas-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 571.
-
-
-Package xcolor Warning: Incompatible color definition on input line 583.
+Package xcolor Warning: Incompatible color definition on input line 574.
 
 
-Package xcolor Warning: Incompatible color definition on input line 583.
+Package xcolor Warning: Incompatible color definition on input line 586.
 
 
-Package xcolor Warning: Incompatible color definition on input line 609.
+Package xcolor Warning: Incompatible color definition on input line 586.
 
 
-Package xcolor Warning: Incompatible color definition on input line 616.
+Package xcolor Warning: Incompatible color definition on input line 612.
 
 
-Package xcolor Warning: Incompatible color definition on input line 616.
+Package xcolor Warning: Incompatible color definition on input line 619.
+
+
+Package xcolor Warning: Incompatible color definition on input line 619.
 
 <img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-1.png, id=2
-67, 886.512pt x 479.8728pt>
+73, 886.512pt x 479.8728pt>
 File: img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-1.png 
 Graphic file (type png)
 <use img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/tree-canopy-cover-200
-0-nationwide-1.png  used on input line 618.
+0-nationwide-1.png  used on input line 621.
 (luatex.def)             Requested size: 886.50983pt x 479.87163pt.
-[10]
+[11]
 
-Package xcolor Warning: Incompatible color definition on input line 620.
-
-
-Package xcolor Warning: Incompatible color definition on input line 629.
+Package xcolor Warning: Incompatible color definition on input line 623.
 
 
-Package xcolor Warning: Incompatible color definition on input line 629.
+Package xcolor Warning: Incompatible color definition on input line 632.
+
+
+Package xcolor Warning: Incompatible color definition on input line 632.
 
 <img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-2.png, id=2
-75, 903.375pt x 479.8728pt>
+82, 903.375pt x 479.8728pt>
 File: img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-2.png 
 Graphic file (type png)
 <use img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/tree-canopy-cover-200
-0-nationwide-2.png  used on input line 631.
+0-nationwide-2.png  used on input line 634.
 (luatex.def)             Requested size: 903.3728pt x 479.87163pt.
-[11<./img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-1.png>
+[12<./img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-1.png>
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 637.
+Package xcolor Warning: Incompatible color definition on input line 640.
 
 
-Package xcolor Warning: Incompatible color definition on input line 643.
+Package xcolor Warning: Incompatible color definition on input line 646.
 
 
-Package xcolor Warning: Incompatible color definition on input line 643.
+Package xcolor Warning: Incompatible color definition on input line 646.
 
 <img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-1.
-png, id=281, 1095.6132pt x 556.479pt>
+png, id=287, 1095.6132pt x 556.479pt>
 File: img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-1.png Graphic file (type png)
 <use img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwid
 e-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/year-of-gross-forest-
-cover-loss-nationwide-1.png  used on input line 645.
+cover-loss-nationwide-1.png  used on input line 648.
 (luatex.def)             Requested size: 1095.61053pt x 556.47765pt.
 
-Overfull \hbox (45.13477pt too wide) in paragraph at lines 645--645
+Overfull \hbox (45.13477pt too wide) in paragraph at lines 648--648
  [] 
  []
 
-[12<./img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-2.png>
+[13<./img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-2.png>
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 647.
+Package xcolor Warning: Incompatible color definition on input line 650.
 
 
-Package xcolor Warning: Incompatible color definition on input line 655.
+Package xcolor Warning: Incompatible color definition on input line 658.
 
 
-Package xcolor Warning: Incompatible color definition on input line 655.
+Package xcolor Warning: Incompatible color definition on input line 658.
 
 <img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-2.
-png, id=287, 930.3558pt x 479.8728pt>
+png, id=293, 930.3558pt x 479.8728pt>
 File: img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-2.png Graphic file (type png)
 <use img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwid
 e-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/year-of-gross-forest-
-cover-loss-nationwide-2.png  used on input line 657.
+cover-loss-nationwide-2.png  used on input line 660.
 (luatex.def)             Requested size: 930.35353pt x 479.87163pt.
-[13<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
+[14<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 659.
+Package xcolor Warning: Incompatible color definition on input line 662.
 
 
-Package xcolor Warning: Incompatible color definition on input line 667.
+Package xcolor Warning: Incompatible color definition on input line 670.
 
 
-Package xcolor Warning: Incompatible color definition on input line 667.
+Package xcolor Warning: Incompatible color definition on input line 670.
 
 <img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-3.
-png, id=292, 903.375pt x 479.8728pt>
+png, id=299, 903.375pt x 479.8728pt>
 File: img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-3.png Graphic file (type png)
 <use img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwid
 e-3.png>
 Package luatex.def Info: img/data-download-preparation-eda/year-of-gross-forest-
-cover-loss-nationwide-3.png  used on input line 669.
+cover-loss-nationwide-3.png  used on input line 672.
 (luatex.def)             Requested size: 903.3728pt x 479.87163pt.
-[14<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
+[15<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 689.
+Package xcolor Warning: Incompatible color definition on input line 692.
 
 
-Package xcolor Warning: Incompatible color definition on input line 704.
+Package xcolor Warning: Incompatible color definition on input line 707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 704.
+Package xcolor Warning: Incompatible color definition on input line 707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 704.
+Package xcolor Warning: Incompatible color definition on input line 707.
 
-[15<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
+[16<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-3.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 704.
+Package xcolor Warning: Incompatible color definition on input line 707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 704.
+Package xcolor Warning: Incompatible color definition on input line 707.
 
-<img/data-download-preparation-eda/fires-m6-v1-sel2-1.png, id=303, 688.0104pt x 
+<img/data-download-preparation-eda/fires-m6-v1-sel2-1.png, id=309, 688.0104pt x 
 479.8728pt>
 File: img/data-download-preparation-eda/fires-m6-v1-sel2-1.png Graphic file (typ
 e png)
 <use img/data-download-preparation-eda/fires-m6-v1-sel2-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/fires-m6-v1-sel2-1.pn
-g  used on input line 706.
+g  used on input line 709.
 (luatex.def)             Requested size: 688.00873pt x 479.87163pt.
 
-Package xcolor Warning: Incompatible color definition on input line 708.
+Package xcolor Warning: Incompatible color definition on input line 711.
 
 
-Package xcolor Warning: Incompatible color definition on input line 723.
+Package xcolor Warning: Incompatible color definition on input line 726.
 
 
-Package xcolor Warning: Incompatible color definition on input line 723.
+Package xcolor Warning: Incompatible color definition on input line 726.
 
-<img/data-download-preparation-eda/fires-m6-v1-sel2-2.png, id=304, 688.0104pt x 
+<img/data-download-preparation-eda/fires-m6-v1-sel2-2.png, id=310, 688.0104pt x 
 479.8728pt>
 File: img/data-download-preparation-eda/fires-m6-v1-sel2-2.png Graphic file (typ
 e png)
 <use img/data-download-preparation-eda/fires-m6-v1-sel2-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/fires-m6-v1-sel2-2.pn
-g  used on input line 725.
+g  used on input line 728.
 (luatex.def)             Requested size: 688.00873pt x 479.87163pt.
-[16<./img/data-download-preparation-eda/fires-m6-v1-sel2-1.png>]
+[17<./img/data-download-preparation-eda/fires-m6-v1-sel2-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 744.
-
-
-Package xcolor Warning: Incompatible color definition on input line 754.
+Package xcolor Warning: Incompatible color definition on input line 747.
 
 
-Package xcolor Warning: Incompatible color definition on input line 754.
+Package xcolor Warning: Incompatible color definition on input line 757.
 
-<img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-1.png, id=309, 
+
+Package xcolor Warning: Incompatible color definition on input line 757.
+
+<img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-1.png, id=315, 
 688.0104pt x 479.8728pt>
 File: img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-1.png Grap
 hic file (type png)
 <use img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/fires-m6-v1-sel-2500k
-m-buffer-1.png  used on input line 756.
+m-buffer-1.png  used on input line 759.
 (luatex.def)             Requested size: 688.00873pt x 479.87163pt.
-[17<./img/data-download-preparation-eda/fires-m6-v1-sel2-2.png>]
+[18<./img/data-download-preparation-eda/fires-m6-v1-sel2-2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 758.
-
-
-Package xcolor Warning: Incompatible color definition on input line 768.
+Package xcolor Warning: Incompatible color definition on input line 761.
 
 
-Package xcolor Warning: Incompatible color definition on input line 768.
+Package xcolor Warning: Incompatible color definition on input line 771.
 
-<img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-2.png, id=315, 
+
+Package xcolor Warning: Incompatible color definition on input line 771.
+
+<img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-2.png, id=321, 
 688.0104pt x 479.8728pt>
 File: img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-2.png Grap
 hic file (type png)
 <use img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/fires-m6-v1-sel-2500k
-m-buffer-2.png  used on input line 770.
+m-buffer-2.png  used on input line 773.
 (luatex.def)             Requested size: 688.00873pt x 479.87163pt.
-[18<./img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-1.png>]
+[19<./img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 789.
-
-
-Package xcolor Warning: Incompatible color definition on input line 813.
+Package xcolor Warning: Incompatible color definition on input line 792.
 
 
-Package xcolor Warning: Incompatible color definition on input line 813.
+Package xcolor Warning: Incompatible color definition on input line 816.
 
 
-Package xcolor Warning: Incompatible color definition on input line 813.
-
-[19<./img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 813.
+Package xcolor Warning: Incompatible color definition on input line 816.
 
 
-Package xcolor Warning: Incompatible color definition on input line 813.
+Package xcolor Warning: Incompatible color definition on input line 816.
 
-<img/data-download-preparation-eda/regular-grid-1.png, id=326, 688.0104pt x 488.
+[20<./img/data-download-preparation-eda/fires-m6-v1-sel-2500km-buffer-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 816.
+
+
+Package xcolor Warning: Incompatible color definition on input line 816.
+
+<img/data-download-preparation-eda/regular-grid-1.png, id=332, 688.0104pt x 488.
 0634pt>
 File: img/data-download-preparation-eda/regular-grid-1.png Graphic file (type pn
 g)
 <use img/data-download-preparation-eda/regular-grid-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/regular-grid-1.png  u
-sed on input line 815.
+sed on input line 818.
 (luatex.def)             Requested size: 688.00873pt x 488.06221pt.
 
-Package xcolor Warning: Incompatible color definition on input line 827.
+Package xcolor Warning: Incompatible color definition on input line 830.
 
-[20<./img/data-download-preparation-eda/regular-grid-1.png>]
+[21<./img/data-download-preparation-eda/regular-grid-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 862.
+Package xcolor Warning: Incompatible color definition on input line 865.
 
 
-Package xcolor Warning: Incompatible color definition on input line 862.
+Package xcolor Warning: Incompatible color definition on input line 865.
 
-<img/data-download-preparation-eda/hex-grid-annual-approach-1.png, id=332, 689.4
+<img/data-download-preparation-eda/hex-grid-annual-approach-1.png, id=339, 689.4
 558pt x 479.8728pt>
 File: img/data-download-preparation-eda/hex-grid-annual-approach-1.png Graphic f
 ile (type png)
 <use img/data-download-preparation-eda/hex-grid-annual-approach-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/hex-grid-annual-appro
-ach-1.png  used on input line 864.
+ach-1.png  used on input line 867.
 (luatex.def)             Requested size: 689.45412pt x 479.87163pt.
-[21] [22<./img/data-download-preparation-eda/hex-grid-annual-approach-1.png>]
+[22] [23<./img/data-download-preparation-eda/hex-grid-annual-approach-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 942.
-
-
-Package xcolor Warning: Incompatible color definition on input line 971.
+Package xcolor Warning: Incompatible color definition on input line 945.
 
 
-Package xcolor Warning: Incompatible color definition on input line 971.
+Package xcolor Warning: Incompatible color definition on input line 974.
+
+
+Package xcolor Warning: Incompatible color definition on input line 974.
 
 <img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-by-year-1.p
-ng, id=346, 1145.7204pt x 639.3486pt>
+ng, id=352, 1145.7204pt x 639.3486pt>
 File: img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-by-yea
 r-1.png Graphic file (type png)
 <use img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-by-year
 -1.png>
 Package luatex.def Info: img/data-download-preparation-eda/tree-canopy-cover-200
-0-nationwide-by-year-1.png  used on input line 973.
+0-nationwide-by-year-1.png  used on input line 976.
 (luatex.def)             Requested size: 525.23788pt x 293.09909pt.
-[23]
+[24]
 
-Package xcolor Warning: Incompatible color definition on input line 986.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1022.
+Package xcolor Warning: Incompatible color definition on input line 989.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1022.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1022.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
-[24<./img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-by-yea
+
+Package xcolor Warning: Incompatible color definition on input line 1025.
+
+[25<./img/data-download-preparation-eda/tree-canopy-cover-2000-nationwide-by-yea
 r-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1022.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1022.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 <img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-by
--year-1.png, id=361, 1145.7204pt x 639.3486pt>
+-year-1.png, id=367, 1145.7204pt x 639.3486pt>
 File: img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-by-year-1.png Graphic file (type png)
 <use img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwid
 e-by-year-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/year-of-gross-forest-
-cover-loss-nationwide-by-year-1.png  used on input line 1024.
+cover-loss-nationwide-by-year-1.png  used on input line 1027.
 (luatex.def)             Requested size: 525.23788pt x 293.09909pt.
 
-Package xcolor Warning: Incompatible color definition on input line 1032.
+Package xcolor Warning: Incompatible color definition on input line 1035.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1050.
+Package xcolor Warning: Incompatible color definition on input line 1053.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1050.
+Package xcolor Warning: Incompatible color definition on input line 1053.
 
 <img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwide-by
--period-1.png, id=362, 1145.7204pt x 639.3486pt>
+-period-1.png, id=368, 1145.7204pt x 639.3486pt>
 File: img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-by-period-1.png Graphic file (type png)
 <use img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwid
 e-by-period-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/year-of-gross-forest-
-cover-loss-nationwide-by-period-1.png  used on input line 1052.
+cover-loss-nationwide-by-period-1.png  used on input line 1055.
 (luatex.def)             Requested size: 525.23788pt x 293.09909pt.
-[25<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
+[26<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-by-year-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1057.
+Package xcolor Warning: Incompatible color definition on input line 1060.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1071.
+Package xcolor Warning: Incompatible color definition on input line 1074.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1071.
+Package xcolor Warning: Incompatible color definition on input line 1074.
 
-<img/data-download-preparation-eda/zonal-prov-1.png, id=367, 855.6768pt x 624.41
+<img/data-download-preparation-eda/zonal-prov-1.png, id=373, 855.6768pt x 624.41
 28pt>
 File: img/data-download-preparation-eda/zonal-prov-1.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-1.png  use
-d on input line 1073.
+d on input line 1076.
 (luatex.def)             Requested size: 855.67471pt x 624.41127pt.
-[26<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
+[27<./img/data-download-preparation-eda/year-of-gross-forest-cover-loss-nationwi
 de-by-period-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1075.
+Package xcolor Warning: Incompatible color definition on input line 1078.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1080.
+Package xcolor Warning: Incompatible color definition on input line 1083.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1080.
+Package xcolor Warning: Incompatible color definition on input line 1083.
 
-[27<./img/data-download-preparation-eda/zonal-prov-1.png>]
+[28<./img/data-download-preparation-eda/zonal-prov-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1115.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1129.
+Package xcolor Warning: Incompatible color definition on input line 1118.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1129.
+Package xcolor Warning: Incompatible color definition on input line 1132.
 
-<img/data-download-preparation-eda/zonal-prov-2.png, id=377, 1049.3604pt x 624.4
+
+Package xcolor Warning: Incompatible color definition on input line 1132.
+
+<img/data-download-preparation-eda/zonal-prov-2.png, id=383, 1049.3604pt x 624.4
 128pt>
 File: img/data-download-preparation-eda/zonal-prov-2.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-2.png  use
-d on input line 1131.
+d on input line 1134.
 (luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
-[28]
+[29]
 
-Package xcolor Warning: Incompatible color definition on input line 1133.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1138.
+Package xcolor Warning: Incompatible color definition on input line 1136.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1138.
-
-[29<./img/data-download-preparation-eda/zonal-prov-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1174.
+Package xcolor Warning: Incompatible color definition on input line 1141.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1186.
+Package xcolor Warning: Incompatible color definition on input line 1141.
+
+[30<./img/data-download-preparation-eda/zonal-prov-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1177.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1186.
+Package xcolor Warning: Incompatible color definition on input line 1189.
 
-<img/data-download-preparation-eda/zonal-prov-3.png, id=386, 1049.3604pt x 624.4
+
+Package xcolor Warning: Incompatible color definition on input line 1189.
+
+<img/data-download-preparation-eda/zonal-prov-3.png, id=392, 1049.3604pt x 624.4
 128pt>
 File: img/data-download-preparation-eda/zonal-prov-3.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-3.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-3.png  use
-d on input line 1188.
+d on input line 1191.
 (luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
-[30]
+[31]
 
-Package xcolor Warning: Incompatible color definition on input line 1190.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1195.
+Package xcolor Warning: Incompatible color definition on input line 1193.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1195.
-
-[31<./img/data-download-preparation-eda/zonal-prov-3.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1231.
+Package xcolor Warning: Incompatible color definition on input line 1198.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1244.
+Package xcolor Warning: Incompatible color definition on input line 1198.
+
+[32<./img/data-download-preparation-eda/zonal-prov-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1234.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1244.
+Package xcolor Warning: Incompatible color definition on input line 1247.
 
-<img/data-download-preparation-eda/zonal-prov-4.png, id=396, 1110.0672pt x 399.8
+
+Package xcolor Warning: Incompatible color definition on input line 1247.
+
+<img/data-download-preparation-eda/zonal-prov-4.png, id=402, 1110.0672pt x 399.8
 94pt>
 File: img/data-download-preparation-eda/zonal-prov-4.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-4.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-4.png  use
-d on input line 1246.
+d on input line 1249.
 (luatex.def)             Requested size: 1110.0645pt x 399.893pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1246--1246
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1249--1249
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1248.
+Package xcolor Warning: Incompatible color definition on input line 1251.
 
-[32<./img/data-download-preparation-eda/zonal-prov-4.png>]
+[33<./img/data-download-preparation-eda/zonal-prov-4.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1253.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1253.
+Package xcolor Warning: Incompatible color definition on input line 1256.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1288.
+Package xcolor Warning: Incompatible color definition on input line 1256.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1301.
+Package xcolor Warning: Incompatible color definition on input line 1291.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1301.
+Package xcolor Warning: Incompatible color definition on input line 1304.
 
-<img/data-download-preparation-eda/zonal-prov-5.png, id=401, 1110.0672pt x 399.8
+
+Package xcolor Warning: Incompatible color definition on input line 1304.
+
+<img/data-download-preparation-eda/zonal-prov-5.png, id=407, 1110.0672pt x 399.8
 94pt>
 File: img/data-download-preparation-eda/zonal-prov-5.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-5.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-5.png  use
-d on input line 1303.
+d on input line 1306.
 (luatex.def)             Requested size: 1110.0645pt x 399.893pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1303--1303
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1306--1306
  [] 
  []
 
-[33]
+[34]
 
-Package xcolor Warning: Incompatible color definition on input line 1305.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1310.
+Package xcolor Warning: Incompatible color definition on input line 1308.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1310.
-
-[34<./img/data-download-preparation-eda/zonal-prov-5.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1345.
+Package xcolor Warning: Incompatible color definition on input line 1313.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1358.
+Package xcolor Warning: Incompatible color definition on input line 1313.
+
+[35<./img/data-download-preparation-eda/zonal-prov-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1348.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1358.
+Package xcolor Warning: Incompatible color definition on input line 1361.
 
-<img/data-download-preparation-eda/zonal-prov-6.png, id=410, 1110.0672pt x 267.8
+
+Package xcolor Warning: Incompatible color definition on input line 1361.
+
+<img/data-download-preparation-eda/zonal-prov-6.png, id=416, 1110.0672pt x 267.8
 808pt>
 File: img/data-download-preparation-eda/zonal-prov-6.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-6.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-6.png  use
-d on input line 1360.
+d on input line 1363.
 (luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1360--1360
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1363--1363
  [] 
  []
 
-[35]
+[36]
 
-Package xcolor Warning: Incompatible color definition on input line 1362.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1367.
+Package xcolor Warning: Incompatible color definition on input line 1365.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1367.
+Package xcolor Warning: Incompatible color definition on input line 1370.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1402.
+Package xcolor Warning: Incompatible color definition on input line 1370.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1416.
+Package xcolor Warning: Incompatible color definition on input line 1405.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1416.
+Package xcolor Warning: Incompatible color definition on input line 1419.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1416.
-
-[36<./img/data-download-preparation-eda/zonal-prov-6.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1416.
+Package xcolor Warning: Incompatible color definition on input line 1419.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1416.
+Package xcolor Warning: Incompatible color definition on input line 1419.
 
-<img/data-download-preparation-eda/zonal-prov-7.png, id=419, 1110.0672pt x 399.8
+[37<./img/data-download-preparation-eda/zonal-prov-6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1419.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1419.
+
+<img/data-download-preparation-eda/zonal-prov-7.png, id=426, 1110.0672pt x 399.8
 94pt>
 File: img/data-download-preparation-eda/zonal-prov-7.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-7.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-7.png  use
-d on input line 1418.
+d on input line 1421.
 (luatex.def)             Requested size: 1110.0645pt x 399.893pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1418--1418
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1421--1421
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1420.
+Package xcolor Warning: Incompatible color definition on input line 1423.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1425.
+Package xcolor Warning: Incompatible color definition on input line 1428.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1425.
+Package xcolor Warning: Incompatible color definition on input line 1428.
 
-[37<./img/data-download-preparation-eda/zonal-prov-7.png>]
+[38<./img/data-download-preparation-eda/zonal-prov-7.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1460.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1472.
+Package xcolor Warning: Incompatible color definition on input line 1463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1472.
+Package xcolor Warning: Incompatible color definition on input line 1475.
 
-<img/data-download-preparation-eda/zonal-prov-8.png, id=425, 1110.0672pt x 267.8
+
+Package xcolor Warning: Incompatible color definition on input line 1475.
+
+<img/data-download-preparation-eda/zonal-prov-8.png, id=431, 1110.0672pt x 267.8
 808pt>
 File: img/data-download-preparation-eda/zonal-prov-8.png Graphic file (type png)
 
 <use img/data-download-preparation-eda/zonal-prov-8.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-prov-8.png  use
-d on input line 1474.
+d on input line 1477.
 (luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1474--1474
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1477--1477
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1476.
+Package xcolor Warning: Incompatible color definition on input line 1479.
 
-[38<./img/data-download-preparation-eda/zonal-prov-8.png>]
+[39<./img/data-download-preparation-eda/zonal-prov-8.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1481.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1481.
+Package xcolor Warning: Incompatible color definition on input line 1484.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1519.
+Package xcolor Warning: Incompatible color definition on input line 1484.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1533.
+Package xcolor Warning: Incompatible color definition on input line 1522.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1533.
+Package xcolor Warning: Incompatible color definition on input line 1536.
 
-<img/data-download-preparation-eda/zonal-mun-1.png, id=430, 855.6768pt x 624.412
+
+Package xcolor Warning: Incompatible color definition on input line 1536.
+
+<img/data-download-preparation-eda/zonal-mun-1.png, id=436, 855.6768pt x 624.412
 8pt>
 File: img/data-download-preparation-eda/zonal-mun-1.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-1.png  used
- on input line 1535.
+ on input line 1538.
 (luatex.def)             Requested size: 855.67471pt x 624.41127pt.
-[39]
+[40]
 
-Package xcolor Warning: Incompatible color definition on input line 1537.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1542.
+Package xcolor Warning: Incompatible color definition on input line 1540.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1542.
-
-[40<./img/data-download-preparation-eda/zonal-mun-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1577.
+Package xcolor Warning: Incompatible color definition on input line 1545.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1591.
+Package xcolor Warning: Incompatible color definition on input line 1545.
+
+[41<./img/data-download-preparation-eda/zonal-mun-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1580.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1591.
+Package xcolor Warning: Incompatible color definition on input line 1594.
 
-<img/data-download-preparation-eda/zonal-mun-2.png, id=440, 1049.3604pt x 624.41
+
+Package xcolor Warning: Incompatible color definition on input line 1594.
+
+<img/data-download-preparation-eda/zonal-mun-2.png, id=447, 1049.3604pt x 624.41
 28pt>
 File: img/data-download-preparation-eda/zonal-mun-2.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-2.png  used
- on input line 1593.
+ on input line 1596.
 (luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
-[41]
+[42]
 
-Package xcolor Warning: Incompatible color definition on input line 1595.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1600.
+Package xcolor Warning: Incompatible color definition on input line 1598.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1600.
-
-[42<./img/data-download-preparation-eda/zonal-mun-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1636.
+Package xcolor Warning: Incompatible color definition on input line 1603.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1648.
+Package xcolor Warning: Incompatible color definition on input line 1603.
+
+[43<./img/data-download-preparation-eda/zonal-mun-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1639.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1648.
+Package xcolor Warning: Incompatible color definition on input line 1651.
 
-<img/data-download-preparation-eda/zonal-mun-3.png, id=450, 1049.3604pt x 624.41
+
+Package xcolor Warning: Incompatible color definition on input line 1651.
+
+<img/data-download-preparation-eda/zonal-mun-3.png, id=456, 1049.3604pt x 624.41
 28pt>
 File: img/data-download-preparation-eda/zonal-mun-3.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-3.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-3.png  used
- on input line 1650.
+ on input line 1653.
 (luatex.def)             Requested size: 1049.35783pt x 624.41127pt.
-[43]
+[44]
 
-Package xcolor Warning: Incompatible color definition on input line 1652.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1657.
+Package xcolor Warning: Incompatible color definition on input line 1655.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1657.
-
-[44<./img/data-download-preparation-eda/zonal-mun-3.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1693.
+Package xcolor Warning: Incompatible color definition on input line 1660.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1706.
+Package xcolor Warning: Incompatible color definition on input line 1660.
+
+[45<./img/data-download-preparation-eda/zonal-mun-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1696.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1706.
+Package xcolor Warning: Incompatible color definition on input line 1709.
 
-<img/data-download-preparation-eda/zonal-mun-4.png, id=459, 1110.0672pt x 399.89
+
+Package xcolor Warning: Incompatible color definition on input line 1709.
+
+<img/data-download-preparation-eda/zonal-mun-4.png, id=465, 1110.0672pt x 399.89
 4pt>
 File: img/data-download-preparation-eda/zonal-mun-4.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-4.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-4.png  used
- on input line 1708.
+ on input line 1711.
 (luatex.def)             Requested size: 1110.0645pt x 399.893pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1708--1708
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1711--1711
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1710.
+Package xcolor Warning: Incompatible color definition on input line 1713.
 
-[45<./img/data-download-preparation-eda/zonal-mun-4.png>]
+[46<./img/data-download-preparation-eda/zonal-mun-4.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1715.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1715.
+Package xcolor Warning: Incompatible color definition on input line 1718.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1750.
+Package xcolor Warning: Incompatible color definition on input line 1718.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1763.
+Package xcolor Warning: Incompatible color definition on input line 1753.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1763.
+Package xcolor Warning: Incompatible color definition on input line 1766.
 
-<img/data-download-preparation-eda/zonal-mun-5.png, id=464, 1110.0672pt x 399.89
+
+Package xcolor Warning: Incompatible color definition on input line 1766.
+
+<img/data-download-preparation-eda/zonal-mun-5.png, id=470, 1110.0672pt x 399.89
 4pt>
 File: img/data-download-preparation-eda/zonal-mun-5.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-5.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-5.png  used
- on input line 1765.
+ on input line 1768.
 (luatex.def)             Requested size: 1110.0645pt x 399.893pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1765--1765
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1768--1768
  [] 
  []
 
-[46]
+[47]
 
-Package xcolor Warning: Incompatible color definition on input line 1767.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1772.
+Package xcolor Warning: Incompatible color definition on input line 1770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1772.
-
-[47<./img/data-download-preparation-eda/zonal-mun-5.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1807.
+Package xcolor Warning: Incompatible color definition on input line 1775.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1820.
+Package xcolor Warning: Incompatible color definition on input line 1775.
+
+[48<./img/data-download-preparation-eda/zonal-mun-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1810.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1820.
+Package xcolor Warning: Incompatible color definition on input line 1823.
 
-<img/data-download-preparation-eda/zonal-mun-6.png, id=473, 1110.0672pt x 267.88
+
+Package xcolor Warning: Incompatible color definition on input line 1823.
+
+<img/data-download-preparation-eda/zonal-mun-6.png, id=479, 1110.0672pt x 267.88
 08pt>
 File: img/data-download-preparation-eda/zonal-mun-6.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-6.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-6.png  used
- on input line 1822.
+ on input line 1825.
 (luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1822--1822
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1825--1825
  [] 
  []
 
-[48]
+[49]
 
-Package xcolor Warning: Incompatible color definition on input line 1824.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1829.
+Package xcolor Warning: Incompatible color definition on input line 1827.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1829.
+Package xcolor Warning: Incompatible color definition on input line 1832.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1864.
+Package xcolor Warning: Incompatible color definition on input line 1832.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1879.
+Package xcolor Warning: Incompatible color definition on input line 1867.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1879.
+Package xcolor Warning: Incompatible color definition on input line 1882.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1879.
-
-[49<./img/data-download-preparation-eda/zonal-mun-6.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1879.
+Package xcolor Warning: Incompatible color definition on input line 1882.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1879.
+Package xcolor Warning: Incompatible color definition on input line 1882.
 
-<img/data-download-preparation-eda/zonal-mun-7.png, id=482, 1110.0672pt x 399.89
+[50<./img/data-download-preparation-eda/zonal-mun-6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1882.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1882.
+
+<img/data-download-preparation-eda/zonal-mun-7.png, id=488, 1110.0672pt x 399.89
 4pt>
 File: img/data-download-preparation-eda/zonal-mun-7.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-7.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-7.png  used
- on input line 1881.
+ on input line 1884.
 (luatex.def)             Requested size: 1110.0645pt x 399.893pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1881--1881
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1884--1884
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1883.
+Package xcolor Warning: Incompatible color definition on input line 1886.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1888.
+Package xcolor Warning: Incompatible color definition on input line 1891.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1888.
+Package xcolor Warning: Incompatible color definition on input line 1891.
 
-[50<./img/data-download-preparation-eda/zonal-mun-7.png>]
+[51<./img/data-download-preparation-eda/zonal-mun-7.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1923.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1936.
+Package xcolor Warning: Incompatible color definition on input line 1926.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1936.
+Package xcolor Warning: Incompatible color definition on input line 1939.
 
-<img/data-download-preparation-eda/zonal-mun-8.png, id=487, 1110.0672pt x 267.88
+
+Package xcolor Warning: Incompatible color definition on input line 1939.
+
+<img/data-download-preparation-eda/zonal-mun-8.png, id=494, 1110.0672pt x 267.88
 08pt>
 File: img/data-download-preparation-eda/zonal-mun-8.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-mun-8.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-mun-8.png  used
- on input line 1938.
+ on input line 1941.
 (luatex.def)             Requested size: 1110.0645pt x 267.88014pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 1938--1938
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 1941--1941
  [] 
  []
 
-[51]
+[52]
 
-Package xcolor Warning: Incompatible color definition on input line 1940.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1945.
+Package xcolor Warning: Incompatible color definition on input line 1943.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1945.
+Package xcolor Warning: Incompatible color definition on input line 1948.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1983.
-
-[52<./img/data-download-preparation-eda/zonal-mun-8.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2000.
+Package xcolor Warning: Incompatible color definition on input line 1948.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2000.
+Package xcolor Warning: Incompatible color definition on input line 1986.
 
-<img/data-download-preparation-eda/zonal-pa-1.png, id=498, 840.2592pt x 624.4128
+[53<./img/data-download-preparation-eda/zonal-mun-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2003.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2003.
+
+<img/data-download-preparation-eda/zonal-pa-1.png, id=504, 840.2592pt x 624.4128
 pt>
 File: img/data-download-preparation-eda/zonal-pa-1.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-1.png  used 
-on input line 2002.
+on input line 2005.
 (luatex.def)             Requested size: 840.25716pt x 624.41127pt.
-[53]
+[54]
 
-Package xcolor Warning: Incompatible color definition on input line 2004.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2009.
+Package xcolor Warning: Incompatible color definition on input line 2007.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2009.
-
-[54<./img/data-download-preparation-eda/zonal-pa-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2044.
+Package xcolor Warning: Incompatible color definition on input line 2012.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2053.
+Package xcolor Warning: Incompatible color definition on input line 2012.
+
+[55<./img/data-download-preparation-eda/zonal-pa-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2047.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2053.
+Package xcolor Warning: Incompatible color definition on input line 2056.
 
 
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2055--2059
+Package xcolor Warning: Incompatible color definition on input line 2056.
+
+
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2058--2062
  [][][][][][] 
  []
 
 
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2059--2064
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2062--2067
  [][][][][][] 
  []
 
 
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2064--2066
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2067--2069
  [][][][][][] 
  []
 
 
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2066--2068
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2069--2071
  [][][][][][] 
  []
 
 
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2068--2092
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2071--2095
  [][][][][][] 
  []
 
 
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2092--2116
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2095--2119
  [][][][][][] 
  []
 
 
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2116--2140
- [][][][][][] 
- []
-
-[55]
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2140--2164
- [][][][][][] 
- []
-
-
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2164--2188
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2119--2143
  [][][][][][] 
  []
 
 [56]
-Overfull \hbox (37.78606pt too wide) in alignment at lines 2188--2198
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2143--2167
  [][][][][][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2200.
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2167--2191
+ [][][][][][] 
+ []
+
+[57]
+Overfull \hbox (37.78606pt too wide) in alignment at lines 2191--2201
+ [][][][][][] 
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2215.
+Package xcolor Warning: Incompatible color definition on input line 2203.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2215.
+Package xcolor Warning: Incompatible color definition on input line 2218.
 
-<img/data-download-preparation-eda/zonal-pa-2.png, id=516, 1030.0884pt x 624.412
+
+Package xcolor Warning: Incompatible color definition on input line 2218.
+
+<img/data-download-preparation-eda/zonal-pa-2.png, id=522, 1030.0884pt x 624.412
 8pt>
 File: img/data-download-preparation-eda/zonal-pa-2.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-2.png  used 
-on input line 2217.
+on input line 2220.
 (luatex.def)             Requested size: 1030.08589pt x 624.41127pt.
-[57]
+[58]
 
-Package xcolor Warning: Incompatible color definition on input line 2219.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2224.
+Package xcolor Warning: Incompatible color definition on input line 2222.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2224.
-
-[58<./img/data-download-preparation-eda/zonal-pa-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2260.
+Package xcolor Warning: Incompatible color definition on input line 2227.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2285.
+Package xcolor Warning: Incompatible color definition on input line 2227.
+
+[59<./img/data-download-preparation-eda/zonal-pa-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2263.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2285.
+Package xcolor Warning: Incompatible color definition on input line 2288.
 
-<img/data-download-preparation-eda/zonal-pa-3.png, id=525, 530.4618pt x 639.3486
+
+Package xcolor Warning: Incompatible color definition on input line 2288.
+
+<img/data-download-preparation-eda/zonal-pa-3.png, id=531, 530.4618pt x 639.3486
 pt>
 File: img/data-download-preparation-eda/zonal-pa-3.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-3.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-3.png  used 
-on input line 2287.
+on input line 2290.
 (luatex.def)             Requested size: 530.4605pt x 639.34703pt.
-[59]
+[60]
 
-Package xcolor Warning: Incompatible color definition on input line 2289.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2302.
+Package xcolor Warning: Incompatible color definition on input line 2292.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2302.
+Package xcolor Warning: Incompatible color definition on input line 2305.
 
 
-Overfull \vbox (1.05287pt too high) detected at line 2302
+Package xcolor Warning: Incompatible color definition on input line 2305.
+
+
+Overfull \vbox (1.05287pt too high) detected at line 2305
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2302.
+Package xcolor Warning: Incompatible color definition on input line 2305.
 
-[60<./img/data-download-preparation-eda/zonal-pa-3.png>]
+[61<./img/data-download-preparation-eda/zonal-pa-3.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 2302.
+Package xcolor Warning: Incompatible color definition on input line 2305.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2302.
+Package xcolor Warning: Incompatible color definition on input line 2305.
 
-<img/data-download-preparation-eda/zonal-pa-4.png, id=534, 1030.0884pt x 624.412
+<img/data-download-preparation-eda/zonal-pa-4.png, id=541, 1030.0884pt x 624.412
 8pt>
 File: img/data-download-preparation-eda/zonal-pa-4.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-4.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-4.png  used 
-on input line 2304.
+on input line 2307.
 (luatex.def)             Requested size: 1030.08589pt x 624.41127pt.
-[61]
+[62]
 
-Package xcolor Warning: Incompatible color definition on input line 2306.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2311.
+Package xcolor Warning: Incompatible color definition on input line 2309.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2311.
-
-[62<./img/data-download-preparation-eda/zonal-pa-4.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2347.
+Package xcolor Warning: Incompatible color definition on input line 2314.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2371.
+Package xcolor Warning: Incompatible color definition on input line 2314.
+
+[63<./img/data-download-preparation-eda/zonal-pa-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2350.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2371.
+Package xcolor Warning: Incompatible color definition on input line 2374.
 
-<img/data-download-preparation-eda/zonal-pa-5.png, id=544, 588.2778pt x 639.3486
+
+Package xcolor Warning: Incompatible color definition on input line 2374.
+
+<img/data-download-preparation-eda/zonal-pa-5.png, id=550, 588.2778pt x 639.3486
 pt>
 File: img/data-download-preparation-eda/zonal-pa-5.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-5.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-5.png  used 
-on input line 2373.
+on input line 2376.
 (luatex.def)             Requested size: 588.27635pt x 639.34703pt.
-[63]
+[64]
 
-Package xcolor Warning: Incompatible color definition on input line 2375.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2389.
+Package xcolor Warning: Incompatible color definition on input line 2378.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2389.
+Package xcolor Warning: Incompatible color definition on input line 2392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2389.
-
-[64<./img/data-download-preparation-eda/zonal-pa-5.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2389.
+Package xcolor Warning: Incompatible color definition on input line 2392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2389.
+Package xcolor Warning: Incompatible color definition on input line 2392.
 
-<img/data-download-preparation-eda/zonal-pa-6.png, id=553, 1110.0672pt x 407.602
+[65<./img/data-download-preparation-eda/zonal-pa-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2392.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2392.
+
+<img/data-download-preparation-eda/zonal-pa-6.png, id=559, 1110.0672pt x 407.602
 8pt>
 File: img/data-download-preparation-eda/zonal-pa-6.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-6.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-6.png  used 
-on input line 2391.
+on input line 2394.
 (luatex.def)             Requested size: 1110.0645pt x 407.60179pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 2391--2391
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2394--2394
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2393.
+Package xcolor Warning: Incompatible color definition on input line 2396.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2402.
+Package xcolor Warning: Incompatible color definition on input line 2405.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2402.
+Package xcolor Warning: Incompatible color definition on input line 2405.
 
-[65<./img/data-download-preparation-eda/zonal-pa-6.png>] [66] [67]
+[66<./img/data-download-preparation-eda/zonal-pa-6.png>] [67] [68]
 
-Package xcolor Warning: Incompatible color definition on input line 2549.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2559.
+Package xcolor Warning: Incompatible color definition on input line 2552.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2559.
-
-[68] [69]
-
-Package xcolor Warning: Incompatible color definition on input line 2706.
+Package xcolor Warning: Incompatible color definition on input line 2562.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2720.
+Package xcolor Warning: Incompatible color definition on input line 2562.
+
+[69] [70]
+
+Package xcolor Warning: Incompatible color definition on input line 2709.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2720.
+Package xcolor Warning: Incompatible color definition on input line 2723.
 
-<img/data-download-preparation-eda/zonal-pa-7.png, id=577, 1110.0672pt x 407.602
+
+Package xcolor Warning: Incompatible color definition on input line 2723.
+
+<img/data-download-preparation-eda/zonal-pa-7.png, id=583, 1110.0672pt x 407.602
 8pt>
 File: img/data-download-preparation-eda/zonal-pa-7.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-7.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-7.png  used 
-on input line 2722.
+on input line 2725.
 (luatex.def)             Requested size: 1110.0645pt x 407.60179pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 2722--2722
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2725--2725
  [] 
  []
 
-[70]
+[71]
 
-Package xcolor Warning: Incompatible color definition on input line 2724.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2729.
+Package xcolor Warning: Incompatible color definition on input line 2727.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2729.
-
-[71<./img/data-download-preparation-eda/zonal-pa-7.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2764.
+Package xcolor Warning: Incompatible color definition on input line 2732.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2778.
+Package xcolor Warning: Incompatible color definition on input line 2732.
+
+[72<./img/data-download-preparation-eda/zonal-pa-7.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2767.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2778.
+Package xcolor Warning: Incompatible color definition on input line 2781.
 
-<img/data-download-preparation-eda/zonal-pa-8.png, id=587, 1110.0672pt x 272.698
+
+Package xcolor Warning: Incompatible color definition on input line 2781.
+
+<img/data-download-preparation-eda/zonal-pa-8.png, id=593, 1110.0672pt x 272.698
 8pt>
 File: img/data-download-preparation-eda/zonal-pa-8.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-8.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-8.png  used 
-on input line 2780.
+on input line 2783.
 (luatex.def)             Requested size: 1110.0645pt x 272.69812pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 2780--2780
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2783--2783
  [] 
  []
 
-[72]
+[73]
 
-Package xcolor Warning: Incompatible color definition on input line 2782.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2787.
+Package xcolor Warning: Incompatible color definition on input line 2785.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2787.
+Package xcolor Warning: Incompatible color definition on input line 2790.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2822.
+Package xcolor Warning: Incompatible color definition on input line 2790.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2839.
+Package xcolor Warning: Incompatible color definition on input line 2825.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2839.
+Package xcolor Warning: Incompatible color definition on input line 2842.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2839.
-
-[73<./img/data-download-preparation-eda/zonal-pa-8.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2839.
+Package xcolor Warning: Incompatible color definition on input line 2842.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2839.
+Package xcolor Warning: Incompatible color definition on input line 2842.
 
-<img/data-download-preparation-eda/zonal-pa-9.png, id=596, 1110.0672pt x 407.602
+[74<./img/data-download-preparation-eda/zonal-pa-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2842.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2842.
+
+<img/data-download-preparation-eda/zonal-pa-9.png, id=602, 1110.0672pt x 407.602
 8pt>
 File: img/data-download-preparation-eda/zonal-pa-9.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-9.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-9.png  used 
-on input line 2841.
+on input line 2844.
 (luatex.def)             Requested size: 1110.0645pt x 407.60179pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 2841--2841
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2844--2844
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2843.
+Package xcolor Warning: Incompatible color definition on input line 2846.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2851.
+Package xcolor Warning: Incompatible color definition on input line 2854.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2851.
+Package xcolor Warning: Incompatible color definition on input line 2854.
 
-[74<./img/data-download-preparation-eda/zonal-pa-9.png>]
+[75<./img/data-download-preparation-eda/zonal-pa-9.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 2886.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2896.
+Package xcolor Warning: Incompatible color definition on input line 2889.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2896.
+Package xcolor Warning: Incompatible color definition on input line 2899.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2931.
-
-[75]
-
-Package xcolor Warning: Incompatible color definition on input line 2945.
+Package xcolor Warning: Incompatible color definition on input line 2899.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2945.
+Package xcolor Warning: Incompatible color definition on input line 2934.
 
-<img/data-download-preparation-eda/zonal-pa-10.png, id=605, 1110.0672pt x 272.69
+[76]
+
+Package xcolor Warning: Incompatible color definition on input line 2948.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2948.
+
+<img/data-download-preparation-eda/zonal-pa-10.png, id=611, 1110.0672pt x 272.69
 88pt>
 File: img/data-download-preparation-eda/zonal-pa-10.png Graphic file (type png)
 <use img/data-download-preparation-eda/zonal-pa-10.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-pa-10.png  used
- on input line 2947.
+ on input line 2950.
 (luatex.def)             Requested size: 1110.0645pt x 272.69812pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 2947--2947
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 2950--2950
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2949.
+Package xcolor Warning: Incompatible color definition on input line 2952.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2954.
+Package xcolor Warning: Incompatible color definition on input line 2957.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2954.
+Package xcolor Warning: Incompatible color definition on input line 2957.
 
-[76<./img/data-download-preparation-eda/zonal-pa-10.png>]
+[77<./img/data-download-preparation-eda/zonal-pa-10.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 2993.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3008.
+Package xcolor Warning: Incompatible color definition on input line 2996.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3008.
+Package xcolor Warning: Incompatible color definition on input line 3011.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-1.png, id=610, 857.604pt
+
+Package xcolor Warning: Incompatible color definition on input line 3011.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-1.png, id=616, 857.604pt
  x 624.4128pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-1.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-1.png  used on input line 3010.
+1.png  used on input line 3013.
 (luatex.def)             Requested size: 857.60191pt x 624.41127pt.
-[77]
-<img/data-download-preparation-eda/zonal-long-term-grid-2.png, id=616, 857.604pt
+[78]
+<img/data-download-preparation-eda/zonal-long-term-grid-2.png, id=622, 857.604pt
  x 309.7974pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-2.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-2.png  used on input line 3016.
+2.png  used on input line 3019.
 (luatex.def)             Requested size: 857.60191pt x 309.79663pt.
-[78<./img/data-download-preparation-eda/zonal-long-term-grid-1.png>]
+[79<./img/data-download-preparation-eda/zonal-long-term-grid-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3018.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3033.
+Package xcolor Warning: Incompatible color definition on input line 3021.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3033.
+Package xcolor Warning: Incompatible color definition on input line 3036.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-3.png, id=621, 1110.0672
+
+Package xcolor Warning: Incompatible color definition on input line 3036.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-3.png, id=627, 1110.0672
 pt x 420.1296pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-3.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-3.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-3.png  used on input line 3035.
+3.png  used on input line 3038.
 (luatex.def)             Requested size: 1110.0645pt x 420.12857pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3035--3035
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3038--3038
  [] 
  []
 
-[79<./img/data-download-preparation-eda/zonal-long-term-grid-2.png>]
+[80<./img/data-download-preparation-eda/zonal-long-term-grid-2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3037.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3050.
+Package xcolor Warning: Incompatible color definition on input line 3040.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3050.
+Package xcolor Warning: Incompatible color definition on input line 3053.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-4.png, id=626, 1110.0672
+
+Package xcolor Warning: Incompatible color definition on input line 3053.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-4.png, id=632, 1110.0672
 pt x 420.1296pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-4.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-4.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-4.png  used on input line 3052.
+4.png  used on input line 3055.
 (luatex.def)             Requested size: 1110.0645pt x 420.12857pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3052--3052
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3055--3055
  [] 
  []
 
-[80<./img/data-download-preparation-eda/zonal-long-term-grid-3.png>]
+[81<./img/data-download-preparation-eda/zonal-long-term-grid-3.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3054.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3073.
+Package xcolor Warning: Incompatible color definition on input line 3057.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3073.
+Package xcolor Warning: Incompatible color definition on input line 3076.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-5.png, id=631, 1110.0672
+
+Package xcolor Warning: Incompatible color definition on input line 3076.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-5.png, id=638, 1110.0672
 pt x 563.2242pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-5.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-5.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-5.png  used on input line 3075.
+5.png  used on input line 3078.
 (luatex.def)             Requested size: 1110.0645pt x 563.22282pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3075--3075
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3078--3078
  [] 
  []
 
-[81<./img/data-download-preparation-eda/zonal-long-term-grid-4.png>]
+[82<./img/data-download-preparation-eda/zonal-long-term-grid-4.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3077.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3097.
+Package xcolor Warning: Incompatible color definition on input line 3080.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3097.
+Package xcolor Warning: Incompatible color definition on input line 3100.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3097.
-
-[82<./img/data-download-preparation-eda/zonal-long-term-grid-5.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3097.
+Package xcolor Warning: Incompatible color definition on input line 3100.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3097.
+Package xcolor Warning: Incompatible color definition on input line 3100.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-6.png, id=641, 1110.0672
+[83<./img/data-download-preparation-eda/zonal-long-term-grid-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3100.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-6.png, id=647, 1110.0672
 pt x 562.2606pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-6.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-6.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-6.png  used on input line 3099.
+6.png  used on input line 3102.
 (luatex.def)             Requested size: 1110.0645pt x 562.25923pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3099--3099
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3102--3102
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3101.
+Package xcolor Warning: Incompatible color definition on input line 3104.
 
-[83<./img/data-download-preparation-eda/zonal-long-term-grid-6.png>]
+[84<./img/data-download-preparation-eda/zonal-long-term-grid-6.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3115.
+Package xcolor Warning: Incompatible color definition on input line 3118.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3115.
+Package xcolor Warning: Incompatible color definition on input line 3118.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-7.png, id=646, 1110.0672
+<img/data-download-preparation-eda/zonal-long-term-grid-7.png, id=652, 1110.0672
 pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-7.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-7.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-7.png  used on input line 3117.
+7.png  used on input line 3120.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3117--3117
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3120--3120
  [] 
  []
 
-<img/data-download-preparation-eda/zonal-long-term-grid-8.png, id=647, 1110.0672
+<img/data-download-preparation-eda/zonal-long-term-grid-8.png, id=653, 1110.0672
 pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-8.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-8.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-8.png  used on input line 3123.
+8.png  used on input line 3126.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3123--3123
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3126--3126
  [] 
  []
 
-[84<./img/data-download-preparation-eda/zonal-long-term-grid-7.png>]
-<img/data-download-preparation-eda/zonal-long-term-grid-9.png, id=652, 1110.0672
+[85<./img/data-download-preparation-eda/zonal-long-term-grid-7.png>]
+<img/data-download-preparation-eda/zonal-long-term-grid-9.png, id=658, 1110.0672
 pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-9.png Graphic file 
 (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-9.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-9.png  used on input line 3129.
+9.png  used on input line 3132.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3129--3129
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3132--3132
  [] 
  []
 
-[85<./img/data-download-preparation-eda/zonal-long-term-grid-8.png>]
+[86<./img/data-download-preparation-eda/zonal-long-term-grid-8.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3131.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3145.
+Package xcolor Warning: Incompatible color definition on input line 3134.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3145.
+Package xcolor Warning: Incompatible color definition on input line 3148.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-10.png, id=657, 1110.067
+
+Package xcolor Warning: Incompatible color definition on input line 3148.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-10.png, id=663, 1110.067
 2pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-10.png Graphic file
  (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-10.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-10.png  used on input line 3147.
+10.png  used on input line 3150.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3147--3147
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3150--3150
  [] 
  []
 
-[86<./img/data-download-preparation-eda/zonal-long-term-grid-9.png>]
-<img/data-download-preparation-eda/zonal-long-term-grid-11.png, id=662, 1110.067
+[87<./img/data-download-preparation-eda/zonal-long-term-grid-9.png>]
+<img/data-download-preparation-eda/zonal-long-term-grid-11.png, id=668, 1110.067
 2pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-11.png Graphic file
  (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-11.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-11.png  used on input line 3153.
+11.png  used on input line 3156.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3153--3153
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3156--3156
  [] 
  []
 
-[87<./img/data-download-preparation-eda/zonal-long-term-grid-10.png>]
-<img/data-download-preparation-eda/zonal-long-term-grid-12.png, id=667, 1110.067
+[88<./img/data-download-preparation-eda/zonal-long-term-grid-10.png>]
+<img/data-download-preparation-eda/zonal-long-term-grid-12.png, id=673, 1110.067
 2pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-12.png Graphic file
  (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-12.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-12.png  used on input line 3159.
+12.png  used on input line 3162.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3159--3159
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3162--3162
  [] 
  []
 
-[88<./img/data-download-preparation-eda/zonal-long-term-grid-11.png>]
+[89<./img/data-download-preparation-eda/zonal-long-term-grid-11.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3161.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3176.
+Package xcolor Warning: Incompatible color definition on input line 3164.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3176.
+Package xcolor Warning: Incompatible color definition on input line 3179.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-13.png, id=672, 1110.067
+
+Package xcolor Warning: Incompatible color definition on input line 3179.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-13.png, id=678, 1110.067
 2pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-13.png Graphic file
  (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-13.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-13.png  used on input line 3178.
+13.png  used on input line 3181.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3178--3178
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3181--3181
  [] 
  []
 
-[89<./img/data-download-preparation-eda/zonal-long-term-grid-12.png>]
+[90<./img/data-download-preparation-eda/zonal-long-term-grid-12.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3180.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3195.
+Package xcolor Warning: Incompatible color definition on input line 3183.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3195.
+Package xcolor Warning: Incompatible color definition on input line 3198.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-14.png, id=677, 1110.067
+
+Package xcolor Warning: Incompatible color definition on input line 3198.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-14.png, id=683, 1110.067
 2pt x 396.0396pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-14.png Graphic file
  (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-14.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-14.png  used on input line 3197.
+14.png  used on input line 3200.
 (luatex.def)             Requested size: 1110.0645pt x 396.03862pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3197--3197
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3200--3200
  [] 
  []
 
-[90<./img/data-download-preparation-eda/zonal-long-term-grid-13.png>]
+[91<./img/data-download-preparation-eda/zonal-long-term-grid-13.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3199.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3214.
+Package xcolor Warning: Incompatible color definition on input line 3202.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3214.
+Package xcolor Warning: Incompatible color definition on input line 3217.
 
-<img/data-download-preparation-eda/zonal-long-term-grid-15.png, id=682, 857.604p
+
+Package xcolor Warning: Incompatible color definition on input line 3217.
+
+<img/data-download-preparation-eda/zonal-long-term-grid-15.png, id=689, 857.604p
 t x 624.4128pt>
 File: img/data-download-preparation-eda/zonal-long-term-grid-15.png Graphic file
  (type png)
 <use img/data-download-preparation-eda/zonal-long-term-grid-15.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-long-term-grid-
-15.png  used on input line 3216.
+15.png  used on input line 3219.
 (luatex.def)             Requested size: 857.60191pt x 624.41127pt.
-[91<./img/data-download-preparation-eda/zonal-long-term-grid-14.png>]
+[92<./img/data-download-preparation-eda/zonal-long-term-grid-14.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3222.
+Package xcolor Warning: Incompatible color definition on input line 3225.
 
-[92<./img/data-download-preparation-eda/zonal-long-term-grid-15.png>]
+[93<./img/data-download-preparation-eda/zonal-long-term-grid-15.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3233.
+Package xcolor Warning: Incompatible color definition on input line 3236.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3233.
+Package xcolor Warning: Incompatible color definition on input line 3236.
 
-<img/data-download-preparation-eda/zonal-annual-grid-1.png, id=693, 895.1844pt x
+<img/data-download-preparation-eda/zonal-annual-grid-1.png, id=699, 895.1844pt x
  624.4128pt>
 File: img/data-download-preparation-eda/zonal-annual-grid-1.png Graphic file (ty
 pe png)
 <use img/data-download-preparation-eda/zonal-annual-grid-1.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-annual-grid-1.p
-ng  used on input line 3235.
+ng  used on input line 3238.
 (luatex.def)             Requested size: 895.18222pt x 624.41127pt.
-[93]
+[94]
 
-Package xcolor Warning: Incompatible color definition on input line 3237.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3261.
+Package xcolor Warning: Incompatible color definition on input line 3240.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3261.
+Package xcolor Warning: Incompatible color definition on input line 3264.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3261.
-
-[94<./img/data-download-preparation-eda/zonal-annual-grid-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3261.
+Package xcolor Warning: Incompatible color definition on input line 3264.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3261.
+Package xcolor Warning: Incompatible color definition on input line 3264.
 
-<img/data-download-preparation-eda/zonal-annual-grid-2.png, id=702, 1110.0672pt 
+[95<./img/data-download-preparation-eda/zonal-annual-grid-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3264.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3264.
+
+<img/data-download-preparation-eda/zonal-annual-grid-2.png, id=708, 1110.0672pt 
 x 569.0058pt>
 File: img/data-download-preparation-eda/zonal-annual-grid-2.png Graphic file (ty
 pe png)
 <use img/data-download-preparation-eda/zonal-annual-grid-2.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-annual-grid-2.p
-ng  used on input line 3263.
+ng  used on input line 3266.
 (luatex.def)             Requested size: 1110.0645pt x 569.00441pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3263--3263
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3266--3266
  [] 
  []
 
-[95]
+[96]
 
-Package xcolor Warning: Incompatible color definition on input line 3265.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3287.
+Package xcolor Warning: Incompatible color definition on input line 3268.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3287.
+Package xcolor Warning: Incompatible color definition on input line 3290.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3287.
-
-[96<./img/data-download-preparation-eda/zonal-annual-grid-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3287.
+Package xcolor Warning: Incompatible color definition on input line 3290.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3287.
+Package xcolor Warning: Incompatible color definition on input line 3290.
 
-<img/data-download-preparation-eda/zonal-annual-grid-3.png, id=711, 1110.0672pt 
+[97<./img/data-download-preparation-eda/zonal-annual-grid-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3290.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3290.
+
+<img/data-download-preparation-eda/zonal-annual-grid-3.png, id=717, 1110.0672pt 
 x 569.9694pt>
 File: img/data-download-preparation-eda/zonal-annual-grid-3.png Graphic file (ty
 pe png)
 <use img/data-download-preparation-eda/zonal-annual-grid-3.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-annual-grid-3.p
-ng  used on input line 3289.
+ng  used on input line 3292.
 (luatex.def)             Requested size: 1110.0645pt x 569.96802pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3289--3289
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3292--3292
  [] 
  []
 
-[97]
+[98]
 
-Package xcolor Warning: Incompatible color definition on input line 3291.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3313.
+Package xcolor Warning: Incompatible color definition on input line 3294.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3313.
+Package xcolor Warning: Incompatible color definition on input line 3316.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3313.
-
-[98<./img/data-download-preparation-eda/zonal-annual-grid-3.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3313.
+Package xcolor Warning: Incompatible color definition on input line 3316.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3313.
+Package xcolor Warning: Incompatible color definition on input line 3316.
 
-<img/data-download-preparation-eda/zonal-annual-grid-4.png, id=720, 1110.0672pt 
+[99<./img/data-download-preparation-eda/zonal-annual-grid-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3316.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3316.
+
+<img/data-download-preparation-eda/zonal-annual-grid-4.png, id=727, 1110.0672pt 
 x 566.5968pt>
 File: img/data-download-preparation-eda/zonal-annual-grid-4.png Graphic file (ty
 pe png)
 <use img/data-download-preparation-eda/zonal-annual-grid-4.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-annual-grid-4.p
-ng  used on input line 3315.
+ng  used on input line 3318.
 (luatex.def)             Requested size: 1110.0645pt x 566.59541pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3315--3315
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3318--3318
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3317.
+Package xcolor Warning: Incompatible color definition on input line 3320.
 
-[99<./img/data-download-preparation-eda/zonal-annual-grid-4.png>]
+[100<./img/data-download-preparation-eda/zonal-annual-grid-4.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3339.
+Package xcolor Warning: Incompatible color definition on input line 3342.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3339.
+Package xcolor Warning: Incompatible color definition on input line 3342.
 
-<img/data-download-preparation-eda/zonal-annual-grid-5.png, id=725, 1110.0672pt 
+<img/data-download-preparation-eda/zonal-annual-grid-5.png, id=732, 1110.0672pt 
 x 569.0058pt>
 File: img/data-download-preparation-eda/zonal-annual-grid-5.png Graphic file (ty
 pe png)
 <use img/data-download-preparation-eda/zonal-annual-grid-5.png>
 Package luatex.def Info: img/data-download-preparation-eda/zonal-annual-grid-5.p
-ng  used on input line 3341.
+ng  used on input line 3344.
 (luatex.def)             Requested size: 1110.0645pt x 569.00441pt.
 
-Overfull \hbox (59.58873pt too wide) in paragraph at lines 3341--3341
+Overfull \hbox (59.58873pt too wide) in paragraph at lines 3344--3344
  [] 
  []
 
-[100] [101<./img/data-download-preparation-eda/zonal-annual-grid-5.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3378.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3378.
+[101] [102<./img/data-download-preparation-eda/zonal-annual-grid-5.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3381.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3381.
 (./data-download-preparation-eda.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3378.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3378.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3381.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3381.
 Package rerunfilecheck Info: File `data-download-preparation-eda.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: 52FFDF7F897F3D663303804EB4AF1745;9255.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3378.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3381.
 )
 
 Here is how much of LuaTeX's memory you used:
- 14175 strings out of 481365
- 156257,552014 words of node,token memory allocated
+ 14176 strings out of 481365
+ 156260,552014 words of node,token memory allocated
  4246 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 550 kern, 1 glyph, 259 attribute, 65 glue_s
 pec, 259 attribute_list, 1 write nodes
-   avail lists: 1:1,2:2882,3:234,4:821,5:1328,6:83,7:13095,8:93,9:2206,10:20,11:
+   avail lists: 1:2,2:2882,3:236,4:821,5:1328,6:83,7:13095,8:93,9:2206,10:20,11:
 264
  29861 multiletter control sequences out of 65536+600000
  145 fonts using 10970747 bytes
@@ -2697,11 +2713,11 @@ texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
 no/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on data-download-preparation-eda.pdf (101 pages, 23127911 bytes).
+Output written on data-download-preparation-eda.pdf (102 pages, 23134715 bytes).
 
 
-PDF statistics: 791 PDF objects out of 1000 (max. 8388607)
- 610 compressed objects within 7 object streams
- 185 named destinations out of 1000 (max. 131072)
+PDF statistics: 797 PDF objects out of 1000 (max. 8388607)
+ 615 compressed objects within 7 object streams
+ 186 named destinations out of 1000 (max. 131072)
  305 words of extra memory for PDF output out of 10000 (max. 100000000)
 
