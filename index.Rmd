@@ -1,0 +1,263 @@
+---
+title: "Deforestación y fuego en República Dominicana durante el siglo XXI"
+author: "José Ramón Martínez Batlle <br> jmartinez19@uasd.edu.do <br> Universidad Autónoma de Santo Domingo"
+date:  noviembre, 2021 <br> Universidad Autónoma de Santo Domingo https://geofis.github.io/forest-loss-fire-reproducible
+output:
+  revealjs::revealjs_presentation:
+    template: slides/ref/defaultmodificada.html
+    transition: fade
+bibliography: slides/ref/biblio.bib
+csl: slides/ref/apa.csl
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css, include=FALSE}
+.reveal p {
+  text-align: left;
+}
+.reveal ul {
+  display: block;
+}
+.reveal ol {
+  display: block;
+}  
+.extrasmall {
+  font-size: 2px;
+}
+```
+
+# ¿Por qué estudiar deforestación y fuego de manera conjunta?
+
+- Se supone que están relacionados, ¿no? Buej, ese es el punto.
+
+<!-- - El fuego es, sobre todo, una práctica usada en la agricultura. -->
+
+![](slides/img/nasa-firms-example.jpg)
+
+##
+
+![](slides/img/burned-pine-forest-bahoruco.jpg)
+
+##
+
+![](slides/img/fire-mapioro.jpg)
+
+##
+
+![](slides/img/palma.gif)
+
+
+# ¿Qué sabemos sobre la relación fuego/deforestación en RD?
+
+- Que el fuego es un __impulsor__ de la deforestación, y que lo es sobre todo en el __pinar__ [@Lloyd558346].
+
+- Que __hemos perdido más bosque__ del que hemos ganado [@hansen2013high].
+
+- Que hubo __fuego en el Holoceno__ [@kennedy20064000; @horn2000prehistoric].
+
+## ¿Qué sabemos sobre la relación fuego/deforestación?
+
+- Que hay una __relación estrecha entre pérdida de bosque y agricultura migratoria__, esta última dirigida por prácticas de __tumba y quema comenzando en pequeños aclareos__ [@camara1997republica; @zweifler1994landuse; @Lloyd558346; @wendell1974agricultura; @ovalle1984analisis; @panamericana1967reconocimiento; @tolentino1998inventario; @myers2004evaluacion].
+
+- Por lo tanto, medir el grado de __asociación__---*niankesea* "estadística"---entre __fuego y deforestación__, es crucial para estimar __qué tanto contribuye la agricultura__ de subsistencia a la deforestación.
+
+# El problema
+
+- PERO, __con las fuentes nacionales esto no es posible__, porque,
+
+  - o __no son consistentes__ espacial y/o temporalmente,
+  
+  - o usan unidades territoriales __inhomogéneas__.
+
+## El problema
+
+- NO TODO ESTÁ PERDIDO, hay opciones.
+
+<img width="500" src="slides/img/nasa-firms-web.jpg">
+<img width="500" src="slides/img/global-forest-change-glad.jpg">
+
+
+## El problema
+
+- OK, tenemos los datos idóneos, pero surge otro problema: un simple análisis de correlación---y más aún, una modelización---con datos espacializados, normalmente es inviable porque se **viola el principio de independencia de las observaciones** (e.g. datos autocorrelacionados espacialmente).
+
+- También tenemos la solución: **modelos espaciales autorregresivos**.
+
+## 
+
+![](slides/img/here-to-help.png)
+
+XKCD comics: https://xkcd.com/1831/
+
+# ¿Qué me planteé?
+
+- **Determinar si existe asociación entre fuego y deforestación, qué tan fuerte es, cuando y dónde**.
+
+- "Ya que" se procesarían millones de celdas, de paso,
+
+  - explorar patrones por __provincias, municipios y AAPP__,
+  
+  - determinar si hay zonas de __concentración significativa__ del fuego y la deforestación,
+  
+  - caracterizar la __composición de la deforestación__ según el tamaño de las zonas deforestadas,
+  
+  - determinar si hay alguna __tendencia__ sostenida.
+
+# ¿Cómo maomeno?
+
+- Cumpliendo los siguientes criterios:
+
+  - Usando __software libre__.
+  
+  - Usando __datos abiertos__.
+  
+  - Creando __script reproducible__ abierto al mundo.
+
+![](slides/img/ossoftware.jpg){width=75%}
+
+## ¿Cómo maomeno?
+
+![](slides/img/loss-year-2001-2018.jpg)
+
+## ¿Cómo maomeno?
+
+![](slides/img/modis-dataset-2001-2018.jpg)
+
+## ¿Cómo maomeno?
+
+- Enfoque de largo plazo.
+
+![](slides/img/long-term-approach-hex-grid-anddr-forest-cover-2000.jpg){width=90%}
+
+## ¿Cómo maomeno?
+
+- Enfoque anual.
+
+![](slides/img/annual-approach-hex-grid-and-2p5-km-buffer-around-forest-loss-2013-as-example.jpg){width=90%}
+
+# ¿Dónde están los resultados?
+
+![](slides/img/preprint.jpg){width=60%}
+
+<small>Por el momento, aquí: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1.full</small>
+
+##
+
+![](slides/img/reproducible-script-1.jpg)
+
+<small>https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf</small>
+
+## 
+
+![](slides/img/reproducible-script-2.jpg)
+
+<small>https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf</small>
+
+## 
+
+![](slides/img/reproducible-script-3.jpg)
+
+<small>https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf</small>
+
+## 
+
+![](slides/img/reproducible-script-4.jpg)
+
+<small>https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf</small>
+
+## 
+
+![](slides/img/reproducible-script-5.jpg)
+
+<small>https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf</small>
+
+##
+
+![](slides/img/loss-2001-2018-pa-plot-time-series.jpg){width=63%}
+
+# ¿Qué encontré?
+
+## ¿Qué encontré?
+
+![](slides/img/forest-loss-fires-2001-2018-and-2012-2018-table.jpg)
+
+## ¿Qué encontré?
+
+![](slides/img/forest-loss-fires-2001-2018-and-2012-2018.jpg)
+
+## ¿Qué encontré?
+
+Ejemplos simplificados de autocorrelación:
+
+![](slides/img/spatial-autocorrelation-types.jpg)
+
+Fuente: http://dx.doi.org/10.4067/S0250-71612012000300004 [@SUAREZ2012]
+
+## ¿Qué encontré?
+
+![](slides/img/lisa-maps-forest-loss-fires-2001-2018-and-2012-2018.jpg){width=90%}
+
+## ¿Qué encontré?
+
+__"En promedio, cada anomalía térmica/punto de calor/fuego detectado por los sensores MODIS y VIIRS, se asoció con 1.5 ha y 3 ha de pérdida de bosque, respectivamente"__
+
+![](slides/img/spatial-error-model-fitting-forest-loss-fire-density-2001-2018-and-2012-2018.jpg)
+
+## ¿Qué encontré?
+
+![](slides/img/composition-of-annual-forest-loss-by-clearing-size.jpg){width=60%}
+
+## ¿Qué encontré?
+
+![](slides/img/yearly-averages-of-forest-loss-and-fire-density-per-100-km2-time-series.jpg){width=65%}
+
+## ¿Qué encontré?
+
+![](slides/img/lisa-maps-yearly-forest-loss-large-and-small-clearings.jpg){width=60%}
+
+## ¿Qué encontré?
+
+![](slides/img/lisa-maps-yearly-fire.jpg){width=60%}
+
+## ¿Qué encontré?
+
+![](slides/img/lisa-maps-yearly-forest-loss-small-clearings-and-fires.jpg){width=60%}
+
+## ¿Qué encontré?
+
+![](slides/img/lisa-maps-yearly-forest-loss-small-clearings-and-fires-annotated.jpg){width=60%}
+
+## ¿Qué encontré?
+
+- El fuego no es buen predictor de la pérdida de bosque en determinadas regiones
+
+![](slides/img/regions-for-annual-models.jpg){width=35%}
+![](slides/img/number-of-years-models-non-significant-table.jpg){width=70%}
+
+## ¿Qué encontré? Recapitulando
+
+- Hemos perdido bosque, y mucho (~3100 km<sup>2</sup>)
+
+- El fuego y la pérdida de bosque están __significativamente asociados__, con un tamaño de efecto importante.
+
+- Las mayores concentraciones de pérdida de bosque y fuego se dieron en __Cord. Central, S. de Bahoruco, Los Haitises/Samaná y las regiones Noroeste y Este__.
+
+- __Dicha asociación fue débil/intermitente__ en el Este, donde el fuego disminuyó y la deforestación aumentó.
+
+- El área deforestada en pequeños (<1 ha) y grandes (>1 ha) desmontes, __¡es básicamente idéntica!__ (~1550 km<sup>2</sup> c/u).
+
+# Gracias por su atención
+
+Vínculo de la presentación
+
+https://geofis.github.io/forest-loss-fire-reproducible
+
+# Referencias
+
+<section style="font-size: 16px; text-align: left;">
+
