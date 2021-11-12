@@ -6,7 +6,7 @@ If you want to check the results of the reproducible code, check the PDF version
 
 If you want to reproduce the code, follow these instructions:
 
-1. Clone this repo to your computer.
+1. Clone this repo to your computer. From a terminal window, this should work: `git clone https://github.com/geofis/forest-loss-fire-reproducible.git`. If you are using RStudio on a desktop version, use the `New Project>Version Control>Git` pipeline.
 
 2. Visit [ZENODO](https://doi.org/10.5281/zenodo.5682103), download the dataset `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
 
@@ -34,7 +34,7 @@ If the packages listed in the `R/load-packages.R` script (and their dependencies
 
 This is the easiest way, because both RStudio IDE and package dependencies would be pulled from a Docker image. However, keep in mind that you will need at least 5 GB of free disk space.
 
-1. Run the `jmartinez19/rstudio` Docker image. This may take a while the first time you run it.
+1. From the cloned repo directory (see ["How to reproduce"](#how-to-reproduce) for instructions on cloning), run the `jmartinez19/rstudio` Docker image. This may take a while the first time you run it.
 
 ```
 docker run --rm \
@@ -52,11 +52,11 @@ docker run --rm \
 
 5. Run the code chunks in the reproducible scripts, or alternately knit the notebooks. Keep in mind that if you knit from RStudio, a message will ask you to allow popup windows, which can be done in the address bar of the browser.
 
-### Using R from a Docker
+### Using R from a Docker container
 
-This method uses 2 GB disk space, which is less than space than previous method, but requires you to run the scripts, since no IDE would be available.
+This method uses 2 GB disk space, which is less than space than previous method, but requires you to run the scripts, since no IDE would be available. You can also knit the `.Rmd` notebooks from the R console; [click here](https://bookdown.org/yihui/rmarkdown/compile.html) for instructions.
 
-1. Build the docker image. This may take a while the first time you run it.
+1. From the cloned repo directory (see ["How to reproduce"](#how-to-reproduce) for instructions on cloning), build the docker image. This may take a while the first time you run it.
 
 `docker build -t ff-dr .`
 
