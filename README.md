@@ -1,8 +1,10 @@
 # Reproducible R code for the manuscript entitled "Forest loss and fire in the Dominican Republic during the 21st Century"
 
-## RMD notebooks execution sequence
+## How to reproduce
 
-If you want to check the results of the reproducible code, check the PDF version of the `.Rmd` notebooks. If you want to reproduce the code, first visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, won't work automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document). Then follow the sequence listed below by running the code chunks in each `.Rmd` notebooks, or alternately knit both notebooks.
+If you want to check the results of the reproducible code, check the PDF version of the `.Rmd` notebooks.
+
+If you want to reproduce the code, first visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document). Then follow the sequence listed below by running the code chunks in each `.Rmd` notebooks, or alternately by knitting the notebooks.
 
 1. `data-download-preparation.Rmd`.
 
@@ -12,7 +14,7 @@ If you want to check the results of the reproducible code, check the PDF version
 
 These reproducible scripts are provided "as is", without warranty of any kind.
 
-## How to reproduce
+## Methods for reproduction
 
 All the methods presented in this section were developed and tested on a PC running under Linux operating system.
 
@@ -38,7 +40,7 @@ docker run --rm \
 
 3. In the `Files` tab (down-right pane), click on the `forest-loss-fire-reproducible` directory, and then click on the `forest-loss-fire-reproducible.Rproj` file. When asked `Do you want to open the project ~/forest-loss-fire-reproducible?`, click `Yes`.
 
-4. Run the code chunks in the reproducible scripts, by following the sequence mentioned in [Script execution sequence](#script-execution-sequence) section.
+4. Run the code chunks in the reproducible scripts, by following the sequence mentioned in [Script execution sequence](#how-to-reproduce) section.
 
 ### Using R from a Docker
 
