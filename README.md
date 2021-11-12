@@ -48,7 +48,7 @@ docker run --rm \
 
 3. In the `Files` tab (down-right pane), click on the `forest-loss-fire-reproducible` directory, and then click on the `forest-loss-fire-reproducible.Rproj` file. When asked `Do you want to open the project ~/forest-loss-fire-reproducible?`, click `Yes`.
 
-4. Run the code chunks in the reproducible scripts, or alternately knit the notebooks.
+4. Run the code chunks in the reproducible scripts, or alternately knit the notebooks. Keep in mind that if you knit from RStudio, a message will ask you to allow popup windows, which can be done in the address bar of the browser.
 
 ### Using R from a Docker
 
@@ -85,7 +85,7 @@ docker run -it --rm \
 
 ### How I built the `jmartinez19/rstudio` Docker image:
 
-1. Created the `rstudio` container based `rocker/rstudio`, and setting `rstudio` user as sudoer.
+1. First, I created the `rstudio` container based `rocker/rstudio`, and setting `rstudio` user as sudoer.
 
 ```
 docker run --rm \
@@ -95,7 +95,7 @@ docker run --rm \
   rocker/rstudio
 ```
 
-2. Accesed RStudio Server via the browser (localhost:8787) and using the provided password.
+2. Then I accesed the RStudio Server via the browser (localhost:8787) as `rstudio` user with the provided password.
 
 3. Installed required packages at the system level using the terminal tab.
 
@@ -108,22 +108,31 @@ apt install libudunits2-dev libgdal-dev libgeos-dev libproj-dev
 apt install libavfilter-dev libglpk-dev
 ```
 
-4. In the R console, install the required packages with:
+4. In the R console, I installed the required packages by running the contents of the `R/load-packages.R` script (copied from source, pasted in the R console and ran it).
 
-```r
-source('R/load-packages.R')
+5. From the R console, I installed latex packages:
+
+```
+library(tinytex)
+install_tinytex()
+latex_pkgs <- c('abstract', 'colortbl', 'environ', 'fpl',
+                'makecell', 'mathpazo', 'multirow', 'palatino',
+                'pdflscape', 'setspace', 'tabu', 'threeparttable',
+                'threeparttablex', 'titlesec', 'trimspaces',
+                'ulem', 'varwidth', 'wrapfig')
+tlmgr_install(latex_pkgs)
 ```
 
-5. Committed to a new image
+6. Committed to a new image
 
 ```
 docker ps # To check the container ID, in this case
 docker commit -m "Add dependencies" c77b73f86dbd jmartinez19/rstudio
 ```
 
-6. Created remote repo jmartinez19/rstudio in the Docker Hub: https://hub.docker.com
+7. Created remote repo jmartinez19/rstudio in the Docker Hub: https://hub.docker.com
 
-7. Pushed to the remote repo
+8. Finally, I pushed to the remote repo
 
 ```
 docker login #Credentials already available in my local machine

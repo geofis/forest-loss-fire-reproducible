@@ -1,5 +1,5 @@
 pkgs <- c('stars', 'sf', 'raster', 'SpaDES', 'gdalUtils', 'MASS', 'leaps', 'kableExtra',
-          'caret', 'tmap', 'plyr', 'tidyverse', 'spdep', 'nortest', 'ez',
+          'caret', 'tmap', 'plyr', 'tidyverse', 'spdep', 'nortest', 'ez', 'psych',
           'doParallel', 'foreach', 'rcompanion', 'cowplot', 'lme4', 'lmerTest',
           'car', 'gridExtra', 'grid', 'cowplot', 'mFilter', 'janitor', 'scales')
 install_load_pkg <- function(pkg){
