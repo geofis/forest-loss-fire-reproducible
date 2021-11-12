@@ -6,7 +6,7 @@ If you want to check the results of the reproducible code, check the PDF version
 
 If you want to reproduce the code, follow these instructions:
 
-1. Clone this repo in your computer.
+1. Clone this repo to your computer.
 
 2. Visit ZENODO, download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
 
