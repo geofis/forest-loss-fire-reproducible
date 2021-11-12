@@ -8,7 +8,7 @@ If you want to reproduce the code, follow these instructions:
 
 1. Clone this repo to your computer. From a terminal window, this should work: `git clone https://github.com/geofis/forest-loss-fire-reproducible.git`. If you are using RStudio on a desktop version, use the `New Project>Version Control>Git` pipeline.
 
-2. Visit [ZENODO](https://doi.org/10.5281/zenodo.5682103), download the dataset `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
+2. Visit [ZENODO](https://doi.org/10.5281/zenodo.5682103), download the dataset `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in the cloned repo directory (e.g. the same directory containing this document).
 
 3. Run the code chunks in the `.Rmd` notebooks, or alternately knit the notebooks. As a suggestion, run the `.Rmd` in the sequence below:
 
