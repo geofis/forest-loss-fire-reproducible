@@ -10,11 +10,13 @@ If you want to reproduce the code, first visit ZENODO, download `forest-loss-fir
 
 2. `modelling.Rmd`
 
+Note: You will need an installation of R Programming Language (version 3.3 or greater) to reproduce the code. Check the [Methods for reproducing the code](#methods-for-reproducing-the-code) section for more information.
+
 ## Disclaimer
 
 These reproducible scripts are provided "as is", without warranty of any kind.
 
-## Methods for reproduction
+## Methods for reproducing the code
 
 All the methods presented in this section were developed and tested on a PC running under Linux operating system.
 
