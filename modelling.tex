@@ -248,13 +248,13 @@ Batlle, 2021). Useful URLs are listed below:
   \url{https://github.com/geofis/forest-loss-fire-reproducible}
 \item
   Associated preprint DOI:
-  \url{https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1}
+  \url{https://www.biorxiv.org/content/10.1101/2021.06.15.448604v2}
 \item
   Associated preprint full text:
-  \url{https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1.full}
+  \url{https://www.biorxiv.org/content/10.1101/2021.06.15.448604v2.full}
 \item
   Dataset: \texttt{forest-loss-fire-reproducible-data-repo.zip}.
-  Download it from \href{https://doi.org/10.5281/zenodo.5682103}{ZENODO}
+  Download it from \href{https://zenodo.org/record/5681481}{ZENODO}
 \item
   Cite the preprint using the following format: Martínez Batlle, J. R.
   (2021). Forest loss and fire in the Dominican Republic during the 21st
@@ -266,7 +266,7 @@ Batlle, 2021). Useful URLs are listed below:
 \section{Instructions for downloading the source
 data}\label{instructions-for-downloading-the-source-data}}
 
-Visit \href{https://doi.org/10.5281/zenodo.5682103}{ZENODO}, download
+Visit \href{https://zenodo.org/record/5681481}{ZENODO}, download
 \texttt{forest-loss-fire-reproducible-data-repo.zip} (preserve its name,
 otherwise, won't work) and place the ZIP file in this repo (e.g.~in the
 same directory containing this document).
@@ -2917,6 +2917,13 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
 \CommentTok{\# jpeg(\textquotesingle{}out/yearly\_lisamaps\_forestloss1ha\_tlp.jpg\textquotesingle{}, width = 3840, height =}
 \CommentTok{\# 1600, res = 350)}
 \FunctionTok{plot\_grid}\NormalTok{(}\AttributeTok{plotlist =}\NormalTok{ hexlisamapsnl, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-lisa-maps-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\# dev.off()}
 
 \CommentTok{\# Small clearings}
@@ -2943,6 +2950,13 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
 \CommentTok{\# jpeg(\textquotesingle{}out/yearly\_lisamaps\_nclumpssmaller1ha\_tlp.jpg\textquotesingle{}, width = 3840, height =}
 \CommentTok{\# 1600, res = 350)}
 \FunctionTok{plot\_grid}\NormalTok{(}\AttributeTok{plotlist =}\NormalTok{ hexlisamapsnlsmal1ha, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-lisa-maps-2} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\# dev.off()}
 
 \CommentTok{\# Fire points MODIS}
@@ -2968,6 +2982,13 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
 \CommentTok{\# jpeg(\textquotesingle{}out/yearly\_lisamaps\_firemodis\_tlp.jpg\textquotesingle{}, width = 3840, height = 1600,}
 \CommentTok{\# res = 350)}
 \FunctionTok{plot\_grid}\NormalTok{(}\AttributeTok{plotlist =}\NormalTok{ hexlisamapsnlfiremodis, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-lisa-maps-3} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\# dev.off()}
 
 \CommentTok{\# Fire points VIIRS}
@@ -2993,6 +3014,13 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
 \CommentTok{\# jpeg(\textquotesingle{}out/yearly\_lisamaps\_fireviirs\_tlp.jpg\textquotesingle{}, width = 3840, height = 1600,}
 \CommentTok{\# res = 350)}
 \FunctionTok{plot\_grid}\NormalTok{(}\AttributeTok{plotlist =}\NormalTok{ hexlisamapsnlfireviirs, }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-lisa-maps-4} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\# dev.off()}
 \end{Highlighting}
 \end{Shaded}
@@ -3014,24 +3042,676 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
         \FunctionTok{replace}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{        spatialreg}\SpecialCharTok{::}\FunctionTok{errorsarlm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ ., }\AttributeTok{listw =}\NormalTok{ hexww), }\AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T))}
+\DocumentationTok{\#\# $\textasciigrave{}YEAR1\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.0851811 {-}0.0228101  0.0003949  0.0240279  0.1214120 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0711969  0.0036501 19.5056 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR1\_PSQKM\_TLP 0.1530253  0.0169809  9.0116 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.30186, LR test value: 12.096, p{-}value: 0.00050525}
+\DocumentationTok{\#\# Asymptotic standard error: 0.085745}
+\DocumentationTok{\#\#     z{-}value: 3.5204, p{-}value: 0.00043088}
+\DocumentationTok{\#\# Wald statistic: 12.393, p{-}value: 0.00043088}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 478.7628 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0013045, (sigma: 0.036118)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.29212 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}949.53, (AIC for lm: {-}939.43)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR2\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.08064020 {-}0.01935483 {-}0.00014982  0.02103636  0.12272537 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0714086  0.0043518 16.4089 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR2\_PSQKM\_TLP 0.1706985  0.0206797  8.2544  2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.44757, LR test value: 30.037, p{-}value: 4.2382e{-}08}
+\DocumentationTok{\#\# Asymptotic standard error: 0.07595}
+\DocumentationTok{\#\#     z{-}value: 5.8929, p{-}value: 3.7956e{-}09}
+\DocumentationTok{\#\# Wald statistic: 34.726, p{-}value: 3.7956e{-}09}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 488.6127 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.001176, (sigma: 0.034292)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.34462 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}969.23, (AIC for lm: {-}941.19)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR3\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.0720108 {-}0.0178344  0.0015545  0.0161489  0.1136078 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0484404  0.0031861  15.204 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR3\_PSQKM\_TLP 0.1315503  0.0176625   7.448 9.481e{-}14}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.33806, LR test value: 16.565, p{-}value: 4.7001e{-}05}
+\DocumentationTok{\#\# Asymptotic standard error: 0.083521}
+\DocumentationTok{\#\#     z{-}value: 4.0476, p{-}value: 5.1742e{-}05}
+\DocumentationTok{\#\# Wald statistic: 16.383, p{-}value: 5.1742e{-}05}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 546.945 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.00075698, (sigma: 0.027513)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.24375 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}1085.9, (AIC for lm: {-}1071.3)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR4\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.10427095 {-}0.02325342 {-}0.00078712  0.02274215  0.12010283 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0786062  0.0054434 14.4407 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR4\_PSQKM\_TLP 0.1966704  0.0249289  7.8893 3.109e{-}15}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.54909, LR test value: 53.724, p{-}value: 2.307e{-}13}
+\DocumentationTok{\#\# Asymptotic standard error: 0.067707}
+\DocumentationTok{\#\#     z{-}value: 8.1098, p{-}value: 4.4409e{-}16}
+\DocumentationTok{\#\# Wald statistic: 65.77, p{-}value: 5.5511e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 488.5654 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0011456, (sigma: 0.033846)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.4292 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}969.13, (AIC for lm: {-}917.41)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR5\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.2200420 {-}0.0264287  0.0024409  0.0349295  0.1950472 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.1536683  0.0091067  16.874 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR5\_PSQKM\_TLP 0.2705047  0.0204866  13.204 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.53713, LR test value: 55.514, p{-}value: 9.2815e{-}14}
+\DocumentationTok{\#\# Asymptotic standard error: 0.068744}
+\DocumentationTok{\#\#     z{-}value: 7.8135, p{-}value: 5.5511e{-}15}
+\DocumentationTok{\#\# Wald statistic: 61.05, p{-}value: 5.5511e{-}15}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 362.4219 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0031163, (sigma: 0.055823)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.54553 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}716.84, (AIC for lm: {-}663.33)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR6\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.0963326 {-}0.0191255 {-}0.0012519  0.0227601  0.1121572 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0716269  0.0058626  12.218 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR6\_PSQKM\_TLP 0.2531370  0.0234226  10.807 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.57909, LR test value: 65.174, p{-}value: 6.6613e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.065024}
+\DocumentationTok{\#\#     z{-}value: 8.9058, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 79.313, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 481.968 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0011955, (sigma: 0.034576)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.50288 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}955.94, (AIC for lm: {-}892.76)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR7\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.09177658 {-}0.01870762  0.00035196  0.01959753  0.10222434 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0694956  0.0049756  13.967 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR7\_PSQKM\_TLP 0.1936719  0.0188588  10.270 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.54926, LR test value: 53.226, p{-}value: 2.9721e{-}13}
+\DocumentationTok{\#\# Asymptotic standard error: 0.067692}
+\DocumentationTok{\#\#     z{-}value: 8.1141, p{-}value: 4.4409e{-}16}
+\DocumentationTok{\#\# Wald statistic: 65.839, p{-}value: 4.4409e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 508.9855 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.00097474, (sigma: 0.031221)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.43736 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}1010, (AIC for lm: {-}958.74)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR8\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.10941036 {-}0.02081554 {-}0.00082134  0.02227856  0.16290963 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0854037  0.0070089  12.185 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR8\_PSQKM\_TLP 0.2304396  0.0206495  11.160 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.63283, LR test value: 77.519, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.059902}
+\DocumentationTok{\#\#     z{-}value: 10.565, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 111.61, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 466.958 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0013204, (sigma: 0.036338)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.49882 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}925.92, (AIC for lm: {-}850.4)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR9\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}0.075650 {-}0.022245  0.000197  0.019406  0.195104 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.0678383  0.0052201  12.995 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR9\_PSQKM\_TLP 0.2156717  0.0187560  11.499 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.4962, LR test value: 39.317, p{-}value: 3.602e{-}10}
+\DocumentationTok{\#\# Asymptotic standard error: 0.072157}
+\DocumentationTok{\#\#     z{-}value: 6.8767, p{-}value: 6.1255e{-}12}
+\DocumentationTok{\#\# Wald statistic: 47.289, p{-}value: 6.1257e{-}12}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 484.2628 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0012029, (sigma: 0.034683)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.45071 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}960.53, (AIC for lm: {-}923.21)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR10\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.1162605 {-}0.0212727  0.0018095  0.0232974  0.1840114 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.0848911  0.0053327  15.919 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR10\_PSQKM\_TLP 0.2317180  0.0219842  10.540 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.477, LR test value: 35.899, p{-}value: 2.0786e{-}09}
+\DocumentationTok{\#\# Asymptotic standard error: 0.073688}
+\DocumentationTok{\#\#     z{-}value: 6.4733, p{-}value: 9.5902e{-}11}
+\DocumentationTok{\#\# Wald statistic: 41.903, p{-}value: 9.5902e{-}11}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 462.414 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0014366, (sigma: 0.037903)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.43623 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}916.83, (AIC for lm: {-}882.93)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR11\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.0840600 {-}0.0162287 {-}0.0022334  0.0181762  0.0876676 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.0512135  0.0049629  10.319 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR11\_PSQKM\_TLP 0.1796224  0.0157287  11.420 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.58239, LR test value: 70.556, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.06472}
+\DocumentationTok{\#\#     z{-}value: 8.9986, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 80.975, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 524.1914 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.00085527, (sigma: 0.029245)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.5089 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}1040.4, (AIC for lm: {-}971.83)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR12\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.1180095 {-}0.0283501  0.0035631  0.0272531  0.1747989 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.0872654  0.0054686  15.957 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR12\_PSQKM\_TLP 0.2394062  0.0210512  11.373 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.39258, LR test value: 22.567, p{-}value: 2.0298e{-}06}
+\DocumentationTok{\#\# Asymptotic standard error: 0.079914}
+\DocumentationTok{\#\#     z{-}value: 4.9126, p{-}value: 8.9888e{-}07}
+\DocumentationTok{\#\# Wald statistic: 24.133, p{-}value: 8.9888e{-}07}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 432.7725 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0018493, (sigma: 0.043003)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.41369 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}857.54, (AIC for lm: {-}836.98)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR13\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.1864478 {-}0.0386916  0.0020771  0.0378961  0.2186490 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.1261562  0.0086123  14.648 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR13\_PSQKM\_TLP 0.3579929  0.0286252  12.506 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.42547, LR test value: 24.296, p{-}value: 8.2629e{-}07}
+\DocumentationTok{\#\# Asymptotic standard error: 0.077583}
+\DocumentationTok{\#\#     z{-}value: 5.4841, p{-}value: 4.1566e{-}08}
+\DocumentationTok{\#\# Wald statistic: 30.075, p{-}value: 4.1566e{-}08}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 329.6468 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0041516, (sigma: 0.064433)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.52467 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}651.29, (AIC for lm: {-}629)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR14\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}0.133626 {-}0.027558 {-}0.004127  0.028091  0.160852 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.0940132  0.0065313  14.394 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR14\_PSQKM\_TLP 0.2882222  0.0240946  11.962 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.43961, LR test value: 30.463, p{-}value: 3.4038e{-}08}
+\DocumentationTok{\#\# Asymptotic standard error: 0.076545}
+\DocumentationTok{\#\#     z{-}value: 5.7431, p{-}value: 9.2941e{-}09}
+\DocumentationTok{\#\# Wald statistic: 32.984, p{-}value: 9.2941e{-}09}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 403.592 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.002307, (sigma: 0.048031)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.41025 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}799.18, (AIC for lm: {-}770.72)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR15\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.1081363 {-}0.0257976 {-}0.0018611  0.0280670  0.1876645 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.0853946  0.0062352  13.696 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR15\_PSQKM\_TLP 0.2610778  0.0227654  11.468 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.44207, LR test value: 25.673, p{-}value: 4.0452e{-}07}
+\DocumentationTok{\#\# Asymptotic standard error: 0.076362}
+\DocumentationTok{\#\#     z{-}value: 5.7892, p{-}value: 7.0723e{-}09}
+\DocumentationTok{\#\# Wald statistic: 33.515, p{-}value: 7.0723e{-}09}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 421.6591 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0019989, (sigma: 0.044709)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.47647 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}835.32, (AIC for lm: {-}811.65)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR16\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.13323164 {-}0.03494577 {-}0.00033706  0.03181717  0.21169211 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.1294272  0.0099802 12.9684 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR16\_PSQKM\_TLP 0.2235441  0.0389027  5.7462 9.125e{-}09}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.63454, LR test value: 72.152, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.059733}
+\DocumentationTok{\#\#     z{-}value: 10.623, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 112.85, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 365.2928 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0029475, (sigma: 0.054291)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.34316 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}722.59, (AIC for lm: {-}652.43)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR17\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.1271094 {-}0.0296464  0.0016767  0.0276869  0.1081017 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.135660   0.011987 11.3176 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR17\_PSQKM\_TLP 0.221618   0.026222  8.4515 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.76184, LR test value: 143.11, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.045681}
+\DocumentationTok{\#\#     z{-}value: 16.677, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 278.13, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 408.5591 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.0019704, (sigma: 0.044389)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.49029 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}809.12, (AIC for lm: {-}668.01)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR18\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.0872076 {-}0.0171274  0.0033593  0.0165493  0.0680710 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                            Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.0662297  0.0063129 10.4912 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR18\_PSQKM\_TLP 0.1927437  0.0212872  9.0544 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.71383, LR test value: 123.93, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.051332}
+\DocumentationTok{\#\#     z{-}value: 13.906, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 193.38, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 534.2127 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.00074882, (sigma: 0.027365)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.49448 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}1060.4, (AIC for lm: {-}938.5)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-2} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{NK) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-3} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{Coef[,}
     \DecValTok{4}\NormalTok{])}
+\DocumentationTok{\#\# $\textasciigrave{}YEAR1\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR1\_PSQKM\_TLP }
+\DocumentationTok{\#\#                        0                        0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR2\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR2\_PSQKM\_TLP }
+\DocumentationTok{\#\#             0.000000e+00             2.220446e{-}16 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR3\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR3\_PSQKM\_TLP }
+\DocumentationTok{\#\#             0.000000e+00             9.481305e{-}14 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR4\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR4\_PSQKM\_TLP }
+\DocumentationTok{\#\#             0.000000e+00             3.108624e{-}15 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR5\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR5\_PSQKM\_TLP }
+\DocumentationTok{\#\#                        0                        0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR6\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR6\_PSQKM\_TLP }
+\DocumentationTok{\#\#                        0                        0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR7\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR7\_PSQKM\_TLP }
+\DocumentationTok{\#\#                        0                        0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR8\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR8\_PSQKM\_TLP }
+\DocumentationTok{\#\#                        0                        0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR9\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#              (Intercept) NFIRESM6\_YEAR9\_PSQKM\_TLP }
+\DocumentationTok{\#\#                        0                        0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR10\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR10\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR11\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR11\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR12\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR12\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR13\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR13\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR14\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR14\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR15\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR15\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR16\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR16\_PSQKM\_TLP }
+\DocumentationTok{\#\#              0.000000e+00              9.125248e{-}09 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR17\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR17\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR18\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\#               (Intercept) NFIRESM6\_YEAR18\_PSQKM\_TLP }
+\DocumentationTok{\#\#                         0                         0}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{Coef[,}
     \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{)] }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    as.data.frame }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{rownames\_to\_column}\NormalTok{(}\AttributeTok{var =} \StringTok{"variable"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plyr}\SpecialCharTok{::}\FunctionTok{ldply}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{format}\NormalTok{(., }\AttributeTok{scientific =}\NormalTok{ F)}
+\DocumentationTok{\#\#                                                          .id}
+\DocumentationTok{\#\# 1    YEAR1\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\_TLP}
+\DocumentationTok{\#\# 2    YEAR1\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\_TLP}
+\DocumentationTok{\#\# 3    YEAR2\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\_TLP}
+\DocumentationTok{\#\# 4    YEAR2\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\_TLP}
+\DocumentationTok{\#\# 5    YEAR3\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\_TLP}
+\DocumentationTok{\#\# 6    YEAR3\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\_TLP}
+\DocumentationTok{\#\# 7    YEAR4\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\_TLP}
+\DocumentationTok{\#\# 8    YEAR4\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\_TLP}
+\DocumentationTok{\#\# 9    YEAR5\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\_TLP}
+\DocumentationTok{\#\# 10   YEAR5\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\_TLP}
+\DocumentationTok{\#\# 11   YEAR6\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\_TLP}
+\DocumentationTok{\#\# 12   YEAR6\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\_TLP}
+\DocumentationTok{\#\# 13   YEAR7\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\_TLP}
+\DocumentationTok{\#\# 14   YEAR7\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\_TLP}
+\DocumentationTok{\#\# 15   YEAR8\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\_TLP}
+\DocumentationTok{\#\# 16   YEAR8\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\_TLP}
+\DocumentationTok{\#\# 17   YEAR9\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\_TLP}
+\DocumentationTok{\#\# 18   YEAR9\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\_TLP}
+\DocumentationTok{\#\# 19 YEAR10\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\_TLP}
+\DocumentationTok{\#\# 20 YEAR10\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\_TLP}
+\DocumentationTok{\#\# 21 YEAR11\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\_TLP}
+\DocumentationTok{\#\# 22 YEAR11\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\_TLP}
+\DocumentationTok{\#\# 23 YEAR12\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\_TLP}
+\DocumentationTok{\#\# 24 YEAR12\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\_TLP}
+\DocumentationTok{\#\# 25 YEAR13\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\_TLP}
+\DocumentationTok{\#\# 26 YEAR13\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\_TLP}
+\DocumentationTok{\#\# 27 YEAR14\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\_TLP}
+\DocumentationTok{\#\# 28 YEAR14\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\_TLP}
+\DocumentationTok{\#\# 29 YEAR15\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\_TLP}
+\DocumentationTok{\#\# 30 YEAR15\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\_TLP}
+\DocumentationTok{\#\# 31 YEAR16\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\_TLP}
+\DocumentationTok{\#\# 32 YEAR16\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\_TLP}
+\DocumentationTok{\#\# 33 YEAR17\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\_TLP}
+\DocumentationTok{\#\# 34 YEAR17\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\_TLP}
+\DocumentationTok{\#\# 35 YEAR18\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\_TLP}
+\DocumentationTok{\#\# 36 YEAR18\_LOSSGREATER1HA\_PUA\_TLP \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\_TLP}
+\DocumentationTok{\#\#                     variable   Estimate                 Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# 1                (Intercept) 0.07119686 0.0000000000000000000000}
+\DocumentationTok{\#\# 2   NFIRESM6\_YEAR1\_PSQKM\_TLP 0.15302532 0.0000000000000000000000}
+\DocumentationTok{\#\# 3                (Intercept) 0.07140858 0.0000000000000000000000}
+\DocumentationTok{\#\# 4   NFIRESM6\_YEAR2\_PSQKM\_TLP 0.17069847 0.0000000000000002220446}
+\DocumentationTok{\#\# 5                (Intercept) 0.04844038 0.0000000000000000000000}
+\DocumentationTok{\#\# 6   NFIRESM6\_YEAR3\_PSQKM\_TLP 0.13155026 0.0000000000000948130463}
+\DocumentationTok{\#\# 7                (Intercept) 0.07860622 0.0000000000000000000000}
+\DocumentationTok{\#\# 8   NFIRESM6\_YEAR4\_PSQKM\_TLP 0.19667036 0.0000000000000031086245}
+\DocumentationTok{\#\# 9                (Intercept) 0.15366827 0.0000000000000000000000}
+\DocumentationTok{\#\# 10  NFIRESM6\_YEAR5\_PSQKM\_TLP 0.27050467 0.0000000000000000000000}
+\DocumentationTok{\#\# 11               (Intercept) 0.07162689 0.0000000000000000000000}
+\DocumentationTok{\#\# 12  NFIRESM6\_YEAR6\_PSQKM\_TLP 0.25313695 0.0000000000000000000000}
+\DocumentationTok{\#\# 13               (Intercept) 0.06949564 0.0000000000000000000000}
+\DocumentationTok{\#\# 14  NFIRESM6\_YEAR7\_PSQKM\_TLP 0.19367188 0.0000000000000000000000}
+\DocumentationTok{\#\# 15               (Intercept) 0.08540374 0.0000000000000000000000}
+\DocumentationTok{\#\# 16  NFIRESM6\_YEAR8\_PSQKM\_TLP 0.23043957 0.0000000000000000000000}
+\DocumentationTok{\#\# 17               (Intercept) 0.06783833 0.0000000000000000000000}
+\DocumentationTok{\#\# 18  NFIRESM6\_YEAR9\_PSQKM\_TLP 0.21567175 0.0000000000000000000000}
+\DocumentationTok{\#\# 19               (Intercept) 0.08489111 0.0000000000000000000000}
+\DocumentationTok{\#\# 20 NFIRESM6\_YEAR10\_PSQKM\_TLP 0.23171801 0.0000000000000000000000}
+\DocumentationTok{\#\# 21               (Intercept) 0.05121346 0.0000000000000000000000}
+\DocumentationTok{\#\# 22 NFIRESM6\_YEAR11\_PSQKM\_TLP 0.17962235 0.0000000000000000000000}
+\DocumentationTok{\#\# 23               (Intercept) 0.08726542 0.0000000000000000000000}
+\DocumentationTok{\#\# 24 NFIRESM6\_YEAR12\_PSQKM\_TLP 0.23940617 0.0000000000000000000000}
+\DocumentationTok{\#\# 25               (Intercept) 0.12615620 0.0000000000000000000000}
+\DocumentationTok{\#\# 26 NFIRESM6\_YEAR13\_PSQKM\_TLP 0.35799290 0.0000000000000000000000}
+\DocumentationTok{\#\# 27               (Intercept) 0.09401316 0.0000000000000000000000}
+\DocumentationTok{\#\# 28 NFIRESM6\_YEAR14\_PSQKM\_TLP 0.28822216 0.0000000000000000000000}
+\DocumentationTok{\#\# 29               (Intercept) 0.08539461 0.0000000000000000000000}
+\DocumentationTok{\#\# 30 NFIRESM6\_YEAR15\_PSQKM\_TLP 0.26107784 0.0000000000000000000000}
+\DocumentationTok{\#\# 31               (Intercept) 0.12942724 0.0000000000000000000000}
+\DocumentationTok{\#\# 32 NFIRESM6\_YEAR16\_PSQKM\_TLP 0.22354414 0.0000000091252483347404}
+\DocumentationTok{\#\# 33               (Intercept) 0.13565973 0.0000000000000000000000}
+\DocumentationTok{\#\# 34 NFIRESM6\_YEAR17\_PSQKM\_TLP 0.22161819 0.0000000000000000000000}
+\DocumentationTok{\#\# 35               (Intercept) 0.06622972 0.0000000000000000000000}
+\DocumentationTok{\#\# 36 NFIRESM6\_YEAR18\_PSQKM\_TLP 0.19274372 0.0000000000000000000000}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossg1ha\_trans)  }\CommentTok{\#Coefficient is significant in each annual model}
+\DocumentationTok{\#\# \# A tibble: 0 x 2}
+\DocumentationTok{\#\# \# ... with 2 variables: variable \textless{}chr\textgreater{}, years \textless{}chr\textgreater{}}
 
 \CommentTok{\# LARGE CLEARINGS UNTRANS}
 \NormalTok{annual\_models\_folossg1ha\_untrans\_formulas }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{y =} \FunctionTok{grep}\NormalTok{(}\StringTok{"\^{}YEAR[0{-}9]\{,2\}\_LOSS.*PUA$"}\NormalTok{,}
@@ -3045,24 +3725,678 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
         \FunctionTok{replace}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{        spatialreg}\SpecialCharTok{::}\FunctionTok{errorsarlm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ ., }\AttributeTok{listw =}\NormalTok{ hexww), }\AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T))}
+\DocumentationTok{\#\# $\textasciigrave{}YEAR1\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00400220 {-}0.00053828 {-}0.00026126  0.00015700  0.00614725 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00067446 0.00010496  6.4258 1.312e{-}10}
+\DocumentationTok{\#\# NFIRESM6\_YEAR1\_PSQKM 0.04187327 0.00341870 12.2483 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.23958, LR test value: 7.3056, p{-}value: 0.006874}
+\DocumentationTok{\#\# Asymptotic standard error: 0.089264}
+\DocumentationTok{\#\#     z{-}value: 2.6839, p{-}value: 0.0072768}
+\DocumentationTok{\#\# Wald statistic: 7.2033, p{-}value: 0.0072768}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1334.105 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.5211e{-}06, (sigma: 0.0012333)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.38222 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2660.2, (AIC for lm: {-}2654.9)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR2\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00721452 {-}0.00038372 {-}0.00011841  0.00034630  0.00663290 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00045458 0.00011897  3.8209  0.000133}
+\DocumentationTok{\#\# NFIRESM6\_YEAR2\_PSQKM 0.07598981 0.00423256 17.9536 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.33614, LR test value: 14.815, p{-}value: 0.00011858}
+\DocumentationTok{\#\# Asymptotic standard error: 0.083642}
+\DocumentationTok{\#\#     z{-}value: 4.0188, p{-}value: 5.8488e{-}05}
+\DocumentationTok{\#\# Wald statistic: 16.151, p{-}value: 5.8488e{-}05}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1336.892 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.4696e{-}06, (sigma: 0.0012123)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.57798 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2665.8, (AIC for lm: {-}2653)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR3\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00264244 {-}0.00063922 {-}0.00033123  0.00028369  0.00832054 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00080088 0.00010123  7.9114 2.442e{-}15}
+\DocumentationTok{\#\# NFIRESM6\_YEAR3\_PSQKM 0.01254571 0.00330873  3.7917 0.0001496}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.2308, LR test value: 6.11, p{-}value: 0.013442}
+\DocumentationTok{\#\# Asymptotic standard error: 0.089729}
+\DocumentationTok{\#\#     z{-}value: 2.5722, p{-}value: 0.010106}
+\DocumentationTok{\#\# Wald statistic: 6.6161, p{-}value: 0.010106}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1356.758 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.2728e{-}06, (sigma: 0.0011282)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.088067 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2705.5, (AIC for lm: {-}2701.4)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR4\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00412363 {-}0.00104743 {-}0.00041873  0.00042044  0.01084023 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00139276 0.00029219  4.7666 1.873e{-}06}
+\DocumentationTok{\#\# NFIRESM6\_YEAR4\_PSQKM 0.05025035 0.00645223  7.7881 6.883e{-}15}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.56024, LR test value: 59.208, p{-}value: 1.4211e{-}14}
+\DocumentationTok{\#\# Asymptotic standard error: 0.066724}
+\DocumentationTok{\#\#     z{-}value: 8.3963, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 70.498, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1213.788 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 3.6959e{-}06, (sigma: 0.0019225)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.41033 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2419.6, (AIC for lm: {-}2362.4)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR5\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.04132423 {-}0.00059713  0.00033180  0.00118285  0.04965465 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate  Std. Error z value Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          {-}0.00019671  0.00039278 {-}0.5008   0.6165}
+\DocumentationTok{\#\# NFIRESM6\_YEAR5\_PSQKM  0.10191299  0.00331184 30.7723   \textless{}2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.099486, LR test value: 1.0309, p{-}value: 0.30995}
+\DocumentationTok{\#\# Asymptotic standard error: 0.095815}
+\DocumentationTok{\#\#     z{-}value: 1.0383, p{-}value: 0.29912}
+\DocumentationTok{\#\# Wald statistic: 1.0781, p{-}value: 0.29912}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 962.2709 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.9043e{-}05, (sigma: 0.0053891)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.80022 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}1916.5, (AIC for lm: {-}1917.5)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR6\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00409675 {-}0.00077535 {-}0.00030226  0.00031388  0.00786843 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00092333 0.00025685  3.5948 0.0003246}
+\DocumentationTok{\#\# NFIRESM6\_YEAR6\_PSQKM 0.03820502 0.00450107  8.4880 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.58169, LR test value: 60.851, p{-}value: 6.1062e{-}15}
+\DocumentationTok{\#\# Asymptotic standard error: 0.064785}
+\DocumentationTok{\#\#     z{-}value: 8.9787, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 80.616, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1256.56 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.6174e{-}06, (sigma: 0.0016178)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.43788 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2505.1, (AIC for lm: {-}2446.3)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR7\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00421376 {-}0.00085716 {-}0.00035945  0.00048234  0.00976684 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00120747 0.00021168  5.7041 1.169e{-}08}
+\DocumentationTok{\#\# NFIRESM6\_YEAR7\_PSQKM 0.03284457 0.00400477  8.2014 2.220e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.48367, LR test value: 37.527, p{-}value: 9.0158e{-}10}
+\DocumentationTok{\#\# Asymptotic standard error: 0.073162}
+\DocumentationTok{\#\#     z{-}value: 6.6109, p{-}value: 3.8196e{-}11}
+\DocumentationTok{\#\# Wald statistic: 43.704, p{-}value: 3.8196e{-}11}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1259.591 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.629e{-}06, (sigma: 0.0016214)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.33768 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2511.2, (AIC for lm: {-}2475.7)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR8\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00764276 {-}0.00111279 {-}0.00046093  0.00061778  0.02092837 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00144677 0.00034686  4.1710 3.033e{-}05}
+\DocumentationTok{\#\# NFIRESM6\_YEAR8\_PSQKM 0.04302492 0.00507721  8.4741 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.48764, LR test value: 36.512, p{-}value: 1.517e{-}09}
+\DocumentationTok{\#\# Asymptotic standard error: 0.072845}
+\DocumentationTok{\#\#     z{-}value: 6.6943, p{-}value: 2.1677e{-}11}
+\DocumentationTok{\#\# Wald statistic: 44.813, p{-}value: 2.1677e{-}11}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1138.21 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 6.8562e{-}06, (sigma: 0.0026184)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.32572 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2268.4, (AIC for lm: {-}2233.9)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR9\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00426786 {-}0.00079661 {-}0.00048773  0.00025372  0.01496190 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                        Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)          0.00097937 0.00016198  6.0461 1.484e{-}09}
+\DocumentationTok{\#\# NFIRESM6\_YEAR9\_PSQKM 0.02999903 0.00368364  8.1438 4.441e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.24777, LR test value: 7.6155, p{-}value: 0.005787}
+\DocumentationTok{\#\# Asymptotic standard error: 0.088822}
+\DocumentationTok{\#\#     z{-}value: 2.7896, p{-}value: 0.005278}
+\DocumentationTok{\#\# Wald statistic: 7.7816, p{-}value: 0.005278}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1244.962 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 3.0748e{-}06, (sigma: 0.0017535)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.24925 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2481.9, (AIC for lm: {-}2476.3)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR10\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00271448 {-}0.00069194 {-}0.00037659  0.00016490  0.01559069 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00084387 0.00015750  5.3580 8.417e{-}08}
+\DocumentationTok{\#\# NFIRESM6\_YEAR10\_PSQKM 0.03172446 0.00355444  8.9253 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.33613, LR test value: 14.296, p{-}value: 0.0001562}
+\DocumentationTok{\#\# Asymptotic standard error: 0.083643}
+\DocumentationTok{\#\#     z{-}value: 4.0187, p{-}value: 5.8524e{-}05}
+\DocumentationTok{\#\# Wald statistic: 16.15, p{-}value: 5.8524e{-}05}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1273.926 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.4175e{-}06, (sigma: 0.0015548)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.33377 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2539.9, (AIC for lm: {-}2527.6)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR11\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00229725 {-}0.00059658 {-}0.00027693  0.00023995  0.00609008 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00071062 0.00016759  4.2403 2.233e{-}05}
+\DocumentationTok{\#\# NFIRESM6\_YEAR11\_PSQKM 0.02444110 0.00244046 10.0150 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.53014, LR test value: 53.613, p{-}value: 2.4403e{-}13}
+\DocumentationTok{\#\# Asymptotic standard error: 0.069342}
+\DocumentationTok{\#\#     z{-}value: 7.6453, p{-}value: 2.0872e{-}14}
+\DocumentationTok{\#\# Wald statistic: 58.451, p{-}value: 2.0872e{-}14}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1336.395 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.4148e{-}06, (sigma: 0.0011895)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.41614 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2664.8, (AIC for lm: {-}2613.2)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR12\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00636507 {-}0.00080365 {-}0.00031180  0.00028070  0.03084883 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00077758 0.00022169  3.5075 0.0004523}
+\DocumentationTok{\#\# NFIRESM6\_YEAR12\_PSQKM 0.04917861 0.00460332 10.6833 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.19023, LR test value: 3.9569, p{-}value: 0.04668}
+\DocumentationTok{\#\# Asymptotic standard error: 0.091783}
+\DocumentationTok{\#\#     z{-}value: 2.0726, p{-}value: 0.038208}
+\DocumentationTok{\#\# Wald statistic: 4.2957, p{-}value: 0.038208}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1148.339 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 6.6356e{-}06, (sigma: 0.002576)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.33571 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2288.7, (AIC for lm: {-}2286.7)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR13\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}1.2518e{-}02 {-}9.8794e{-}04 {-}7.2876e{-}05  3.5668e{-}04  5.6945e{-}02 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00014553 0.00036894  0.3945   0.6932}
+\DocumentationTok{\#\# NFIRESM6\_YEAR13\_PSQKM 0.08959956 0.00641381 13.9698   \textless{}2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.14505, LR test value: 2.8759, p{-}value: 0.089913}
+\DocumentationTok{\#\# Asymptotic standard error: 0.093886}
+\DocumentationTok{\#\#     z{-}value: 1.5449, p{-}value: 0.12237}
+\DocumentationTok{\#\# Wald statistic: 2.3868, p{-}value: 0.12237}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1003.086 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.0986e{-}05, (sigma: 0.004581)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.45509 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}1998.2, (AIC for lm: {-}1997.3)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR14\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}9.1553e{-}03 {-}8.5614e{-}04 {-}9.4469e{-}05  4.9998e{-}04  1.4053e{-}02 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00014704 0.00019731  0.7452   0.4561}
+\DocumentationTok{\#\# NFIRESM6\_YEAR14\_PSQKM 0.07674963 0.00364294 21.0681   \textless{}2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.30573, LR test value: 13.203, p{-}value: 0.00027957}
+\DocumentationTok{\#\# Asymptotic standard error: 0.085514}
+\DocumentationTok{\#\#     z{-}value: 3.5752, p{-}value: 0.00034999}
+\DocumentationTok{\#\# Wald statistic: 12.782, p{-}value: 0.00034999}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1206.605 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 4.1345e{-}06, (sigma: 0.0020333)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.64185 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2405.2, (AIC for lm: {-}2394)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR15\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00885153 {-}0.00096168 {-}0.00042504  0.00033932  0.01376869 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00075035 0.00025348  2.9601  0.003075}
+\DocumentationTok{\#\# NFIRESM6\_YEAR15\_PSQKM 0.06805864 0.00496408 13.7102 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.31687, LR test value: 10.894, p{-}value: 0.00096492}
+\DocumentationTok{\#\# Asymptotic standard error: 0.084839}
+\DocumentationTok{\#\#     z{-}value: 3.735, p{-}value: 0.00018771}
+\DocumentationTok{\#\# Wald statistic: 13.95, p{-}value: 0.00018771}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1152.104 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 6.3511e{-}06, (sigma: 0.0025201)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.51092 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2296.2, (AIC for lm: {-}2287.3)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR16\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00734528 {-}0.00197447 {-}0.00109461  0.00039872  0.02762510 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00300400 0.00070074  4.2869 1.812e{-}05}
+\DocumentationTok{\#\# NFIRESM6\_YEAR16\_PSQKM 0.04398531 0.01568455  2.8044  0.005041}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.6059, LR test value: 68.35, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.06252}
+\DocumentationTok{\#\#     z{-}value: 9.6914, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 93.923, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1009.676 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.8274e{-}05, (sigma: 0.0042748)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.25874 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2011.4, (AIC for lm: {-}1945)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR17\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00621429 {-}0.00162025 {-}0.00072690  0.00091705  0.01482493 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00307324 0.00069988  4.3911 1.128e{-}05}
+\DocumentationTok{\#\# NFIRESM6\_YEAR17\_PSQKM 0.06806921 0.01223563  5.5632 2.649e{-}08}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.70621, LR test value: 115.21, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.052187}
+\DocumentationTok{\#\#     z{-}value: 13.532, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 183.12, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1075.208 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.0439e{-}05, (sigma: 0.003231)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.40995 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2142.4, (AIC for lm: {-}2029.2)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR18\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.00314489 {-}0.00085315 {-}0.00027292  0.00046051  0.00759208 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                         Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           0.00140144 0.00038554  3.6350  0.000278}
+\DocumentationTok{\#\# NFIRESM6\_YEAR18\_PSQKM 0.05623892 0.00608765  9.2382 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.75485, LR test value: 140.91, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.046534}
+\DocumentationTok{\#\#     z{-}value: 16.221, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 263.14, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 1269.649 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.188e{-}06, (sigma: 0.0014792)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.50233 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}2531.3, (AIC for lm: {-}2392.4)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-4} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-5} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{NK) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-6} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{Coef[,}
     \DecValTok{4}\NormalTok{])}
+\DocumentationTok{\#\# $\textasciigrave{}YEAR1\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR1\_PSQKM }
+\DocumentationTok{\#\#         1.311937e{-}10         0.000000e+00 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR2\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR2\_PSQKM }
+\DocumentationTok{\#\#         0.0001329549         0.0000000000 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR3\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR3\_PSQKM }
+\DocumentationTok{\#\#         2.442491e{-}15         1.496211e{-}04 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR4\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR4\_PSQKM }
+\DocumentationTok{\#\#         1.873332e{-}06         6.883383e{-}15 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR5\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR5\_PSQKM }
+\DocumentationTok{\#\#            0.6165029            0.0000000 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR6\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR6\_PSQKM }
+\DocumentationTok{\#\#         0.0003246311         0.0000000000 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR7\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR7\_PSQKM }
+\DocumentationTok{\#\#         1.169477e{-}08         2.220446e{-}16 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR8\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR8\_PSQKM }
+\DocumentationTok{\#\#         3.032672e{-}05         0.000000e+00 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR9\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#          (Intercept) NFIRESM6\_YEAR9\_PSQKM }
+\DocumentationTok{\#\#         1.483706e{-}09         4.440892e{-}16 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR10\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR10\_PSQKM }
+\DocumentationTok{\#\#          8.416851e{-}08          0.000000e+00 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR11\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR11\_PSQKM }
+\DocumentationTok{\#\#          2.232564e{-}05          0.000000e+00 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR12\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR12\_PSQKM }
+\DocumentationTok{\#\#          0.0004523409          0.0000000000 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR13\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR13\_PSQKM }
+\DocumentationTok{\#\#             0.6932408             0.0000000 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR14\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR14\_PSQKM }
+\DocumentationTok{\#\#             0.4561499             0.0000000 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR15\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR15\_PSQKM }
+\DocumentationTok{\#\#           0.003074909           0.000000000 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR16\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR16\_PSQKM }
+\DocumentationTok{\#\#          0.0000181172          0.0050414558 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR17\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR17\_PSQKM }
+\DocumentationTok{\#\#          1.127658e{-}05          2.648774e{-}08 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}YEAR18\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\#           (Intercept) NFIRESM6\_YEAR18\_PSQKM }
+\DocumentationTok{\#\#          0.0002779514          0.0000000000}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossg1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{Coef[,}
     \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{)] }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    as.data.frame }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{rownames\_to\_column}\NormalTok{(}\AttributeTok{var =} \StringTok{"variable"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plyr}\SpecialCharTok{::}\FunctionTok{ldply}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{format}\NormalTok{(., }\AttributeTok{scientific =}\NormalTok{ F)}
+\DocumentationTok{\#\#                                                  .id              variable}
+\DocumentationTok{\#\# 1    YEAR1\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 2    YEAR1\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM  NFIRESM6\_YEAR1\_PSQKM}
+\DocumentationTok{\#\# 3    YEAR2\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 4    YEAR2\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM  NFIRESM6\_YEAR2\_PSQKM}
+\DocumentationTok{\#\# 5    YEAR3\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 6    YEAR3\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM  NFIRESM6\_YEAR3\_PSQKM}
+\DocumentationTok{\#\# 7    YEAR4\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 8    YEAR4\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM  NFIRESM6\_YEAR4\_PSQKM}
+\DocumentationTok{\#\# 9    YEAR5\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 10   YEAR5\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM  NFIRESM6\_YEAR5\_PSQKM}
+\DocumentationTok{\#\# 11   YEAR6\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 12   YEAR6\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM  NFIRESM6\_YEAR6\_PSQKM}
+\DocumentationTok{\#\# 13   YEAR7\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 14   YEAR7\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM  NFIRESM6\_YEAR7\_PSQKM}
+\DocumentationTok{\#\# 15   YEAR8\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 16   YEAR8\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM  NFIRESM6\_YEAR8\_PSQKM}
+\DocumentationTok{\#\# 17   YEAR9\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 18   YEAR9\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM  NFIRESM6\_YEAR9\_PSQKM}
+\DocumentationTok{\#\# 19 YEAR10\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 20 YEAR10\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM NFIRESM6\_YEAR10\_PSQKM}
+\DocumentationTok{\#\# 21 YEAR11\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 22 YEAR11\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM NFIRESM6\_YEAR11\_PSQKM}
+\DocumentationTok{\#\# 23 YEAR12\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 24 YEAR12\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM NFIRESM6\_YEAR12\_PSQKM}
+\DocumentationTok{\#\# 25 YEAR13\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 26 YEAR13\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM NFIRESM6\_YEAR13\_PSQKM}
+\DocumentationTok{\#\# 27 YEAR14\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 28 YEAR14\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM NFIRESM6\_YEAR14\_PSQKM}
+\DocumentationTok{\#\# 29 YEAR15\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 30 YEAR15\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM NFIRESM6\_YEAR15\_PSQKM}
+\DocumentationTok{\#\# 31 YEAR16\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 32 YEAR16\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM NFIRESM6\_YEAR16\_PSQKM}
+\DocumentationTok{\#\# 33 YEAR17\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 34 YEAR17\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM NFIRESM6\_YEAR17\_PSQKM}
+\DocumentationTok{\#\# 35 YEAR18\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 36 YEAR18\_LOSSGREATER1HA\_PUA \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM NFIRESM6\_YEAR18\_PSQKM}
+\DocumentationTok{\#\#         Estimate                 Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# 1   0.0006744607 0.0000000001311937225523}
+\DocumentationTok{\#\# 2   0.0418732702 0.0000000000000000000000}
+\DocumentationTok{\#\# 3   0.0004545846 0.0001329548783455258842}
+\DocumentationTok{\#\# 4   0.0759898107 0.0000000000000000000000}
+\DocumentationTok{\#\# 5   0.0008008791 0.0000000000000024424907}
+\DocumentationTok{\#\# 6   0.0125457127 0.0001496210606330983239}
+\DocumentationTok{\#\# 7   0.0013927646 0.0000018733316384800247}
+\DocumentationTok{\#\# 8   0.0502503546 0.0000000000000068833828}
+\DocumentationTok{\#\# 9  {-}0.0001967075 0.6165029334691047857575}
+\DocumentationTok{\#\# 10  0.1019129918 0.0000000000000000000000}
+\DocumentationTok{\#\# 11  0.0009233265 0.0003246311264764045745}
+\DocumentationTok{\#\# 12  0.0382050240 0.0000000000000000000000}
+\DocumentationTok{\#\# 13  0.0012074654 0.0000000116947660444566}
+\DocumentationTok{\#\# 14  0.0328445681 0.0000000000000002220446}
+\DocumentationTok{\#\# 15  0.0014467672 0.0000303267230792325648}
+\DocumentationTok{\#\# 16  0.0430249163 0.0000000000000000000000}
+\DocumentationTok{\#\# 17  0.0009793731 0.0000000014837058248673}
+\DocumentationTok{\#\# 18  0.0299990298 0.0000000000000004440892}
+\DocumentationTok{\#\# 19  0.0008438701 0.0000000841685066088615}
+\DocumentationTok{\#\# 20  0.0317244624 0.0000000000000000000000}
+\DocumentationTok{\#\# 21  0.0007106193 0.0000223256412648087377}
+\DocumentationTok{\#\# 22  0.0244410982 0.0000000000000000000000}
+\DocumentationTok{\#\# 23  0.0007775811 0.0004523408969951958625}
+\DocumentationTok{\#\# 24  0.0491786094 0.0000000000000000000000}
+\DocumentationTok{\#\# 25  0.0001455342 0.6932407986752766593241}
+\DocumentationTok{\#\# 26  0.0895995640 0.0000000000000000000000}
+\DocumentationTok{\#\# 27  0.0001470380 0.4561499424761810139728}
+\DocumentationTok{\#\# 28  0.0767496344 0.0000000000000000000000}
+\DocumentationTok{\#\# 29  0.0007503457 0.0030749091330977140757}
+\DocumentationTok{\#\# 30  0.0680586404 0.0000000000000000000000}
+\DocumentationTok{\#\# 31  0.0030039991 0.0000181171983029138062}
+\DocumentationTok{\#\# 32  0.0439853138 0.0050414558130369435673}
+\DocumentationTok{\#\# 33  0.0030732434 0.0000112765771913547752}
+\DocumentationTok{\#\# 34  0.0680692065 0.0000000264877380029560}
+\DocumentationTok{\#\# 35  0.0014014350 0.0002779514300623731060}
+\DocumentationTok{\#\# 36  0.0562389160 0.0000000000000000000000}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossg1ha\_untrans)  }\CommentTok{\#Intercept not significant in years 5, 13 and 14}
+\DocumentationTok{\#\# \# A tibble: 1 x 2}
+\DocumentationTok{\#\#   variable    years    }
+\DocumentationTok{\#\#   \textless{}chr\textgreater{}       \textless{}chr\textgreater{}    }
+\DocumentationTok{\#\# 1 (Intercept) 5, 13, 14}
 
 \CommentTok{\# NCLUMPS TRANS}
 \NormalTok{annual\_models\_folossnclumpsl1ha\_trans\_formulas }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{y =} \FunctionTok{grep}\NormalTok{(}\StringTok{"\^{}NCLUMPSSMALLER1HA\_YEAR[0{-}9]\{,2\}.*\_TLP$"}\NormalTok{,}
@@ -3076,22 +4410,603 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
         \FunctionTok{replace}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{        spatialreg}\SpecialCharTok{::}\FunctionTok{errorsarlm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ ., }\AttributeTok{listw =}\NormalTok{ hexww), }\AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T))}
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR1\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}1.000063 {-}0.243522 {-}0.018846  0.203693  1.253928 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              1.118388   0.060297 18.5481 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR1\_PSQKM\_TLP 1.068334   0.165316  6.4624 1.031e{-}10}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.63211, LR test value: 75.978, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.059974}
+\DocumentationTok{\#\#     z{-}value: 10.54, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 111.09, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}98.83285 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.11569, (sigma: 0.34013)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.3377 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 205.67, (AIC for lm: 279.64)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR2\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.7321173 {-}0.2614645  0.0017228  0.2123042  1.3238299 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              1.059378   0.084008 12.6105 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR2\_PSQKM\_TLP 1.255906   0.205781  6.1031  1.04e{-}09}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.7475, LR test value: 133.01, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.047419}
+\DocumentationTok{\#\#     z{-}value: 15.764, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 248.49, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}97.04389 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.10812, (sigma: 0.32882)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.45491 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 202.09, (AIC for lm: 333.1)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR3\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.5140631 {-}0.0882784  0.0034355  0.0998236  0.5969004 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               1.00737    0.04779 21.0792 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR3\_PSQKM\_TLP  0.65299    0.10300  6.3395 2.306e{-}10}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.78521, LR test value: 175.79, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.042747}
+\DocumentationTok{\#\#     z{-}value: 18.369, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 337.41, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 83.48272 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.025377, (sigma: 0.1593)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.53685 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}158.97, (AIC for lm: 14.826)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR4\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.7873813 {-}0.2330558  0.0070515  0.1990039  0.8709776 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              1.229289   0.095816 12.8296 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR4\_PSQKM\_TLP 1.539323   0.248272  6.2001 5.641e{-}10}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.77571, LR test value: 156.07, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.043956}
+\DocumentationTok{\#\#     z{-}value: 17.647, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 311.42, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}99.00946 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.10803, (sigma: 0.32867)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.56665 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 206.02, (AIC for lm: 360.09)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR5\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.62109189 {-}0.12731506 {-}0.00055372  0.13036230  0.55953089 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              1.061003   0.060547 17.5236 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR5\_PSQKM\_TLP 0.729055   0.079326  9.1906 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.77387, LR test value: 159.8, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.044187}
+\DocumentationTok{\#\#     z{-}value: 17.513, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 306.72, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: 18.85743 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.042595, (sigma: 0.20639)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.61117 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: {-}29.715, (AIC for lm: 128.09)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR6\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.8039183 {-}0.1607881 {-}0.0051577  0.1766811  0.5684693 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              0.977041   0.064794  15.079 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR6\_PSQKM\_TLP 1.473669   0.169289   8.705 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.74848, LR test value: 150.33, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.047302}
+\DocumentationTok{\#\#     z{-}value: 15.823, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 250.37, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}24.48332 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.060892, (sigma: 0.24676)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.57069 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 56.967, (AIC for lm: 205.3)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR7\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}0.783077 {-}0.206268 {-}0.011627  0.180473  1.337631 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              1.156624   0.068147 16.9726 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR7\_PSQKM\_TLP 1.148752   0.181043  6.3452 2.221e{-}10}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.71156, LR test value: 118.49, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.051587}
+\DocumentationTok{\#\#     z{-}value: 13.793, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 190.26, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}66.77203 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.086724, (sigma: 0.29449)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.43585 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 141.54, (AIC for lm: 258.03)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR8\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#         Min          1Q      Median          3Q         Max }
+\DocumentationTok{\#\# {-}0.90533769 {-}0.22969630 {-}0.00066043  0.20177155  1.10111452 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              1.203332   0.097946 12.2856 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR8\_PSQKM\_TLP 1.700140   0.183191  9.2807 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.78492, LR test value: 173.8, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.042785}
+\DocumentationTok{\#\#     z{-}value: 18.346, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 336.57, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}93.61433 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.10292, (sigma: 0.32082)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.59406 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 195.23, (AIC for lm: 367.03)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR9\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.7966988 {-}0.2732844 {-}0.0064492  0.2429723  0.9870137 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                          Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)              1.082942   0.090066 12.0239 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR9\_PSQKM\_TLP 1.500504   0.192870  7.7799 7.327e{-}15}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.742, LR test value: 131.56, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.048074}
+\DocumentationTok{\#\#     z{-}value: 15.435, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 238.23, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}111.8461 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.12191, (sigma: 0.34916)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.47473 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 231.69, (AIC for lm: 361.26)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR10\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.6547413 {-}0.1506051 {-}0.0064436  0.1721439  0.7695523 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               1.062184   0.074258 14.3040 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR10\_PSQKM\_TLP 1.273815   0.143728  8.8627 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.78703, LR test value: 160.22, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.042513}
+\DocumentationTok{\#\#     z{-}value: 18.513, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 342.71, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}25.54442 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.060013, (sigma: 0.24497)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.58035 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 59.089, (AIC for lm: 217.31)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR11\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}0.935334 {-}0.125059 {-}0.017386  0.151763  0.800068 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               1.032653   0.081866 12.6139 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR11\_PSQKM\_TLP 0.969821   0.127618  7.5994 2.975e{-}14}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.81614, LR test value: 198.65, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.03865}
+\DocumentationTok{\#\#     z{-}value: 21.116, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 445.89, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}15.69533 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.054441, (sigma: 0.23333)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.60876 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 39.391, (AIC for lm: 236.04)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR12\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}0.876261 {-}0.210728 {-}0.016549  0.186666  0.930474 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               1.277935   0.070871 18.0318 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR12\_PSQKM\_TLP 1.019336   0.160193  6.3632 1.977e{-}10}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.70685, LR test value: 110.29, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.052115}
+\DocumentationTok{\#\#     z{-}value: 13.563, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 183.96, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}80.75642 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.097084, (sigma: 0.31158)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.41391 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 169.51, (AIC for lm: 277.81)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR13\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}0.690363 {-}0.193198  0.013329  0.184414  0.715258 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               0.964514   0.064637 14.9221 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR13\_PSQKM\_TLP 1.176172   0.123602  9.5158 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.72407, LR test value: 132.76, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.050166}
+\DocumentationTok{\#\#     z{-}value: 14.434, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 208.33, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}43.47217 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.071683, (sigma: 0.26774)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.53695 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 94.944, (AIC for lm: 225.7)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR14\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}1.00489 {-}0.23137 {-}0.01679  0.22768  1.29398 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               1.188215   0.080732  14.718 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR14\_PSQKM\_TLP 1.832739   0.173227  10.580 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.72148, LR test value: 132.94, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.050462}
+\DocumentationTok{\#\#     z{-}value: 14.297, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 204.42, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}102.8638 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.11479, (sigma: 0.3388)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.49708 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 213.73, (AIC for lm: 344.67)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR15\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.8113657 {-}0.1773313 {-}0.0025089  0.1707536  0.8403639 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)               1.045587   0.053088 19.6952 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR15\_PSQKM\_TLP 1.157689   0.140341  8.2491  2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.64727, LR test value: 75.646, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.058453}
+\DocumentationTok{\#\#     z{-}value: 11.073, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 122.62, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}41.2265 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.07293, (sigma: 0.27006)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.48538 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 90.453, (AIC for lm: 164.1)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR16\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.9823576 {-}0.1607784  0.0028347  0.1860345  0.8048715 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)                1.20502    0.07315 16.4732   \textless{}2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR16\_PSQKM\_TLP  1.04706    0.19657  5.3267    1e{-}07}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.75802, LR test value: 132.56, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.046149}
+\DocumentationTok{\#\#     z{-}value: 16.425, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 269.79, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}51.04865 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.074718, (sigma: 0.27335)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.46844 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 110.1, (AIC for lm: 240.66)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR17\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#        Min         1Q     Median         3Q        Max }
+\DocumentationTok{\#\# {-}0.8804475 {-}0.2111853 {-}0.0056222  0.2041896  0.7031250 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)                1.26603    0.10907 11.6079 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR17\_PSQKM\_TLP  1.03586    0.17253  6.0041 1.924e{-}09}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.82915, LR test value: 188.19, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.036843}
+\DocumentationTok{\#\#     z{-}value: 22.505, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 506.47, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}74.56686 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.085884, (sigma: 0.29306)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.54466 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 157.13, (AIC for lm: 343.32)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR18\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\_TLP\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#       Min        1Q    Median        3Q       Max }
+\DocumentationTok{\#\# {-}1.270141 {-}0.238464 {-}0.015116  0.239294  1.181349 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                           Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)                1.08617    0.10581 10.2650 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR18\_PSQKM\_TLP  1.67308    0.28550  5.8602 4.622e{-}09}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.77551, LR test value: 159.04, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.043981}
+\DocumentationTok{\#\#     z{-}value: 17.633, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 310.92, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}126.6418 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.13441, (sigma: 0.36663)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.49799 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 261.28, (AIC for lm: 418.32)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-7} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-8} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{NK) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-9} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{Coef[,}
     \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{)] }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    as.data.frame }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{rownames\_to\_column}\NormalTok{(}\AttributeTok{var =} \StringTok{"variable"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plyr}\SpecialCharTok{::}\FunctionTok{ldply}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{format}\NormalTok{(., }\AttributeTok{scientific =}\NormalTok{ F)}
+\DocumentationTok{\#\#                                                               .id}
+\DocumentationTok{\#\# 1    NCLUMPSSMALLER1HA\_YEAR1\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\_TLP}
+\DocumentationTok{\#\# 2    NCLUMPSSMALLER1HA\_YEAR1\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\_TLP}
+\DocumentationTok{\#\# 3    NCLUMPSSMALLER1HA\_YEAR2\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\_TLP}
+\DocumentationTok{\#\# 4    NCLUMPSSMALLER1HA\_YEAR2\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\_TLP}
+\DocumentationTok{\#\# 5    NCLUMPSSMALLER1HA\_YEAR3\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\_TLP}
+\DocumentationTok{\#\# 6    NCLUMPSSMALLER1HA\_YEAR3\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\_TLP}
+\DocumentationTok{\#\# 7    NCLUMPSSMALLER1HA\_YEAR4\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\_TLP}
+\DocumentationTok{\#\# 8    NCLUMPSSMALLER1HA\_YEAR4\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\_TLP}
+\DocumentationTok{\#\# 9    NCLUMPSSMALLER1HA\_YEAR5\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\_TLP}
+\DocumentationTok{\#\# 10   NCLUMPSSMALLER1HA\_YEAR5\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\_TLP}
+\DocumentationTok{\#\# 11   NCLUMPSSMALLER1HA\_YEAR6\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\_TLP}
+\DocumentationTok{\#\# 12   NCLUMPSSMALLER1HA\_YEAR6\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\_TLP}
+\DocumentationTok{\#\# 13   NCLUMPSSMALLER1HA\_YEAR7\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\_TLP}
+\DocumentationTok{\#\# 14   NCLUMPSSMALLER1HA\_YEAR7\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\_TLP}
+\DocumentationTok{\#\# 15   NCLUMPSSMALLER1HA\_YEAR8\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\_TLP}
+\DocumentationTok{\#\# 16   NCLUMPSSMALLER1HA\_YEAR8\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\_TLP}
+\DocumentationTok{\#\# 17   NCLUMPSSMALLER1HA\_YEAR9\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\_TLP}
+\DocumentationTok{\#\# 18   NCLUMPSSMALLER1HA\_YEAR9\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\_TLP}
+\DocumentationTok{\#\# 19 NCLUMPSSMALLER1HA\_YEAR10\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\_TLP}
+\DocumentationTok{\#\# 20 NCLUMPSSMALLER1HA\_YEAR10\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\_TLP}
+\DocumentationTok{\#\# 21 NCLUMPSSMALLER1HA\_YEAR11\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\_TLP}
+\DocumentationTok{\#\# 22 NCLUMPSSMALLER1HA\_YEAR11\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\_TLP}
+\DocumentationTok{\#\# 23 NCLUMPSSMALLER1HA\_YEAR12\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\_TLP}
+\DocumentationTok{\#\# 24 NCLUMPSSMALLER1HA\_YEAR12\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\_TLP}
+\DocumentationTok{\#\# 25 NCLUMPSSMALLER1HA\_YEAR13\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\_TLP}
+\DocumentationTok{\#\# 26 NCLUMPSSMALLER1HA\_YEAR13\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\_TLP}
+\DocumentationTok{\#\# 27 NCLUMPSSMALLER1HA\_YEAR14\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\_TLP}
+\DocumentationTok{\#\# 28 NCLUMPSSMALLER1HA\_YEAR14\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\_TLP}
+\DocumentationTok{\#\# 29 NCLUMPSSMALLER1HA\_YEAR15\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\_TLP}
+\DocumentationTok{\#\# 30 NCLUMPSSMALLER1HA\_YEAR15\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\_TLP}
+\DocumentationTok{\#\# 31 NCLUMPSSMALLER1HA\_YEAR16\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\_TLP}
+\DocumentationTok{\#\# 32 NCLUMPSSMALLER1HA\_YEAR16\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\_TLP}
+\DocumentationTok{\#\# 33 NCLUMPSSMALLER1HA\_YEAR17\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\_TLP}
+\DocumentationTok{\#\# 34 NCLUMPSSMALLER1HA\_YEAR17\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\_TLP}
+\DocumentationTok{\#\# 35 NCLUMPSSMALLER1HA\_YEAR18\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\_TLP}
+\DocumentationTok{\#\# 36 NCLUMPSSMALLER1HA\_YEAR18\_PSQKM\_TLP \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\_TLP}
+\DocumentationTok{\#\#                     variable  Estimate                 Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# 1                (Intercept) 1.1183876 0.0000000000000000000000}
+\DocumentationTok{\#\# 2   NFIRESM6\_YEAR1\_PSQKM\_TLP 1.0683337 0.0000000001030640017774}
+\DocumentationTok{\#\# 3                (Intercept) 1.0593782 0.0000000000000000000000}
+\DocumentationTok{\#\# 4   NFIRESM6\_YEAR2\_PSQKM\_TLP 1.2559064 0.0000000010401834948937}
+\DocumentationTok{\#\# 5                (Intercept) 1.0073656 0.0000000000000000000000}
+\DocumentationTok{\#\# 6   NFIRESM6\_YEAR3\_PSQKM\_TLP 0.6529914 0.0000000002305591273455}
+\DocumentationTok{\#\# 7                (Intercept) 1.2292893 0.0000000000000000000000}
+\DocumentationTok{\#\# 8   NFIRESM6\_YEAR4\_PSQKM\_TLP 1.5393228 0.0000000005641085376595}
+\DocumentationTok{\#\# 9                (Intercept) 1.0610030 0.0000000000000000000000}
+\DocumentationTok{\#\# 10  NFIRESM6\_YEAR5\_PSQKM\_TLP 0.7290553 0.0000000000000000000000}
+\DocumentationTok{\#\# 11               (Intercept) 0.9770409 0.0000000000000000000000}
+\DocumentationTok{\#\# 12  NFIRESM6\_YEAR6\_PSQKM\_TLP 1.4736689 0.0000000000000000000000}
+\DocumentationTok{\#\# 13               (Intercept) 1.1566241 0.0000000000000000000000}
+\DocumentationTok{\#\# 14  NFIRESM6\_YEAR7\_PSQKM\_TLP 1.1487517 0.0000000002221329786778}
+\DocumentationTok{\#\# 15               (Intercept) 1.2033323 0.0000000000000000000000}
+\DocumentationTok{\#\# 16  NFIRESM6\_YEAR8\_PSQKM\_TLP 1.7001402 0.0000000000000000000000}
+\DocumentationTok{\#\# 17               (Intercept) 1.0829416 0.0000000000000000000000}
+\DocumentationTok{\#\# 18  NFIRESM6\_YEAR9\_PSQKM\_TLP 1.5005043 0.0000000000000073274720}
+\DocumentationTok{\#\# 19               (Intercept) 1.0621841 0.0000000000000000000000}
+\DocumentationTok{\#\# 20 NFIRESM6\_YEAR10\_PSQKM\_TLP 1.2738146 0.0000000000000000000000}
+\DocumentationTok{\#\# 21               (Intercept) 1.0326534 0.0000000000000000000000}
+\DocumentationTok{\#\# 22 NFIRESM6\_YEAR11\_PSQKM\_TLP 0.9698211 0.0000000000000297539771}
+\DocumentationTok{\#\# 23               (Intercept) 1.2779354 0.0000000000000000000000}
+\DocumentationTok{\#\# 24 NFIRESM6\_YEAR12\_PSQKM\_TLP 1.0193358 0.0000000001976512287172}
+\DocumentationTok{\#\# 25               (Intercept) 0.9645141 0.0000000000000000000000}
+\DocumentationTok{\#\# 26 NFIRESM6\_YEAR13\_PSQKM\_TLP 1.1761720 0.0000000000000000000000}
+\DocumentationTok{\#\# 27               (Intercept) 1.1882147 0.0000000000000000000000}
+\DocumentationTok{\#\# 28 NFIRESM6\_YEAR14\_PSQKM\_TLP 1.8327393 0.0000000000000000000000}
+\DocumentationTok{\#\# 29               (Intercept) 1.0455874 0.0000000000000000000000}
+\DocumentationTok{\#\# 30 NFIRESM6\_YEAR15\_PSQKM\_TLP 1.1576891 0.0000000000000002220446}
+\DocumentationTok{\#\# 31               (Intercept) 1.2050224 0.0000000000000000000000}
+\DocumentationTok{\#\# 32 NFIRESM6\_YEAR16\_PSQKM\_TLP 1.0470553 0.0000001000331406597610}
+\DocumentationTok{\#\# 33               (Intercept) 1.2660282 0.0000000000000000000000}
+\DocumentationTok{\#\# 34 NFIRESM6\_YEAR17\_PSQKM\_TLP 1.0358592 0.0000000019239991821962}
+\DocumentationTok{\#\# 35               (Intercept) 1.0861709 0.0000000000000000000000}
+\DocumentationTok{\#\# 36 NFIRESM6\_YEAR18\_PSQKM\_TLP 1.6730772 0.0000000046222852212452}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans)  }\CommentTok{\#NFIRESM6 coefficient is significant in every annual model}
+\DocumentationTok{\#\# \# A tibble: 0 x 2}
+\DocumentationTok{\#\# \# ... with 2 variables: variable \textless{}chr\textgreater{}, years \textless{}chr\textgreater{}}
 
 \CommentTok{\# NCLUMPS UNTRANS}
 \NormalTok{annual\_models\_folossnclumpsl1ha\_untrans\_formulas }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{y =} \FunctionTok{grep}\NormalTok{(}\StringTok{"\^{}NCLUMPSSMALLER1HA\_YEAR[0{-}9]\{,2\}.*KM$"}\NormalTok{,}
@@ -3105,22 +5020,603 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
         \FunctionTok{replace}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{        spatialreg}\SpecialCharTok{::}\FunctionTok{errorsarlm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ ., }\AttributeTok{listw =}\NormalTok{ hexww), }\AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T))}
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR1\_PSQKM \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.68520 {-}0.87407 {-}0.28693  0.54172  7.46532 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           1.81310    0.16943 10.7012 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR1\_PSQKM 16.87205    3.56113  4.7378  2.16e{-}06}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.52667, LR test value: 44.117, p{-}value: 3.093e{-}11}
+\DocumentationTok{\#\# Asymptotic standard error: 0.069637}
+\DocumentationTok{\#\#     z{-}value: 7.563, p{-}value: 3.9302e{-}14}
+\DocumentationTok{\#\# Wald statistic: 57.199, p{-}value: 3.9413e{-}14}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}425.8944 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.5899, (sigma: 1.2609)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.20078 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 859.79, (AIC for lm: 901.91)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR2\_PSQKM \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}1.82247 {-}0.64216 {-}0.23657  0.46121  4.35940 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           1.54365    0.18946  8.1475 4.441e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR2\_PSQKM 17.53185    3.27944  5.3460 8.993e{-}08}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.68375, LR test value: 97.71, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.054645}
+\DocumentationTok{\#\#     z{-}value: 12.512, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 156.56, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}360.2905 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.8944, (sigma: 0.94573)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.35241 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 728.58, (AIC for lm: 824.29)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR3\_PSQKM \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}2.41132 {-}0.63544 {-}0.19749  0.31395  6.40659 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           1.68441    0.28808  5.8471 5.002e{-}09}
+\DocumentationTok{\#\# NFIRESM6\_YEAR3\_PSQKM  9.51067    3.26330  2.9144  0.003563}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.75133, LR test value: 149.14, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.046959}
+\DocumentationTok{\#\#     z{-}value: 16, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 255.99, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}409.4719 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.2752, (sigma: 1.1293)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.45715 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 826.94, (AIC for lm: 974.09)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR4\_PSQKM \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.34698 {-}0.77387 {-}0.29440  0.48889  5.01623 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           2.15546    0.32508  6.6305 3.346e{-}11}
+\DocumentationTok{\#\# NFIRESM6\_YEAR4\_PSQKM 22.80644    4.28246  5.3255 1.007e{-}07}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.75265, LR test value: 139.11, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.046801}
+\DocumentationTok{\#\#     z{-}value: 16.082, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 258.63, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}436.0388 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.5721, (sigma: 1.2538)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.50161 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 880.08, (AIC for lm: 1017.2)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR5\_PSQKM \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}4.17933 {-}0.82364 {-}0.31870  0.43642  8.36288 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           2.29560    0.39806  5.7669 8.072e{-}09}
+\DocumentationTok{\#\# NFIRESM6\_YEAR5\_PSQKM 12.68546    1.09546 11.5800 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.76867, LR test value: 149.21, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.044837}
+\DocumentationTok{\#\#     z{-}value: 17.144, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 293.91, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}475.3948 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.126, (sigma: 1.4581)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.62419 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 958.79, (AIC for lm: 1106)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR6\_PSQKM \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}1.78575 {-}0.61179 {-}0.20116  0.38913  3.07146 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           1.41665    0.20523  6.9027 5.102e{-}12}
+\DocumentationTok{\#\# NFIRESM6\_YEAR6\_PSQKM 17.44138    2.42716  7.1859 6.675e{-}13}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.72947, LR test value: 131.09, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.049542}
+\DocumentationTok{\#\#     z{-}value: 14.724, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 216.8, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}339.6752 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.74321, (sigma: 0.8621)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.51776 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 687.35, (AIC for lm: 816.44)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR7\_PSQKM \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}2.98664 {-}0.74250 {-}0.19944  0.51212  7.33576 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           1.86546    0.23003  8.1098 4.441e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR7\_PSQKM 15.78103    2.95573  5.3391 9.339e{-}08}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.67194, LR test value: 95.863, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.055902}
+\DocumentationTok{\#\#     z{-}value: 12.02, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 144.48, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}412.1756 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.355, (sigma: 1.164)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.3505 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 832.35, (AIC for lm: 926.21)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR8\_PSQKM \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.19755 {-}0.91890 {-}0.21914  0.64920  5.11753 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           2.29308    0.35348  6.4872 8.743e{-}11}
+\DocumentationTok{\#\# NFIRESM6\_YEAR8\_PSQKM 19.38971    2.54466  7.6198 2.531e{-}14}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.76515, LR test value: 152.79, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.045274}
+\DocumentationTok{\#\#     z{-}value: 16.9, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 285.62, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}445.8157 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.6862, (sigma: 1.2986)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.52883 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 899.63, (AIC for lm: 1050.4)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR9\_PSQKM \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}1.65667 {-}0.73531 {-}0.16371  0.61059  3.33725 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                      Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)           1.70281    0.20292  8.3917 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR9\_PSQKM 11.26811    2.07736  5.4242  5.82e{-}08}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.70235, LR test value: 111.8, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.052616}
+\DocumentationTok{\#\#     z{-}value: 13.349, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 178.19, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}360.9127 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 0.89107, (sigma: 0.94397)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.39415 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 729.83, (AIC for lm: 839.62)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR10\_PSQKM \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.46512 {-}0.67609 {-}0.25338  0.57793  4.64330 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            1.83799    0.30642  5.9982 1.995e{-}09}
+\DocumentationTok{\#\# NFIRESM6\_YEAR10\_PSQKM 17.45155    2.59922  6.7141 1.892e{-}11}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.76852, LR test value: 150.49, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.044856}
+\DocumentationTok{\#\#     z{-}value: 17.133, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 293.55, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}408.4723 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.2527, (sigma: 1.1192)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.51971 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 824.94, (AIC for lm: 973.43)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR11\_PSQKM \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}2.41808 {-}0.65273 {-}0.28127  0.38189  6.67524 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            1.80002    0.36922  4.8752 1.087e{-}06}
+\DocumentationTok{\#\# NFIRESM6\_YEAR11\_PSQKM 13.35425    2.42653  5.5034 3.725e{-}08}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.79854, LR test value: 180.03, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.041013}
+\DocumentationTok{\#\#     z{-}value: 19.47, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 379.1, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}422.3525 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.3718, (sigma: 1.1712)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.5408 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 852.71, (AIC for lm: 1030.7)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR12\_PSQKM \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.27828 {-}1.09232 {-}0.31417  0.63727  5.77417 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            2.61863    0.30106  8.6980 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# NFIRESM6\_YEAR12\_PSQKM 12.94519    2.99231  4.3262 1.517e{-}05}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.67381, LR test value: 89.934, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.055704}
+\DocumentationTok{\#\#     z{-}value: 12.096, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 146.32, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}481.4409 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.3409, (sigma: 1.53)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.34082 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 970.88, (AIC for lm: 1058.8)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR13\_PSQKM \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}2.90917 {-}0.66616 {-}0.21825  0.39427  5.43486 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            1.57979    0.23143  6.8263 8.711e{-}12}
+\DocumentationTok{\#\# NFIRESM6\_YEAR13\_PSQKM 11.97290    1.59940  7.4859 7.105e{-}14}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.70051, LR test value: 115.51, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.052818}
+\DocumentationTok{\#\#     z{-}value: 13.263, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 175.9, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}396.8312 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.1847, (sigma: 1.0884)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.43161 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 801.66, (AIC for lm: 915.17)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR14\_PSQKM \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.66342 {-}0.88461 {-}0.19487  0.60649  7.77443 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            2.29828    0.29157  7.8823 3.109e{-}15}
+\DocumentationTok{\#\# NFIRESM6\_YEAR14\_PSQKM 23.42567    2.48731  9.4181 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.70093, LR test value: 119.22, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.052772}
+\DocumentationTok{\#\#     z{-}value: 13.282, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 176.41, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}454.9501 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.8752, (sigma: 1.3694)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.44474 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 917.9, (AIC for lm: 1035.1)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR15\_PSQKM \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.67113 {-}0.84067 {-}0.33793  0.55796  8.31782 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            1.81999    0.23552  7.7274 1.088e{-}14}
+\DocumentationTok{\#\# NFIRESM6\_YEAR15\_PSQKM 25.18301    2.98787  8.4284 \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.59539, LR test value: 62.879, p{-}value: 2.2204e{-}15}
+\DocumentationTok{\#\# Asymptotic standard error: 0.063514}
+\DocumentationTok{\#\#     z{-}value: 9.3741, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 87.874, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}466.5511 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 2.1456, (sigma: 1.4648)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.46856 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 941.1, (AIC for lm: 1002)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR16\_PSQKM \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}7.58252 {-}1.21736 {-}0.38747  0.71228 10.51284 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            3.10816    0.70283  4.4224 9.763e{-}06}
+\DocumentationTok{\#\# NFIRESM6\_YEAR16\_PSQKM 28.18897    7.66577  3.6773 0.0002358}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.80928, LR test value: 178.63, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.039581}
+\DocumentationTok{\#\#     z{-}value: 20.446, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 418.05, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}573.4085 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 4.495, (sigma: 2.1201)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.52227 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 1154.8, (AIC for lm: 1331.5)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR17\_PSQKM \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}5.71806 {-}1.36977 {-}0.69024  1.09789  9.24351 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            3.44280    0.68992  4.9902 6.033e{-}07}
+\DocumentationTok{\#\# NFIRESM6\_YEAR17\_PSQKM 28.89736    8.18899  3.5288 0.0004174}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.80066, LR test value: 178.34, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.040733}
+\DocumentationTok{\#\#     z{-}value: 19.656, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 386.36, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}579.2415 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 4.7349, (sigma: 2.176)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.51218 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 1166.5, (AIC for lm: 1342.8)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# $\textasciigrave{}NCLUMPSSMALLER1HA\_YEAR18\_PSQKM \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM\textasciigrave{}}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Call:spatialreg::errorsarlm(formula = x, data = ., listw = hexww)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Residuals:}
+\DocumentationTok{\#\#      Min       1Q   Median       3Q      Max }
+\DocumentationTok{\#\# {-}3.06522 {-}0.75193 {-}0.36616  0.52665  7.36383 }
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Type: error }
+\DocumentationTok{\#\# Coefficients: (asymptotic standard errors) }
+\DocumentationTok{\#\#                       Estimate Std. Error z value  Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# (Intercept)            1.78521    0.34693  5.1457 2.666e{-}07}
+\DocumentationTok{\#\# NFIRESM6\_YEAR18\_PSQKM 24.12177    4.97737  4.8463 1.258e{-}06}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Lambda: 0.77819, LR test value: 156.82, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Asymptotic standard error: 0.043643}
+\DocumentationTok{\#\#     z{-}value: 17.831, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# Wald statistic: 317.93, p{-}value: \textless{} 2.22e{-}16}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# Log likelihood: {-}428.5163 for error model}
+\DocumentationTok{\#\# ML residual variance (sigma squared): 1.4592, (sigma: 1.208)}
+\DocumentationTok{\#\# Nagelkerke pseudo{-}R{-}squared: 0.47096 }
+\DocumentationTok{\#\# Number of observations: 253 }
+\DocumentationTok{\#\# Number of parameters estimated: 4 }
+\DocumentationTok{\#\# AIC: 865.03, (AIC for lm: 1019.8)}
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-10} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-11} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{NK) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    unlist }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-models-12} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{lapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_untrans, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{summary}\NormalTok{(x, }\AttributeTok{Nagelkerke =}\NormalTok{ T)}\SpecialCharTok{$}\NormalTok{Coef[,}
     \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{)] }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    as.data.frame }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{rownames\_to\_column}\NormalTok{(}\AttributeTok{var =} \StringTok{"variable"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
 \NormalTok{    plyr}\SpecialCharTok{::}\FunctionTok{ldply}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{format}\NormalTok{(., }\AttributeTok{scientific =}\NormalTok{ F)}
+\DocumentationTok{\#\#                                                       .id              variable}
+\DocumentationTok{\#\# 1    NCLUMPSSMALLER1HA\_YEAR1\_PSQKM \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 2    NCLUMPSSMALLER1HA\_YEAR1\_PSQKM \textasciitilde{} NFIRESM6\_YEAR1\_PSQKM  NFIRESM6\_YEAR1\_PSQKM}
+\DocumentationTok{\#\# 3    NCLUMPSSMALLER1HA\_YEAR2\_PSQKM \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 4    NCLUMPSSMALLER1HA\_YEAR2\_PSQKM \textasciitilde{} NFIRESM6\_YEAR2\_PSQKM  NFIRESM6\_YEAR2\_PSQKM}
+\DocumentationTok{\#\# 5    NCLUMPSSMALLER1HA\_YEAR3\_PSQKM \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 6    NCLUMPSSMALLER1HA\_YEAR3\_PSQKM \textasciitilde{} NFIRESM6\_YEAR3\_PSQKM  NFIRESM6\_YEAR3\_PSQKM}
+\DocumentationTok{\#\# 7    NCLUMPSSMALLER1HA\_YEAR4\_PSQKM \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 8    NCLUMPSSMALLER1HA\_YEAR4\_PSQKM \textasciitilde{} NFIRESM6\_YEAR4\_PSQKM  NFIRESM6\_YEAR4\_PSQKM}
+\DocumentationTok{\#\# 9    NCLUMPSSMALLER1HA\_YEAR5\_PSQKM \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 10   NCLUMPSSMALLER1HA\_YEAR5\_PSQKM \textasciitilde{} NFIRESM6\_YEAR5\_PSQKM  NFIRESM6\_YEAR5\_PSQKM}
+\DocumentationTok{\#\# 11   NCLUMPSSMALLER1HA\_YEAR6\_PSQKM \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 12   NCLUMPSSMALLER1HA\_YEAR6\_PSQKM \textasciitilde{} NFIRESM6\_YEAR6\_PSQKM  NFIRESM6\_YEAR6\_PSQKM}
+\DocumentationTok{\#\# 13   NCLUMPSSMALLER1HA\_YEAR7\_PSQKM \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 14   NCLUMPSSMALLER1HA\_YEAR7\_PSQKM \textasciitilde{} NFIRESM6\_YEAR7\_PSQKM  NFIRESM6\_YEAR7\_PSQKM}
+\DocumentationTok{\#\# 15   NCLUMPSSMALLER1HA\_YEAR8\_PSQKM \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 16   NCLUMPSSMALLER1HA\_YEAR8\_PSQKM \textasciitilde{} NFIRESM6\_YEAR8\_PSQKM  NFIRESM6\_YEAR8\_PSQKM}
+\DocumentationTok{\#\# 17   NCLUMPSSMALLER1HA\_YEAR9\_PSQKM \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 18   NCLUMPSSMALLER1HA\_YEAR9\_PSQKM \textasciitilde{} NFIRESM6\_YEAR9\_PSQKM  NFIRESM6\_YEAR9\_PSQKM}
+\DocumentationTok{\#\# 19 NCLUMPSSMALLER1HA\_YEAR10\_PSQKM \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 20 NCLUMPSSMALLER1HA\_YEAR10\_PSQKM \textasciitilde{} NFIRESM6\_YEAR10\_PSQKM NFIRESM6\_YEAR10\_PSQKM}
+\DocumentationTok{\#\# 21 NCLUMPSSMALLER1HA\_YEAR11\_PSQKM \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 22 NCLUMPSSMALLER1HA\_YEAR11\_PSQKM \textasciitilde{} NFIRESM6\_YEAR11\_PSQKM NFIRESM6\_YEAR11\_PSQKM}
+\DocumentationTok{\#\# 23 NCLUMPSSMALLER1HA\_YEAR12\_PSQKM \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 24 NCLUMPSSMALLER1HA\_YEAR12\_PSQKM \textasciitilde{} NFIRESM6\_YEAR12\_PSQKM NFIRESM6\_YEAR12\_PSQKM}
+\DocumentationTok{\#\# 25 NCLUMPSSMALLER1HA\_YEAR13\_PSQKM \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 26 NCLUMPSSMALLER1HA\_YEAR13\_PSQKM \textasciitilde{} NFIRESM6\_YEAR13\_PSQKM NFIRESM6\_YEAR13\_PSQKM}
+\DocumentationTok{\#\# 27 NCLUMPSSMALLER1HA\_YEAR14\_PSQKM \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 28 NCLUMPSSMALLER1HA\_YEAR14\_PSQKM \textasciitilde{} NFIRESM6\_YEAR14\_PSQKM NFIRESM6\_YEAR14\_PSQKM}
+\DocumentationTok{\#\# 29 NCLUMPSSMALLER1HA\_YEAR15\_PSQKM \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 30 NCLUMPSSMALLER1HA\_YEAR15\_PSQKM \textasciitilde{} NFIRESM6\_YEAR15\_PSQKM NFIRESM6\_YEAR15\_PSQKM}
+\DocumentationTok{\#\# 31 NCLUMPSSMALLER1HA\_YEAR16\_PSQKM \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 32 NCLUMPSSMALLER1HA\_YEAR16\_PSQKM \textasciitilde{} NFIRESM6\_YEAR16\_PSQKM NFIRESM6\_YEAR16\_PSQKM}
+\DocumentationTok{\#\# 33 NCLUMPSSMALLER1HA\_YEAR17\_PSQKM \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 34 NCLUMPSSMALLER1HA\_YEAR17\_PSQKM \textasciitilde{} NFIRESM6\_YEAR17\_PSQKM NFIRESM6\_YEAR17\_PSQKM}
+\DocumentationTok{\#\# 35 NCLUMPSSMALLER1HA\_YEAR18\_PSQKM \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM           (Intercept)}
+\DocumentationTok{\#\# 36 NCLUMPSSMALLER1HA\_YEAR18\_PSQKM \textasciitilde{} NFIRESM6\_YEAR18\_PSQKM NFIRESM6\_YEAR18\_PSQKM}
+\DocumentationTok{\#\#     Estimate                 Pr(\textgreater{}|z|)}
+\DocumentationTok{\#\# 1   1.813101 0.0000000000000000000000}
+\DocumentationTok{\#\# 2  16.872055 0.0000021600699307011695}
+\DocumentationTok{\#\# 3   1.543653 0.0000000000000004440892}
+\DocumentationTok{\#\# 4  17.531849 0.0000000899268792764474}
+\DocumentationTok{\#\# 5   1.684413 0.0000000050015127595060}
+\DocumentationTok{\#\# 6   9.510673 0.0035633392273459740807}
+\DocumentationTok{\#\# 7   2.155461 0.0000000000334636762744}
+\DocumentationTok{\#\# 8  22.806441 0.0000001006502663436493}
+\DocumentationTok{\#\# 9   2.295604 0.0000000080721240802717}
+\DocumentationTok{\#\# 10 12.685458 0.0000000000000000000000}
+\DocumentationTok{\#\# 11  1.416646 0.0000000000051021409320}
+\DocumentationTok{\#\# 12 17.441377 0.0000000000006674660824}
+\DocumentationTok{\#\# 13  1.865456 0.0000000000000004440892}
+\DocumentationTok{\#\# 14 15.781026 0.0000000933894299670612}
+\DocumentationTok{\#\# 15  2.293080 0.0000000000874313954569}
+\DocumentationTok{\#\# 16 19.389709 0.0000000000000253130850}
+\DocumentationTok{\#\# 17  1.702808 0.0000000000000000000000}
+\DocumentationTok{\#\# 18 11.268110 0.0000000582029089368774}
+\DocumentationTok{\#\# 19  1.837989 0.0000000019945940454846}
+\DocumentationTok{\#\# 20 17.451550 0.0000000000189170901166}
+\DocumentationTok{\#\# 21  1.800022 0.0000010870979341159881}
+\DocumentationTok{\#\# 22 13.354254 0.0000000372478188293002}
+\DocumentationTok{\#\# 23  2.618625 0.0000000000000000000000}
+\DocumentationTok{\#\# 24 12.945194 0.0000151737113989192096}
+\DocumentationTok{\#\# 25  1.579792 0.0000000000087112539404}
+\DocumentationTok{\#\# 26 11.972902 0.0000000000000710542736}
+\DocumentationTok{\#\# 27  2.298278 0.0000000000000031086245}
+\DocumentationTok{\#\# 28 23.425672 0.0000000000000000000000}
+\DocumentationTok{\#\# 29  1.819987 0.0000000000000108801856}
+\DocumentationTok{\#\# 30 25.183013 0.0000000000000000000000}
+\DocumentationTok{\#\# 31  3.108159 0.0000097629471409454993}
+\DocumentationTok{\#\# 32 28.188967 0.0002357607849194920391}
+\DocumentationTok{\#\# 33  3.442795 0.0000006032688519841400}
+\DocumentationTok{\#\# 34 28.897357 0.0004174394768807765388}
+\DocumentationTok{\#\# 35  1.785213 0.0000002665526410705610}
+\DocumentationTok{\#\# 36 24.121766 0.0000012579447614680106}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossnclumpsl1ha\_untrans)  }\CommentTok{\#NFIRESM6 coefficient is significant in every annual model}
+\DocumentationTok{\#\# \# A tibble: 0 x 2}
+\DocumentationTok{\#\# \# ... with 2 variables: variable \textless{}chr\textgreater{}, years \textless{}chr\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3145,6 +5641,10 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwer),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossg1ha\_trans\_er) }\CommentTok{\#NFIRESM6 coefficient not significant in many years}
+\DocumentationTok{\#\# \# A tibble: 1 x 2}
+\DocumentationTok{\#\#   variable years                        }
+\DocumentationTok{\#\#   \textless{}chr\textgreater{}    \textless{}chr\textgreater{}                        }
+\DocumentationTok{\#\# 1 NFIRESM6 1, 2, 3, 4, 7, 10, 15, 16, 17}
 
 \CommentTok{\# Eastern Region, small clearings \textasciitilde{} fire}
 \NormalTok{annual\_models\_folossnclumpsl1ha\_trans\_er }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_formulas,}
@@ -3157,6 +5657,10 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwer),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_er) }\CommentTok{\#NFIRESM6 coefficient not significant almost every year}
+\DocumentationTok{\#\# \# A tibble: 1 x 2}
+\DocumentationTok{\#\#   variable years                                            }
+\DocumentationTok{\#\#   \textless{}chr\textgreater{}    \textless{}chr\textgreater{}                                            }
+\DocumentationTok{\#\# 1 NFIRESM6 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17}
 
 \CommentTok{\# Los Haitises{-}Samaná, large clearings \textasciitilde{} fire}
 \NormalTok{hexzonalfmtlhs }\OtherTok{\textless{}{-}}\NormalTok{ hexzonalfmt }\SpecialCharTok{\%\textgreater{}\%}
@@ -3174,6 +5678,10 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwlhs),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossg1ha\_trans\_lhs) }\CommentTok{\#NFIRESM6 coefficient not significant in many years}
+\DocumentationTok{\#\# \# A tibble: 1 x 2}
+\DocumentationTok{\#\#   variable years                                 }
+\DocumentationTok{\#\#   \textless{}chr\textgreater{}    \textless{}chr\textgreater{}                                 }
+\DocumentationTok{\#\# 1 NFIRESM6 1, 2, 7, 9, 10, 11, 12, 13, 14, 16, 17}
 
 \CommentTok{\# Los Haitises{-}Samaná, small clearings \textasciitilde{} fire}
 \NormalTok{annual\_models\_folossnclumpsl1ha\_trans\_lhs }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_formulas,}
@@ -3186,6 +5694,10 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwlhs),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_lhs) }\CommentTok{\#NFIRESM6 coefficient is significant in seven years}
+\DocumentationTok{\#\# \# A tibble: 1 x 2}
+\DocumentationTok{\#\#   variable years                 }
+\DocumentationTok{\#\#   \textless{}chr\textgreater{}    \textless{}chr\textgreater{}                 }
+\DocumentationTok{\#\# 1 NFIRESM6 1, 2, 4, 7, 12, 14, 17}
 
 \CommentTok{\# Central, large clearings \textasciitilde{} fire}
 \NormalTok{hexzonalfmtcent }\OtherTok{\textless{}{-}}\NormalTok{ hexzonalfmt }\SpecialCharTok{\%\textgreater{}\%}
@@ -3203,6 +5715,10 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwcent),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossg1ha\_trans\_cent) }\CommentTok{\#NFIRESM6 coefficient is not significant only in 2016}
+\DocumentationTok{\#\# \# A tibble: 1 x 2}
+\DocumentationTok{\#\#   variable years}
+\DocumentationTok{\#\#   \textless{}chr\textgreater{}    \textless{}chr\textgreater{}}
+\DocumentationTok{\#\# 1 NFIRESM6 16}
 
 \CommentTok{\# Central, small clearings \textasciitilde{} fire}
 \NormalTok{annual\_models\_folossnclumpsl1ha\_trans\_cent }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_formulas,}
@@ -3215,6 +5731,10 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwcent),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_cent) }\CommentTok{\#NFIRESM6 coefficient is not significant only in 4, 12 and 16}
+\DocumentationTok{\#\# \# A tibble: 1 x 2}
+\DocumentationTok{\#\#   variable years    }
+\DocumentationTok{\#\#   \textless{}chr\textgreater{}    \textless{}chr\textgreater{}    }
+\DocumentationTok{\#\# 1 NFIRESM6 4, 12, 16}
 
 \CommentTok{\# Western, large clearings \textasciitilde{} fire}
 \NormalTok{hexzonalfmtwr }\OtherTok{\textless{}{-}}\NormalTok{ hexzonalfmt }\SpecialCharTok{\%\textgreater{}\%}
@@ -3232,6 +5752,8 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwwr),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossg1ha\_trans\_wr) }\CommentTok{\#NFIRESM6 coefficient is significant in every annual model}
+\DocumentationTok{\#\# \# A tibble: 0 x 2}
+\DocumentationTok{\#\# \# ... with 2 variables: variable \textless{}chr\textgreater{}, years \textless{}chr\textgreater{}}
 
 \CommentTok{\# Western, small clearings \textasciitilde{} fire}
 \NormalTok{annual\_models\_folossnclumpsl1ha\_trans\_wr }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_formulas,}
@@ -3244,6 +5766,8 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
                                                  \AttributeTok{listw =}\NormalTok{ hexwwwr),}
                         \AttributeTok{simplify =}\NormalTok{ F)}
 \FunctionTok{annual\_models\_sign\_coefs}\NormalTok{(annual\_models\_folossnclumpsl1ha\_trans\_wr) }\CommentTok{\#NFIRESM6 coefficient is significant in every annual model}
+\DocumentationTok{\#\# \# A tibble: 0 x 2}
+\DocumentationTok{\#\# \# ... with 2 variables: variable \textless{}chr\textgreater{}, years \textless{}chr\textgreater{}}
 
 \CommentTok{\# Maps}
 \CommentTok{\# jpeg(\textquotesingle{}out/east\_west\_regions\_maps.jpg\textquotesingle{}, width = 2000, height = 1600, res = 350)}
@@ -3255,6 +5779,13 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
   \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}(A)\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}(B)\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}(C)\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}(D)\textquotesingle{}}\NormalTok{),}
   \AttributeTok{label\_size =} \DecValTok{14}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{scale =} \DecValTok{1}\NormalTok{, }\AttributeTok{hjust =} \SpecialCharTok{{-}}\FloatTok{4.9}\NormalTok{, }\AttributeTok{vjust =} \FloatTok{1.2}\NormalTok{,}
   \AttributeTok{align =} \StringTok{\textquotesingle{}v\textquotesingle{}}\NormalTok{, }\AttributeTok{axis =} \StringTok{\textquotesingle{}t\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-local-models-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\# dev.off()}
 \CommentTok{\# system(}
 \CommentTok{\#   paste(\textquotesingle{}convert out/east\_west\_regions\_maps.jpg {-}gravity South {-}chop 0x70\textquotesingle{},}

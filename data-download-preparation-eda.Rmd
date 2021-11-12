@@ -62,17 +62,17 @@ This is a reproducible notebook of the manuscript entitled 'Forest loss and fire
 
 - Source repo: https://github.com/geofis/forest-loss-fire-reproducible
 
-- Associated preprint DOI: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1
+- Associated preprint DOI: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v2
 
-- Associated preprint full text: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1.full
+- Associated preprint full text: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v2.full
 
-- Dataset: `forest-loss-fire-reproducible-data-repo.zip`. Download it from [ZENODO](https://doi.org/10.5281/zenodo.5682103)
+- Dataset: `forest-loss-fire-reproducible-data-repo.zip`. Download it from [ZENODO](https://zenodo.org/record/5681481)
 
 - Cite the preprint using the following format: Martínez Batlle, J. R. (2021). Forest loss and fire in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604
 
 # Instructions for downloading the source data
 
-Visit [ZENODO](https://doi.org/10.5281/zenodo.5682103), download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, won't work) and place the ZIP file in this repo (e.g. in the same directory containing this document).
+Visit [ZENODO](https://zenodo.org/record/5681481), download `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, won't work) and place the ZIP file in this repo (e.g. in the same directory containing this document).
 
 # Unzip source data
 
