@@ -8,9 +8,9 @@ If you want to reproduce the code, follow these instructions:
 
 1. Clone this repo to your computer.
 
-2. Visit ZENODO, download the dataset [`forest-loss-fire-reproducible-data-repo.zip`](https://doi.org/10.5281/zenodo.5682103) (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
+2. Visit [ZENODO](https://doi.org/10.5281/zenodo.5682103), download the dataset `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in this repo (e.g. in the same directory containing this document).
 
-3. Run the code chunks in each `.Rmd` notebooks, or alternately knit the notebooks.
+3. Run the code chunks in the `.Rmd` notebooks, or alternately knit the notebooks. As a suggestion, run the `.Rmd` in the sequence below:
 
     - `data-download-preparation.Rmd`.
     
@@ -24,15 +24,15 @@ These reproducible scripts are provided "as is", without warranty of any kind.
 
 ## Methods for reproducing the code
 
-All the methods presented in this section were developed and tested on a PC running under Linux operating system.
+All the methods presented in this section were developed and tested on a Linux PC.
 
 ### Using your current installation of R
 
-If the packages listed in the `R/load-packages.R` script (and their dependencies) are already installed in your PC, you can move forward and run the code-chunks following the sequence mentioned in the previous section. Otherwise, all the packages should be installed by hand. This is not the easiest way, but if you are familiar with R packages installation, then I recommend it.
+If the packages listed in the `R/load-packages.R` script (and their dependencies) are already installed in your PC, you can move forward and run the code chunks following the sequence mentioned in the [How to reproduce section](#how-to-reproduce) section. Otherwise, all the packages should be installed by hand. This is not the easiest way, but if you are familiar with R packages installation, then I recommend it.
 
 ### Using `jmartinez19/rstudio` Docker container
 
-This is the easiest way, because both RStudio IDE and dependencies would be installed in a Docker image. However, keep in mind that you would need at least 5 GB of free disk space.
+This is the easiest way, because both RStudio IDE and package dependencies would be pulled from a Docker image. However, keep in mind that you will need at least 5 GB of free disk space.
 
 1. Run the `jmartinez19/rstudio` Docker image. This may take a while the first time you run it.
 
@@ -48,7 +48,9 @@ docker run --rm \
 
 3. In the `Files` tab (down-right pane), click on the `forest-loss-fire-reproducible` directory, and then click on the `forest-loss-fire-reproducible.Rproj` file. When asked `Do you want to open the project ~/forest-loss-fire-reproducible?`, click `Yes`.
 
-4. Run the code chunks in the reproducible scripts, or alternately knit the notebooks. Keep in mind that if you knit from RStudio, a message will ask you to allow popup windows, which can be done in the address bar of the browser.
+4. Download the `forest-loss-fire-reproducible-data-repo.zip` dataset from [ZENODO](https://doi.org/10.5281/zenodo.5682103) if you have not already done so.
+
+5. Run the code chunks in the reproducible scripts, or alternately knit the notebooks. Keep in mind that if you knit from RStudio, a message will ask you to allow popup windows, which can be done in the address bar of the browser.
 
 ### Using R from a Docker
 
@@ -79,7 +81,9 @@ docker run -it --rm \
 
 `xhost -`
 
-6. Run the code chunks in the reproducible scripts, or alternately knit the notebooks.
+6. Download the `forest-loss-fire-reproducible-data-repo.zip` dataset from [ZENODO](https://doi.org/10.5281/zenodo.5682103) if you have not already done so.
+
+7. Run the code chunks in the reproducible scripts, or alternately knit the notebooks.
 
 ## Appendix
 
