@@ -1,8 +1,6 @@
 # Reproducible R code for the manuscript entitled "Forest loss and fire in the Dominican Republic during the 21st Century"
 
-José Ramón Martínez Batlle
-Universidad Autónoma de Santo Domingo (UASD)
-jmartinez19\@uasd.edu.do
+José Ramón Martínez Batlle, Universidad Autónoma de Santo Domingo (UASD) jmartinez19\@uasd.edu.do
 
 [![DOI](https://zenodo.org/badge/421058260.svg)](https://zenodo.org/badge/latestdoi/421058260)
 
