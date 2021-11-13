@@ -1,6 +1,8 @@
 # Reproducible R code for the manuscript entitled "Forest loss and fire in the Dominican Republic during the 21st Century"
 
-Cite this repo using the following format: 
+[![DOI](https://zenodo.org/badge/421058260.svg)](https://zenodo.org/badge/latestdoi/421058260)
+
+Cite this repo using the following format (BibTeX entry [here](#bibtex-entry-for-this-repo)): "José Ramón Martínez Batlle. (2021). geofis/forest-loss-fire-reproducible: First release (v0.0.0.9000). Zenodo. https://doi.org/10.5281/zenodo.5694017"
 
 If you want to cite the manuscript as well, use the following format: "Martínez Batlle, J. R. (2021). Forest loss and fire in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604"
 
@@ -145,4 +147,20 @@ docker commit -m "Add dependencies" c77b73f86dbd jmartinez19/rstudio
 ```
 docker login #Credentials already available in my local machine
 docker push jmartinez19/rstudio
+```
+
+### Bibtex entry for this repo
+
+```
+@software{jose_ramon_martinez_batlle_2021_5694017,
+  author       = {José Ramón Martínez Batlle},
+  title        = {{geofis/forest-loss-fire-reproducible: First 
+                   release}},
+  month        = nov,
+  year         = 2021,
+  publisher    = {Zenodo},
+  version      = {v0.0.0.9000},
+  doi          = {10.5281/zenodo.5694017},
+  url          = {https://doi.org/10.5281/zenodo.5694017}
+}
 ```
