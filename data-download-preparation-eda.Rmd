@@ -62,9 +62,9 @@ This is a reproducible notebook of the manuscript entitled 'Forest loss and fire
 
 - Source repo: https://github.com/geofis/forest-loss-fire-reproducible
 
-- Associated preprint DOI: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v2
+- Associated preprint DOI: https://www.biorxiv.org/content/10.1101/2021.06.15.448604
 
-- Associated preprint full text: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v2.full
+- Associated preprint full text: https://www.biorxiv.org/content/10.1101/2021.06.15.448604.full
 
 - Dataset: `forest-loss-fire-reproducible-data-repo.zip`. Download it from [ZENODO](https://zenodo.org/record/5681481)
 

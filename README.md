@@ -1,5 +1,9 @@
 # Reproducible R code for the manuscript entitled "Forest loss and fire in the Dominican Republic during the 21st Century"
 
+Cite this repo using the following format: 
+
+If you want to cite the manuscript as well, use the following format: "Martínez Batlle, J. R. (2021). Forest loss and fire in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604"
+
 ## How to reproduce
 
 If you want to check the results of the reproducible code, check the PDF version of the `.Rmd` notebooks.
