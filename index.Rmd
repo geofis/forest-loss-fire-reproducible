@@ -1,7 +1,7 @@
 ---
 title: "Deforestación y fuego en República Dominicana durante el siglo XXI"
 author: "José Ramón Martínez Batlle <br> jmartinez19@uasd.edu.do <br> Universidad Autónoma de Santo Domingo"
-date:  noviembre, 2021 <br> Universidad Autónoma de Santo Domingo https://geofis.github.io/forest-loss-fire-reproducible
+date:  "18 de noviembre, 2021 <br> XX Jornada de Investigación Científica <br> https://geofis.github.io/forest-loss-fire-reproducible"
 output:
   revealjs::revealjs_presentation:
     template: slides/ref/defaultmodificada.html
@@ -144,7 +144,7 @@ XKCD comics: https://xkcd.com/1831/
 
 ![](slides/img/preprint.jpg){width=60%}
 
-<small>Por el momento, aquí: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v1.full</small>
+<small>Por el momento, aquí: https://www.biorxiv.org/content/10.1101/2021.06.15.448604v2.full</small>
 
 ##
 
