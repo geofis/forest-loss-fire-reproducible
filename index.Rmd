@@ -148,6 +148,10 @@ XKCD comics: https://xkcd.com/1831/
 
 ##
 
+![](slides/img/manuscript-pci.jpg)
+
+##
+
 ![](slides/img/reproducible-script-1.jpg)
 
 <small>https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf</small>
