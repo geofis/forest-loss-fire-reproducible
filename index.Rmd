@@ -150,6 +150,10 @@ XKCD comics: https://xkcd.com/1831/
 
 ![](slides/img/manuscript-pci.jpg)
 
+## ![](slides/img/reproducible-script-0.jpg){width=65%}
+
+<small>https://github.com/geofis/forest-loss-fire-reproducible</small>
+
 ##
 
 ![](slides/img/reproducible-script-1.jpg)
