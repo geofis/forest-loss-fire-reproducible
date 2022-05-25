@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.8.7)  13 NOV 2021 08:59
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.8.7)  25 MAY 2022 11:42
  restricted system commands enabled.
 **modelling.tex
 (./modelling.tex
@@ -1093,2308 +1093,2500 @@ Overfull \hbox (22.972pt too wide) in paragraph at lines 541--541
 Package xcolor Warning: Incompatible color definition on input line 543.
 
 
-Package xcolor Warning: Incompatible color definition on input line 555.
+Package xcolor Warning: Incompatible color definition on input line 558.
 
 
-Package xcolor Warning: Incompatible color definition on input line 555.
+Package xcolor Warning: Incompatible color definition on input line 558.
 
 
-Package xcolor Warning: Incompatible color definition on input line 555.
+Package xcolor Warning: Incompatible color definition on input line 558.
 
 [11<./img/modelling/lta-esda-6.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 555.
+Package xcolor Warning: Incompatible color definition on input line 558.
 
 
-Package xcolor Warning: Incompatible color definition on input line 555.
+Package xcolor Warning: Incompatible color definition on input line 558.
 
-<img/modelling/lta-esda-7.png, id=169, 1002.144pt x 639.8304pt>
+<img/modelling/lta-esda-7.png, id=169, 1073.4504pt x 614.7768pt>
 File: img/modelling/lta-esda-7.png Graphic file (type png)
 <use img/modelling/lta-esda-7.png>
-Package luatex.def Info: img/modelling/lta-esda-7.png  used on input line 557.
-(luatex.def)             Requested size: 1002.14156pt x 639.82883pt.
+Package luatex.def Info: img/modelling/lta-esda-7.png  used on input line 560.
+(luatex.def)             Requested size: 1073.44777pt x 614.77528pt.
 
-Package xcolor Warning: Incompatible color definition on input line 559.
-
-[12<./img/modelling/lta-esda-7.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 571.
-
-
-Package xcolor Warning: Incompatible color definition on input line 571.
-
-<img/modelling/lta-esda-8.png, id=174, 949.146pt x 639.8304pt>
-File: img/modelling/lta-esda-8.png Graphic file (type png)
-<use img/modelling/lta-esda-8.png>
-Package luatex.def Info: img/modelling/lta-esda-8.png  used on input line 573.
-(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
-[13]
-
-Package xcolor Warning: Incompatible color definition on input line 575.
-
-
-Package xcolor Warning: Incompatible color definition on input line 587.
-
-
-Package xcolor Warning: Incompatible color definition on input line 587.
-
-
-Package xcolor Warning: Incompatible color definition on input line 587.
-
-[14<./img/modelling/lta-esda-8.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 587.
-
-
-Package xcolor Warning: Incompatible color definition on input line 587.
-
-<img/modelling/lta-esda-9.png, id=183, 949.146pt x 639.8304pt>
-File: img/modelling/lta-esda-9.png Graphic file (type png)
-<use img/modelling/lta-esda-9.png>
-Package luatex.def Info: img/modelling/lta-esda-9.png  used on input line 589.
-(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
-[15]
-
-Package xcolor Warning: Incompatible color definition on input line 591.
-
-
-Package xcolor Warning: Incompatible color definition on input line 603.
-
-
-Package xcolor Warning: Incompatible color definition on input line 603.
-
-
-Package xcolor Warning: Incompatible color definition on input line 603.
-
-[16<./img/modelling/lta-esda-9.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 603.
-
-
-Package xcolor Warning: Incompatible color definition on input line 603.
-
-<img/modelling/lta-esda-10.png, id=192, 949.146pt x 639.8304pt>
-File: img/modelling/lta-esda-10.png Graphic file (type png)
-<use img/modelling/lta-esda-10.png>
-Package luatex.def Info: img/modelling/lta-esda-10.png  used on input line 605.
-(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
-[17]
-
-Package xcolor Warning: Incompatible color definition on input line 607.
-
-
-Package xcolor Warning: Incompatible color definition on input line 619.
-
-
-Package xcolor Warning: Incompatible color definition on input line 619.
-
-
-Package xcolor Warning: Incompatible color definition on input line 619.
-
-[18<./img/modelling/lta-esda-10.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 619.
-
-
-Package xcolor Warning: Incompatible color definition on input line 619.
-
-<img/modelling/lta-esda-11.png, id=201, 949.146pt x 639.8304pt>
-File: img/modelling/lta-esda-11.png Graphic file (type png)
-<use img/modelling/lta-esda-11.png>
-Package luatex.def Info: img/modelling/lta-esda-11.png  used on input line 621.
-(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
-[19]
-
-Package xcolor Warning: Incompatible color definition on input line 623.
-
-
-Package xcolor Warning: Incompatible color definition on input line 635.
-
-
-Package xcolor Warning: Incompatible color definition on input line 635.
-
-
-Package xcolor Warning: Incompatible color definition on input line 635.
-
-[20<./img/modelling/lta-esda-11.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 635.
-
-
-Package xcolor Warning: Incompatible color definition on input line 635.
-
-<img/modelling/lta-esda-12.png, id=210, 949.146pt x 639.8304pt>
-File: img/modelling/lta-esda-12.png Graphic file (type png)
-<use img/modelling/lta-esda-12.png>
-Package luatex.def Info: img/modelling/lta-esda-12.png  used on input line 637.
-(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
-[21]
-
-Package xcolor Warning: Incompatible color definition on input line 639.
-
-
-Package xcolor Warning: Incompatible color definition on input line 681.
-
-
-Package xcolor Warning: Incompatible color definition on input line 681.
-
-
-Package xcolor Warning: Incompatible color definition on input line 681.
-
-[22<./img/modelling/lta-esda-12.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 681.
-
-
-Package xcolor Warning: Incompatible color definition on input line 681.
-
-<img/modelling/lta-esda-13.png, id=220, 819.06pt x 624.4128pt>
-File: img/modelling/lta-esda-13.png Graphic file (type png)
-<use img/modelling/lta-esda-13.png>
-Package luatex.def Info: img/modelling/lta-esda-13.png  used on input line 683.
-(luatex.def)             Requested size: 819.058pt x 624.41127pt.
-[23]
-
-Package xcolor Warning: Incompatible color definition on input line 685.
-
-
-Package xcolor Warning: Incompatible color definition on input line 740.
-
-
-Package xcolor Warning: Incompatible color definition on input line 740.
-
-
-Package xcolor Warning: Incompatible color definition on input line 740.
-
-[24<./img/modelling/lta-esda-13.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 740.
-
-
-Package xcolor Warning: Incompatible color definition on input line 740.
-
-
-Package xcolor Warning: Incompatible color definition on input line 764.
-
-[25]
-
-Package xcolor Warning: Incompatible color definition on input line 785.
-
-
-Package xcolor Warning: Incompatible color definition on input line 785.
-
-<img/modelling/lta-esda-14.png, id=233, 1073.4504pt x 639.8304pt>
-File: img/modelling/lta-esda-14.png Graphic file (type png)
-<use img/modelling/lta-esda-14.png>
-Package luatex.def Info: img/modelling/lta-esda-14.png  used on input line 787.
-(luatex.def)             Requested size: 1073.44777pt x 639.82883pt.
-
-Overfull \hbox (22.972pt too wide) in paragraph at lines 787--787
+Overfull \hbox (22.972pt too wide) in paragraph at lines 560--560
  [] 
  []
 
+[12]
+
+Package xcolor Warning: Incompatible color definition on input line 562.
+
+
+Package xcolor Warning: Incompatible color definition on input line 576.
+
+
+Package xcolor Warning: Incompatible color definition on input line 576.
+
+
+Overfull \vbox (1.43513pt too high) detected at line 576
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 576.
+
+[13<./img/modelling/lta-esda-7.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 576.
+
+
+Package xcolor Warning: Incompatible color definition on input line 576.
+
+<img/modelling/lta-esda-8.png, id=178, 1002.144pt x 639.8304pt>
+File: img/modelling/lta-esda-8.png Graphic file (type png)
+<use img/modelling/lta-esda-8.png>
+Package luatex.def Info: img/modelling/lta-esda-8.png  used on input line 578.
+(luatex.def)             Requested size: 1002.14156pt x 639.82883pt.
+[14]
+
+Package xcolor Warning: Incompatible color definition on input line 580.
+
+
+Package xcolor Warning: Incompatible color definition on input line 592.
+
+
+Package xcolor Warning: Incompatible color definition on input line 592.
+
+
+Package xcolor Warning: Incompatible color definition on input line 592.
+
+[15<./img/modelling/lta-esda-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 592.
+
+
+Package xcolor Warning: Incompatible color definition on input line 592.
+
+<img/modelling/lta-esda-9.png, id=187, 949.146pt x 639.8304pt>
+File: img/modelling/lta-esda-9.png Graphic file (type png)
+<use img/modelling/lta-esda-9.png>
+Package luatex.def Info: img/modelling/lta-esda-9.png  used on input line 594.
+(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
+[16]
+
+Package xcolor Warning: Incompatible color definition on input line 596.
+
+
+Package xcolor Warning: Incompatible color definition on input line 608.
+
+
+Package xcolor Warning: Incompatible color definition on input line 608.
+
+
+Package xcolor Warning: Incompatible color definition on input line 608.
+
+[17<./img/modelling/lta-esda-9.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 608.
+
+
+Package xcolor Warning: Incompatible color definition on input line 608.
+
+<img/modelling/lta-esda-10.png, id=196, 949.146pt x 639.8304pt>
+File: img/modelling/lta-esda-10.png Graphic file (type png)
+<use img/modelling/lta-esda-10.png>
+Package luatex.def Info: img/modelling/lta-esda-10.png  used on input line 610.
+(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
+[18]
+
+Package xcolor Warning: Incompatible color definition on input line 612.
+
+
+Package xcolor Warning: Incompatible color definition on input line 624.
+
+
+Package xcolor Warning: Incompatible color definition on input line 624.
+
+
+Package xcolor Warning: Incompatible color definition on input line 624.
+
+[19<./img/modelling/lta-esda-10.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 624.
+
+
+Package xcolor Warning: Incompatible color definition on input line 624.
+
+<img/modelling/lta-esda-11.png, id=205, 949.146pt x 639.8304pt>
+File: img/modelling/lta-esda-11.png Graphic file (type png)
+<use img/modelling/lta-esda-11.png>
+Package luatex.def Info: img/modelling/lta-esda-11.png  used on input line 626.
+(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
+[20]
+
+Package xcolor Warning: Incompatible color definition on input line 628.
+
+
+Package xcolor Warning: Incompatible color definition on input line 640.
+
+
+Package xcolor Warning: Incompatible color definition on input line 640.
+
+
+Package xcolor Warning: Incompatible color definition on input line 640.
+
+[21<./img/modelling/lta-esda-11.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 640.
+
+
+Package xcolor Warning: Incompatible color definition on input line 640.
+
+<img/modelling/lta-esda-12.png, id=215, 949.146pt x 639.8304pt>
+File: img/modelling/lta-esda-12.png Graphic file (type png)
+<use img/modelling/lta-esda-12.png>
+Package luatex.def Info: img/modelling/lta-esda-12.png  used on input line 642.
+(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
+[22]
+
+Package xcolor Warning: Incompatible color definition on input line 644.
+
+
+Package xcolor Warning: Incompatible color definition on input line 656.
+
+
+Package xcolor Warning: Incompatible color definition on input line 656.
+
+
+Package xcolor Warning: Incompatible color definition on input line 656.
+
+[23<./img/modelling/lta-esda-12.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 656.
+
+
+Package xcolor Warning: Incompatible color definition on input line 656.
+
+<img/modelling/lta-esda-13.png, id=224, 949.146pt x 639.8304pt>
+File: img/modelling/lta-esda-13.png Graphic file (type png)
+<use img/modelling/lta-esda-13.png>
+Package luatex.def Info: img/modelling/lta-esda-13.png  used on input line 658.
+(luatex.def)             Requested size: 949.14369pt x 639.82883pt.
+[24]
+
+Package xcolor Warning: Incompatible color definition on input line 660.
+
+
+Package xcolor Warning: Incompatible color definition on input line 702.
+
+
+Package xcolor Warning: Incompatible color definition on input line 702.
+
+
+Package xcolor Warning: Incompatible color definition on input line 702.
+
+[25<./img/modelling/lta-esda-13.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 702.
+
+
+Package xcolor Warning: Incompatible color definition on input line 702.
+
+<img/modelling/lta-esda-14.png, id=233, 819.06pt x 624.4128pt>
+File: img/modelling/lta-esda-14.png Graphic file (type png)
+<use img/modelling/lta-esda-14.png>
+Package luatex.def Info: img/modelling/lta-esda-14.png  used on input line 704.
+(luatex.def)             Requested size: 819.058pt x 624.41127pt.
 [26]
+
+Package xcolor Warning: Incompatible color definition on input line 706.
+
+
+Package xcolor Warning: Incompatible color definition on input line 729.
+
+
+Package xcolor Warning: Incompatible color definition on input line 729.
+
+
+Package xcolor Warning: Incompatible color definition on input line 729.
+
+[27<./img/modelling/lta-esda-14.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 729.
+
+
+Package xcolor Warning: Incompatible color definition on input line 729.
+
+<img/modelling/lta-esda-15.png, id=242, 1040.688pt x 372.9132pt>
+File: img/modelling/lta-esda-15.png Graphic file (type png)
+<use img/modelling/lta-esda-15.png>
+Package luatex.def Info: img/modelling/lta-esda-15.png  used on input line 731.
+(luatex.def)             Requested size: 1040.68547pt x 372.91228pt.
+
+Package xcolor Warning: Incompatible color definition on input line 733.
+
 
 Package xcolor Warning: Incompatible color definition on input line 789.
 
 
-Package xcolor Warning: Incompatible color definition on input line 804.
+Package xcolor Warning: Incompatible color definition on input line 789.
 
 
-Package xcolor Warning: Incompatible color definition on input line 804.
+Package xcolor Warning: Incompatible color definition on input line 789.
+
+[28<./img/modelling/lta-esda-15.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 789.
 
 
-Overfull \vbox (1.53467pt too high) detected at line 804
+Package xcolor Warning: Incompatible color definition on input line 789.
+
+
+Package xcolor Warning: Incompatible color definition on input line 813.
+
+
+Package xcolor Warning: Incompatible color definition on input line 834.
+
+
+Package xcolor Warning: Incompatible color definition on input line 834.
+
+
+Overfull \vbox (1.528pt too high) detected at line 834
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 804.
+Package xcolor Warning: Incompatible color definition on input line 834.
 
-[27<./img/modelling/lta-esda-14.png>]
+[29]
 
-Package xcolor Warning: Incompatible color definition on input line 804.
-
-
-Package xcolor Warning: Incompatible color definition on input line 804.
-
-<img/modelling/lta-esda-15.png, id=242, 643.203pt x 636.4578pt>
-File: img/modelling/lta-esda-15.png Graphic file (type png)
-<use img/modelling/lta-esda-15.png>
-Package luatex.def Info: img/modelling/lta-esda-15.png  used on input line 806.
-(luatex.def)             Requested size: 643.20143pt x 636.45624pt.
-[28]
-
-Package xcolor Warning: Incompatible color definition on input line 808.
+Package xcolor Warning: Incompatible color definition on input line 834.
 
 
-Package xcolor Warning: Incompatible color definition on input line 832.
+Package xcolor Warning: Incompatible color definition on input line 834.
 
-
-Package xcolor Warning: Incompatible color definition on input line 832.
-
-
-Package xcolor Warning: Incompatible color definition on input line 832.
-
-[29<./img/modelling/lta-esda-15.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 832.
-
-
-Package xcolor Warning: Incompatible color definition on input line 832.
-
-<img/modelling/lta-esda-16.png, id=251, 819.06pt x 624.4128pt>
+<img/modelling/lta-esda-16.png, id=251, 1073.4504pt x 639.8304pt>
 File: img/modelling/lta-esda-16.png Graphic file (type png)
 <use img/modelling/lta-esda-16.png>
-Package luatex.def Info: img/modelling/lta-esda-16.png  used on input line 834.
-(luatex.def)             Requested size: 819.058pt x 624.41127pt.
-[30]
+Package luatex.def Info: img/modelling/lta-esda-16.png  used on input line 836.
+(luatex.def)             Requested size: 1073.44777pt x 639.82883pt.
 
-Package xcolor Warning: Incompatible color definition on input line 840.
-
-[31<./img/modelling/lta-esda-16.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 953.
-
-[32]
-
-Package xcolor Warning: Incompatible color definition on input line 953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 969.
-
-[33]
-
-Package xcolor Warning: Incompatible color definition on input line 1075.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1075.
-
-
-Underfull \vbox (badness 1668) detected at line 1075
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 1075.
-
-[34]
-
-Package xcolor Warning: Incompatible color definition on input line 1075.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1075.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1081.
-
-[35]
-
-Package xcolor Warning: Incompatible color definition on input line 1166.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1166.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1166.
-
-[36]
-
-Package xcolor Warning: Incompatible color definition on input line 1166.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1166.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1172.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1188.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1188.
-
-<img/modelling/lta-model-predictions-1.png, id=283, 1065.2598pt x 636.9396pt>
-File: img/modelling/lta-model-predictions-1.png Graphic file (type png)
-<use img/modelling/lta-model-predictions-1.png>
-Package luatex.def Info: img/modelling/lta-model-predictions-1.png  used on inpu
-t line 1190.
-(luatex.def)             Requested size: 1065.2572pt x 636.93805pt.
-
-Overfull \hbox (14.78143pt too wide) in paragraph at lines 1190--1190
+Overfull \hbox (22.972pt too wide) in paragraph at lines 836--836
  [] 
  []
 
+[30]
+
+Package xcolor Warning: Incompatible color definition on input line 838.
+
+
+Package xcolor Warning: Incompatible color definition on input line 853.
+
+
+Package xcolor Warning: Incompatible color definition on input line 853.
+
+
+Overfull \vbox (1.53467pt too high) detected at line 853
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 853.
+
+[31<./img/modelling/lta-esda-16.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 853.
+
+
+Package xcolor Warning: Incompatible color definition on input line 853.
+
+<img/modelling/lta-esda-17.png, id=261, 643.203pt x 636.4578pt>
+File: img/modelling/lta-esda-17.png Graphic file (type png)
+<use img/modelling/lta-esda-17.png>
+Package luatex.def Info: img/modelling/lta-esda-17.png  used on input line 855.
+(luatex.def)             Requested size: 643.20143pt x 636.45624pt.
+[32]
+
+Package xcolor Warning: Incompatible color definition on input line 857.
+
+
+Package xcolor Warning: Incompatible color definition on input line 881.
+
+
+Package xcolor Warning: Incompatible color definition on input line 881.
+
+
+Package xcolor Warning: Incompatible color definition on input line 881.
+
+[33<./img/modelling/lta-esda-17.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 881.
+
+
+Package xcolor Warning: Incompatible color definition on input line 881.
+
+<img/modelling/lta-esda-18.png, id=270, 819.06pt x 624.4128pt>
+File: img/modelling/lta-esda-18.png Graphic file (type png)
+<use img/modelling/lta-esda-18.png>
+Package luatex.def Info: img/modelling/lta-esda-18.png  used on input line 883.
+(luatex.def)             Requested size: 819.058pt x 624.41127pt.
+[34]
+
+Package xcolor Warning: Incompatible color definition on input line 885.
+
+
+Package xcolor Warning: Incompatible color definition on input line 910.
+
+
+Package xcolor Warning: Incompatible color definition on input line 910.
+
+
+Package xcolor Warning: Incompatible color definition on input line 910.
+
+[35<./img/modelling/lta-esda-18.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 910.
+
+
+Package xcolor Warning: Incompatible color definition on input line 910.
+
+<img/modelling/lta-esda-19.png, id=279, 1040.688pt x 372.9132pt>
+File: img/modelling/lta-esda-19.png Graphic file (type png)
+<use img/modelling/lta-esda-19.png>
+Package luatex.def Info: img/modelling/lta-esda-19.png  used on input line 912.
+(luatex.def)             Requested size: 1040.68547pt x 372.91228pt.
+
+Package xcolor Warning: Incompatible color definition on input line 914.
+
+
+Package xcolor Warning: Incompatible color definition on input line 919.
+
+
+Package xcolor Warning: Incompatible color definition on input line 919.
+
+
+Package xcolor Warning: Incompatible color definition on input line 925.
+
+[36<./img/modelling/lta-esda-19.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1038.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1038.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1038.
+
 [37]
 
-Package xcolor Warning: Incompatible color definition on input line 1201.
-
-[38<./img/modelling/lta-model-predictions-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1222.
+Package xcolor Warning: Incompatible color definition on input line 1038.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1222.
+Package xcolor Warning: Incompatible color definition on input line 1038.
 
-<img/modelling/aa-neighbours-1.png, id=294, 689.4558pt x 479.8728pt>
-File: img/modelling/aa-neighbours-1.png Graphic file (type png)
-<use img/modelling/aa-neighbours-1.png>
-Package luatex.def Info: img/modelling/aa-neighbours-1.png  used on input line 1
-224.
-(luatex.def)             Requested size: 689.45412pt x 479.87163pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1054.
+
+[38]
+
+Package xcolor Warning: Incompatible color definition on input line 1160.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1160.
+
+
+Underfull \vbox (badness 1668) detected at line 1160
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1160.
+
 [39]
 
-Package xcolor Warning: Incompatible color definition on input line 1226.
+Package xcolor Warning: Incompatible color definition on input line 1160.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1246.
+Package xcolor Warning: Incompatible color definition on input line 1160.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1246.
+Package xcolor Warning: Incompatible color definition on input line 1166.
 
-<img/modelling/aa-neighbours-2.png, id=301, 688.974pt x 479.8728pt>
-File: img/modelling/aa-neighbours-2.png Graphic file (type png)
-<use img/modelling/aa-neighbours-2.png>
-Package luatex.def Info: img/modelling/aa-neighbours-2.png  used on input line 1
-248.
-(luatex.def)             Requested size: 688.97232pt x 479.87163pt.
-[40<./img/modelling/aa-neighbours-1.png>]
+[40]
 
-Package xcolor Warning: Incompatible color definition on input line 1250.
+Package xcolor Warning: Incompatible color definition on input line 1251.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1266.
+Package xcolor Warning: Incompatible color definition on input line 1251.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1266.
+Package xcolor Warning: Incompatible color definition on input line 1251.
+
+[41]
+
+Package xcolor Warning: Incompatible color definition on input line 1251.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1272.
-
-[41<./img/modelling/aa-neighbours-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1344.
+Package xcolor Warning: Incompatible color definition on input line 1251.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1344.
+Package xcolor Warning: Incompatible color definition on input line 1257.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1344.
+Package xcolor Warning: Incompatible color definition on input line 1273.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1273.
+
+<img/modelling/lta-model-predictions-1.png, id=308, 1065.2598pt x 636.9396pt>
+File: img/modelling/lta-model-predictions-1.png Graphic file (type png)
+<use img/modelling/lta-model-predictions-1.png>
+Package luatex.def Info: img/modelling/lta-model-predictions-1.png  used on inpu
+t line 1275.
+(luatex.def)             Requested size: 1065.2572pt x 636.93805pt.
+
+Overfull \hbox (14.78143pt too wide) in paragraph at lines 1275--1275
+ [] 
+ []
 
 [42]
 
-Package xcolor Warning: Incompatible color definition on input line 1344.
+Package xcolor Warning: Incompatible color definition on input line 1286.
+
+[43<./img/modelling/lta-model-predictions-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1307.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1344.
+Package xcolor Warning: Incompatible color definition on input line 1307.
 
-<img/modelling/aa-eda-ts-1.png, id=316, 604.1772pt x 633.567pt>
-File: img/modelling/aa-eda-ts-1.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-1.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-1.png  used on input line 1346.
+<img/modelling/aa-neighbours-1.png, id=319, 689.4558pt x 479.8728pt>
+File: img/modelling/aa-neighbours-1.png Graphic file (type png)
+<use img/modelling/aa-neighbours-1.png>
+Package luatex.def Info: img/modelling/aa-neighbours-1.png  used on input line 1
+309.
+(luatex.def)             Requested size: 689.45412pt x 479.87163pt.
+[44]
 
-(luatex.def)             Requested size: 604.17572pt x 633.56546pt.
-[43]
-
-Package xcolor Warning: Incompatible color definition on input line 1348.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1311.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1331.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1331.
 
-[44<./img/modelling/aa-eda-ts-1.png>]
+<img/modelling/aa-neighbours-2.png, id=325, 688.974pt x 479.8728pt>
+File: img/modelling/aa-neighbours-2.png Graphic file (type png)
+<use img/modelling/aa-neighbours-2.png>
+Package luatex.def Info: img/modelling/aa-neighbours-2.png  used on input line 1
+333.
+(luatex.def)             Requested size: 688.97232pt x 479.87163pt.
+[45<./img/modelling/aa-neighbours-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
-
-Underfull \vbox (badness 10000) detected at line 1639
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1639
- []
+Package xcolor Warning: Incompatible color definition on input line 1335.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
-[45]
-
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1351.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1351.
 
 
-Underfull \vbox (badness 10000) detected at line 1639
- []
+Package xcolor Warning: Incompatible color definition on input line 1357.
+
+[46<./img/modelling/aa-neighbours-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1429.
 
 
-Underfull \vbox (badness 10000) detected at line 1639
- []
+Package xcolor Warning: Incompatible color definition on input line 1429.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
-[46]
-
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
-
-Underfull \vbox (badness 10000) detected at line 1639
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1639
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1429.
 
 [47]
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1429.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1429.
 
+<img/modelling/aa-eda-ts-1.png, id=339, 604.1772pt x 633.567pt>
+File: img/modelling/aa-eda-ts-1.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-1.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-1.png  used on input line 1431.
 
-Underfull \vbox (badness 10000) detected at line 1639
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1639
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
+(luatex.def)             Requested size: 604.17572pt x 633.56546pt.
 [48]
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
+Package xcolor Warning: Incompatible color definition on input line 1433.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1639.
-
-<img/modelling/aa-eda-ts-2.png, id=341, 599.3592pt x 639.8304pt>
-File: img/modelling/aa-eda-ts-2.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-2.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-2.png  used on input line 1641.
-
-(luatex.def)             Requested size: 599.35773pt x 639.82883pt.
-[49]
-
-Package xcolor Warning: Incompatible color definition on input line 1643.
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1661.
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1661.
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
+[49<./img/modelling/aa-eda-ts-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1661.
-
-[50<./img/modelling/aa-eda-ts-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1661.
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1661.
+Underfull \vbox (badness 10000) detected at line 1724
+ []
 
-<img/modelling/aa-eda-ts-3.png, id=350, 566.5968pt x 639.8304pt>
-File: img/modelling/aa-eda-ts-3.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-3.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-3.png  used on input line 1663.
 
-(luatex.def)             Requested size: 566.59541pt x 639.82883pt.
+Underfull \vbox (badness 10000) detected at line 1724
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
+[50]
+
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
+
+Underfull \vbox (badness 10000) detected at line 1724
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1724
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
 [51]
 
-Package xcolor Warning: Incompatible color definition on input line 1665.
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1684.
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1684.
+Underfull \vbox (badness 10000) detected at line 1724
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1684.
-
-[52<./img/modelling/aa-eda-ts-3.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1684.
+Underfull \vbox (badness 10000) detected at line 1724
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1684.
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
-<img/modelling/aa-eda-ts-4.png, id=360, 604.1772pt x 639.8304pt>
-File: img/modelling/aa-eda-ts-4.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-4.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-4.png  used on input line 1686.
+[52]
 
-(luatex.def)             Requested size: 604.17572pt x 639.82883pt.
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
+
+Underfull \vbox (badness 10000) detected at line 1724
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1724
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
 [53]
 
-Package xcolor Warning: Incompatible color definition on input line 1688.
+Package xcolor Warning: Incompatible color definition on input line 1724.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1722.
+Package xcolor Warning: Incompatible color definition on input line 1724.
+
+<img/modelling/aa-eda-ts-2.png, id=365, 599.3592pt x 639.8304pt>
+File: img/modelling/aa-eda-ts-2.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-2.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-2.png  used on input line 1726.
+
+(luatex.def)             Requested size: 599.35773pt x 639.82883pt.
+[54]
+
+Package xcolor Warning: Incompatible color definition on input line 1728.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1722.
+Package xcolor Warning: Incompatible color definition on input line 1746.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1722.
-
-[54<./img/modelling/aa-eda-ts-4.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1722.
+Package xcolor Warning: Incompatible color definition on input line 1746.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1722.
+Package xcolor Warning: Incompatible color definition on input line 1746.
 
-<img/modelling/aa-eda-ts-5.png, id=369, 562.7424pt x 639.8304pt>
-File: img/modelling/aa-eda-ts-5.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-5.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-5.png  used on input line 1724.
+[55<./img/modelling/aa-eda-ts-2.png>]
 
-(luatex.def)             Requested size: 562.74103pt x 639.82883pt.
-[55]
-
-Package xcolor Warning: Incompatible color definition on input line 1726.
+Package xcolor Warning: Incompatible color definition on input line 1746.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1730.
+Package xcolor Warning: Incompatible color definition on input line 1746.
+
+<img/modelling/aa-eda-ts-3.png, id=374, 566.5968pt x 639.8304pt>
+File: img/modelling/aa-eda-ts-3.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-3.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-3.png  used on input line 1748.
+
+(luatex.def)             Requested size: 566.59541pt x 639.82883pt.
+[56]
+
+Package xcolor Warning: Incompatible color definition on input line 1750.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1730.
-
-<img/modelling/aa-eda-ts-6.png, id=374, 562.7424pt x 639.8304pt>
-File: img/modelling/aa-eda-ts-6.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-6.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-6.png  used on input line 1732.
-
-(luatex.def)             Requested size: 562.74103pt x 639.82883pt.
-[56<./img/modelling/aa-eda-ts-5.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1734.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1769.
+
+[57<./img/modelling/aa-eda-ts-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 
-Underfull \vbox (badness 1708) detected at line 1798
- []
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
+<img/modelling/aa-eda-ts-4.png, id=383, 604.1772pt x 639.8304pt>
+File: img/modelling/aa-eda-ts-4.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-4.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-4.png  used on input line 1771.
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
-
-[57<./img/modelling/aa-eda-ts-6.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 1798.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1798.
-
-
-Underfull \vbox (badness 10000) detected at line 1798
- []
-
-
-Overfull \vbox (0.31696pt too high) detected at line 1798
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 1798.
-
+(luatex.def)             Requested size: 604.17572pt x 639.82883pt.
 [58]
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1773.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1807.
 
-<img/modelling/aa-eda-ts-7.png, id=387, 412.9026pt x 636.4578pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1807.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1807.
+
+[59<./img/modelling/aa-eda-ts-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1807.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1807.
+
+<img/modelling/aa-eda-ts-5.png, id=392, 562.7424pt x 639.8304pt>
+File: img/modelling/aa-eda-ts-5.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-5.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-5.png  used on input line 1809.
+
+(luatex.def)             Requested size: 562.74103pt x 639.82883pt.
+[60]
+
+Package xcolor Warning: Incompatible color definition on input line 1811.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1815.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1815.
+
+<img/modelling/aa-eda-ts-6.png, id=397, 562.7424pt x 639.8304pt>
+File: img/modelling/aa-eda-ts-6.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-6.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-6.png  used on input line 1817.
+
+(luatex.def)             Requested size: 562.74103pt x 639.82883pt.
+[61<./img/modelling/aa-eda-ts-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1819.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+
+Underfull \vbox (badness 1708) detected at line 1883
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+[62<./img/modelling/aa-eda-ts-6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+
+Underfull \vbox (badness 10000) detected at line 1883
+ []
+
+
+Overfull \vbox (0.31696pt too high) detected at line 1883
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+[63]
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1883.
+
+<img/modelling/aa-eda-ts-7.png, id=411, 412.9026pt x 636.4578pt>
 File: img/modelling/aa-eda-ts-7.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-7.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-7.png  used on input line 1800.
+Package luatex.def Info: img/modelling/aa-eda-ts-7.png  used on input line 1885.
 
 (luatex.def)             Requested size: 412.90158pt x 636.45624pt.
 
-Package xcolor Warning: Incompatible color definition on input line 1802.
+Package xcolor Warning: Incompatible color definition on input line 1887.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1884.
+Package xcolor Warning: Incompatible color definition on input line 1973.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1884.
+Package xcolor Warning: Incompatible color definition on input line 1973.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1884.
+Package xcolor Warning: Incompatible color definition on input line 1973.
 
-[59<./img/modelling/aa-eda-ts-7.png>]
+[64<./img/modelling/aa-eda-ts-7.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1884.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1884.
+Package xcolor Warning: Incompatible color definition on input line 1973.
 
 
-Underfull \vbox (badness 10000) detected at line 1884
+Package xcolor Warning: Incompatible color definition on input line 1973.
+
+
+Underfull \vbox (badness 10000) detected at line 1973
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 1884
+Overfull \vbox (1.65413pt too high) detected at line 1973
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1884.
+Package xcolor Warning: Incompatible color definition on input line 1973.
 
-[60]
+[65]
 
-Package xcolor Warning: Incompatible color definition on input line 1884.
+Package xcolor Warning: Incompatible color definition on input line 1973.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1884.
+Package xcolor Warning: Incompatible color definition on input line 1973.
 
-<img/modelling/aa-eda-ts-8.png, id=396, 426.393pt x 636.4578pt>
+<img/modelling/aa-eda-ts-8.png, id=420, 562.7424pt x 636.4578pt>
 File: img/modelling/aa-eda-ts-8.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-8.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-8.png  used on input line 1886.
+Package luatex.def Info: img/modelling/aa-eda-ts-8.png  used on input line 1975.
 
-(luatex.def)             Requested size: 426.39195pt x 636.45624pt.
-[61]
-<img/modelling/aa-eda-ts-9.png, id=402, 426.393pt x 636.4578pt>
+(luatex.def)             Requested size: 562.74103pt x 636.45624pt.
+[66]
+
+Package xcolor Warning: Incompatible color definition on input line 1977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1993.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1993.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1993.
+
+[67<./img/modelling/aa-eda-ts-8.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1993.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1993.
+
+<img/modelling/aa-eda-ts-9.png, id=429, 426.393pt x 636.4578pt>
 File: img/modelling/aa-eda-ts-9.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-9.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-9.png  used on input line 1892.
+Package luatex.def Info: img/modelling/aa-eda-ts-9.png  used on input line 1995.
 
 (luatex.def)             Requested size: 426.39195pt x 636.45624pt.
-[62<./img/modelling/aa-eda-ts-8.png>] [63<./img/modelling/aa-eda-ts-9.png>]
-Overfull \hbox (225.27052pt too wide) in paragraph at lines 1936--1936
+[68]
+<img/modelling/aa-eda-ts-10.png, id=434, 426.393pt x 636.4578pt>
+File: img/modelling/aa-eda-ts-10.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-10.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-10.png  used on input line 2001
+.
+(luatex.def)             Requested size: 426.39195pt x 636.45624pt.
+[69<./img/modelling/aa-eda-ts-9.png>] [70<./img/modelling/aa-eda-ts-10.png>]
+Overfull \hbox (225.27052pt too wide) in paragraph at lines 2045--2045
 []\T1/lmtt/m/n/10 ## triennial\_interval & Avg. area of forest loss in sq. km p
 er 100 sq. km & Avg. number of forest loss patches \$<\$1 Ha per 100 sq. km & A
 vg. number of MODIS M6 fire points per 100 sq. km & Avg. number of VIRS V1 fire
  points per 100 sq. km\\[] 
  []
 
-<img/modelling/aa-eda-ts-10.png, id=411, 426.393pt x 636.9396pt>
-File: img/modelling/aa-eda-ts-10.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-10.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-10.png  used on input line 1938
-.
-(luatex.def)             Requested size: 426.39195pt x 636.93805pt.
-[64]
-<img/modelling/aa-eda-ts-11.png, id=416, 426.393pt x 636.9396pt>
+<img/modelling/aa-eda-ts-11.png, id=443, 426.393pt x 636.9396pt>
 File: img/modelling/aa-eda-ts-11.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-11.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-11.png  used on input line 1944
+Package luatex.def Info: img/modelling/aa-eda-ts-11.png  used on input line 2047
 .
 (luatex.def)             Requested size: 426.39195pt x 636.93805pt.
-[65<./img/modelling/aa-eda-ts-10.png>] [66<./img/modelling/aa-eda-ts-11.png>]
-Overfull \hbox (235.7705pt too wide) in paragraph at lines 1991--1991
+[71]
+<img/modelling/aa-eda-ts-12.png, id=449, 426.393pt x 636.9396pt>
+File: img/modelling/aa-eda-ts-12.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-12.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-12.png  used on input line 2053
+.
+(luatex.def)             Requested size: 426.39195pt x 636.93805pt.
+[72<./img/modelling/aa-eda-ts-11.png>] [73<./img/modelling/aa-eda-ts-12.png>]
+Overfull \hbox (235.7705pt too wide) in paragraph at lines 2100--2100
 []\T1/lmtt/m/n/10 ## quadrennial\_interval & Avg. area of forest loss in sq. km
  per 100 sq. km & Avg. number of forest loss patches \$<\$1 Ha per 100 sq. km &
  Avg. number of MODIS M6 fire points per 100 sq. km & Avg. number of VIRS V1 fi
 re points per 100 sq. km\\[] 
  []
 
-<img/modelling/aa-eda-ts-12.png, id=425, 400.8576pt x 636.9396pt>
-File: img/modelling/aa-eda-ts-12.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-12.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-12.png  used on input line 1993
-.
-(luatex.def)             Requested size: 400.85661pt x 636.93805pt.
-[67]
-<img/modelling/aa-eda-ts-13.png, id=430, 400.8576pt x 636.9396pt>
+<img/modelling/aa-eda-ts-13.png, id=459, 400.8576pt x 636.9396pt>
 File: img/modelling/aa-eda-ts-13.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-13.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-13.png  used on input line 1999
+Package luatex.def Info: img/modelling/aa-eda-ts-13.png  used on input line 2102
 .
 (luatex.def)             Requested size: 400.85661pt x 636.93805pt.
-[68<./img/modelling/aa-eda-ts-12.png>] [69<./img/modelling/aa-eda-ts-13.png>]
-Overfull \hbox (241.02048pt too wide) in paragraph at lines 2043--2043
+[74]
+<img/modelling/aa-eda-ts-14.png, id=464, 400.8576pt x 636.9396pt>
+File: img/modelling/aa-eda-ts-14.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-14.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-14.png  used on input line 2108
+.
+(luatex.def)             Requested size: 400.85661pt x 636.93805pt.
+[75<./img/modelling/aa-eda-ts-13.png>] [76<./img/modelling/aa-eda-ts-14.png>]
+Overfull \hbox (241.02048pt too wide) in paragraph at lines 2152--2152
 []\T1/lmtt/m/n/10 # In the Dominican Republic, by four-year periods from 2001 t
 o 2018, both the area of forest loss (top) and the number of small clearings (m
 iddle) per 100 sq. km, increased since 2013 WITHOUT the help of fire (bottom). 
 This is a worrisome pattern[] 
  []
 
-<img/modelling/aa-eda-ts-14.png, id=439, 400.8576pt x 636.9396pt>
-File: img/modelling/aa-eda-ts-14.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-14.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-14.png  used on input line 2045
-.
-(luatex.def)             Requested size: 400.85661pt x 636.93805pt.
-[70]
-<img/modelling/aa-eda-ts-15.png, id=444, 400.8576pt x 636.9396pt>
+<img/modelling/aa-eda-ts-15.png, id=473, 400.8576pt x 636.9396pt>
 File: img/modelling/aa-eda-ts-15.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-15.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-15.png  used on input line 2051
+Package luatex.def Info: img/modelling/aa-eda-ts-15.png  used on input line 2154
 .
 (luatex.def)             Requested size: 400.85661pt x 636.93805pt.
-[71<./img/modelling/aa-eda-ts-14.png>] [72<./img/modelling/aa-eda-ts-15.png>]
-<img/modelling/aa-eda-ts-16.png, id=455, 432.6564pt x 636.4578pt>
+[77]
+<img/modelling/aa-eda-ts-16.png, id=478, 400.8576pt x 636.9396pt>
 File: img/modelling/aa-eda-ts-16.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-16.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-16.png  used on input line 2093
+Package luatex.def Info: img/modelling/aa-eda-ts-16.png  used on input line 2160
 .
-(luatex.def)             Requested size: 432.65535pt x 636.45624pt.
-[73]
-<img/modelling/aa-eda-ts-17.png, id=460, 432.6564pt x 636.4578pt>
+(luatex.def)             Requested size: 400.85661pt x 636.93805pt.
+[78<./img/modelling/aa-eda-ts-15.png>] [79<./img/modelling/aa-eda-ts-16.png>]
+<img/modelling/aa-eda-ts-17.png, id=487, 432.6564pt x 636.4578pt>
 File: img/modelling/aa-eda-ts-17.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-17.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-17.png  used on input line 2099
+Package luatex.def Info: img/modelling/aa-eda-ts-17.png  used on input line 2202
 .
 (luatex.def)             Requested size: 432.65535pt x 636.45624pt.
-[74<./img/modelling/aa-eda-ts-16.png>] [75<./img/modelling/aa-eda-ts-17.png>]
-Overfull \hbox (225.27052pt too wide) in paragraph at lines 2134--2134
+[80]
+<img/modelling/aa-eda-ts-18.png, id=492, 432.6564pt x 636.4578pt>
+File: img/modelling/aa-eda-ts-18.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-18.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-18.png  used on input line 2208
+.
+(luatex.def)             Requested size: 432.65535pt x 636.45624pt.
+[81<./img/modelling/aa-eda-ts-17.png>] [82<./img/modelling/aa-eda-ts-18.png>]
+Overfull \hbox (225.27052pt too wide) in paragraph at lines 2243--2243
 []\T1/lmtt/m/n/10 ## sexennial\_interval & Avg. area of forest loss in sq. km p
 er 100 sq. km & Avg. number of forest loss patches \$<\$1 Ha per 100 sq. km & A
 vg. number of MODIS M6 fire points per 100 sq. km & Avg. number of VIRS V1 fire
  points per 100 sq. km\\[] 
  []
 
-<img/modelling/aa-eda-ts-18.png, id=469, 426.393pt x 636.4578pt>
-File: img/modelling/aa-eda-ts-18.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-18.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-18.png  used on input line 2136
-.
-(luatex.def)             Requested size: 426.39195pt x 636.45624pt.
-[76]
-<img/modelling/aa-eda-ts-19.png, id=474, 426.393pt x 636.4578pt>
+<img/modelling/aa-eda-ts-19.png, id=502, 426.393pt x 636.4578pt>
 File: img/modelling/aa-eda-ts-19.png Graphic file (type png)
 <use img/modelling/aa-eda-ts-19.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-19.png  used on input line 2142
+Package luatex.def Info: img/modelling/aa-eda-ts-19.png  used on input line 2245
 .
 (luatex.def)             Requested size: 426.39195pt x 636.45624pt.
-[77<./img/modelling/aa-eda-ts-18.png>] [78<./img/modelling/aa-eda-ts-19.png>]
-Overfull \hbox (225.27052pt too wide) in paragraph at lines 2197--2197
+[83]
+<img/modelling/aa-eda-ts-20.png, id=507, 426.393pt x 636.4578pt>
+File: img/modelling/aa-eda-ts-20.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-20.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-20.png  used on input line 2251
+.
+(luatex.def)             Requested size: 426.39195pt x 636.45624pt.
+[84<./img/modelling/aa-eda-ts-19.png>] [85<./img/modelling/aa-eda-ts-20.png>]
+Overfull \hbox (225.27052pt too wide) in paragraph at lines 2306--2306
 []\T1/lmtt/m/n/10 ## decennial\_interval & Avg. area of forest loss in sq. km p
 er 100 sq. km & Avg. number of forest loss patches \$<\$1 Ha per 100 sq. km & A
 vg. number of MODIS M6 fire points per 100 sq. km & Avg. number of VIRS V1 fire
  points per 100 sq. km\\[] 
  []
 
-<img/modelling/aa-eda-ts-20.png, id=483, 858.5676pt x 639.8304pt>
-File: img/modelling/aa-eda-ts-20.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-20.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-20.png  used on input line 2199
+<img/modelling/aa-eda-ts-21.png, id=516, 858.5676pt x 639.8304pt>
+File: img/modelling/aa-eda-ts-21.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-21.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-21.png  used on input line 2308
 .
 (luatex.def)             Requested size: 858.56549pt x 639.82883pt.
-[79]
+[86]
 
-Package xcolor Warning: Incompatible color definition on input line 2201.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2243.
+Package xcolor Warning: Incompatible color definition on input line 2310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2243.
+Package xcolor Warning: Incompatible color definition on input line 2352.
 
 
-Underfull \vbox (badness 1708) detected at line 2243
+Package xcolor Warning: Incompatible color definition on input line 2352.
+
+
+Underfull \vbox (badness 1708) detected at line 2352
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2243.
+Package xcolor Warning: Incompatible color definition on input line 2352.
 
-[80<./img/modelling/aa-eda-ts-20.png>]
+[87<./img/modelling/aa-eda-ts-21.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 2243.
+Package xcolor Warning: Incompatible color definition on input line 2352.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2243.
+Package xcolor Warning: Incompatible color definition on input line 2352.
 
-<img/modelling/aa-eda-ts-21.png, id=492, 710.655pt x 636.4578pt>
-File: img/modelling/aa-eda-ts-21.png Graphic file (type png)
-<use img/modelling/aa-eda-ts-21.png>
-Package luatex.def Info: img/modelling/aa-eda-ts-21.png  used on input line 2245
+<img/modelling/aa-eda-ts-22.png, id=525, 710.655pt x 636.4578pt>
+File: img/modelling/aa-eda-ts-22.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-22.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-22.png  used on input line 2354
 .
 (luatex.def)             Requested size: 710.65326pt x 636.45624pt.
-[81]
+[88]
 
-Package xcolor Warning: Incompatible color definition on input line 2247.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2253.
+Package xcolor Warning: Incompatible color definition on input line 2356.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2253.
+Package xcolor Warning: Incompatible color definition on input line 2378.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2259.
-
-[82<./img/modelling/aa-eda-ts-21.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2301.
+Package xcolor Warning: Incompatible color definition on input line 2378.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2301.
+Package xcolor Warning: Incompatible color definition on input line 2378.
 
-<img/modelling/aa-yearly-forest-loss-maps-1.png, id=503, 1062.8508pt x 439.8834p
+[89<./img/modelling/aa-eda-ts-22.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2378.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2378.
+
+<img/modelling/aa-eda-ts-23.png, id=534, 903.8568pt x 636.4578pt>
+File: img/modelling/aa-eda-ts-23.png Graphic file (type png)
+<use img/modelling/aa-eda-ts-23.png>
+Package luatex.def Info: img/modelling/aa-eda-ts-23.png  used on input line 2380
+.
+(luatex.def)             Requested size: 903.8546pt x 636.45624pt.
+[90]
+
+Package xcolor Warning: Incompatible color definition on input line 2382.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2387.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2387.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2393.
+
+[91<./img/modelling/aa-eda-ts-23.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2435.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2435.
+
+<img/modelling/aa-yearly-forest-loss-maps-1.png, id=545, 1062.8508pt x 439.8834p
 t>
 File: img/modelling/aa-yearly-forest-loss-maps-1.png Graphic file (type png)
 <use img/modelling/aa-yearly-forest-loss-maps-1.png>
 Package luatex.def Info: img/modelling/aa-yearly-forest-loss-maps-1.png  used on
- input line 2303.
+ input line 2437.
 (luatex.def)             Requested size: 1062.8482pt x 439.88232pt.
 
-Overfull \hbox (12.37244pt too wide) in paragraph at lines 2303--2303
+Overfull \hbox (12.37244pt too wide) in paragraph at lines 2437--2437
  [] 
  []
 
-[83]
-<img/modelling/aa-yearly-forest-loss-maps-2.png, id=508, 1062.8508pt x 431.6928p
+[92]
+<img/modelling/aa-yearly-forest-loss-maps-2.png, id=550, 1062.8508pt x 431.6928p
 t>
 File: img/modelling/aa-yearly-forest-loss-maps-2.png Graphic file (type png)
 <use img/modelling/aa-yearly-forest-loss-maps-2.png>
 Package luatex.def Info: img/modelling/aa-yearly-forest-loss-maps-2.png  used on
- input line 2305.
+ input line 2439.
 (luatex.def)             Requested size: 1062.8482pt x 431.69174pt.
 
-Overfull \hbox (12.37244pt too wide) in paragraph at lines 2305--2305
+Overfull \hbox (12.37244pt too wide) in paragraph at lines 2439--2439
  [] 
  []
 
-[84<./img/modelling/aa-yearly-forest-loss-maps-1.png>]
-<img/modelling/aa-yearly-forest-loss-maps-3.png, id=513, 1062.8508pt x 439.8834p
+[93<./img/modelling/aa-yearly-forest-loss-maps-1.png>]
+<img/modelling/aa-yearly-forest-loss-maps-3.png, id=555, 1062.8508pt x 439.8834p
 t>
 File: img/modelling/aa-yearly-forest-loss-maps-3.png Graphic file (type png)
 <use img/modelling/aa-yearly-forest-loss-maps-3.png>
 Package luatex.def Info: img/modelling/aa-yearly-forest-loss-maps-3.png  used on
- input line 2307.
+ input line 2441.
 (luatex.def)             Requested size: 1062.8482pt x 439.88232pt.
 
-Overfull \hbox (12.37244pt too wide) in paragraph at lines 2307--2307
+Overfull \hbox (12.37244pt too wide) in paragraph at lines 2441--2441
  [] 
  []
 
-[85<./img/modelling/aa-yearly-forest-loss-maps-2.png>]
-<img/modelling/aa-yearly-forest-loss-maps-4.png, id=518, 1062.8508pt x 439.8834p
+[94<./img/modelling/aa-yearly-forest-loss-maps-2.png>]
+<img/modelling/aa-yearly-forest-loss-maps-4.png, id=560, 1062.8508pt x 439.8834p
 t>
 File: img/modelling/aa-yearly-forest-loss-maps-4.png Graphic file (type png)
 <use img/modelling/aa-yearly-forest-loss-maps-4.png>
 Package luatex.def Info: img/modelling/aa-yearly-forest-loss-maps-4.png  used on
- input line 2309.
+ input line 2443.
 (luatex.def)             Requested size: 1062.8482pt x 439.88232pt.
 
-Overfull \hbox (12.37244pt too wide) in paragraph at lines 2309--2309
+Overfull \hbox (12.37244pt too wide) in paragraph at lines 2443--2443
  [] 
  []
 
-[86<./img/modelling/aa-yearly-forest-loss-maps-3.png>]
+[95<./img/modelling/aa-yearly-forest-loss-maps-3.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 2314.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2448.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-[87<./img/modelling/aa-yearly-forest-loss-maps-4.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+[96<./img/modelling/aa-yearly-forest-loss-maps-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Underfull \vbox (badness 10000) detected at line 2846
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Underfull \vbox (badness 10000) detected at line 2980
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2846
+Underfull \vbox (badness 10000) detected at line 2980
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
-[88]
+[97]
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Underfull \vbox (badness 10000) detected at line 2846
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Underfull \vbox (badness 10000) detected at line 2980
  []
 
 
-Overfull \vbox (1.07861pt too high) detected at line 2846
+Overfull \vbox (1.07861pt too high) detected at line 2980
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
-[89]
+[98]
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Underfull \vbox (badness 10000) detected at line 2846
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Underfull \vbox (badness 10000) detected at line 2980
  []
 
 
-Overfull \vbox (1.07861pt too high) detected at line 2846
+Overfull \vbox (1.07861pt too high) detected at line 2980
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-[90]
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Underfull \vbox (badness 10000) detected at line 2846
- []
-
-
-Overfull \vbox (1.07861pt too high) detected at line 2846
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-[91]
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Underfull \vbox (badness 10000) detected at line 2846
- []
-
-
-Overfull \vbox (1.07861pt too high) detected at line 2846
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-[92]
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Underfull \vbox (badness 10000) detected at line 2846
- []
-
-
-Overfull \vbox (1.07861pt too high) detected at line 2846
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-[93]
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Underfull \vbox (badness 10000) detected at line 2846
- []
-
-
-Overfull \vbox (1.07861pt too high) detected at line 2846
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-[94]
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Underfull \vbox (badness 10000) detected at line 2846
- []
-
-
-Overfull \vbox (1.07861pt too high) detected at line 2846
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-[95]
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2846.
-
-<img/modelling/transformations-1.png, id=561, 1073.4504pt x 639.3486pt>
-File: img/modelling/transformations-1.png Graphic file (type png)
-<use img/modelling/transformations-1.png>
-Package luatex.def Info: img/modelling/transformations-1.png  used on input line
- 2848.
-(luatex.def)             Requested size: 1073.44777pt x 639.34703pt.
-
-Overfull \hbox (22.972pt too wide) in paragraph at lines 2848--2848
- [] 
- []
-
-[96]
-
-Package xcolor Warning: Incompatible color definition on input line 2850.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2882.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2882.
-
-
-Overfull \vbox (2.00688pt too high) detected at line 2882
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 2882.
-
-[97<./img/modelling/transformations-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2882.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2882.
-
-<img/modelling/transformations-2.png, id=570, 1067.187pt x 365.2044pt>
-File: img/modelling/transformations-2.png Graphic file (type png)
-<use img/modelling/transformations-2.png>
-Package luatex.def Info: img/modelling/transformations-2.png  used on input line
- 2884.
-(luatex.def)             Requested size: 1067.1844pt x 365.2035pt.
-
-Overfull \hbox (16.70863pt too wide) in paragraph at lines 2884--2884
- [] 
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 2886.
-
-[98<./img/modelling/transformations-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2890.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2890.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2895.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2921.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2921.
-
-<img/modelling/aa-lisa-maps-1.png, id=575, 1070.5596pt x 554.07pt>
-File: img/modelling/aa-lisa-maps-1.png Graphic file (type png)
-<use img/modelling/aa-lisa-maps-1.png>
-Package luatex.def Info: img/modelling/aa-lisa-maps-1.png  used on input line 29
-23.
-(luatex.def)             Requested size: 1070.55699pt x 554.06865pt.
-
-Overfull \hbox (20.08122pt too wide) in paragraph at lines 2923--2923
- [] 
- []
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 [99]
 
-Package xcolor Warning: Incompatible color definition on input line 2925.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2954.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2954.
-
-
-Overfull \vbox (0.7285pt too high) detected at line 2954
+Underfull \vbox (badness 10000) detected at line 2980
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2954.
-
-[100<./img/modelling/aa-lisa-maps-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2954.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2954.
-
-<img/modelling/aa-lisa-maps-2.png, id=585, 1070.5596pt x 554.07pt>
-File: img/modelling/aa-lisa-maps-2.png Graphic file (type png)
-<use img/modelling/aa-lisa-maps-2.png>
-Package luatex.def Info: img/modelling/aa-lisa-maps-2.png  used on input line 29
-56.
-(luatex.def)             Requested size: 1070.55699pt x 554.06865pt.
-
-Overfull \hbox (20.08122pt too wide) in paragraph at lines 2956--2956
- [] 
+Overfull \vbox (1.07861pt too high) detected at line 2980
  []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+[100]
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Underfull \vbox (badness 10000) detected at line 2980
+ []
+
+
+Overfull \vbox (1.07861pt too high) detected at line 2980
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 [101]
 
-Package xcolor Warning: Incompatible color definition on input line 2958.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2986.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2986.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2986.
-
-[102<./img/modelling/aa-lisa-maps-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 2986.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2986.
-
-<img/modelling/aa-lisa-maps-3.png, id=595, 1070.5596pt x 554.07pt>
-File: img/modelling/aa-lisa-maps-3.png Graphic file (type png)
-<use img/modelling/aa-lisa-maps-3.png>
-Package luatex.def Info: img/modelling/aa-lisa-maps-3.png  used on input line 29
-88.
-(luatex.def)             Requested size: 1070.55699pt x 554.06865pt.
-
-Overfull \hbox (20.08122pt too wide) in paragraph at lines 2988--2988
- [] 
+Underfull \vbox (badness 10000) detected at line 2980
  []
+
+
+Overfull \vbox (1.07861pt too high) detected at line 2980
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+[102]
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Underfull \vbox (badness 10000) detected at line 2980
+ []
+
+
+Overfull \vbox (1.07861pt too high) detected at line 2980
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 [103]
 
-Package xcolor Warning: Incompatible color definition on input line 2990.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3018.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3018.
+Underfull \vbox (badness 10000) detected at line 2980
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3018.
-
-[104<./img/modelling/aa-lisa-maps-3.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3018.
+Overfull \vbox (1.07861pt too high) detected at line 2980
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3018.
+Package xcolor Warning: Incompatible color definition on input line 2980.
 
-<img/modelling/aa-lisa-maps-4.png, id=605, 1070.5596pt x 503.9628pt>
-File: img/modelling/aa-lisa-maps-4.png Graphic file (type png)
-<use img/modelling/aa-lisa-maps-4.png>
-Package luatex.def Info: img/modelling/aa-lisa-maps-4.png  used on input line 30
-20.
-(luatex.def)             Requested size: 1070.55699pt x 503.96156pt.
+[104]
 
-Overfull \hbox (20.08122pt too wide) in paragraph at lines 3020--3020
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2980.
+
+<img/modelling/transformations-1.png, id=604, 1073.4504pt x 639.3486pt>
+File: img/modelling/transformations-1.png Graphic file (type png)
+<use img/modelling/transformations-1.png>
+Package luatex.def Info: img/modelling/transformations-1.png  used on input line
+ 2982.
+(luatex.def)             Requested size: 1073.44777pt x 639.34703pt.
+
+Overfull \hbox (22.972pt too wide) in paragraph at lines 2982--2982
+ [] 
+ []
+
+[105]
+
+Package xcolor Warning: Incompatible color definition on input line 2984.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3016.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3016.
+
+
+Overfull \vbox (2.00688pt too high) detected at line 3016
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 3016.
+
+[106<./img/modelling/transformations-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3016.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3016.
+
+<img/modelling/transformations-2.png, id=613, 1067.187pt x 365.2044pt>
+File: img/modelling/transformations-2.png Graphic file (type png)
+<use img/modelling/transformations-2.png>
+Package luatex.def Info: img/modelling/transformations-2.png  used on input line
+ 3018.
+(luatex.def)             Requested size: 1067.1844pt x 365.2035pt.
+
+Overfull \hbox (16.70863pt too wide) in paragraph at lines 3018--3018
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3022.
+Package xcolor Warning: Incompatible color definition on input line 3020.
 
-[105<./img/modelling/aa-lisa-maps-4.png>]
+[107<./img/modelling/transformations-2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3026.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3026.
+Package xcolor Warning: Incompatible color definition on input line 3055.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3031.
+Package xcolor Warning: Incompatible color definition on input line 3055.
 
+<img/modelling/transformations-3.png, id=618, 1067.187pt x 365.2044pt>
+File: img/modelling/transformations-3.png Graphic file (type png)
+<use img/modelling/transformations-3.png>
+Package luatex.def Info: img/modelling/transformations-3.png  used on input line
+ 3057.
+(luatex.def)             Requested size: 1067.1844pt x 365.2035pt.
 
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-[106]
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Underfull \vbox (badness 10000) detected at line 3533
+Overfull \hbox (16.70863pt too wide) in paragraph at lines 3057--3057
+ [] 
  []
-
-
-Overfull \vbox (1.65413pt too high) detected at line 3533
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-[107]
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Underfull \vbox (badness 10000) detected at line 3533
- []
-
-
-Overfull \vbox (1.65413pt too high) detected at line 3533
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
 
 [108]
 
-Package xcolor Warning: Incompatible color definition on input line 3533.
+Package xcolor Warning: Incompatible color definition on input line 3059.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3533.
+Package xcolor Warning: Incompatible color definition on input line 3064.
 
 
-Underfull \vbox (badness 10000) detected at line 3533
+Package xcolor Warning: Incompatible color definition on input line 3064.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3069.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3095.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3095.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3095.
+
+[109<./img/modelling/transformations-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3095.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3095.
+
+<img/modelling/aa-lisa-maps-1.png, id=628, 1070.5596pt x 554.07pt>
+File: img/modelling/aa-lisa-maps-1.png Graphic file (type png)
+<use img/modelling/aa-lisa-maps-1.png>
+Package luatex.def Info: img/modelling/aa-lisa-maps-1.png  used on input line 30
+97.
+(luatex.def)             Requested size: 1070.55699pt x 554.06865pt.
+
+Overfull \hbox (20.08122pt too wide) in paragraph at lines 3097--3097
+ [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3533
+Package xcolor Warning: Incompatible color definition on input line 3099.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3128.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3128.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3128.
+
+[110<./img/modelling/aa-lisa-maps-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3128.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3128.
+
+<img/modelling/aa-lisa-maps-2.png, id=633, 1070.5596pt x 554.07pt>
+File: img/modelling/aa-lisa-maps-2.png Graphic file (type png)
+<use img/modelling/aa-lisa-maps-2.png>
+Package luatex.def Info: img/modelling/aa-lisa-maps-2.png  used on input line 31
+30.
+(luatex.def)             Requested size: 1070.55699pt x 554.06865pt.
+
+Overfull \hbox (20.08122pt too wide) in paragraph at lines 3130--3130
+ [] 
  []
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-[109]
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Underfull \vbox (badness 10000) detected at line 3533
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3533
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-[110]
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Underfull \vbox (badness 10000) detected at line 3533
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3533
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
 
 [111]
 
-Package xcolor Warning: Incompatible color definition on input line 3533.
+Package xcolor Warning: Incompatible color definition on input line 3132.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3533.
+Package xcolor Warning: Incompatible color definition on input line 3160.
 
 
-Underfull \vbox (badness 10000) detected at line 3533
+Package xcolor Warning: Incompatible color definition on input line 3160.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3160.
+
+[112<./img/modelling/aa-lisa-maps-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3160.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3160.
+
+<img/modelling/aa-lisa-maps-3.png, id=643, 1070.5596pt x 554.07pt>
+File: img/modelling/aa-lisa-maps-3.png Graphic file (type png)
+<use img/modelling/aa-lisa-maps-3.png>
+Package luatex.def Info: img/modelling/aa-lisa-maps-3.png  used on input line 31
+62.
+(luatex.def)             Requested size: 1070.55699pt x 554.06865pt.
+
+Overfull \hbox (20.08122pt too wide) in paragraph at lines 3162--3162
+ [] 
  []
-
-
-Underfull \vbox (badness 10000) detected at line 3533
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-[112]
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-
-Underfull \vbox (badness 10000) detected at line 3533
- []
-
-
-Overfull \vbox (0.3007pt too high) detected at line 3533
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 3533.
 
 [113]
 
-Package xcolor Warning: Incompatible color definition on input line 3533.
+Package xcolor Warning: Incompatible color definition on input line 3164.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3533.
-
-<img/modelling/aa-models-1.png, id=644, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-1.png Graphic file (type png)
-<use img/modelling/aa-models-1.png>
-Package luatex.def Info: img/modelling/aa-models-1.png  used on input line 3535.
-
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[114]
-
-Package xcolor Warning: Incompatible color definition on input line 3537.
+Package xcolor Warning: Incompatible color definition on input line 3192.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3543.
+Package xcolor Warning: Incompatible color definition on input line 3192.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3543.
+Package xcolor Warning: Incompatible color definition on input line 3192.
 
-<img/modelling/aa-models-2.png, id=649, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-2.png Graphic file (type png)
-<use img/modelling/aa-models-2.png>
-Package luatex.def Info: img/modelling/aa-models-2.png  used on input line 3545.
+[114<./img/modelling/aa-lisa-maps-3.png>]
 
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[115<./img/modelling/aa-models-1.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3547.
+Package xcolor Warning: Incompatible color definition on input line 3192.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3553.
+Package xcolor Warning: Incompatible color definition on input line 3192.
 
+<img/modelling/aa-lisa-maps-4.png, id=652, 1070.5596pt x 503.9628pt>
+File: img/modelling/aa-lisa-maps-4.png Graphic file (type png)
+<use img/modelling/aa-lisa-maps-4.png>
+Package luatex.def Info: img/modelling/aa-lisa-maps-4.png  used on input line 31
+94.
+(luatex.def)             Requested size: 1070.55699pt x 503.96156pt.
 
-Package xcolor Warning: Incompatible color definition on input line 3553.
-
-<img/modelling/aa-models-3.png, id=654, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-3.png Graphic file (type png)
-<use img/modelling/aa-models-3.png>
-Package luatex.def Info: img/modelling/aa-models-3.png  used on input line 3555.
-
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[116<./img/modelling/aa-models-2.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3557.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-[117<./img/modelling/aa-models-3.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Underfull \vbox (badness 10000) detected at line 4216
+Overfull \hbox (20.08122pt too wide) in paragraph at lines 3194--3194
+ [] 
  []
 
 
-Overfull \vbox (1.07861pt too high) detected at line 4216
+Package xcolor Warning: Incompatible color definition on input line 3196.
+
+[115<./img/modelling/aa-lisa-maps-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3200.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3200.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+[116]
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Overfull \vbox (1.65413pt too high) detected at line 3707
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+[117]
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
+
+
+Underfull \vbox (badness 10000) detected at line 3707
+ []
+
+
+Overfull \vbox (1.65413pt too high) detected at line 3707
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 [118]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 [119]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Overfull \vbox (1.07861pt too high) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 [120]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 [121]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 [122]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Underfull \vbox (badness 10000) detected at line 3707
  []
 
 
-Overfull \vbox (0.83862pt too high) detected at line 4216
+Overfull \vbox (0.3007pt too high) detected at line 3707
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 [123]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3707.
 
+<img/modelling/aa-models-1.png, id=691, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-1.png Graphic file (type png)
+<use img/modelling/aa-models-1.png>
+Package luatex.def Info: img/modelling/aa-models-1.png  used on input line 3709.
 
-Underfull \vbox (badness 10000) detected at line 4216
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4216
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
 [124]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3711.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 3717.
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Package xcolor Warning: Incompatible color definition on input line 3717.
+
+<img/modelling/aa-models-2.png, id=696, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-2.png Graphic file (type png)
+<use img/modelling/aa-models-2.png>
+Package luatex.def Info: img/modelling/aa-models-2.png  used on input line 3719.
+
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+[125<./img/modelling/aa-models-1.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3721.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3727.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3727.
+
+<img/modelling/aa-models-3.png, id=701, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-3.png Graphic file (type png)
+<use img/modelling/aa-models-3.png>
+Package luatex.def Info: img/modelling/aa-models-3.png  used on input line 3729.
+
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+[126<./img/modelling/aa-models-2.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3731.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+[127<./img/modelling/aa-models-3.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4216
+Overfull \vbox (1.07861pt too high) detected at line 4390
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-[125]
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Underfull \vbox (badness 10000) detected at line 4216
- []
-
-
-Overfull \vbox (1.65413pt too high) detected at line 4216
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-[126]
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Underfull \vbox (badness 10000) detected at line 4216
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4216
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-[127]
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
-
-
-Underfull \vbox (badness 10000) detected at line 4216
- []
-
-
-Overfull \vbox (1.65413pt too high) detected at line 4216
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 [128]
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4216.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
-<img/modelling/aa-models-4.png, id=708, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-4.png Graphic file (type png)
-<use img/modelling/aa-models-4.png>
-Package luatex.def Info: img/modelling/aa-models-4.png  used on input line 4218.
 
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+Underfull \vbox (badness 10000) detected at line 4390
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4390
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
 [129]
 
-Package xcolor Warning: Incompatible color definition on input line 4220.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4226.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4226.
-
-<img/modelling/aa-models-5.png, id=713, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-5.png Graphic file (type png)
-<use img/modelling/aa-models-5.png>
-Package luatex.def Info: img/modelling/aa-models-5.png  used on input line 4228.
-
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[130<./img/modelling/aa-models-4.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 4230.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4236.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4236.
-
-<img/modelling/aa-models-6.png, id=718, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-6.png Graphic file (type png)
-<use img/modelling/aa-models-6.png>
-Package luatex.def Info: img/modelling/aa-models-6.png  used on input line 4238.
-
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[131<./img/modelling/aa-models-5.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 4240.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-[132<./img/modelling/aa-models-6.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Underfull \vbox (badness 10000) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Overfull \vbox (1.07861pt too high) detected at line 4901
+Overfull \vbox (1.07861pt too high) detected at line 4390
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+[130]
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Underfull \vbox (badness 10000) detected at line 4390
+ []
+
+
+Overfull \vbox (1.65413pt too high) detected at line 4390
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+[131]
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Underfull \vbox (badness 10000) detected at line 4390
+ []
+
+
+Overfull \vbox (1.65413pt too high) detected at line 4390
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+[132]
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
+
+
+Underfull \vbox (badness 10000) detected at line 4390
+ []
+
+
+Overfull \vbox (0.83862pt too high) detected at line 4390
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 [133]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 [134]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Overfull \vbox (0.3007pt too high) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 [135]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Overfull \vbox (1.65413pt too high) detected at line 4390
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 [136]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 [137]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Underfull \vbox (badness 10000) detected at line 4390
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 4901
+Overfull \vbox (1.65413pt too high) detected at line 4390
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 [138]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4390.
 
+<img/modelling/aa-models-4.png, id=756, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-4.png Graphic file (type png)
+<use img/modelling/aa-models-4.png>
+Package luatex.def Info: img/modelling/aa-models-4.png  used on input line 4392.
 
-Underfull \vbox (badness 10000) detected at line 4901
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4901
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
 [139]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4394.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 4400.
 
 
-Underfull \vbox (badness 10000) detected at line 4901
+Package xcolor Warning: Incompatible color definition on input line 4400.
+
+<img/modelling/aa-models-5.png, id=761, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-5.png Graphic file (type png)
+<use img/modelling/aa-models-5.png>
+Package luatex.def Info: img/modelling/aa-models-5.png  used on input line 4402.
+
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+[140<./img/modelling/aa-models-4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 4404.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4410.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4410.
+
+<img/modelling/aa-models-6.png, id=766, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-6.png Graphic file (type png)
+<use img/modelling/aa-models-6.png>
+Package luatex.def Info: img/modelling/aa-models-6.png  used on input line 4412.
+
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+[141<./img/modelling/aa-models-5.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 4414.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+[142<./img/modelling/aa-models-6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 4901
+Overfull \vbox (1.07861pt too high) detected at line 5075
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-[140]
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Underfull \vbox (badness 10000) detected at line 4901
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4901
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-[141]
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Underfull \vbox (badness 10000) detected at line 4901
- []
-
-
-Overfull \vbox (0.3007pt too high) detected at line 4901
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-[142]
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
-
-
-Underfull \vbox (badness 10000) detected at line 4901
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4901
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 [143]
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4901.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
-<img/modelling/aa-models-7.png, id=774, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-7.png Graphic file (type png)
-<use img/modelling/aa-models-7.png>
-Package luatex.def Info: img/modelling/aa-models-7.png  used on input line 4903.
 
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+Underfull \vbox (badness 10000) detected at line 5075
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5075
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
 [144]
 
-Package xcolor Warning: Incompatible color definition on input line 4905.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4911.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4911.
-
-<img/modelling/aa-models-8.png, id=779, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-8.png Graphic file (type png)
-<use img/modelling/aa-models-8.png>
-Package luatex.def Info: img/modelling/aa-models-8.png  used on input line 4913.
-
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[145<./img/modelling/aa-models-7.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 4915.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4921.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4921.
-
-<img/modelling/aa-models-9.png, id=784, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-9.png Graphic file (type png)
-<use img/modelling/aa-models-9.png>
-Package luatex.def Info: img/modelling/aa-models-9.png  used on input line 4923.
-
-(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[146<./img/modelling/aa-models-8.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 4925.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-[147<./img/modelling/aa-models-9.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-
-Underfull \vbox (badness 10000) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 5511
+Overfull \vbox (0.3007pt too high) detected at line 5075
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+[145]
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Underfull \vbox (badness 10000) detected at line 5075
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5075
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+[146]
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Underfull \vbox (badness 10000) detected at line 5075
+ []
+
+
+Overfull \vbox (1.65413pt too high) detected at line 5075
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+[147]
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
+
+
+Underfull \vbox (badness 10000) detected at line 5075
+ []
+
+
+Overfull \vbox (1.65413pt too high) detected at line 5075
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 [148]
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 [149]
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Overfull \vbox (1.65413pt too high) detected at line 5075
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 [150]
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 [151]
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Overfull \vbox (0.3007pt too high) detected at line 5075
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 [152]
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Underfull \vbox (badness 10000) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Overfull \vbox (1.65413pt too high) detected at line 5511
+Underfull \vbox (badness 10000) detected at line 5075
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 [153]
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5075.
 
+<img/modelling/aa-models-7.png, id=821, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-7.png Graphic file (type png)
+<use img/modelling/aa-models-7.png>
+Package luatex.def Info: img/modelling/aa-models-7.png  used on input line 5077.
 
-Underfull \vbox (badness 10000) detected at line 5511
- []
-
-
-Overfull \vbox (1.65413pt too high) detected at line 5511
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
 [154]
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5079.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5511.
+Package xcolor Warning: Incompatible color definition on input line 5085.
 
 
-Underfull \vbox (badness 10000) detected at line 5511
- []
+Package xcolor Warning: Incompatible color definition on input line 5085.
 
+<img/modelling/aa-models-8.png, id=826, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-8.png Graphic file (type png)
+<use img/modelling/aa-models-8.png>
+Package luatex.def Info: img/modelling/aa-models-8.png  used on input line 5087.
 
-Underfull \vbox (badness 10000) detected at line 5511
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-[155]
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-
-Underfull \vbox (badness 10000) detected at line 5511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 5511
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-[156]
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5511.
-
-<img/modelling/aa-models-10.png, id=830, 1042.6152pt x 574.7874pt>
-File: img/modelling/aa-models-10.png Graphic file (type png)
-<use img/modelling/aa-models-10.png>
-Package luatex.def Info: img/modelling/aa-models-10.png  used on input line 5513
-.
-(luatex.def)             Requested size: 1042.61267pt x 574.786pt.
-[157]
-
-Package xcolor Warning: Incompatible color definition on input line 5515.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5521.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5521.
-
-<img/modelling/aa-models-11.png, id=835, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-11.png Graphic file (type png)
-<use img/modelling/aa-models-11.png>
-Package luatex.def Info: img/modelling/aa-models-11.png  used on input line 5523
-.
 (luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[158<./img/modelling/aa-models-10.png>]
+[155<./img/modelling/aa-models-7.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 5525.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5531.
+Package xcolor Warning: Incompatible color definition on input line 5089.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5531.
+Package xcolor Warning: Incompatible color definition on input line 5095.
 
-<img/modelling/aa-models-12.png, id=840, 1042.6152pt x 572.8602pt>
-File: img/modelling/aa-models-12.png Graphic file (type png)
-<use img/modelling/aa-models-12.png>
-Package luatex.def Info: img/modelling/aa-models-12.png  used on input line 5533
-.
+
+Package xcolor Warning: Incompatible color definition on input line 5095.
+
+<img/modelling/aa-models-9.png, id=831, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-9.png Graphic file (type png)
+<use img/modelling/aa-models-9.png>
+Package luatex.def Info: img/modelling/aa-models-9.png  used on input line 5097.
+
 (luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
-[159<./img/modelling/aa-models-11.png>]
+[156<./img/modelling/aa-models-8.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 5535.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5621.
+Package xcolor Warning: Incompatible color definition on input line 5099.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5621.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5621.
-
-[160<./img/modelling/aa-models-12.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 5621.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5621.
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+[157<./img/modelling/aa-models-9.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Underfull \vbox (badness 10000) detected at line 5621
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Underfull \vbox (badness 10000) detected at line 5685
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5621
+Overfull \vbox (1.65413pt too high) detected at line 5685
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5621.
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+[158]
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+[159]
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+[160]
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Overfull \vbox (1.65413pt too high) detected at line 5685
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 [161]
 
-Package xcolor Warning: Incompatible color definition on input line 5621.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5621.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5626.
+Underfull \vbox (badness 10000) detected at line 5685
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Underfull \vbox (badness 10000) detected at line 5685
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 [162]
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Underfull \vbox (badness 10000) detected at line 5783
+Underfull \vbox (badness 10000) detected at line 5685
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5783
+Overfull \vbox (1.65413pt too high) detected at line 5685
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 [163]
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Underfull \vbox (badness 10000) detected at line 5783
+Underfull \vbox (badness 10000) detected at line 5685
  []
 
 
-Overfull \vbox (1.71086pt too high) detected at line 5783
+Overfull \vbox (1.65413pt too high) detected at line 5685
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 [164]
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5783.
+Package xcolor Warning: Incompatible color definition on input line 5685.
 
-<img/modelling/aa-local-models-1.png, id=867, 1034.4246pt x 643.203pt>
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+[165]
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5685
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+[166]
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5685.
+
+<img/modelling/aa-models-10.png, id=877, 1042.6152pt x 574.7874pt>
+File: img/modelling/aa-models-10.png Graphic file (type png)
+<use img/modelling/aa-models-10.png>
+Package luatex.def Info: img/modelling/aa-models-10.png  used on input line 5687
+.
+(luatex.def)             Requested size: 1042.61267pt x 574.786pt.
+[167]
+
+Package xcolor Warning: Incompatible color definition on input line 5689.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5695.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5695.
+
+<img/modelling/aa-models-11.png, id=882, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-11.png Graphic file (type png)
+<use img/modelling/aa-models-11.png>
+Package luatex.def Info: img/modelling/aa-models-11.png  used on input line 5697
+.
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+[168<./img/modelling/aa-models-10.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 5699.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5705.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5705.
+
+<img/modelling/aa-models-12.png, id=887, 1042.6152pt x 572.8602pt>
+File: img/modelling/aa-models-12.png Graphic file (type png)
+<use img/modelling/aa-models-12.png>
+Package luatex.def Info: img/modelling/aa-models-12.png  used on input line 5707
+.
+(luatex.def)             Requested size: 1042.61267pt x 572.8588pt.
+[169<./img/modelling/aa-models-11.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 5709.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+[170<./img/modelling/aa-models-12.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+
+Underfull \vbox (badness 10000) detected at line 5795
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5795
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+[171]
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5795.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5800.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+[172]
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+
+Underfull \vbox (badness 10000) detected at line 5957
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5957
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+[173]
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+
+Underfull \vbox (badness 10000) detected at line 5957
+ []
+
+
+Overfull \vbox (1.71086pt too high) detected at line 5957
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+[174]
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5957.
+
+<img/modelling/aa-local-models-1.png, id=915, 1034.4246pt x 643.203pt>
 File: img/modelling/aa-local-models-1.png Graphic file (type png)
 <use img/modelling/aa-local-models-1.png>
 Package luatex.def Info: img/modelling/aa-local-models-1.png  used on input line
- 5785.
+ 5959.
 (luatex.def)             Requested size: 1034.42207pt x 643.20143pt.
 
-Package xcolor Warning: Incompatible color definition on input line 5787.
+Package xcolor Warning: Incompatible color definition on input line 5961.
 
-[165<./img/modelling/aa-local-models-1.png>]
+[175<./img/modelling/aa-local-models-1.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 5795.
+Package xcolor Warning: Incompatible color definition on input line 5969.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5795.
+Package xcolor Warning: Incompatible color definition on input line 5969.
 
-[166]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5811.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5811.
+[176]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5985.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5985.
 (./modelling.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5811.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5811.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5985.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5985.
 Package rerunfilecheck Info: File `modelling.out' has not changed.
 (rerunfilecheck)             Checksum: FFA40BE52C15412EC0288EB864A8CC4A;4708.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5811.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5985.
 )
 
 Here is how much of LuaTeX's memory you used:
- 14145 strings out of 481365
- 381549,552014 words of node,token memory allocated
+ 14251 strings out of 481365
+ 381557,552014 words of node,token memory allocated
  688 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 32 kern, 1 glyph, 17 attribute, 65 glue_spe
 c, 17 attribute_list, 1 write nodes
-   avail lists: 1:2,2:11050,3:672,4:1426,5:1831,6:59,7:40030,8:92,9:1345,10:20,1
-1:735
- 29813 multiletter control sequences out of 65536+600000
+   avail lists: 2:11050,3:672,4:1426,5:1831,6:60,7:40030,8:92,9:1345,10:20,11:73
+5
+ 29855 multiletter control sequences out of 65536+600000
  145 fonts using 10970747 bytes
  38i,7n,39p,878b,426s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvip
@@ -3405,10 +3597,10 @@ texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
 no/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on modelling.pdf (166 pages, 8765814 bytes).
+Output written on modelling.pdf (176 pages, 10145757 bytes).
 
-PDF statistics: 926 PDF objects out of 1000 (max. 8388607)
- 680 compressed objects within 7 object streams
- 203 named destinations out of 1000 (max. 131072)
+PDF statistics: 974 PDF objects out of 1000 (max. 8388607)
+ 711 compressed objects within 8 object streams
+ 213 named destinations out of 1000 (max. 131072)
  137 words of extra memory for PDF output out of 10000 (max. 100000000)
 

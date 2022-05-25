@@ -85,8 +85,8 @@
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
 
-\title{Reproducible R code for the manuscript entitled `Forest loss and
-fire in the Dominican Republic during the 21st Century': Data download,
+\title{Reproducible R code for the manuscript entitled `Fire and forest
+loss in the Dominican Republic during the 21st Century': Data download,
 preparation and exploratory data analysis (EDA)  }
  
 
@@ -155,7 +155,7 @@ Twitter: \url{https://twitter.com/geografiard}) () and  (Researcher,
 Universidad Autónoma de Santo Domingo (UASD))},
              pdfkeywords = {keyword 1, keyword 2},  
             pdftitle={Reproducible R code for the manuscript entitled
-`Forest loss and fire in the Dominican Republic during the 21st
+`Fire and forest loss in the Dominican Republic during the 21st
 Century': Data download, preparation and exploratory data analysis
 (EDA)},
             colorlinks=true,
@@ -234,8 +234,8 @@ Universidad Autónoma de Santo Domingo (UASD)}
 \noindent  \hypertarget{description-and-urls}{%
 \section{Description and URLs}\label{description-and-urls}}
 
-This is a reproducible notebook of the manuscript entitled `Forest loss
-and fire in the Dominican Republic during the 21st Century' (Martínez
+This is a reproducible notebook of the manuscript entitled `Fire and
+forest loss in the Dominican Republic during the 21st Century' (Martínez
 Batlle, 2021). Useful URLs are listed below:
 
 \begin{itemize}
@@ -256,7 +256,7 @@ Batlle, 2021). Useful URLs are listed below:
   Download it from \href{https://zenodo.org/record/5681481}{ZENODO}
 \item
   Cite the preprint using the following format: Martínez Batlle, J. R.
-  (2021). Forest loss and fire in the Dominican Republic during the 21st
+  (2021). Fire and forest loss in the Dominican Republic during the 21st
   Century. \emph{bioRxiv}.
   \url{https://doi.org/10.1101/2021.06.15.448604}
 \end{itemize}
@@ -726,6 +726,234 @@ simply loaded using the \texttt{readRDS} function as follows.
 \end{Shaded}
 
 \begin{center}\includegraphics{img/data-download-preparation-eda/fires-m6-v1-sel2-2} \end{center}
+
+\begin{quote}
+BEGIN: After revision, round 1: create MODIS data subset of the period
+2012-2018 for comparisons of consistency and sensitivity with VIIRS data
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# FIRES M6}
+\NormalTok{firesm6sel2\_for\_comparison }\OtherTok{\textless{}{-}}\NormalTok{ firesm6sel2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(ACQ\_DATE}\SpecialCharTok{\textgreater{}=}\StringTok{\textquotesingle{}2012{-}01{-}01\textquotesingle{}} \SpecialCharTok{\&}\NormalTok{ ACQ\_DATE}\SpecialCharTok{\textless{}=}\StringTok{\textquotesingle{}2018{-}12{-}31\textquotesingle{}}\NormalTok{)}
+\NormalTok{firesm6sel2\_for\_comparison\_tb }\OtherTok{\textless{}{-}}\NormalTok{ firesm6sel2\_for\_comparison }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{st\_drop\_geometry}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{value =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(ACQ\_DATE, value) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{add\_row}\NormalTok{(}\AttributeTok{ACQ\_DATE =} \FunctionTok{as.Date}\NormalTok{(}\StringTok{"2016{-}11{-}01"}\NormalTok{), }\AttributeTok{value =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(}\AttributeTok{year\_month =} \FunctionTok{floor\_date}\NormalTok{(ACQ\_DATE, }\StringTok{"month"}\NormalTok{) }\SpecialCharTok{+} \DecValTok{14}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{monthly\_sum =} \FunctionTok{sum}\NormalTok{(value))}
+\NormalTok{firesm6sel2\_for\_comparison\_ts }\OtherTok{\textless{}{-}}\NormalTok{ firesm6sel2\_for\_comparison\_tb }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pull}\NormalTok{(monthly\_sum) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ts}\NormalTok{(., }\AttributeTok{start =} \DecValTok{2012}\NormalTok{, }\AttributeTok{frequency =} \DecValTok{12}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(firesm6sel2\_for\_comparison\_ts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{decompose}\NormalTok{(firesm6sel2\_for\_comparison\_ts))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-2} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# FIRES V1}
+\NormalTok{firesv1sel2}
+\DocumentationTok{\#\# Simple feature collection with 25838 features and 14 fields}
+\DocumentationTok{\#\# Geometry type: POINT}
+\DocumentationTok{\#\# Dimension:     XY}
+\DocumentationTok{\#\# Bounding box:  xmin: 184135.9 ymin: 1934167 xmax: 569069 ymax: 2204713}
+\DocumentationTok{\#\# Projected CRS: WGS 84 / UTM zone 19N}
+\DocumentationTok{\#\# First 10 features:}
+\DocumentationTok{\#\#    LATITUDE LONGITUDE BRIGHT\_TI4 SCAN TRACK   ACQ\_DATE ACQ\_TIME SATELLITE}
+\DocumentationTok{\#\# 1  19.67432 {-}71.19218      299.1 0.39  0.36 2012{-}01{-}20     0624         N}
+\DocumentationTok{\#\# 2  18.54227 {-}70.65716      334.5 0.57  0.43 2012{-}01{-}20     1735         N}
+\DocumentationTok{\#\# 3  18.45904 {-}70.67375      332.8 0.57  0.43 2012{-}01{-}20     1735         N}
+\DocumentationTok{\#\# 4  19.22709 {-}69.25442      329.7 0.47  0.40 2012{-}01{-}20     1735         N}
+\DocumentationTok{\#\# 5  18.54321 {-}70.65190      328.5 0.57  0.43 2012{-}01{-}20     1735         N}
+\DocumentationTok{\#\# 6  18.54611 {-}70.65849      332.7 0.57  0.43 2012{-}01{-}20     1735         N}
+\DocumentationTok{\#\# 7  19.54269 {-}71.62812      336.5 0.42  0.45 2012{-}01{-}20     1735         N}
+\DocumentationTok{\#\# 8  19.70803 {-}71.25784      340.8 0.39  0.44 2012{-}01{-}20     1735         N}
+\DocumentationTok{\#\# 9  19.55058 {-}70.87585      299.8 0.48  0.40 2012{-}01{-}21     0605         N}
+\DocumentationTok{\#\# 10 19.45360 {-}71.18945      337.7 0.39  0.59 2012{-}01{-}21     1717         N}
+\DocumentationTok{\#\#    INSTRUMENT CONFIDENCE VERSION BRIGHT\_TI5  FRP TYPE                 geometry}
+\DocumentationTok{\#\# 1       VIIRS          n       1      288.5  0.2    0 POINT (270174.9 2176923)}
+\DocumentationTok{\#\# 2       VIIRS          n       1      292.7  6.7    0 POINT (325093.1 2050986)}
+\DocumentationTok{\#\# 3       VIIRS          n       1      297.8  5.2    0 POINT (323256.3 2041791)}
+\DocumentationTok{\#\# 4       VIIRS          n       1      293.9  2.9    0 POINT (473258.8 2125974)}
+\DocumentationTok{\#\# 5       VIIRS          n       1      292.3 12.0    0 POINT (325649.4 2051085)}
+\DocumentationTok{\#\# 6       VIIRS          n       1      292.5  6.7    0 POINT (324956.6 2051413)}
+\DocumentationTok{\#\# 7       VIIRS          n       1      295.5  1.8    0 POINT (224224.1 2162993)}
+\DocumentationTok{\#\# 8       VIIRS          n       1      296.4  3.5    0 POINT (263338.1 2180746)}
+\DocumentationTok{\#\# 9       VIIRS          n       1      289.5  0.4    0 POINT (303197.9 2162828)}
+\DocumentationTok{\#\# 10      VIIRS          n       1      299.9  3.2    0 POINT (270148.4 2152482)}
+\NormalTok{firesv1sel2\_tb }\OtherTok{\textless{}{-}}\NormalTok{ firesv1sel2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{st\_drop\_geometry}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{value =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(ACQ\_DATE, value) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(}\AttributeTok{year\_month =} \FunctionTok{floor\_date}\NormalTok{(ACQ\_DATE, }\StringTok{"month"}\NormalTok{) }\SpecialCharTok{+} \DecValTok{14}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{monthly\_sum =} \FunctionTok{sum}\NormalTok{(value))}
+\NormalTok{firesv1sel2\_ts }\OtherTok{\textless{}{-}}\NormalTok{ firesv1sel2\_tb }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pull}\NormalTok{(monthly\_sum) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ts}\NormalTok{(., }\AttributeTok{start =} \DecValTok{2012}\NormalTok{, }\AttributeTok{frequency =} \DecValTok{12}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(firesv1sel2\_ts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-3} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{decompose}\NormalTok{(firesv1sel2\_ts))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-4} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{common\_ts\_comparison }\OtherTok{\textless{}{-}}\NormalTok{ firesm6sel2\_for\_comparison\_tb }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{MODIS}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ monthly\_sum) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{inner\_join}\NormalTok{(firesv1sel2\_tb }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{VIIRS}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ monthly\_sum))}
+\NormalTok{common\_ts\_comparison\_p }\OtherTok{\textless{}{-}}\NormalTok{ common\_ts\_comparison }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{gather}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Sensor}\StringTok{\textasciigrave{}}\NormalTok{, value, }\SpecialCharTok{{-}}\NormalTok{year\_month) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  ggplot }\SpecialCharTok{+} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year\_month, }\AttributeTok{y =}\NormalTok{ value, }\AttributeTok{group =} \StringTok{\textasciigrave{}}\AttributeTok{Sensor}\StringTok{\textasciigrave{}}\NormalTok{, }\AttributeTok{color =} \StringTok{\textasciigrave{}}\AttributeTok{Sensor}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{\textquotesingle{}loess\textquotesingle{}}\NormalTok{, }\AttributeTok{span =} \FloatTok{0.3}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.3}\NormalTok{, }\AttributeTok{color =} \StringTok{\textquotesingle{}grey\textquotesingle{}}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{lwd =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \FunctionTok{as.numeric}\NormalTok{(common\_ts\_comparison}\SpecialCharTok{$}\NormalTok{year\_month[}\FunctionTok{yday}\NormalTok{(common\_ts\_comparison}\SpecialCharTok{$}\NormalTok{year\_month)}\SpecialCharTok{==}\DecValTok{1}\NormalTok{] }\SpecialCharTok{+} \DecValTok{15}\NormalTok{), }\AttributeTok{colour=}\StringTok{"grey60"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{expand\_limits}\NormalTok{(}\AttributeTok{x =} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}2012{-}01{-}01\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2019{-}01{-}01\textquotesingle{}}\NormalTok{))) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_date}\NormalTok{(}\AttributeTok{breaks=}\FunctionTok{pretty\_breaks}\NormalTok{(}\DecValTok{7}\NormalTok{), }\AttributeTok{date\_minor\_breaks=}\StringTok{"1 month"}\NormalTok{, }\AttributeTok{date\_labels =} \StringTok{\textquotesingle{}\%Y{-}\%m\textquotesingle{}}\NormalTok{, }\AttributeTok{expand =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{trans =} \StringTok{\textquotesingle{}log1p\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{16}\NormalTok{), }\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{0}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{vjust =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Number of fire points (log{-}scale)"}\NormalTok{)}
+\CommentTok{\# jpeg(\textquotesingle{}img/data{-}download{-}preparation{-}eda/modis\_viirs\_2012\_2018\_time\_series\_comparison.jpg\textquotesingle{}, width = 3840, height = 1600, res = 350)}
+\NormalTok{common\_ts\_comparison\_p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-5} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dev.off()}
+
+\CommentTok{\# Correlation and lineal dependency}
+\DocumentationTok{\#\# Correlation}
+\FunctionTok{cor.test}\NormalTok{(firesm6sel2\_for\_comparison\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum, firesv1sel2\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum)}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\#  Pearson\textquotesingle{}s product{-}moment correlation}
+\DocumentationTok{\#\# }
+\DocumentationTok{\#\# data:  firesm6sel2\_for\_comparison\_tb$monthly\_sum and firesv1sel2\_tb$monthly\_sum}
+\DocumentationTok{\#\# t = 32.707, df = 82, p{-}value \textless{} 2.2e{-}16}
+\DocumentationTok{\#\# alternative hypothesis: true correlation is not equal to 0}
+\DocumentationTok{\#\# 95 percent confidence interval:}
+\DocumentationTok{\#\#  0.9445063 0.9763954}
+\DocumentationTok{\#\# sample estimates:}
+\DocumentationTok{\#\#       cor }
+\DocumentationTok{\#\# 0.9637453}
+\CommentTok{\# Cross{-}correlation function}
+\CommentTok{\# jpeg(\textquotesingle{}img/data{-}download{-}preparation{-}eda/modis\_viirs\_2012\_2018\_cross\_correlation.jpg\textquotesingle{}, width = 3840, height = 1600, res = 350)}
+\NormalTok{par\_mar\_orig }\OtherTok{\textless{}{-}} \FunctionTok{par}\NormalTok{(}\StringTok{\textquotesingle{}mar\textquotesingle{}}\NormalTok{)}
+\NormalTok{par\_mar }\OtherTok{\textless{}{-}}\NormalTok{ par\_mar\_orig}
+\NormalTok{par\_mar[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\FloatTok{0.5}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =}\NormalTok{ par\_mar)}
+\FunctionTok{ccf}\NormalTok{(firesm6sel2\_for\_comparison\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum, firesv1sel2\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum,}
+    \AttributeTok{lag.max =} \DecValTok{12}\NormalTok{, }\AttributeTok{main =} \StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{, }\AttributeTok{ylab =} \StringTok{\textquotesingle{}cross{-}correlation\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \StringTok{\textquotesingle{}lag\textquotesingle{}}\NormalTok{,}
+    \AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{12}\NormalTok{, }\DecValTok{12}\NormalTok{), }\AttributeTok{xaxt =} \StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
+\FunctionTok{axis}\NormalTok{(}\AttributeTok{side =} \DecValTok{1}\NormalTok{, }\AttributeTok{at =} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{12}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-6} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =}\NormalTok{ par\_mar\_orig)}
+\CommentTok{\# dev.off()}
+\FunctionTok{lag2.plot}\NormalTok{(}
+\NormalTok{  firesm6sel2\_for\_comparison\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum,}
+\NormalTok{  firesv1sel2\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum,}
+  \AttributeTok{max.lag =} \DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-7} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{ccf}\NormalTok{(firesm6sel2\_for\_comparison\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum, firesv1sel2\_tb}\SpecialCharTok{$}\NormalTok{monthly\_sum, }\AttributeTok{lag.max =} \DecValTok{6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-8} \end{center}
+
+\begin{verbatim}
+## 
+## Autocorrelations of series 'X', by lag
+## 
+##     -6     -5     -4     -3     -2     -1      0      1      2      3      4 
+## -0.013 -0.054 -0.068 -0.076  0.084  0.569  0.964  0.496  0.047 -0.040  0.033 
+##      5      6 
+##  0.031 -0.020
+## Lineal model
+lm(firesv1sel2_tb$monthly_sum ~ firesm6sel2_for_comparison_tb$monthly_sum) %>% summary()
+## 
+## Call:
+## lm(formula = firesv1sel2_tb$monthly_sum ~ firesm6sel2_for_comparison_tb$monthly_sum)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -245.315  -24.819    3.624   40.678  201.094 
+## 
+## Coefficients:
+##                                           Estimate Std. Error t value Pr(>|t|)
+## (Intercept)                                 8.3644    12.6884   0.659    0.512
+## firesm6sel2_for_comparison_tb$monthly_sum   5.6867     0.1739  32.707   <2e-16
+##                                              
+## (Intercept)                                  
+## firesm6sel2_for_comparison_tb$monthly_sum ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 80.58 on 82 degrees of freedom
+## Multiple R-squared:  0.9288, Adjusted R-squared:  0.9279 
+## F-statistic:  1070 on 1 and 82 DF,  p-value: < 2.2e-16
+## Scatter plot
+common_ts_comparison_sp <- common_ts_comparison %>%
+  ggplot + aes(x = MODIS, y = VIIRS) +
+  # geom_point() +
+  geom_point(color="black", fill="#69b3a2", shape=22,
+             alpha=0.5, size=2, stroke = 1) +
+  stat_poly_eq(formula = y ~ x, eq.with.lhs = "italic(V)~`=`~",
+                eq.x.rhs = "~italic(M)",
+               aes(label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "*plain(\",\")~")),
+               parse = TRUE) + 
+  geom_smooth(method=lm) +
+  theme_bw() +
+  theme(text = element_text(size = 16))
+# jpeg('img/data-download-preparation-eda/modis_viirs_2012_2018_scatterplot_lineal_model.jpg', width = 3840, height = 1600, res = 350)
+common_ts_comparison_sp
+\end{verbatim}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{img/data-download-preparation-eda/unnamed-chunk-1-9} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dev.off()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+END: After revision, round 1: create MODIS data subset of the period
+2012-2018 for comparisons of consistency and sensitivity with VIIRS data
+\end{quote}
 
 \hypertarget{hotspotfire-layers-m6-and-v1-for-the-annual-analytical-approach}{%
 \subsection{Hotspot/fire layers (M6 and V1) for the annual analytical

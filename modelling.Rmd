@@ -9,7 +9,7 @@ output:
     number_sections: true
     toc: true
     toc_depth: 4
-title: "Reproducible R code for the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century'"
+title: "Reproducible R code for the manuscript entitled 'Fire and forest loss in the Dominican Republic during the 21st Century'"
 subtitle: "Data transformation, exploratory spatial data analysis (ESDA) and modelling"
 author:
   - name: "Martínez Batlle, José Ramón (jmartinez19@uasd.edu.do; Twitter: https://twitter.com/geografiard)"
@@ -56,7 +56,7 @@ knitr::opts_chunk$set(
 
 # Description and URLs
 
-This is a reproducible notebook of the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century' [@martinez2021forest]. Useful URLs are listed below:
+This is a reproducible notebook of the manuscript entitled 'Fire and forest loss in the Dominican Republic during the 21st Century' [@martinez2021forest]. Useful URLs are listed below:
 
 - This document: https://github.com/geofis/forest-loss-fire-reproducible/modelling.pdf
 
@@ -203,10 +203,20 @@ all_mp <- plyr::ldply(
 all_mp_sum <- all_mp %>%
   group_by(name) %>%
   summarize(x = mean(x), wx = mean(wx))
-# jpeg('out/moran_plots_forest_loss_fires_0118_1218.jpg', width = 3840, height = 2160, res = 300)
+# jpeg('img/modelling/moran_plots_forest_loss_fires_0118_1218.jpg', width = 3840, height = 2160, res = 300)
 moran_plot_gg(mp = all_mp, mp_sum = all_mp_sum, textsize = 16)
 # dev.off()
 }
+
+# BEGIN: After revision, round 1: Moran scatterplots only for forest loss 2001-2018 and MODIS fire points. ####
+all_mp_loss0118_modis <- all_mp %>% filter(grepl('(A)|(C)', name)) %>% 
+  mutate(name = gsub('C', 'B', name))
+all_mp_loss0118_modis_sum <- all_mp_loss0118_modis %>% group_by(name) %>%
+  summarize(x = mean(x), wx = mean(wx))
+# jpeg('img/modelling/moran_plots_forest_loss_fires_0118.jpg', width = 2228, height = 1276, res = 250)
+moran_plot_gg(mp = all_mp_loss0118_modis, mp_sum = all_mp_loss0118_modis_sum, textsize = 16)
+# dev.off()
+# END: After revision, round 1: Moran scatterplots only for forest loss 2001-2018 and MODIS fire points. ####
 
 # * LISA Map LOSS0118_PUA_PYR_NORM
 grdlisamapl0118 <- lisamap(objesp = grdzonal %>% replace(is.na(.), 0),
@@ -347,6 +357,36 @@ grdlisamap_objs <- grdlisamapl0118_obj %>% select(-LOSS0118_PUA_PYR_NORM) %>%
 }
 # dev.off()
 
+# BEGIN: After revision, round 1: LISA Maps fires and forest loss 2001-2018 {tmap} ####
+# jpeg('img/modelling/lisamaps_loss0118_firesm6.jpg', width = 3840, height = 1500, res = 250)
+{
+  grdlisamap_objs %>% dplyr::select(
+    `(A)` = LOSS0118_PUA_PYR_NORM,
+    `(B)` = NFIRESM6_PSQKM_PYR_TLP) %>%
+    replace(is.na(.), 0) %>%
+    gather(variable, value, -geometry) %>%
+    mutate(variable = factor(variable, levels = unique(variable))) %>% 
+    mutate(color = case_when(
+      value == 'high-high' ~ 'red',
+      value == 'low-low' ~ 'blue',
+      value == 'high-low' ~ 'lightblue',
+      value == 'low-high' ~ 'pink',
+      value == 'not signif.' ~ 'lightgrey'
+    )) %>%
+    tm_shape() +
+    tm_fill(col = 'color', size = 0.1, legend.is.portrait = T,
+            legend.format = list(digits = 2, text.separator = '-')
+            ) +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 2, legend.title.size = 0.0001,
+              legend.text.size = 1.8, bg.color = 'white',
+              legend.format = list(fun = function(x) formatC(x, digits = 2, format = "f"))) + 
+    tm_shape(seaocean) + tm_borders() + tm_fill(col = 'white')
+}
+# dev.off()
+# END: After revision, round 1: LISA Maps fires and forest loss 2001-2018 {tmap} ####
+
 # Statistical summaries
 grdzonaledam6 <- grdzonal %>% mutate(LOSS0118_AREASQKM = LOSS0118_AREASQM/1000000) %>% 
   dplyr::select(ENLACE,
@@ -450,6 +490,32 @@ grdzonaledam6 %>% st_drop_geometry %>%
     tm_shape(points_of_interest) + tm_text('code', size = 2, col = 'black', fontface = 'bold', bg.color = 'white', bg.alpha = 0.5)
   # dev.off()
 }
+
+# > BEGIN: After revision, round 1: remove VIIRS fire points and 2012-2018 forest loss maps ####
+# Maps (for manuscript)
+{
+  # jpeg('img/modelling/maps_loss0118_firesm6.jpg', width = 3840, height = 1500, res = 250)
+  grdzonal %>% dplyr::select(
+    `(A)` = LOSS0118_PUA,
+    `(B)` = NFIRESM6_PSQKM) %>%
+    mutate_if(is.numeric, funs(.*100)) %>% 
+    replace(is.na(.), 0) %>% 
+    gather(variable, value, -geometry) %>%
+    mutate(variable = factor(variable, levels = unique(variable))) %>% 
+    tm_shape() +
+    tm_fill(col='value', palette = c('#c9eebd', '#69d6bd', '#00bdc1', '#10858d'), size = 0.1,
+            style = 'kmeans', legend.is.portrait = T, legend.format = list(digits = 2, text.separator = '-'), n = 4
+            ) +
+    tm_borders(col = 'grey15', lwd = 0.3) +
+    tm_facets(by = "variable", nrow = 1, free.coords = FALSE, free.scales = TRUE) +
+    tm_layout(panel.label.size = 2, legend.title.size = 0.0001,
+              legend.text.size = 1.5, bg.color = 'grey90',
+              legend.format = list(scientific = TRUE, fun = function(x) formatC(x, digits = 2, format = "f"))) + 
+    tm_shape(seaocean) + tm_borders() + tm_fill(col = 'white') + 
+    tm_shape(points_of_interest) + tm_text('code', size = 2, col = 'black', fontface = 'bold', bg.color = 'white', bg.alpha = 0.5)
+  # dev.off()
+}
+# END: After revision, round 1: remove VIIRS fire points and 2012-2018 forest loss maps  ####
 ```
 
 ## Spatial autoregressive model: 2001-2018
@@ -822,6 +888,23 @@ periodic_summaries_yearly <- periodic_summaries(
 sapply(periodic_summaries_yearly$summaries_print_df[,-1], summary)
 periodic_summaries_yearly$summaries_print_df %>%
   summarise_at(vars(-matches('^year')), psych::describe, na.rm = T) %>% t
+
+# > BEGIN: After revision, round 1: remove VIIRS fire points plots ####
+## Years
+periodic_summaries_yearly <- periodic_summaries(
+  source_table = four_variables_for_plots %>% filter(!grepl('D', variable2)), measurevar = 'value',
+  bins = 'year_factor', sum_variable = 'variable2', aspect_ratio = 1/3, smooth_alpha = 0.3,
+  # smooth_method = 'loess', method_args = list(degree = 0),
+  smooth_method = 'gam', smooth_formula = y ~ s(x, bs = 'ad', k = 16),
+  smooth_span = 0.35, labels_angle = 90, xlab = 'Year', smooth = T, save = F,
+  plot_filename = 'forest_loss_fire_points_line_plots_error_bars_2001_2018_four_variables.jpg',
+  calc_se = F, new_dev = F
+)
+# jpeg('img/modelling/forest_loss_fire_points_line_plots_error_bars_2001_2018_three_variables.jpg', width = 2000, height = 2300, res = 300)
+# periodic_summaries_yearly$plot
+# dev.off()
+# > END: After revision, round 1: remove VIIRS fire points plots ####
+
 ## Triennials
 periodic_summaries(
   source_table = four_variables_for_plots, measurevar = 'value',
@@ -955,6 +1038,24 @@ four_variables_ts_filt_gg
 # jpeg('out/forest_loss_fire_points_line_plots_2001_2018_ts_decomposition.jpg', width = 2600, height = 2160, res = 250)
 # four_variables_ts_filt_gg
 # dev.off()
+
+# > BEGIN: After revision, round 1: remove VIIRS fire points plots from time-series decomposition ####
+# Time-series decomposition
+three_variables_ts_filt_gg <- four_variables_ts_filt_for_gg %>%
+  filter(!grepl('D', Variable)) %>% 
+  gather(Component, Value, -Variable, -Year, -Filter) %>% 
+  mutate(Variable = gsub(' per', '\nper', Variable)) %>% 
+  ggplot +
+  aes(x = Year, y = Value, color = Component) +
+    scale_x_continuous(breaks = 2001:2018) + 
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), text = element_text(size = 14), aspect.ratio = 1/2) +
+  geom_line() +
+  facet_grid(Variable ~ Filter, scales = 'free_y')
+# jpeg('img/modelling/forest_loss_fire_points_line_plots_2001_2018_ts_decomposition.jpg', width = 2800, height = 2000, res = 250)
+three_variables_ts_filt_gg
+# dev.off()
+# > END: After revision, round 1: remove VIIRS fire points plots from time-series decomposition ####
 ```
 
 ## Yearly forest-loss and fire incidence maps
@@ -1070,6 +1171,39 @@ lambda_tests %>%
   xlab('Year') +
   ylab("Moran's I")
 # dev.off()
+
+# > BEGIN: After revision, round 1: remove VIIRS fire from Moran's I trend plot ####
+# jpeg('img/modelling/morans_i_time_series_three_variables_tlp.jpg', width = 3840, height = 1600, res = 350)
+lambda_tests %>% 
+  dplyr::select(value = MIEST, MIVAR, LENGTH, variable2, year) %>% 
+  mutate(year_factor = factor(year)) %>% 
+    mutate(variable = case_when(
+    variable2 == 'NFIRESM6PSQKM_TLP' ~ '(C)',
+    variable2 == 'NFIRESV1PSQKM_TLP' ~ '(D)',
+    variable2 == 'NCLUMPSSMALLER1HAPSQKM_TLP' ~ '(B)',
+    variable2 == 'LOSSGREATER1HA_PUA_TLP' ~ '(A)'
+    )) %>% 
+  filter(!grepl('D', variable)) %>% 
+  ggplot +
+  aes(x = year_factor, y = value, group = variable, color = variable) +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5),
+    panel.grid.minor = element_blank(),
+    text = element_text(size = 14), aspect.ratio = 1/3) +
+  geom_line(lwd = 1) +
+  geom_errorbar(
+    aes(
+      ymin = value - qnorm(p=(0.05/2)+(1-0.05))*sqrt(MIVAR)/sqrt(LENGTH),
+      ymax = value + qnorm(p=(0.05/2)+(1-0.05))*sqrt(MIVAR)/sqrt(LENGTH)),
+    alpha = 0.75,
+    colour = "grey50",
+    width = .15) +
+  geom_point(size=1, shape=21, color = 'grey50') + 
+  xlab('Year') +
+  ylab("Moran's I")
+# dev.off()
+# > END: After revision, round 1: remove VIIRS fire from Moran's I trend plot ####
 ```
 
 ## LISA maps

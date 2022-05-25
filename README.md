@@ -1,12 +1,12 @@
-# Reproducible R code for the manuscript entitled "Forest loss and fire in the Dominican Republic during the 21st Century"
+# Reproducible R code for the manuscript entitled "Fire and forest loss in the Dominican Republic during the 21st Century"
 
 José Ramón Martínez Batlle, Universidad Autónoma de Santo Domingo (UASD) jmartinez19\@uasd.edu.do
 
-[![DOI](https://zenodo.org/badge/421058260.svg)](https://zenodo.org/badge/latestdoi/421058260)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5694017.svg)](https://doi.org/10.5281/zenodo.5694017)
 
 Cite this repo using the following format (BibTeX entry [here](#bibtex-entry-for-this-repo)): "José Ramón Martínez Batlle. (2021). geofis/forest-loss-fire-reproducible: First release (v0.0.0.9000). Zenodo. https://doi.org/10.5281/zenodo.5694017"
 
-If you want to cite the manuscript as well, use the following format: "Martínez Batlle, J. R. (2021). Forest loss and fire in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604"
+If you want to cite the manuscript as well, use the following format: "Martínez Batlle, J. R. (2021). Fire and forest loss in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604"
 
 ## How to reproduce
 

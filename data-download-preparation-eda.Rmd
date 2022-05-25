@@ -9,7 +9,7 @@ output:
     number_sections: true
     toc: true
     toc_depth: 4
-title: "Reproducible R code for the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century'"
+title: "Reproducible R code for the manuscript entitled 'Fire and forest loss in the Dominican Republic during the 21st Century'"
 subtitle: "Data download, preparation and exploratory data analysis (EDA)"
 author:
   - name: "Martínez Batlle, José Ramón (jmartinez19@uasd.edu.do; Twitter: https://twitter.com/geografiard)"
@@ -56,7 +56,7 @@ knitr::opts_chunk$set(
 
 # Description and URLs
 
-This is a reproducible notebook of the manuscript entitled 'Forest loss and fire in the Dominican Republic during the 21st Century' [@martinez2021forest]. Useful URLs are listed below:
+This is a reproducible notebook of the manuscript entitled 'Fire and forest loss in the Dominican Republic during the 21st Century' [@martinez2021forest]. Useful URLs are listed below:
 
 - This document: https://github.com/geofis/forest-loss-fire-reproducible/data-download-preparation-eda.pdf
 
@@ -68,7 +68,7 @@ This is a reproducible notebook of the manuscript entitled 'Forest loss and fire
 
 - Dataset: `forest-loss-fire-reproducible-data-repo.zip`. Download it from [ZENODO](https://zenodo.org/record/5681481)
 
-- Cite the preprint using the following format: Martínez Batlle, J. R. (2021). Forest loss and fire in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604
+- Cite the preprint using the following format: Martínez Batlle, J. R. (2021). Fire and forest loss in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604
 
 # Instructions for downloading the source data
 
@@ -239,6 +239,99 @@ cline %>% as_Spatial %>% plot
 plot(as_Spatial(firesv1sel2), main = "Thermal anomalies within forest V1",
      pch = 1, cex = 0.1, add = T, col = 'orange')
 ```
+
+> BEGIN: After revision, round 1: create MODIS data subset of the period 2012-2018 for comparisons of consistency and sensitivity with VIIRS data
+
+```{r, out.width = '75%'}
+# FIRES M6
+firesm6sel2_for_comparison <- firesm6sel2 %>% 
+  filter(ACQ_DATE>='2012-01-01' & ACQ_DATE<='2018-12-31')
+firesm6sel2_for_comparison_tb <- firesm6sel2_for_comparison %>% 
+  st_drop_geometry() %>% 
+  mutate(value = 1) %>% 
+  dplyr::select(ACQ_DATE, value) %>% 
+  add_row(ACQ_DATE = as.Date("2016-11-01"), value = 0) %>% 
+  group_by(year_month = floor_date(ACQ_DATE, "month") + 14) %>%
+  summarize(monthly_sum = sum(value))
+firesm6sel2_for_comparison_ts <- firesm6sel2_for_comparison_tb %>% 
+  pull(monthly_sum) %>% 
+  ts(., start = 2012, frequency = 12)
+plot(firesm6sel2_for_comparison_ts)
+plot(decompose(firesm6sel2_for_comparison_ts))
+
+# FIRES V1
+firesv1sel2
+firesv1sel2_tb <- firesv1sel2 %>% 
+  st_drop_geometry() %>% 
+  mutate(value = 1) %>% 
+  dplyr::select(ACQ_DATE, value) %>% 
+  group_by(year_month = floor_date(ACQ_DATE, "month") + 14) %>%
+  summarize(monthly_sum = sum(value))
+firesv1sel2_ts <- firesv1sel2_tb %>% 
+  pull(monthly_sum) %>% 
+  ts(., start = 2012, frequency = 12)
+plot(firesv1sel2_ts)
+plot(decompose(firesv1sel2_ts))
+
+common_ts_comparison <- firesm6sel2_for_comparison_tb %>% 
+  rename(`MODIS` = monthly_sum) %>% 
+  inner_join(firesv1sel2_tb %>% rename(`VIIRS` = monthly_sum))
+common_ts_comparison_p <- common_ts_comparison %>% gather(`Sensor`, value, -year_month) %>% 
+  ggplot + aes(x = year_month, y = value, group = `Sensor`, color = `Sensor`) +
+  geom_smooth(method = 'loess', span = 0.3, alpha = 0.3, color = 'grey', lwd = 1) + geom_line(lwd = 1) + 
+  geom_vline(xintercept = as.numeric(common_ts_comparison$year_month[yday(common_ts_comparison$year_month)==1] + 15), colour="grey60") +
+  expand_limits(x = as.Date(c('2012-01-01', '2019-01-01'))) +
+  scale_x_date(breaks=pretty_breaks(7), date_minor_breaks="1 month", date_labels = '%Y-%m', expand = c(0,0)) + 
+  scale_y_continuous(trans = 'log1p') +
+  theme_bw() +
+  theme(text = element_text(size = 16), axis.text.x = element_text(angle = 0, hjust = 0.5, vjust = -1)) +
+  xlab("") + ylab("Number of fire points (log-scale)")
+# jpeg('img/data-download-preparation-eda/modis_viirs_2012_2018_time_series_comparison.jpg', width = 3840, height = 1600, res = 350)
+common_ts_comparison_p
+# dev.off()
+
+# Correlation and lineal dependency
+## Correlation
+cor.test(firesm6sel2_for_comparison_tb$monthly_sum, firesv1sel2_tb$monthly_sum)
+# Cross-correlation function
+# jpeg('img/data-download-preparation-eda/modis_viirs_2012_2018_cross_correlation.jpg', width = 3840, height = 1600, res = 350)
+par_mar_orig <- par('mar')
+par_mar <- par_mar_orig
+par_mar[c(1,3)] <- c(4, 0.5)
+par(mar = par_mar)
+ccf(firesm6sel2_for_comparison_tb$monthly_sum, firesv1sel2_tb$monthly_sum,
+    lag.max = 12, main = '', ylab = 'cross-correlation', xlab = 'lag',
+    xlim = c(-12, 12), xaxt = 'n')
+axis(side = 1, at = seq(-12, 12, 2))
+par(mar = par_mar_orig)
+# dev.off()
+lag2.plot(
+  firesm6sel2_for_comparison_tb$monthly_sum,
+  firesv1sel2_tb$monthly_sum,
+  max.lag = 8)
+print(ccf(firesm6sel2_for_comparison_tb$monthly_sum, firesv1sel2_tb$monthly_sum, lag.max = 6))
+## Lineal model
+lm(firesv1sel2_tb$monthly_sum ~ firesm6sel2_for_comparison_tb$monthly_sum) %>% summary()
+## Scatter plot
+common_ts_comparison_sp <- common_ts_comparison %>%
+  ggplot + aes(x = MODIS, y = VIIRS) +
+  # geom_point() +
+  geom_point(color="black", fill="#69b3a2", shape=22,
+             alpha=0.5, size=2, stroke = 1) +
+  stat_poly_eq(formula = y ~ x, eq.with.lhs = "italic(V)~`=`~",
+                eq.x.rhs = "~italic(M)",
+               aes(label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "*plain(\",\")~")),
+               parse = TRUE) + 
+  geom_smooth(method=lm) +
+  theme_bw() +
+  theme(text = element_text(size = 16))
+# jpeg('img/data-download-preparation-eda/modis_viirs_2012_2018_scatterplot_lineal_model.jpg', width = 3840, height = 1600, res = 350)
+common_ts_comparison_sp
+# dev.off()
+```
+
+> END: After revision, round 1: create MODIS data subset of the period 2012-2018 for comparisons of consistency and sensitivity with VIIRS data
+
 
 ## Hotspot/fire layers (M6 and V1) for the annual analytical approach
 

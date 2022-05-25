@@ -1,7 +1,7 @@
 pkgs <- c('stars', 'sf', 'raster', 'SpaDES', 'gdalUtils', 'MASS', 'leaps', 'kableExtra',
           'caret', 'tmap', 'plyr', 'tidyverse', 'spdep', 'nortest', 'ez', 'psych',
           'doParallel', 'foreach', 'rcompanion', 'cowplot', 'lme4', 'lmerTest',
-          'car', 'gridExtra', 'grid', 'cowplot', 'mFilter', 'janitor', 'scales')
+          'car', 'gridExtra', 'grid', 'cowplot', 'mFilter', 'janitor', 'scales', 'lubridate', 'ggpmisc', 'astsa')
 install_load_pkg <- function(pkg){
   new_pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
   if (length(new_pkg))

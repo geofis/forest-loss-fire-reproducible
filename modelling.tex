@@ -85,8 +85,8 @@
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
 
-\title{Reproducible R code for the manuscript entitled `Forest loss and
-fire in the Dominican Republic during the 21st Century': Data
+\title{Reproducible R code for the manuscript entitled `Fire and forest
+loss in the Dominican Republic during the 21st Century': Data
 transformation, exploratory spatial data analysis (ESDA) and
 modelling  }
  
@@ -156,7 +156,7 @@ Twitter: \url{https://twitter.com/geografiard}) () and  (Researcher,
 Universidad Autónoma de Santo Domingo (UASD))},
              pdfkeywords = {keyword 1, keyword 2},  
             pdftitle={Reproducible R code for the manuscript entitled
-`Forest loss and fire in the Dominican Republic during the 21st
+`Fire and forest loss in the Dominican Republic during the 21st
 Century': Data transformation, exploratory spatial data analysis (ESDA)
 and modelling},
             colorlinks=true,
@@ -235,8 +235,8 @@ Universidad Autónoma de Santo Domingo (UASD)}
 \noindent  \hypertarget{description-and-urls}{%
 \section{Description and URLs}\label{description-and-urls}}
 
-This is a reproducible notebook of the manuscript entitled `Forest loss
-and fire in the Dominican Republic during the 21st Century' (Martínez
+This is a reproducible notebook of the manuscript entitled `Fire and
+forest loss in the Dominican Republic during the 21st Century' (Martínez
 Batlle, 2021). Useful URLs are listed below:
 
 \begin{itemize}
@@ -530,8 +530,8 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \NormalTok{    all\_mp\_sum }\OtherTok{\textless{}{-}}\NormalTok{ all\_mp }\SpecialCharTok{\%\textgreater{}\%}
         \FunctionTok{group\_by}\NormalTok{(name) }\SpecialCharTok{\%\textgreater{}\%}
         \FunctionTok{summarize}\NormalTok{(}\AttributeTok{x =} \FunctionTok{mean}\NormalTok{(x), }\AttributeTok{wx =} \FunctionTok{mean}\NormalTok{(wx))}
-    \CommentTok{\# jpeg(\textquotesingle{}out/moran\_plots\_forest\_loss\_fires\_0118\_1218.jpg\textquotesingle{}, width = 3840,}
-    \CommentTok{\# height = 2160, res = 300)}
+    \CommentTok{\# jpeg(\textquotesingle{}img/modelling/moran\_plots\_forest\_loss\_fires\_0118\_1218.jpg\textquotesingle{}, width =}
+    \CommentTok{\# 3840, height = 2160, res = 300)}
     \FunctionTok{moran\_plot\_gg}\NormalTok{(}\AttributeTok{mp =}\NormalTok{ all\_mp, }\AttributeTok{mp\_sum =}\NormalTok{ all\_mp\_sum, }\AttributeTok{textsize =} \DecValTok{16}\NormalTok{)}
     \CommentTok{\# dev.off()}
 \NormalTok{\}}
@@ -542,6 +542,27 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 
 \begin{Shaded}
 \begin{Highlighting}[]
+
+\CommentTok{\# }\RegionMarkerTok{BEGIN}\CommentTok{: After revision, round 1: Moran scatterplots only for forest loss}
+\CommentTok{\# 2001{-}2018 and MODIS fire points. \#\#\#\#}
+\NormalTok{all\_mp\_loss0118\_modis }\OtherTok{\textless{}{-}}\NormalTok{ all\_mp }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{filter}\NormalTok{(}\FunctionTok{grepl}\NormalTok{(}\StringTok{"(A)|(C)"}\NormalTok{, name)) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{name =} \FunctionTok{gsub}\NormalTok{(}\StringTok{"C"}\NormalTok{, }\StringTok{"B"}\NormalTok{, name))}
+\NormalTok{all\_mp\_loss0118\_modis\_sum }\OtherTok{\textless{}{-}}\NormalTok{ all\_mp\_loss0118\_modis }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{group\_by}\NormalTok{(name) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarize}\NormalTok{(}\AttributeTok{x =} \FunctionTok{mean}\NormalTok{(x), }\AttributeTok{wx =} \FunctionTok{mean}\NormalTok{(wx))}
+\CommentTok{\# jpeg(\textquotesingle{}img/modelling/moran\_plots\_forest\_loss\_fires\_0118.jpg\textquotesingle{}, width = 2228,}
+\CommentTok{\# height = 1276, res = 250)}
+\FunctionTok{moran\_plot\_gg}\NormalTok{(}\AttributeTok{mp =}\NormalTok{ all\_mp\_loss0118\_modis, }\AttributeTok{mp\_sum =}\NormalTok{ all\_mp\_loss0118\_modis\_sum, }\AttributeTok{textsize =} \DecValTok{16}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/lta-esda-7} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dev.off() }\RegionMarkerTok{END}\CommentTok{: After revision, round 1: Moran scatterplots only for forest}
+\CommentTok{\# loss 2001{-}2018 and MODIS fire points. \#\#\#\#}
 
 \CommentTok{\# * LISA Map LOSS0118\_PUA\_PYR\_NORM}
 \NormalTok{grdlisamapl0118 }\OtherTok{\textless{}{-}} \FunctionTok{lisamap}\NormalTok{(}\AttributeTok{objesp =}\NormalTok{ grdzonal }\SpecialCharTok{\%\textgreater{}\%}
@@ -554,7 +575,7 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-7} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-8} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -570,7 +591,7 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-8} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-9} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -586,7 +607,7 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-9} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-10} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -602,7 +623,7 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-10} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-11} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -618,7 +639,7 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-11} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-12} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -634,7 +655,7 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-12} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-13} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -680,11 +701,39 @@ variables}{Modelling for the long-term approach, using forest-loss as dependent 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-13} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-14} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# dev.off()}
+
+\CommentTok{\# }\RegionMarkerTok{BEGIN}\CommentTok{: After revision, round 1: LISA Maps fires and forest loss 2001{-}2018}
+\CommentTok{\# \{tmap\} \#\#\#\# jpeg(\textquotesingle{}img/modelling/lisamaps\_loss0118\_firesm6.jpg\textquotesingle{}, width = 3840,}
+\CommentTok{\# height = 1500, res = 250)}
+\NormalTok{\{}
+\NormalTok{    grdlisamap\_objs }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{        dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{(A)}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ LOSS0118\_PUA\_PYR\_NORM, }\StringTok{\textasciigrave{}}\AttributeTok{(B)}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ NFIRESM6\_PSQKM\_PYR\_TLP) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{replace}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{gather}\NormalTok{(variable, value, }\SpecialCharTok{{-}}\NormalTok{geometry) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{mutate}\NormalTok{(}\AttributeTok{variable =} \FunctionTok{factor}\NormalTok{(variable, }\AttributeTok{levels =} \FunctionTok{unique}\NormalTok{(variable))) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{mutate}\NormalTok{(}\AttributeTok{color =} \FunctionTok{case\_when}\NormalTok{(value }\SpecialCharTok{==} \StringTok{"high{-}high"} \SpecialCharTok{\textasciitilde{}} \StringTok{"red"}\NormalTok{, value }\SpecialCharTok{==} \StringTok{"low{-}low"} \SpecialCharTok{\textasciitilde{}}
+            \StringTok{"blue"}\NormalTok{, value }\SpecialCharTok{==} \StringTok{"high{-}low"} \SpecialCharTok{\textasciitilde{}} \StringTok{"lightblue"}\NormalTok{, value }\SpecialCharTok{==} \StringTok{"low{-}high"} \SpecialCharTok{\textasciitilde{}} \StringTok{"pink"}\NormalTok{,}
+\NormalTok{            value }\SpecialCharTok{==} \StringTok{"not signif."} \SpecialCharTok{\textasciitilde{}} \StringTok{"lightgrey"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{tm\_shape}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col =} \StringTok{"color"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{legend.is.portrait =}\NormalTok{ T, }\AttributeTok{legend.format =} \FunctionTok{list}\NormalTok{(}\AttributeTok{digits =} \DecValTok{2}\NormalTok{,}
+        \AttributeTok{text.separator =} \StringTok{"{-}"}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{tm\_borders}\NormalTok{(}\AttributeTok{col =} \StringTok{"grey15"}\NormalTok{, }\AttributeTok{lwd =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{tm\_facets}\NormalTok{(}\AttributeTok{by =} \StringTok{"variable"}\NormalTok{,}
+        \AttributeTok{nrow =} \DecValTok{1}\NormalTok{, }\AttributeTok{free.coords =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{free.scales =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{tm\_layout}\NormalTok{(}\AttributeTok{panel.label.size =} \DecValTok{2}\NormalTok{,}
+        \AttributeTok{legend.title.size =} \FloatTok{1e{-}04}\NormalTok{, }\AttributeTok{legend.text.size =} \FloatTok{1.8}\NormalTok{, }\AttributeTok{bg.color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{legend.format =} \FunctionTok{list}\NormalTok{(}\AttributeTok{fun =} \ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{formatC}\NormalTok{(x,}
+            \AttributeTok{digits =} \DecValTok{2}\NormalTok{, }\AttributeTok{format =} \StringTok{"f"}\NormalTok{))) }\SpecialCharTok{+} \FunctionTok{tm\_shape}\NormalTok{(seaocean) }\SpecialCharTok{+} \FunctionTok{tm\_borders}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col =} \StringTok{"white"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/lta-esda-15} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dev.off() }\RegionMarkerTok{END}\CommentTok{: After revision, round 1: LISA Maps fires and forest loss}
+\CommentTok{\# 2001{-}2018 \{tmap\} \#\#\#\#}
 
 \CommentTok{\# Statistical summaries}
 \NormalTok{grdzonaledam6 }\OtherTok{\textless{}{-}}\NormalTok{ grdzonal }\SpecialCharTok{\%\textgreater{}\%}
@@ -784,7 +833,7 @@ Maximum forest loss area (sq. km) per 100 sq. km per year & 1.82 & 3.21\\
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-14} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-16} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -803,7 +852,7 @@ Maximum forest loss area (sq. km) per 100 sq. km per year & 1.82 & 3.21\\
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-15} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-17} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -831,7 +880,43 @@ Maximum forest loss area (sq. km) per 100 sq. km per year & 1.82 & 3.21\\
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/lta-esda-16} \end{center}
+\begin{center}\includegraphics{img/modelling/lta-esda-18} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# \textgreater{} }\RegionMarkerTok{BEGIN}\CommentTok{: After revision, round 1: remove VIIRS fire points and 2012{-}2018}
+\CommentTok{\# forest loss maps \#\#\#\# Maps (for manuscript)}
+\NormalTok{\{}
+    \CommentTok{\# jpeg(\textquotesingle{}img/modelling/maps\_loss0118\_firesm6.jpg\textquotesingle{}, width = 3840, height =}
+    \CommentTok{\# 1500, res = 250)}
+\NormalTok{    grdzonal }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{        dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{(A)}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ LOSS0118\_PUA, }\StringTok{\textasciigrave{}}\AttributeTok{(B)}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ NFIRESM6\_PSQKM) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{mutate\_if}\NormalTok{(is.numeric, }\FunctionTok{funs}\NormalTok{(. }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{replace}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{gather}\NormalTok{(variable, value, }\SpecialCharTok{{-}}\NormalTok{geometry) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{mutate}\NormalTok{(}\AttributeTok{variable =} \FunctionTok{factor}\NormalTok{(variable, }\AttributeTok{levels =} \FunctionTok{unique}\NormalTok{(variable))) }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{tm\_shape}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col =} \StringTok{"value"}\NormalTok{, }\AttributeTok{palette =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#c9eebd"}\NormalTok{, }\StringTok{"\#69d6bd"}\NormalTok{, }\StringTok{"\#00bdc1"}\NormalTok{,}
+        \StringTok{"\#10858d"}\NormalTok{), }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{style =} \StringTok{"kmeans"}\NormalTok{, }\AttributeTok{legend.is.portrait =}\NormalTok{ T, }\AttributeTok{legend.format =} \FunctionTok{list}\NormalTok{(}\AttributeTok{digits =} \DecValTok{2}\NormalTok{,}
+        \AttributeTok{text.separator =} \StringTok{"{-}"}\NormalTok{), }\AttributeTok{n =} \DecValTok{4}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{tm\_borders}\NormalTok{(}\AttributeTok{col =} \StringTok{"grey15"}\NormalTok{, }\AttributeTok{lwd =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{tm\_facets}\NormalTok{(}\AttributeTok{by =} \StringTok{"variable"}\NormalTok{,}
+        \AttributeTok{nrow =} \DecValTok{1}\NormalTok{, }\AttributeTok{free.coords =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{free.scales =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{tm\_layout}\NormalTok{(}\AttributeTok{panel.label.size =} \DecValTok{2}\NormalTok{,}
+        \AttributeTok{legend.title.size =} \FloatTok{1e{-}04}\NormalTok{, }\AttributeTok{legend.text.size =} \FloatTok{1.5}\NormalTok{, }\AttributeTok{bg.color =} \StringTok{"grey90"}\NormalTok{, }\AttributeTok{legend.format =} \FunctionTok{list}\NormalTok{(}\AttributeTok{scientific =} \ConstantTok{TRUE}\NormalTok{,}
+            \AttributeTok{fun =} \ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{formatC}\NormalTok{(x, }\AttributeTok{digits =} \DecValTok{2}\NormalTok{, }\AttributeTok{format =} \StringTok{"f"}\NormalTok{))) }\SpecialCharTok{+} \FunctionTok{tm\_shape}\NormalTok{(seaocean) }\SpecialCharTok{+}
+        \FunctionTok{tm\_borders}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{tm\_fill}\NormalTok{(}\AttributeTok{col =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{tm\_shape}\NormalTok{(points\_of\_interest) }\SpecialCharTok{+} \FunctionTok{tm\_text}\NormalTok{(}\StringTok{"code"}\NormalTok{,}
+        \AttributeTok{size =} \DecValTok{2}\NormalTok{, }\AttributeTok{col =} \StringTok{"black"}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{bg.color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{bg.alpha =} \FloatTok{0.5}\NormalTok{)}
+    \CommentTok{\# dev.off()}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/lta-esda-19} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# }\RegionMarkerTok{END}\CommentTok{: After revision, round 1: remove VIIRS fire points and 2012{-}2018 forest}
+\CommentTok{\# loss maps \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{spatial-autoregressive-model-2001-2018}{%
 \subsection{Spatial autoregressive model:
@@ -1872,6 +1957,30 @@ series}\label{exploratory-data-analysis-eda-of-the-time-series}}
 \DocumentationTok{\#\# Avg. number of VIRS V1 fire points per 100 sq. km.skew              {-}0.04055990}
 \DocumentationTok{\#\# Avg. number of VIRS V1 fire points per 100 sq. km.kurtosis          {-}1.92615529}
 \DocumentationTok{\#\# Avg. number of VIRS V1 fire points per 100 sq. km.se                 0.96764434}
+
+\CommentTok{\# \textgreater{} }\RegionMarkerTok{BEGIN}\CommentTok{: After revision, round 1: remove VIIRS fire points plots \#\#\#\#}
+\DocumentationTok{\#\# Years}
+\NormalTok{periodic\_summaries\_yearly }\OtherTok{\textless{}{-}} \FunctionTok{periodic\_summaries}\NormalTok{(}
+  \AttributeTok{source\_table =}\NormalTok{ four\_variables\_for\_plots }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{grepl}\NormalTok{(}\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{, variable2)), }\AttributeTok{measurevar =} \StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{,}
+  \AttributeTok{bins =} \StringTok{\textquotesingle{}year\_factor\textquotesingle{}}\NormalTok{, }\AttributeTok{sum\_variable =} \StringTok{\textquotesingle{}variable2\textquotesingle{}}\NormalTok{, }\AttributeTok{aspect\_ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{, }\AttributeTok{smooth\_alpha =} \FloatTok{0.3}\NormalTok{,}
+  \CommentTok{\# smooth\_method = \textquotesingle{}loess\textquotesingle{}, method\_args = list(degree = 0),}
+  \AttributeTok{smooth\_method =} \StringTok{\textquotesingle{}gam\textquotesingle{}}\NormalTok{, }\AttributeTok{smooth\_formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}} \FunctionTok{s}\NormalTok{(x, }\AttributeTok{bs =} \StringTok{\textquotesingle{}ad\textquotesingle{}}\NormalTok{, }\AttributeTok{k =} \DecValTok{16}\NormalTok{),}
+  \AttributeTok{smooth\_span =} \FloatTok{0.35}\NormalTok{, }\AttributeTok{labels\_angle =} \DecValTok{90}\NormalTok{, }\AttributeTok{xlab =} \StringTok{\textquotesingle{}Year\textquotesingle{}}\NormalTok{, }\AttributeTok{smooth =}\NormalTok{ T, }\AttributeTok{save =}\NormalTok{ F,}
+  \AttributeTok{plot\_filename =} \StringTok{\textquotesingle{}forest\_loss\_fire\_points\_line\_plots\_error\_bars\_2001\_2018\_four\_variables.jpg\textquotesingle{}}\NormalTok{,}
+  \AttributeTok{calc\_se =}\NormalTok{ F, }\AttributeTok{new\_dev =}\NormalTok{ F}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-8} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# jpeg(\textquotesingle{}img/modelling/forest\_loss\_fire\_points\_line\_plots\_error\_bars\_2001\_2018\_three\_variables.jpg\textquotesingle{}, width = 2000, height = 2300, res = 300)}
+\CommentTok{\# periodic\_summaries\_yearly$plot}
+\CommentTok{\# dev.off()}
+\CommentTok{\# \textgreater{} }\RegionMarkerTok{END}\CommentTok{: After revision, round 1: remove VIIRS fire points plots \#\#\#\#}
+
 \DocumentationTok{\#\# Triennials}
 \FunctionTok{periodic\_summaries}\NormalTok{(}
   \AttributeTok{source\_table =}\NormalTok{ four\_variables\_for\_plots, }\AttributeTok{measurevar =} \StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{,}
@@ -1883,13 +1992,13 @@ series}\label{exploratory-data-analysis-eda-of-the-time-series}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-8} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-9} \end{center}
 
 \begin{verbatim}
 ## $plot
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-9} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-10} \end{center}
 
 \begin{verbatim}
 ## 
@@ -1915,16 +2024,16 @@ series}\label{exploratory-data-analysis-eda-of-the-time-series}}
 ## 
 ## $summaries_print_df
 ## # A tibble: 6 x 5
-##   triennial_interval `Avg. area of fore~ `Avg. number of for~ `Avg. number of M~
-##   <fct>              <chr>               <chr>                <chr>             
-## 1 2001-2003          0.1 (0.01)          181.59 (5.33)        0.92 (0.08)       
-## 2 2004-2006          0.24 (0.03)         235.18 (7.47)        2.27 (0.24)       
-## 3 2007-2009          0.2 (0.01)          230.33 (6.15)        2.13 (0.12)       
-## 4 2010-2012          0.15 (0.01)         240.63 (6.97)        1.94 (0.12)       
-## 5 2013-2015          0.2 (0.02)          229.65 (6.96)        2.13 (0.14)       
-## 6 2016-2018          0.32 (0.02)         306.5 (11.08)        1.05 (0.06)       
+##   triennial_interval `Avg. area of forest lo~` `Avg. number o~` `Avg. number o~`
+##   <fct>              <chr>                     <chr>            <chr>           
+## 1 2001-2003          0.1 (0.01)                181.59 (5.33)    0.92 (0.08)     
+## 2 2004-2006          0.24 (0.03)               235.18 (7.47)    2.27 (0.24)     
+## 3 2007-2009          0.2 (0.01)                230.33 (6.15)    2.13 (0.12)     
+## 4 2010-2012          0.15 (0.01)               240.63 (6.97)    1.94 (0.12)     
+## 5 2013-2015          0.2 (0.02)                229.65 (6.96)    2.13 (0.14)     
+## 6 2016-2018          0.32 (0.02)               306.5 (11.08)    1.05 (0.06)     
 ## # ... with 1 more variable:
-## #   Avg. number of VIRS V1 fire points per 100 sq. km <chr>
+## #   `Avg. number of VIRS V1 fire points per 100 sq. km` <chr>
 ## Quadrennials
 periodic_summaries(
   source_table = four_variables_for_plots, measurevar = 'value',
@@ -1935,13 +2044,13 @@ periodic_summaries(
 )
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-10} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-11} \end{center}
 
 \begin{verbatim}
 ## $plot
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-11} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-12} \end{center}
 
 \begin{verbatim}
 ## 
@@ -1965,15 +2074,15 @@ periodic_summaries(
 ## 
 ## $summaries_print_df
 ## # A tibble: 5 x 5
-##   quadrennial_interval `Avg. area of fore~ `Avg. number of f~ `Avg. number of M~
-##   <fct>                <chr>               <chr>              <chr>             
-## 1 2001-2004            0.13 (0.01)         200.49 (5.12)      1.08 (0.07)       
-## 2 2005-2008            0.23 (0.02)         236.06 (6.24)      2.44 (0.19)       
-## 3 2009-2012            0.15 (0.01)         229.26 (5.64)      1.93 (0.1)        
-## 4 2013-2016            0.24 (0.02)         254.89 (7.57)      1.86 (0.11)       
-## 5 2017-2018            0.3 (0.02)          294.45 (12.75)     1.04 (0.08)       
+##   quadrennial_interval `Avg. area of forest ~` `Avg. number o~` `Avg. number o~`
+##   <fct>                <chr>                   <chr>            <chr>           
+## 1 2001-2004            0.13 (0.01)             200.49 (5.12)    1.08 (0.07)     
+## 2 2005-2008            0.23 (0.02)             236.06 (6.24)    2.44 (0.19)     
+## 3 2009-2012            0.15 (0.01)             229.26 (5.64)    1.93 (0.1)      
+## 4 2013-2016            0.24 (0.02)             254.89 (7.57)    1.86 (0.11)     
+## 5 2017-2018            0.3 (0.02)              294.45 (12.75)   1.04 (0.08)     
 ## # ... with 1 more variable:
-## #   Avg. number of VIRS V1 fire points per 100 sq. km <chr>
+## #   `Avg. number of VIRS V1 fire points per 100 sq. km` <chr>
 
 # Drawing results
 periodic_summaries(
@@ -1990,13 +2099,13 @@ periodic_summaries(
 )
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-12} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-13} \end{center}
 
 \begin{verbatim}
 ## $plot
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-13} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-14} \end{center}
 
 \begin{verbatim}
 ## 
@@ -2042,13 +2151,13 @@ periodic_summaries(
 )
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-14} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-15} \end{center}
 
 \begin{verbatim}
 ## $plot
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-15} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-16} \end{center}
 
 \begin{verbatim}
 ## 
@@ -2090,13 +2199,13 @@ periodic_summaries(
 )
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-16} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-17} \end{center}
 
 \begin{verbatim}
 ## $plot
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-17} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-18} \end{center}
 
 \begin{verbatim}
 ## 
@@ -2116,13 +2225,13 @@ periodic_summaries(
 ## 
 ## $summaries_print_df
 ## # A tibble: 3 x 5
-##   sexennial_interval `Avg. area of fore~ `Avg. number of for~ `Avg. number of M~
-##   <fct>              <chr>               <chr>                <chr>             
-## 1 2001-2006          0.17 (0.01)         208.39 (4.64)        1.59 (0.13)       
-## 2 2007-2012          0.17 (0.01)         235.48 (4.65)        2.04 (0.08)       
-## 3 2013-2018          0.26 (0.01)         268.08 (6.61)        1.59 (0.08)       
+##   sexennial_interval `Avg. area of forest lo~` `Avg. number o~` `Avg. number o~`
+##   <fct>              <chr>                     <chr>            <chr>           
+## 1 2001-2006          0.17 (0.01)               208.39 (4.64)    1.59 (0.13)     
+## 2 2007-2012          0.17 (0.01)               235.48 (4.65)    2.04 (0.08)     
+## 3 2013-2018          0.26 (0.01)               268.08 (6.61)    1.59 (0.08)     
 ## # ... with 1 more variable:
-## #   Avg. number of VIRS V1 fire points per 100 sq. km <chr>
+## #   `Avg. number of VIRS V1 fire points per 100 sq. km` <chr>
 ## Decennials
 periodic_summaries(
   source_table = four_variables_for_plots, measurevar = 'value',
@@ -2133,13 +2242,13 @@ periodic_summaries(
 )
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-18} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-19} \end{center}
 
 \begin{verbatim}
 ## $plot
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-19} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-20} \end{center}
 
 \begin{verbatim}
 ## 
@@ -2157,12 +2266,12 @@ periodic_summaries(
 ## 
 ## $summaries_print_df
 ## # A tibble: 2 x 5
-##   decennial_interval `Avg. area of fore~ `Avg. number of for~ `Avg. number of M~
-##   <fct>              <chr>               <chr>                <chr>             
-## 1 2001-2010          0.17 (0.01)         216.32 (3.52)        1.75 (0.09)       
-## 2 2011-2018          0.23 (0.01)         263.56 (5.43)        1.72 (0.07)       
+##   decennial_interval `Avg. area of forest lo~` `Avg. number o~` `Avg. number o~`
+##   <fct>              <chr>                     <chr>            <chr>           
+## 1 2001-2010          0.17 (0.01)               216.32 (3.52)    1.75 (0.09)     
+## 2 2011-2018          0.23 (0.01)               263.56 (5.43)    1.72 (0.07)     
 ## # ... with 1 more variable:
-## #   Avg. number of VIRS V1 fire points per 100 sq. km <chr>
+## #   `Avg. number of VIRS V1 fire points per 100 sq. km` <chr>
 
 # Commented plot, only forest loss and fires modis
 four_variables_for_plots_commented <- hexzonalfm %>% 
@@ -2196,7 +2305,7 @@ four_variables_plot_commented <- four_variables_for_plots_commented %>%
 four_variables_plot_commented + geom_smooth(method = 'loess', span = 0.5)
 \end{verbatim}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-20} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-21} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2242,13 +2351,38 @@ four_variables_plot_commented + geom_smooth(method = 'loess', span = 0.5)
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{img/modelling/aa-eda-ts-21} \end{center}
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-22} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# jpeg(\textquotesingle{}out/forest\_loss\_fire\_points\_line\_plots\_2001\_2018\_ts\_decomposition.jpg\textquotesingle{}, width = 2600, height = 2160, res = 250)}
 \CommentTok{\# four\_variables\_ts\_filt\_gg}
 \CommentTok{\# dev.off()}
+
+\CommentTok{\# \textgreater{} }\RegionMarkerTok{BEGIN}\CommentTok{: After revision, round 1: remove VIIRS fire points plots from time{-}series decomposition \#\#\#\#}
+\CommentTok{\# Time{-}series decomposition}
+\NormalTok{three\_variables\_ts\_filt\_gg }\OtherTok{\textless{}{-}}\NormalTok{ four\_variables\_ts\_filt\_for\_gg }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{grepl}\NormalTok{(}\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{, Variable)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{gather}\NormalTok{(Component, Value, }\SpecialCharTok{{-}}\NormalTok{Variable, }\SpecialCharTok{{-}}\NormalTok{Year, }\SpecialCharTok{{-}}\NormalTok{Filter) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Variable =} \FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{} per\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}}\SpecialCharTok{\textbackslash{}n}\StringTok{per\textquotesingle{}}\NormalTok{, Variable)) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  ggplot }\SpecialCharTok{+}
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Value, }\AttributeTok{color =}\NormalTok{ Component) }\SpecialCharTok{+}
+    \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \DecValTok{2001}\SpecialCharTok{:}\DecValTok{2018}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme\_bw}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{, }\AttributeTok{vjust =} \FloatTok{0.5}\NormalTok{), }\AttributeTok{text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{14}\NormalTok{), }\AttributeTok{aspect.ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(Variable }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Filter, }\AttributeTok{scales =} \StringTok{\textquotesingle{}free\_y\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# jpeg(\textquotesingle{}img/modelling/forest\_loss\_fire\_points\_line\_plots\_2001\_2018\_ts\_decomposition.jpg\textquotesingle{}, width = 2800, height = 2000, res = 250)}
+\NormalTok{three\_variables\_ts\_filt\_gg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/aa-eda-ts-23} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dev.off()}
+\CommentTok{\# \textgreater{} }\RegionMarkerTok{END}\CommentTok{: After revision, round 1: remove VIIRS fire points plots from time{-}series decomposition \#\#\#\#}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2886,6 +3020,46 @@ maps}\label{yearly-forest-loss-and-fire-incidence-maps}}
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# dev.off()}
+
+\CommentTok{\# \textgreater{} }\RegionMarkerTok{BEGIN}\CommentTok{: After revision, round 1: remove VIIRS fire from Moran\textquotesingle{}s I trend plot \#\#\#\#}
+\CommentTok{\# jpeg(\textquotesingle{}img/modelling/morans\_i\_time\_series\_three\_variables\_tlp.jpg\textquotesingle{}, width = 3840, height = 1600, res = 350)}
+\NormalTok{lambda\_tests }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\AttributeTok{value =}\NormalTok{ MIEST, MIVAR, LENGTH, variable2, year) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{year\_factor =} \FunctionTok{factor}\NormalTok{(year)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{variable =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    variable2 }\SpecialCharTok{==} \StringTok{\textquotesingle{}NFIRESM6PSQKM\_TLP\textquotesingle{}} \SpecialCharTok{\textasciitilde{}} \StringTok{\textquotesingle{}(C)\textquotesingle{}}\NormalTok{,}
+\NormalTok{    variable2 }\SpecialCharTok{==} \StringTok{\textquotesingle{}NFIRESV1PSQKM\_TLP\textquotesingle{}} \SpecialCharTok{\textasciitilde{}} \StringTok{\textquotesingle{}(D)\textquotesingle{}}\NormalTok{,}
+\NormalTok{    variable2 }\SpecialCharTok{==} \StringTok{\textquotesingle{}NCLUMPSSMALLER1HAPSQKM\_TLP\textquotesingle{}} \SpecialCharTok{\textasciitilde{}} \StringTok{\textquotesingle{}(B)\textquotesingle{}}\NormalTok{,}
+\NormalTok{    variable2 }\SpecialCharTok{==} \StringTok{\textquotesingle{}LOSSGREATER1HA\_PUA\_TLP\textquotesingle{}} \SpecialCharTok{\textasciitilde{}} \StringTok{\textquotesingle{}(A)\textquotesingle{}}
+\NormalTok{    )) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{grepl}\NormalTok{(}\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{, variable)) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  ggplot }\SpecialCharTok{+}
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year\_factor, }\AttributeTok{y =}\NormalTok{ value, }\AttributeTok{group =}\NormalTok{ variable, }\AttributeTok{color =}\NormalTok{ variable) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{, }\AttributeTok{vjust =} \FloatTok{0.5}\NormalTok{),}
+    \AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{(),}
+    \AttributeTok{text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{14}\NormalTok{), }\AttributeTok{aspect.ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{lwd =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_errorbar}\NormalTok{(}
+    \FunctionTok{aes}\NormalTok{(}
+      \AttributeTok{ymin =}\NormalTok{ value }\SpecialCharTok{{-}} \FunctionTok{qnorm}\NormalTok{(}\AttributeTok{p=}\NormalTok{(}\FloatTok{0.05}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}\SpecialCharTok{+}\NormalTok{(}\DecValTok{1}\FloatTok{{-}0.05}\NormalTok{))}\SpecialCharTok{*}\FunctionTok{sqrt}\NormalTok{(MIVAR)}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(LENGTH),}
+      \AttributeTok{ymax =}\NormalTok{ value }\SpecialCharTok{+} \FunctionTok{qnorm}\NormalTok{(}\AttributeTok{p=}\NormalTok{(}\FloatTok{0.05}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}\SpecialCharTok{+}\NormalTok{(}\DecValTok{1}\FloatTok{{-}0.05}\NormalTok{))}\SpecialCharTok{*}\FunctionTok{sqrt}\NormalTok{(MIVAR)}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(LENGTH)),}
+    \AttributeTok{alpha =} \FloatTok{0.75}\NormalTok{,}
+    \AttributeTok{colour =} \StringTok{"grey50"}\NormalTok{,}
+    \AttributeTok{width =}\NormalTok{ .}\DecValTok{15}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size=}\DecValTok{1}\NormalTok{, }\AttributeTok{shape=}\DecValTok{21}\NormalTok{, }\AttributeTok{color =} \StringTok{\textquotesingle{}grey50\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{\textquotesingle{}Year\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Moran\textquotesingle{}s I"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{img/modelling/transformations-3} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dev.off()}
+\CommentTok{\# \textgreater{} }\RegionMarkerTok{END}\CommentTok{: After revision, round 1: remove VIIRS fire from Moran\textquotesingle{}s I trend plot \#\#\#\#}
 \end{Highlighting}
 \end{Shaded}
 
