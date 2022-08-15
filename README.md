@@ -16,7 +16,7 @@ If you want to reproduce the code, follow these instructions:
 
 1. Clone this repo to your computer. From a terminal window, this should work: `git clone https://github.com/geofis/forest-loss-fire-reproducible.git`. If you are using RStudio on a desktop version, use the `New Project>Version Control>Git` pipeline.
 
-2. Visit [ZENODO](https://zenodo.org/record/5681481), download the dataset `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in the cloned repo directory (named `forest-loss-fire-reproducible/`).
+2. Visit [ZENODO](https://doi.org/10.5281/zenodo.6990803), download the dataset `forest-loss-fire-reproducible-data-repo.zip` (preserve its name, otherwise, the reproducible script may not be able to unzip it automatically) and place the ZIP file in the cloned repo directory (named `forest-loss-fire-reproducible/`).
 
 3. Run the code chunks in the `.Rmd` notebooks, or alternately knit the notebooks. As a suggestion, run the `.Rmd` in the sequence below:
 
@@ -56,7 +56,7 @@ docker run --rm \
 
 3. In the `Files` tab (down-right pane), click on the `forest-loss-fire-reproducible` directory, and then click on the `forest-loss-fire-reproducible.Rproj` file. When asked `Do you want to open the project ~/forest-loss-fire-reproducible?`, click `Yes`.
 
-4. Download the `forest-loss-fire-reproducible-data-repo.zip` dataset from [ZENODO](https://zenodo.org/record/5681481) if you have not already done so.
+4. Download the `forest-loss-fire-reproducible-data-repo.zip` dataset from [ZENODO](https://doi.org/10.5281/zenodo.6990803) if you have not already done so.
 
 5. Run the code chunks in the reproducible scripts, or alternately knit the notebooks. Keep in mind that if you knit from RStudio, a message will ask you to allow popup windows, which can be done in the address bar of the browser.
 
@@ -89,7 +89,7 @@ docker run -it --rm \
 
 `xhost -`
 
-6. Download the `forest-loss-fire-reproducible-data-repo.zip` dataset from [ZENODO](https://zenodo.org/record/5681481) if you have not already done so.
+6. Download the `forest-loss-fire-reproducible-data-repo.zip` dataset from [ZENODO](https://doi.org/10.5281/zenodo.6990803) if you have not already done so.
 
 7. Run the code chunks in the reproducible scripts, or alternately knit the notebooks.
 
