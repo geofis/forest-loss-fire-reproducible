@@ -2,9 +2,9 @@
 
 José Ramón Martínez Batlle, Universidad Autónoma de Santo Domingo (UASD) jmartinez19\@uasd.edu.do
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5694017.svg)](https://doi.org/10.5281/zenodo.5694017)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6991441.svg)](https://doi.org/10.5281/zenodo.6991441)
 
-Cite this repo using the following format (BibTeX entry [here](#bibtex-entry-for-this-repo)): "José Ramón Martínez Batlle. (2021). geofis/forest-loss-fire-reproducible: First release (v0.0.0.9000). Zenodo. https://doi.org/10.5281/zenodo.5694017"
+Cite this repo using the following format (BibTeX entry [here](#bibtex-entry-for-this-repo)): "José Ramón Martínez Batlle. (2022). geofis/forest-loss-fire-reproducible: Preparing for publication (v0.0.2). Zenodo. https://doi.org/10.5281/zenodo.6991441"
 
 If you want to cite the manuscript as well, use the following format: "Martínez Batlle, J. R. (2021). Fire and forest loss in the Dominican Republic during the 21st Century. *bioRxiv*. https://doi.org/10.1101/2021.06.15.448604"
 
@@ -154,15 +154,15 @@ docker push jmartinez19/rstudio
 ### Bibtex entry for this repo
 
 ```
-@software{jose_ramon_martinez_batlle_2021_5694017,
+@software{jose_ramon_martinez_batlle_2022_6991441,
   author       = {José Ramón Martínez Batlle},
-  title        = {{geofis/forest-loss-fire-reproducible: First 
-                   release}},
-  month        = nov,
-  year         = 2021,
+  title        = {{geofis/forest-loss-fire-reproducible: Preparing 
+                   for publication}},
+  month        = aug,
+  year         = 2022,
   publisher    = {Zenodo},
-  version      = {v0.0.0.9000},
-  doi          = {10.5281/zenodo.5694017},
-  url          = {https://doi.org/10.5281/zenodo.5694017}
+  version      = {v0.0.2},
+  doi          = {10.5281/zenodo.6991441},
+  url          = {https://doi.org/10.5281/zenodo.6991441}
 }
 ```
